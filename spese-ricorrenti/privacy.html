@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Spese Ricorrenti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="index.html"><span class="dot"></span> Spese Ricorrenti</a>
+  <div class="langs">
+    <button type="button" data-set-lang="it" aria-pressed="true">Italiano</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<!-- ==================== ITALIANO ==================== -->
+<div data-lang="it">
+
+<h1>Privacy Policy</h1>
+<p class="lede">Come l'app <strong>Spese Ricorrenti</strong> tratta i tuoi dati.</p>
+<p class="updated">Ultimo aggiornamento: 25 agosto 2026 · Versione app: 1.0</p>
+
+<div class="card tldr">
+  <h3>In sintesi</h3>
+  <ul>
+    <li><strong>Le tue spese non lasciano il telefono.</strong> Nomi, importi, categorie, scadenze e note sono salvati solo sul dispositivo. Non abbiamo un server e non possiamo vederli.</li>
+    <li><strong>Non vendiamo dati e non facciamo pubblicità.</strong> Nessun IDFA, nessun tracciamento pubblicitario, nessun profilo commerciale.</li>
+    <li><strong>Raccogliamo statistiche d'uso anonime</strong> (quali schermate vengono aperte, quanti abbonamenti vengono attivati) tramite TelemetryDeck, collegate a un identificativo pseudonimo del dispositivo. <strong>Puoi disattivarle</strong> da <em>Opzioni → Privacy</em>.</li>
+    <li><strong>Gli acquisti passano da Apple.</strong> Non vediamo mai i dati della tua carta.</li>
+  </ul>
+</div>
+
+<h2>1. Titolare del trattamento</h2>
+<p>
+  Il titolare del trattamento è <strong>Rocco Barletta</strong>, in qualità di persona fisica
+  sviluppatrice dell'applicazione.
+</p>
+<p>
+  Per qualsiasi richiesta relativa alla privacy puoi scriverci a
+  <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.
+  Rispondiamo entro 30 giorni.
+</p>
+
+<h2>2. Dati che restano solo sul tuo dispositivo</h2>
+<p>
+  Tutto ciò che inserisci nell'app viene salvato in un database locale (SwiftData) nella memoria del tuo
+  iPhone. <strong>Non viene trasmesso a noi né a terzi.</strong> Rientrano in questa categoria:
+</p>
+<ul>
+  <li>nome, importo e valuta di ogni spesa;</li>
+  <li>categoria (comprese le categorie personalizzate che crei tu), icona e colore;</li>
+  <li>ricorrenza, prima scadenza, eventuale data di fine, stato attivo o in pausa;</li>
+  <li>note, promemoria e importi storici registrati per singola scadenza;</li>
+  <li>preferenze dell'app: valuta predefinita, impostazioni dei promemoria, lingua.</li>
+</ul>
+<p>
+  Se usi <em>Esporta spese</em>, il file XLSX o CSV viene generato sul dispositivo e sei tu a decidere dove
+  salvarlo o a chi inviarlo: noi non ne riceviamo copia. Lo stesso vale, in senso inverso, per
+  <em>Importa spese</em>.
+</p>
+<p>
+  I <strong>promemoria</strong> sono notifiche locali programmate dal sistema operativo sul dispositivo.
+  Non passano da alcun server e non richiedono l'invio delle tue spese a terzi.
+</p>
+<p>
+  Al momento il <strong>backup su iCloud non è attivo</strong>. Se in futuro lo attiveremo, i dati verranno
+  sincronizzati nel <em>tuo</em> account iCloud personale, sotto il controllo di Apple e non nostro, e questa
+  pagina verrà aggiornata prima del rilascio.
+</p>
+
+<h2>3. Statistiche d'uso (TelemetryDeck)</h2>
+<p>
+  Per capire quali funzioni vengono effettivamente usate e dove l'app crea difficoltà, inviamo eventi
+  statistici a <strong>TelemetryDeck</strong>, che agisce come responsabile del trattamento per nostro conto.
+  I dati sono trasmessi in HTTPS all'endpoint <code>nom.telemetrydeck.com</code>.
+</p>
+
+<h3>3.1 Eventi che inviamo</h3>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Evento</th><th>Informazioni allegate</th></tr></thead>
+  <tbody>
+    <tr><td><code>screen_view</code></td><td>Nome della schermata aperta (es. "DashboardView")</td></tr>
+    <tr><td><code>tap_add_expense</code></td><td>Nessuna</td></tr>
+    <tr><td><code>open_suggestion_helper</code></td><td>Nessuna</td></tr>
+    <tr><td><code>tap_rate_app</code></td><td>Nessuna</td></tr>
+    <tr><td><code>search_performed</code></td><td><strong>Solo il numero di caratteri</strong> digitati. Il testo che cerchi non viene mai inviato.</td></tr>
+    <tr><td><code>expense_added</code></td><td>Nome della spesa <strong>scelta dal catalogo predefinito</strong> dell'app (es. "netflix", "spotify"). Le spese che crei a mano non generano questo evento.</td></tr>
+    <tr><td><code>expense_added_via_siri</code></td><td>Due soli indicatori: se l'app ha riconosciuto automaticamente la categoria e se avevi indicato un importo. <strong>Il nome che detti a Siri non viene inviato.</strong></td></tr>
+    <tr><td><code>paywall_view</code>, <code>paywall_purchase_tap</code>, <code>paywall_restore_tap</code>, <code>paywall_close</code></td><td>Nessuna</td></tr>
+  </tbody>
+</table>
+</div>
+<p>
+  Inoltre l'SDK di TelemetryDeck invia automaticamente due eventi tecnici che non dipendono da una tua
+  azione specifica: <code>TelemetryDeck.Session.started</code> (all'avvio dell'app e quando la riapri dopo
+  almeno 5 minuti in background) e <code>TelemetryDeck.Acquisition.newInstallDetected</code> (al primo avvio
+  dopo l'installazione).
+</p>
+
+<h3>3.2 Informazioni allegate automaticamente a ogni evento</h3>
+<p>
+  Indipendentemente dall'evento, l'SDK allega un insieme fisso di informazioni tecniche sul dispositivo e
+  sull'utilizzo:
+</p>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Categoria</th><th>Dati</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Identificativo pseudonimo</strong></td>
+      <td>Un codice <code>clientUser</code> ottenuto applicando la funzione crittografica SHA-256, insieme a
+      una stringa fissa aggiunta dall'app (<em>salt</em>), all'identificativo che iOS assegna al nostro
+      insieme di app su quel dispositivo (<em>identifier for vendor</em>). L'identificativo originale non
+      viene mai trasmesso: parte solo il codice derivato, che non è riconducibile al tuo nome, al tuo numero
+      o al tuo Apple Account. Il salt serve a evitare che un terzo in possesso dell'identificativo di un
+      dispositivo possa ricalcolarne l'hash e riconoscerlo nei nostri dati. È però
+      <strong>stabile nel tempo</strong>, quindi permette di riconoscere che più eventi arrivano dallo stesso
+      dispositivo. Viene azzerato quando disinstalli le nostre app dal dispositivo.
+      Ogni sessione ha inoltre un codice casuale <code>sessionID</code>, non conservato tra un avvio e l'altro.</td>
+    </tr>
+    <tr><td><strong>App</strong></td><td>Versione e numero di build; se la copia proviene da App Store o TestFlight; nome e versione dell'SDK.</td></tr>
+    <tr><td><strong>Dispositivo</strong></td><td>Modello (es. <code>iPhone16,1</code>), architettura del processore, sistema operativo e versione, risoluzione e fattore di scala dello schermo, orientamento.</td></tr>
+    <tr><td><strong>Lingua e area</strong></td><td>Lingua dell'app, lingua preferita di sistema, <em>locale</em> (es. <code>it_IT</code>), Paese impostato sul dispositivo (es. <code>IT</code>) e fuso orario (es. <code>UTC+1</code>). Sono ricavati dalle impostazioni del dispositivo, <strong>non</strong> dalla tua posizione GPS.</td></tr>
+    <tr><td><strong>Accessibilità e aspetto</strong></td><td>Impostazioni di accessibilità attive (riduzione del movimento, testo in grassetto, colori invertiti, contrasto aumentato, riduzione della trasparenza, distinzione senza colore), dimensione del testo preferita, tema chiaro o scuro, direzione di lettura.</td></tr>
+    <tr><td><strong>Utilizzo nel tempo</strong></td><td>Data della prima sessione (installazione), numero totale di sessioni, numero di giorni distinti di utilizzo, giorni di utilizzo nell'ultimo mese, durata media delle sessioni e durata della sessione precedente.</td></tr>
+    <tr><td><strong>Data e ora locali</strong></td><td>Giorno del mese, giorno della settimana, giorno dell'anno, settimana, mese, trimestre, ora del giorno e se è un giorno festivo del fine settimana.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>
+  Come per qualunque connessione a internet, il server che riceve i dati vede necessariamente l'
+  <strong>indirizzo IP</strong> da cui arriva la richiesta. Non lo usiamo per identificarti né lo
+  incrociamo con altri dati.
+</p>
+<p>
+  Se il dispositivo è offline, gli eventi vengono messi in coda in un file nella cartella cache dell'app,
+  sul dispositivo, e inviati alla connessione successiva.
+</p>
+<p>
+  Non raccogliamo <strong>importi</strong>, <strong>saldi</strong>, <strong>note</strong>, <strong>date di
+  scadenza</strong> né gli elenchi delle tue spese. Non raccogliamo nemmeno i <strong>nomi che scrivi o
+  detti tu</strong>: l'unico nome che può essere inviato è quello di una voce che hai selezionato dal
+  catalogo predefinito dell'app.
+</p>
+
+<h2>4. Abbonamenti e acquisti (RevenueCat e Apple)</h2>
+<p>
+  La gestione degli abbonamenti Premium è affidata a <strong>RevenueCat</strong>, responsabile del
+  trattamento per nostro conto. Non trasmettiamo a RevenueCat alcun dato identificativo tuo: non
+  effettuiamo alcun login e non associamo il tuo profilo a un'email o a un nome. RevenueCat genera un
+  proprio identificativo anonimo del dispositivo e tratta:
+</p>
+<ul>
+  <li>la ricevuta d'acquisto rilasciata da Apple;</li>
+  <li>lo stato dell'abbonamento (attivo, scaduto, in prova, rimborsato) e la sua cronologia;</li>
+  <li>il prodotto acquistato e il Paese dello store.</li>
+</ul>
+<p>
+  Il <strong>pagamento avviene interamente tramite Apple</strong> con il tuo Apple Account. Noi non
+  riceviamo, non vediamo e non conserviamo i dati della tua carta di credito o del tuo metodo di pagamento.
+  Per il trattamento dei dati da parte di Apple si applica la privacy policy di Apple.
+</p>
+
+<h2>5. Accesso con Apple</h2>
+<p>
+  Durante l'introduzione iniziale l'app offre il pulsante <em>Accedi con Apple</em> come alternativa a
+  <em>Continua senza account</em>. L'app <strong>non richiede il tuo nome né il tuo indirizzo email</strong>
+  (nessuno <em>scope</em> viene domandato ad Apple) e non conserva né trasmette l'identificativo restituito:
+  l'esito dell'accesso viene usato solo per proseguire l'introduzione, e non viene creato alcun account
+  presso di noi. In entrambi i casi le tue spese restano su questo dispositivo.
+</p>
+
+<h2>6. Cosa non facciamo</h2>
+<ul>
+  <li>Non vendiamo, affittiamo né cediamo dati a terzi.</li>
+  <li>Non mostriamo pubblicità e non usiamo reti pubblicitarie.</li>
+  <li>Non usiamo l'IDFA e non chiediamo l'autorizzazione al tracciamento: l'app non svolge attività di
+      <em>tracking</em> ai sensi delle regole Apple.</li>
+  <li>Non accediamo a posizione GPS, rubrica, foto, microfono, calendario o salute.</li>
+  <li>Non creiamo profili per finalità di marketing e non prendiamo decisioni automatizzate che ti
+      riguardino.</li>
+</ul>
+
+<h2>7. Base giuridica del trattamento</h2>
+<ul>
+  <li><strong>Esecuzione del contratto</strong> (art. 6.1.b GDPR): gestione dell'abbonamento Premium e
+      ripristino degli acquisti.</li>
+  <li><strong>Legittimo interesse</strong> (art. 6.1.f GDPR): statistiche d'uso aggregate e pseudonime, per
+      correggere errori, capire quali funzioni servono davvero e mantenere l'app sostenibile. Abbiamo
+      limitato i dati al minimo necessario: nessun identificativo diretto, nessun importo, nessun elenco
+      delle tue spese.</li>
+</ul>
+<p>
+  Puoi esercitare il <strong>diritto di opposizione</strong> alle statistiche d'uso in qualsiasi momento e
+  senza doverci scrivere, disattivando <em>Statistiche d'uso anonime</em> in <em>Opzioni → Privacy</em>: da
+  quel momento l'app smette di inviare qualsiasi evento, compresi quelli tecnici di avvio sessione. La
+  scelta viene ricordata anche dopo un riavvio dell'app.
+</p>
+
+<h2>8. Conservazione dei dati</h2>
+<ul>
+  <li><strong>Dati sul dispositivo:</strong> restano finché non li elimini dall'app o non disinstalli
+      l'app. La disinstallazione cancella il database locale.</li>
+  <li><strong>Statistiche d'uso:</strong> conservate da TelemetryDeck in forma pseudonima e aggregata per
+      il periodo previsto dal servizio. Sul dispositivo, la cronologia delle sessioni recenti viene
+      mantenuta per 90 giorni.</li>
+  <li><strong>Dati d'acquisto:</strong> conservati da RevenueCat e da Apple per il tempo necessario alla
+      gestione dell'abbonamento e agli obblighi fiscali e contabili.</li>
+</ul>
+
+<h2>9. Trasferimenti fuori dallo Spazio Economico Europeo</h2>
+<p>
+  Alcuni fornitori possono trattare i dati in Paesi esterni allo Spazio Economico Europeo. In tal caso il
+  trasferimento avviene sulla base delle <strong>Clausole Contrattuali Standard</strong> approvate dalla
+  Commissione europea o di altra garanzia adeguata prevista dal Capo V del GDPR. I riferimenti privacy dei
+  fornitori sono:
+</p>
+<ul>
+  <li>TelemetryDeck — <a href="https://telemetrydeck.com/privacy/" rel="noopener">telemetrydeck.com/privacy</a></li>
+  <li>RevenueCat — <a href="https://www.revenuecat.com/privacy/" rel="noopener">revenuecat.com/privacy</a></li>
+  <li>Apple — <a href="https://www.apple.com/legal/privacy/it/" rel="noopener">apple.com/legal/privacy</a></li>
+</ul>
+
+<h2>10. I tuoi diritti</h2>
+<p>Ai sensi degli articoli 15-22 del GDPR hai diritto di:</p>
+<ul>
+  <li>ottenere conferma dell'esistenza di un trattamento e accedere ai dati;</li>
+  <li>chiederne la rettifica o la cancellazione;</li>
+  <li>chiedere la limitazione del trattamento od opporti al legittimo interesse;</li>
+  <li>ricevere i dati in formato strutturato (portabilità);</li>
+  <li>proporre reclamo all'autorità di controllo. In Italia:
+      <a href="https://www.garanteprivacy.it" rel="noopener">Garante per la protezione dei dati personali</a>.</li>
+</ul>
+<div class="card">
+  <p style="margin:0">
+    <strong>Nota pratica.</strong> Per i dati che restano sul dispositivo puoi esercitare direttamente
+    accesso, rettifica e cancellazione dall'app: le spese si modificano ed eliminano dalla schermata
+    principale, e <em>Esporta spese</em> ti fornisce una copia in formato leggibile. Per le statistiche
+    d'uso, poiché sono legate a un identificativo pseudonimo e non al tuo nome, per dare seguito a una
+    richiesta potremmo doverti chiedere elementi che ci permettano di individuare i dati che ti riguardano.
+  </p>
+</div>
+
+<h2>11. Minori</h2>
+<p>
+  L'app non è rivolta a minori di 14 anni e non raccoglie intenzionalmente dati di minori. Se ritieni che
+  un minore ci abbia fornito dati, scrivici e provvederemo a cancellarli.
+</p>
+
+<h2>12. Modifiche a questa policy</h2>
+<p>
+  Se cambiano i dati raccolti o i fornitori coinvolti, aggiorneremo questa pagina modificando la data in
+  alto. Le modifiche rilevanti verranno segnalate anche nelle note di versione dell'app.
+</p>
+
+<h2>13. Contatti</h2>
+<p>
+  <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+</p>
+
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div data-lang="en">
+
+<h1>Privacy Policy</h1>
+<p class="lede">How the <strong>Spese Ricorrenti</strong> app handles your data.</p>
+<p class="updated">Last updated: 25 August 2026 · App version: 1.0</p>
+
+<div class="card tldr">
+  <h3>In short</h3>
+  <ul>
+    <li><strong>Your expenses never leave your phone.</strong> Names, amounts, categories, due dates and notes are stored on the device only. We run no server and cannot see them.</li>
+    <li><strong>We do not sell data and show no ads.</strong> No IDFA, no advertising tracking, no commercial profiling.</li>
+    <li><strong>We collect anonymous usage statistics</strong> (which screens are opened, how many subscriptions start) through TelemetryDeck, tied to a pseudonymous device identifier. <strong>You can turn them off</strong> in <em>Settings → Privacy</em>.</li>
+    <li><strong>Purchases go through Apple.</strong> We never see your payment card details.</li>
+  </ul>
+</div>
+
+<h2>1. Data controller</h2>
+<p>
+  The data controller is <strong>Rocco Barletta</strong>, a natural person and the developer of the
+  application.
+</p>
+<p>
+  For any privacy request, write to
+  <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>. We reply within 30 days.
+</p>
+
+<h2>2. Data that stays on your device only</h2>
+<p>
+  Everything you enter in the app is stored in a local database (SwiftData) in your iPhone's storage.
+  <strong>It is not transmitted to us or to any third party.</strong> This includes:
+</p>
+<ul>
+  <li>name, amount and currency of each expense;</li>
+  <li>category (including custom categories you create), icon and colour;</li>
+  <li>recurrence, first due date, optional end date, active or paused state;</li>
+  <li>notes, reminders and historical amounts recorded per due date;</li>
+  <li>app preferences: default currency, reminder settings, language.</li>
+</ul>
+<p>
+  If you use <em>Export expenses</em>, the XLSX or CSV file is generated on the device and you decide where
+  to save it or whom to send it to: we receive no copy. The same applies, in reverse, to
+  <em>Import expenses</em>.
+</p>
+<p>
+  <strong>Reminders</strong> are local notifications scheduled by the operating system on the device. They
+  do not pass through any server and do not require sending your expenses to third parties.
+</p>
+<p>
+  iCloud backup is currently <strong>not enabled</strong>. If we enable it in the future, data will sync to
+  <em>your own</em> personal iCloud account, under Apple's control and not ours, and this page will be
+  updated before release.
+</p>
+
+<h2>3. Usage statistics (TelemetryDeck)</h2>
+<p>
+  To understand which features are actually used and where the app causes trouble, we send statistical
+  events to <strong>TelemetryDeck</strong>, acting as processor on our behalf. Data is transmitted over
+  HTTPS to the endpoint <code>nom.telemetrydeck.com</code>.
+</p>
+
+<h3>3.1 Events we send</h3>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Event</th><th>Attached information</th></tr></thead>
+  <tbody>
+    <tr><td><code>screen_view</code></td><td>Name of the screen opened (e.g. "DashboardView")</td></tr>
+    <tr><td><code>tap_add_expense</code></td><td>None</td></tr>
+    <tr><td><code>open_suggestion_helper</code></td><td>None</td></tr>
+    <tr><td><code>tap_rate_app</code></td><td>None</td></tr>
+    <tr><td><code>search_performed</code></td><td><strong>Only the number of characters</strong> typed. The text you search for is never sent.</td></tr>
+    <tr><td><code>expense_added</code></td><td>Name of the expense <strong>picked from the app's built-in catalogue</strong> (e.g. "netflix", "spotify"). Expenses you create manually do not generate this event.</td></tr>
+    <tr><td><code>expense_added_via_siri</code></td><td>Two indicators only: whether the app automatically recognised the category, and whether you stated an amount. <strong>The name you dictate to Siri is not sent.</strong></td></tr>
+    <tr><td><code>paywall_view</code>, <code>paywall_purchase_tap</code>, <code>paywall_restore_tap</code>, <code>paywall_close</code></td><td>None</td></tr>
+  </tbody>
+</table>
+</div>
+<p>
+  In addition, the TelemetryDeck SDK automatically sends two technical events that do not depend on a
+  specific action of yours: <code>TelemetryDeck.Session.started</code> (on app launch and when you reopen it
+  after at least 5 minutes in the background) and
+  <code>TelemetryDeck.Acquisition.newInstallDetected</code> (on first launch after installation).
+</p>
+
+<h3>3.2 Information automatically attached to every event</h3>
+<p>
+  Regardless of the event, the SDK attaches a fixed set of technical information about the device and its
+  usage:
+</p>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Category</th><th>Data</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Pseudonymous identifier</strong></td>
+      <td>A <code>clientUser</code> code obtained by applying the SHA-256 cryptographic function, together
+      with a fixed string added by the app (<em>salt</em>), to the identifier iOS assigns to our set of apps
+      on that device (<em>identifier for vendor</em>). The original identifier is never transmitted: only the
+      derived code is sent, and it cannot be traced back to your name, phone number or Apple Account. The
+      salt prevents a third party holding a device's identifier from recomputing its hash and recognising it
+      in our data. It is however <strong>stable over time</strong>, so it
+      allows recognising that several events come from the same device. It is reset when you uninstall our
+      apps from the device. Each session also has a random <code>sessionID</code> code, not retained between
+      launches.</td>
+    </tr>
+    <tr><td><strong>App</strong></td><td>Version and build number; whether the copy comes from the App Store or TestFlight; SDK name and version.</td></tr>
+    <tr><td><strong>Device</strong></td><td>Model (e.g. <code>iPhone16,1</code>), processor architecture, operating system and version, screen resolution and scale factor, orientation.</td></tr>
+    <tr><td><strong>Language and region</strong></td><td>App language, preferred system language, <em>locale</em> (e.g. <code>it_IT</code>), country set on the device (e.g. <code>IT</code>) and time zone (e.g. <code>UTC+1</code>). These come from device settings, <strong>not</strong> from your GPS location.</td></tr>
+    <tr><td><strong>Accessibility and appearance</strong></td><td>Active accessibility settings (reduce motion, bold text, invert colours, increase contrast, reduce transparency, differentiate without colour), preferred text size, light or dark theme, reading direction.</td></tr>
+    <tr><td><strong>Usage over time</strong></td><td>Date of first session (installation), total number of sessions, number of distinct days used, days used in the last month, average session duration and previous session duration.</td></tr>
+    <tr><td><strong>Local date and time</strong></td><td>Day of month, day of week, day of year, week, month, quarter, hour of day and whether it is a weekend day.</td></tr>
+  </tbody>
+</table>
+</div>
+<p>
+  As with any internet connection, the receiving server necessarily sees the <strong>IP address</strong> the
+  request comes from. We do not use it to identify you nor cross-reference it with other data.
+</p>
+<p>
+  If the device is offline, events are queued in a file inside the app's cache folder, on the device, and
+  sent on the next connection.
+</p>
+<p>
+  We do not collect <strong>amounts</strong>, <strong>balances</strong>, <strong>notes</strong>,
+  <strong>due dates</strong> or the lists of your expenses. Nor do we collect the <strong>names you type or
+  dictate</strong>: the only name that may be sent is that of an entry you selected from the app's built-in
+  catalogue.
+</p>
+
+<h2>4. Subscriptions and purchases (RevenueCat and Apple)</h2>
+<p>
+  Premium subscription management is handled by <strong>RevenueCat</strong>, acting as processor on our
+  behalf. We transmit no identifying data about you to RevenueCat: we perform no login and do not associate
+  your profile with an email address or a name. RevenueCat generates its own anonymous device identifier and
+  processes:
+</p>
+<ul>
+  <li>the purchase receipt issued by Apple;</li>
+  <li>subscription status (active, expired, in trial, refunded) and its history;</li>
+  <li>the purchased product and the store country.</li>
+</ul>
+<p>
+  <strong>Payment happens entirely through Apple</strong> with your Apple Account. We do not receive, see or
+  store your credit card or payment method details. Apple's own privacy policy applies to Apple's
+  processing.
+</p>
+
+<h2>5. Sign in with Apple</h2>
+<p>
+  During the initial onboarding, the app offers the <em>Sign in with Apple</em> button as an alternative to
+  <em>Continue without an account</em>. The app <strong>does not request your name or email address</strong>
+  (no <em>scope</em> is asked of Apple) and neither stores nor transmits the identifier returned: the sign-in
+  outcome is only used to continue the onboarding, and no account is created with us. Either way, your
+  expenses stay on this device.
+</p>
+
+<h2>6. What we do not do</h2>
+<ul>
+  <li>We do not sell, rent or transfer data to third parties.</li>
+  <li>We show no advertising and use no ad networks.</li>
+  <li>We do not use the IDFA and do not ask for tracking permission: the app performs no
+      <em>tracking</em> as defined by Apple's rules.</li>
+  <li>We do not access GPS location, contacts, photos, microphone, calendar or health data.</li>
+  <li>We do not build marketing profiles and take no automated decisions concerning you.</li>
+</ul>
+
+<h2>7. Legal basis for processing</h2>
+<ul>
+  <li><strong>Performance of a contract</strong> (Art. 6(1)(b) GDPR): managing the Premium subscription and
+      restoring purchases.</li>
+  <li><strong>Legitimate interest</strong> (Art. 6(1)(f) GDPR): aggregated, pseudonymous usage statistics, to
+      fix bugs, understand which features are genuinely needed and keep the app sustainable. We have kept
+      the data to the minimum necessary: no direct identifier, no amounts, no lists of your expenses.</li>
+</ul>
+<p>
+  You can exercise your <strong>right to object</strong> to usage statistics at any time, without writing to
+  us, by turning off <em>Anonymous usage statistics</em> in <em>Settings → Privacy</em>: from that moment the
+  app stops sending any event, including the technical session-start ones. The choice is remembered across
+  app restarts.
+</p>
+
+<h2>8. Data retention</h2>
+<ul>
+  <li><strong>Data on the device:</strong> kept until you delete it in the app or uninstall the app.
+      Uninstalling deletes the local database.</li>
+  <li><strong>Usage statistics:</strong> retained by TelemetryDeck in pseudonymous and aggregated form for
+      the period provided by the service. On the device, recent session history is kept for 90 days.</li>
+  <li><strong>Purchase data:</strong> retained by RevenueCat and Apple for as long as necessary to manage
+      the subscription and to meet tax and accounting obligations.</li>
+</ul>
+
+<h2>9. Transfers outside the European Economic Area</h2>
+<p>
+  Some providers may process data in countries outside the European Economic Area. In that case the transfer
+  takes place on the basis of the <strong>Standard Contractual Clauses</strong> approved by the European
+  Commission or another adequate safeguard under Chapter V of the GDPR. Providers' privacy references:
+</p>
+<ul>
+  <li>TelemetryDeck — <a href="https://telemetrydeck.com/privacy/" rel="noopener">telemetrydeck.com/privacy</a></li>
+  <li>RevenueCat — <a href="https://www.revenuecat.com/privacy/" rel="noopener">revenuecat.com/privacy</a></li>
+  <li>Apple — <a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></li>
+</ul>
+
+<h2>10. Your rights</h2>
+<p>Under Articles 15-22 GDPR you have the right to:</p>
+<ul>
+  <li>obtain confirmation that processing exists and access the data;</li>
+  <li>request its rectification or erasure;</li>
+  <li>request restriction of processing or object to legitimate interest;</li>
+  <li>receive the data in a structured format (portability);</li>
+  <li>lodge a complaint with a supervisory authority. In Italy:
+      <a href="https://www.garanteprivacy.it" rel="noopener">Garante per la protezione dei dati personali</a>.</li>
+</ul>
+<div class="card">
+  <p style="margin:0">
+    <strong>Practical note.</strong> For data that stays on the device you can exercise access,
+    rectification and erasure directly in the app: expenses can be edited and deleted from the main screen,
+    and <em>Export expenses</em> gives you a copy in a readable format. For usage statistics, since they are
+    tied to a pseudonymous identifier and not to your name, we may need to ask you for details that let us
+    locate the data concerning you before acting on a request.
+  </p>
+</div>
+
+<h2>11. Children</h2>
+<p>
+  The app is not directed at children under 14 and does not knowingly collect children's data. If you
+  believe a child has provided us with data, write to us and we will delete it.
+</p>
+
+<h2>12. Changes to this policy</h2>
+<p>
+  If the data collected or the providers involved change, we will update this page and change the date at
+  the top. Significant changes will also be noted in the app's release notes.
+</p>
+
+<h2>13. Contact</h2>
+<p>
+  <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+</p>
+
+</div>
+
+<footer>
+  <a href="index.html" data-i18n-it="Home" data-i18n-en="Home">Home</a>
+  <a href="terms.html" data-i18n-it="Termini e condizioni" data-i18n-en="Terms &amp; Conditions">Termini e condizioni</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'sr-legal-lang';
+  var buttons = document.querySelectorAll('[data-set-lang]');
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+    });
+    document.querySelectorAll('[data-i18n-' + lang + ']').forEach(function (el) {
+      el.textContent = el.getAttribute('data-i18n-' + lang);
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) {}
+  var initial = stored || ((navigator.language || 'it').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
+  });
+
+  apply(initial);
+})();
+</script>
+
+</body>
+</html>

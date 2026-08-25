@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spese Ricorrenti — Informazioni legali</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <span class="brand"><span class="dot"></span> Spese Ricorrenti</span>
+  <div class="langs">
+    <button type="button" data-set-lang="it" aria-pressed="true">Italiano</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<div data-lang="it">
+  <h1>Informazioni legali</h1>
+  <p class="lede">
+    Documenti dell'app Spese Ricorrenti per iPhone, l'app che tiene traccia delle tue spese
+    ricorrenti mantenendo i dati sul tuo dispositivo.
+  </p>
+
+  <div class="nav-cards">
+    <a href="privacy.html">
+      <strong>Privacy Policy</strong>
+      <span>Quali dati raccogliamo, quali restano solo sul tuo iPhone e quali sono i tuoi diritti.</span>
+    </a>
+    <a href="terms.html">
+      <strong>Termini e condizioni</strong>
+      <span>Licenza d'uso, limite della versione gratuita, abbonamenti Premium e disdetta.</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Contatti</h3>
+    <p style="margin:0">
+      Per domande, segnalazioni o richieste relative ai tuoi dati:
+      <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+    </p>
+  </div>
+</div>
+
+<div data-lang="en">
+  <h1>Legal information</h1>
+  <p class="lede">
+    Documents for the Spese Ricorrenti iPhone app — the app that keeps track of your recurring
+    expenses while keeping the data on your device.
+  </p>
+
+  <div class="nav-cards">
+    <a href="privacy.html">
+      <strong>Privacy Policy</strong>
+      <span>What data we collect, what stays on your iPhone only, and what your rights are.</span>
+    </a>
+    <a href="terms.html">
+      <strong>Terms &amp; Conditions</strong>
+      <span>Licence, free-version limit, Premium subscriptions and cancellation.</span>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Contact</h3>
+    <p style="margin:0">
+      For questions, reports or requests concerning your data:
+      <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  <a href="privacy.html" data-i18n-it="Privacy Policy" data-i18n-en="Privacy Policy">Privacy Policy</a>
+  <a href="terms.html" data-i18n-it="Termini e condizioni" data-i18n-en="Terms &amp; Conditions">Termini e condizioni</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'sr-legal-lang';
+  var buttons = document.querySelectorAll('[data-set-lang]');
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+    });
+    document.querySelectorAll('[data-i18n-' + lang + ']').forEach(function (el) {
+      el.textContent = el.getAttribute('data-i18n-' + lang);
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) {}
+  var initial = stored || ((navigator.language || 'it').toLowerCase().indexOf('it') === 0 ? 'it' : 'en');
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
+  });
+
+  apply(initial);
+})();
+</script>
+
+</body>
+</html>

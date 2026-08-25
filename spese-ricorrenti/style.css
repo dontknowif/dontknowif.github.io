@@ -1,0 +1,189 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f5f5f7;
+  --bg-card: #ffffff;
+  --text: #1d1d1f;
+  --text-dim: #6e6e73;
+  --border: #d2d2d7;
+  --accent: #0071e3;
+  --accent-soft: #e8f2fe;
+  --warn-bg: #fff8e6;
+  --warn-border: #f0c36d;
+  --mono-bg: #f5f5f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --bg-soft: #1c1c1e;
+    --bg-card: #1c1c1e;
+    --text: #f5f5f7;
+    --text-dim: #98989d;
+    --border: #38383a;
+    --accent: #2997ff;
+    --accent-soft: #10283d;
+    --warn-bg: #2b2312;
+    --warn-border: #6b5420;
+    --mono-bg: #2c2c2e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 0 20px 80px;
+}
+
+.wrap { max-width: 760px; margin: 0 auto; }
+
+header.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 28px 0 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand .dot {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #0071e3, #34c759);
+  flex: none;
+}
+
+.langs { display: flex; gap: 6px; }
+
+.langs button {
+  font: inherit;
+  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.langs button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+h1 {
+  font-size: clamp(28px, 6vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 36px 0 8px;
+}
+
+h2 {
+  font-size: clamp(20px, 4vw, 25px);
+  letter-spacing: -0.01em;
+  margin: 44px 0 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+h3 { font-size: 18px; margin: 28px 0 8px; }
+
+p, li { color: var(--text); overflow-wrap: break-word; }
+
+.lede { font-size: 19px; color: var(--text-dim); margin: 0 0 4px; }
+
+.updated { font-size: 14px; color: var(--text-dim); margin: 0 0 8px; }
+
+a { color: var(--accent); }
+
+ul, ol { padding-left: 22px; }
+
+li { margin: 6px 0; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.87em;
+  background: var(--mono-bg);
+  padding: 2px 5px;
+  border-radius: 5px;
+  /* Nomi di evento come TelemetryDeck.Acquisition.newInstallDetected non hanno
+     spazi: senza questo spingono la pagina in scroll orizzontale su iPhone. */
+  overflow-wrap: anywhere;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+
+.card.tldr { background: var(--accent-soft); border-color: transparent; }
+
+.card.tldr ul { margin: 8px 0 0; }
+
+.card h3 { margin-top: 0; }
+
+.tablewrap { overflow-x: auto; margin: 18px 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+  min-width: 480px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th { font-weight: 600; background: var(--bg-soft); }
+
+tbody tr:last-child td { border-bottom: none; }
+
+footer {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+footer a { margin-right: 16px; }
+
+[data-lang] { display: none; }
+
+.nav-cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 28px 0; }
+
+.nav-cards a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.nav-cards a strong { display: block; font-size: 18px; margin-bottom: 4px; }
+
+.nav-cards a span { color: var(--text-dim); font-size: 15px; }
