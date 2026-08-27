@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Spese Ricorrenti — iPhone app for subscriptions, bills and due dates</title>
+<meta name="description" content="iPhone app that keeps track of subscriptions, bills, rent and insurance. Reminders before every due date, monthly totals and a savings report. Free for up to 8 expenses, no account, no ads.">
+<link rel="canonical" href="https://dontknowif.github.io/spese-ricorrenti/en/">
+
+<link rel="alternate" hreflang="it" href="https://dontknowif.github.io/spese-ricorrenti/">
+<link rel="alternate" hreflang="en" href="https://dontknowif.github.io/spese-ricorrenti/en/">
+<link rel="alternate" hreflang="x-default" href="https://dontknowif.github.io/spese-ricorrenti/">
+
+<meta name="theme-color" content="#5ba8f1">
+<meta name="author" content="Rocco Barletta">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spese Ricorrenti">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:title" content="Spese Ricorrenti — iPhone app for subscriptions, bills and due dates">
+<meta property="og:description" content="Keep subscriptions, bills and recurring expenses under control. Reminders before every due date and a savings report. Free for up to 8 expenses, no account.">
+<meta property="og:url" content="https://dontknowif.github.io/spese-ricorrenti/en/">
+<meta property="og:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Spese Ricorrenti app icon next to the app name and the line: subscriptions, bills and due dates always under control.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spese Ricorrenti — iPhone app for subscriptions and bills">
+<meta name="twitter:description" content="Reminders before every due date, monthly totals and a savings report. Free for up to 8 expenses, no account.">
+<meta name="twitter:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
+
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../icon-180.png">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/#app",
+      "name": "Spese Ricorrenti",
+      "alternateName": "Recurr",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Recurring expense and subscription tracker",
+      "operatingSystem": "iOS 17.0 or later",
+      "url": "https://dontknowif.github.io/spese-ricorrenti/en/",
+      "image": "https://dontknowif.github.io/spese-ricorrenti/icon-512.png",
+      "screenshot": "https://dontknowif.github.io/spese-ricorrenti/og-image.png",
+      "inLanguage": ["it", "en", "es", "fr", "de"],
+      "description": "iPhone app that tracks recurring expenses such as subscriptions, bills, rent, insurance and taxes. It shows the monthly total, sends reminders before each due date and flags possible savings. Data stays on the device and in the user's own iCloud account: the developer runs no servers.",
+      "featureList": [
+        "Current and next month summary",
+        "Due-date calendar with monthly total",
+        "Spending trend over time and breakdown by category",
+        "Local notification reminders, customisable per expense",
+        "Variable expenses with real amount tracking",
+        "Add expenses with Siri",
+        "Catalogue of 57 common recurring expenses for quick setup",
+        "12 built-in categories plus custom ones",
+        "Annual savings report with six types of insight",
+        "Import and export in XLSX and CSV",
+        "Sync with the user's personal iCloud account"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Free for up to 8 expenses. Premium features (unlimited expenses, import/export, annual savings report) are available as a subscription or one-off purchase: price and duration are shown in the app before confirming."
+      },
+      "author": { "@id": "https://dontknowif.github.io/#publisher" },
+      "publisher": { "@id": "https://dontknowif.github.io/#publisher" },
+      "privacyPolicy": "https://dontknowif.github.io/spese-ricorrenti/privacy.html",
+      "termsOfService": "https://dontknowif.github.io/spese-ricorrenti/terms.html"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dontknowif.github.io/#publisher",
+      "name": "dontknowif",
+      "url": "https://dontknowif.github.io/",
+      "email": "feedbacksr@icloud.com",
+      "founder": { "@type": "Person", "name": "Rocco Barletta" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/en/#website",
+      "url": "https://dontknowif.github.io/spese-ricorrenti/en/",
+      "name": "Spese Ricorrenti",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://dontknowif.github.io/#publisher" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/en/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Spese Ricorrenti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is an iPhone app that keeps track of expenses that repeat over time: subscriptions, bills, rent, insurance, taxes and instalments. You enter an expense once, stating how often it repeats, and the app works out all future due dates, the total for each month, and warns you before every payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the app free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for up to 8 saved expenses, with no account and no time limit. Reminders, the calendar, the charts and the monthly summary are all included in the free version. Premium is needed to go beyond 8 expenses and for import/export and the annual savings report: price and duration are shown in the app before you confirm the purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the app connect to my bank account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Spese Ricorrenti does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf. It is a note-keeping tool: you enter the expenses yourself, which is why it never needs to ask for banking credentials."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does my data go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Names, amounts, categories and notes stay in your iPhone's storage and sync automatically to your own personal iCloud account, so you find them again on other devices signed in with the same Apple Account. There is no developer server: whoever built the app cannot see, receive or store your expenses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the savings report work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It reads the expenses you have already entered and looks for six typical situations where money is wasted: several streaming services active at once, monthly subscriptions that might cost less annually, price increases detected in your recorded history, expenses paused in the app but probably still billed by the provider, expenses duplicated by mistake, and mortgages worth refinancing. These are deterministic rules computed on the device: there is no artificial intelligence and no data is sent anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All calculations, charts, reminders and the savings report work fully offline, because they happen on the device. A connection is only needed for iCloud sync and for purchasing Premium."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it handle bills that change every time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can mark an expense as variable: from the calendar you record the amount actually paid at each due date, and for future ones the app shows an estimate based on the average of the most recent recorded amounts, marked with a tilde. If an amount rises compared with the previous one, the savings report flags it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which devices and languages does it support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It runs on iPhone with iOS 17 or later. The interface is available in Italian, English, Spanish, French and German, and the language can be chosen in the app's settings independently of the system language."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there ads or tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The app shows no ads, uses no ad networks, does not use the IDFA and does not carry out tracking as defined by Apple's rules. It collects only anonymous, aggregated usage statistics, which never include the names or amounts of your expenses and which you can switch off at any time from Options, Privacy section."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="landing">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="./"><span class="dot"></span> Spese Ricorrenti</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#savings">Savings</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="langs">
+      <a href="../" hreflang="it">IT</a>
+      <a href="./" aria-current="true" hreflang="en">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Your expenses stay on your iPhone</p>
+      <h1>Subscriptions and bills,<br><span class="grad">finally under control.</span></h1>
+      <p class="hero-sub">
+        Enter an expense once. Spese Ricorrenti works out every future due date,
+        tells you what you spend each month, and warns you <strong>before</strong> the charge lands.
+      </p>
+      <div class="hero-actions">
+        <span class="store-badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+          <span><span class="small">Coming soon on the</span><span class="big">App Store</span></span>
+        </span>
+      </div>
+      <p class="hero-note">For iPhone, iOS 17 or later · Free for up to 8 expenses, no account</p>
+    </div>
+
+    <div class="hero-phone">
+      <!-- Recreation of the app interface. The figures add up: 650 + 12.99 + 39
+           + 84.20 = €786.19 this month; next month the gas &amp; electricity bill
+           does not fall due (every 2 months) → €701.99. -->
+      <div class="phone" role="img" aria-label="The app's main screen: a greeting, a summary showing €786.19 this month and €701.99 next month, and the list of recurring expenses with Rent, Netflix, Gym and Gas &amp; electricity.">
+        <div class="phone-screen">
+          <div class="ph-status">
+            <span>9:41</span>
+            <span class="ph-signal"><i></i><i></i><i></i><span class="ph-battery"></span></span>
+          </div>
+
+          <div class="ph-greet">Good morning</div>
+
+          <div class="ph-cards">
+            <div class="ph-card">
+              <span>This month</span><strong>€786.19</strong><small>4 due dates</small>
+            </div>
+            <div class="ph-card next">
+              <span>Next month</span><strong>€701.99</strong><small>3 due dates</small>
+            </div>
+          </div>
+
+          <div class="ph-list-title">Your expenses</div>
+
+          <ul class="ph-list">
+            <li class="ph-row">
+              <span class="ph-ico" style="background:#e3effc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+              </span>
+              <span class="ph-name"><b>Rent</b><span>Home · 1 Sep</span></span>
+              <span class="ph-amt"><b>€650.00</b><span>Every month</span></span>
+            </li>
+            <li class="ph-row">
+              <span class="ph-ico" style="background:#fdeae3">
+                <svg viewBox="0 0 24 24" fill="#e8590c"><path d="M8 5.5v13l11-6.5z"/></svg>
+              </span>
+              <span class="ph-name"><b>Netflix</b><span>Leisure · 5 Sep</span><span class="ph-tag due">in 3d</span></span>
+              <span class="ph-amt"><b>€12.99</b><span>Every month</span></span>
+            </li>
+            <li class="ph-row">
+              <span class="ph-ico" style="background:#e4f6ea">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2ba14f" stroke-width="2" stroke-linecap="round"><path d="M4 9v6M8 6v12M16 6v12M20 9v6M8 12h8"/></svg>
+              </span>
+              <span class="ph-name"><b>Gym</b><span>Health · 8 Sep</span></span>
+              <span class="ph-amt"><b>€39.00</b><span>Every month</span></span>
+            </li>
+            <li class="ph-row">
+              <span class="ph-ico" style="background:#fdf3dc">
+                <svg viewBox="0 0 24 24" fill="#e0a01e"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+              </span>
+              <span class="ph-name"><b>Gas &amp; electricity</b><span>Utilities · 14 Sep</span></span>
+              <span class="ph-amt"><b class="est">~€84.20</b><span>Every 2 months</span></span>
+            </li>
+          </ul>
+
+          <div class="ph-tabs">
+            <span class="ph-tab on">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home
+            </span>
+            <span class="ph-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 20v-6M12 20V7M19 20v-9"/></svg>Trend
+            </span>
+            <span class="ph-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar
+            </span>
+            <span class="ph-tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg>Options
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== KEY FACTS ===================== -->
+<section class="container" aria-label="Key facts">
+  <div class="facts">
+    <div class="fact"><b>8</b><span>free expenses, no account</span></div>
+    <div class="fact"><b>5</b><span>languages: IT, EN, ES, FR, DE</span></div>
+    <div class="fact"><b>0</b><span>ads and trackers</span></div>
+    <div class="fact"><b>iOS 17+</b><span>iPhone</span></div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <h2>Everything you pay for every month, in one place</h2>
+      <p>No bank connection, no statements to import. Enter an expense once and the app takes it from there.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>The month at a glance</h3>
+        <p>What you spend this month and what you'll spend next, with the number of due dates. If the total changes, the app tells you which expense makes the difference.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 3.5-1.5 5-2 5.5h18c-.5-.5-2-2-2-5.5a7 7 0 0 0-7-7Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Warnings before the charge</h3>
+        <p>Local notifications with the notice period you choose, which can differ for every single expense. Free for everyone, no Premium required.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M12 20V7M19 20v-9"/></svg></div>
+        <h3>Trend over time</h3>
+        <p>A month-by-month chart, the yearly total and a pie breakdown by category: tap a slice to see which expenses make it up.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h3>Bills that keep changing</h3>
+        <p>Mark an expense as variable and record the real amount at each due date. For future ones the app estimates the figure from the average of recent amounts.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10"/><path d="M8.5 6.5 12 3l3.5 3.5"/><rect x="4" y="13" width="16" height="8" rx="3"/></svg></div>
+        <h3>Add it by speaking</h3>
+        <p>"Add an expense in Recurr" and Siri does the rest. The expense arrives tagged <em>To review</em>, so you can check the amount and date at your own pace.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2.4"/></svg></div>
+        <h3>A quick start</h3>
+        <p>A catalogue of 57 common expenses — streaming, utilities, insurance, gym — to tick off in bulk, with category and frequency already suggested.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v9M9.5 10h5M9.5 14h5"/></svg></div>
+        <h3>Categories of your own</h3>
+        <p>12 ready-made categories plus the ones you create, with your choice of colour and icon. Each expense can have its own currency and frequency.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="M8 12l4 4 4-4"/><path d="M4 18v2h16v-2"/></svg></div>
+        <h3>The data really is yours</h3>
+        <p>Export everything to XLSX or CSV whenever you like, and re-import the edited file. No closed format, nothing locking you in.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SAVINGS REPORT ===================== -->
+<section class="section section-alt" id="savings">
+  <div class="container">
+    <div class="section-head">
+      <h2>Find the money you're throwing away</h2>
+      <p>
+        The savings report re-reads the expenses you entered and looks for six situations
+        where people usually pay more than they need to. Everything is worked out on your
+        iPhone: no artificial intelligence, no data sent anywhere.
+      </p>
+    </div>
+
+    <div class="insights">
+      <div class="insight">
+        <span class="badge" style="background:#fdeae3;color:#c2410c">Overlapping streaming</span>
+        <div>
+          <b>Four video subscriptions running at once</b>
+          <p>Instead of telling you to cancel everything, it works out what you'd save by keeping one active at a time in rotation: you still watch it all, just not simultaneously.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#fdf3dc;color:#a16207">Price increase</span>
+        <div>
+          <b>A bill went up compared with last time</b>
+          <p>It compares the last two amounts you recorded for variable expenses and estimates what the increase will cost you over a year.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e8e4fd;color:#6d28d9">Duplicate expense</span>
+        <div>
+          <b>The same service entered twice</b>
+          <p>It happens when importing a file or adding something in a hurry. The app spots them even with different capitals or accents, and tells you what the duplicate costs.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#fdf3dc;color:#a16207">Paused for a while</span>
+        <div>
+          <b>Paused here, but perhaps still being charged</b>
+          <p>Pausing an expense in the app does not cancel the subscription with the provider. After two weeks the app reminds you, along with the yearly amount you risk continuing to pay.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e3effc;color:#1d4ed8">Better yearly?</span>
+        <div>
+          <b>Monthly subscriptions that often cost less per year</b>
+          <p>It invites you to check whether a cheaper annual plan exists, without inventing discount percentages. Phone and internet providers are excluded: in Italy they bill monthly only.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e3effc;color:#1d4ed8">Mortgage refinancing</span>
+        <div>
+          <b>Have you ever checked what other banks offer?</b>
+          <p>A reminder that in Italy switching your mortgage to another bank is free by law, with no fees or penalties. No invented figures: just a nudge to ask for a quote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRIVACY ===================== -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head">
+      <h2>Your expenses never reach us</h2>
+      <p>An expense app knows deeply private things: what you earn, where you live, what insurance you hold, whether you pay a lawyer or a therapist. That's why it's built this way.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.9 7.5 9 4.3-1.1 7.5-4.5 7.5-9V6L12 3Z"/><path d="M9 12.2l2 2 4-4.2"/></svg></div>
+        <h3>No servers of ours</h3>
+        <p>Data lives on your iPhone and syncs to <strong>your</strong> personal iCloud, directly between you and Apple. It never passes through us: we can't see it and can't recover it.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>Zero advertising</h3>
+        <p>No ad networks, no IDFA, no commercial profile. The app does not carry out tracking as defined by Apple's rules.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>No account, no bank</h3>
+        <p>You don't need to sign up to use it. The app doesn't connect to accounts or cards and never asks for banking credentials: it has no need for them.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18.5" cy="16.5" r="3"/></svg></div>
+        <h3>Statistics you can switch off</h3>
+        <p>We collect only anonymous, aggregated usage data — never expense names or amounts — to understand what to improve. One switch in Options turns it off entirely.</p>
+      </article>
+    </div>
+
+    <p style="margin-top:26px">
+      Every detail, event by event, is listed in the
+      <a href="../privacy.html">Privacy Policy</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Genuinely free, Premium if you need it</h2>
+      <p>The free version isn't a timed trial: it stays free, with all the everyday features included.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <div class="price">Up to 8 expenses</div>
+        <p class="price-note">No account, no expiry date</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Monthly summary and upcoming due dates</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Calendar and trend charts</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Reminders before every due date</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Siri input and the expense catalogue</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Variable expenses and custom categories</li>
+        </ul>
+      </div>
+
+      <div class="plan pro">
+        <h3>Premium</h3>
+        <div class="price">Unlimited expenses</div>
+        <p class="price-note">Subscription or one-off purchase. Price and duration are shown in the app before you confirm.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Everything in the free version</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>No limit on the number of expenses</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Annual savings report</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Import and export in XLSX and CSV</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Cancel any time through Apple</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top:22px;color:var(--text-dim);font-size:15px">
+      If Premium ends and you have more than 8 expenses, you lose none of them: the extras are
+      paused and stay visible, ready to become active again if you renew.
+      Full conditions are in the <a href="../terms.html">Terms &amp; Conditions</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head"><h2>Frequently asked questions</h2></div>
+
+    <div class="faq">
+      <details open>
+        <summary>What is Spese Ricorrenti?</summary>
+        <p>It is an iPhone app that keeps track of expenses that repeat over time: subscriptions, bills, rent, insurance, taxes and instalments. You enter an expense once, stating how often it repeats, and the app works out all future due dates, the total for each month, and warns you before every payment.</p>
+      </details>
+
+      <details>
+        <summary>Is the app free?</summary>
+        <p>Yes, for up to 8 saved expenses, with no account and no time limit. Reminders, the calendar, the charts and the monthly summary are all included in the free version. Premium is needed to go beyond 8 expenses and for import/export and the annual savings report: price and duration are shown in the app before you confirm the purchase.</p>
+      </details>
+
+      <details>
+        <summary>Does the app connect to my bank account?</summary>
+        <p>No. Spese Ricorrenti does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf. It is a note-keeping tool: you enter the expenses yourself, which is why it never needs to ask for banking credentials.</p>
+      </details>
+
+      <details>
+        <summary>Where does my data go?</summary>
+        <p>Names, amounts, categories and notes stay in your iPhone's storage and sync automatically to your own personal iCloud account, so you find them again on other devices signed in with the same Apple Account. There is no developer server: whoever built the app cannot see, receive or store your expenses.</p>
+      </details>
+
+      <details>
+        <summary>How does the savings report work?</summary>
+        <p>It reads the expenses you have already entered and looks for six typical situations where money is wasted: several streaming services active at once, monthly subscriptions that might cost less annually, price increases detected in your recorded history, expenses paused in the app but probably still billed by the provider, expenses duplicated by mistake, and mortgages worth refinancing. These are deterministic rules computed on the device: there is no artificial intelligence and no data is sent anywhere.</p>
+      </details>
+
+      <details>
+        <summary>Does it work without an internet connection?</summary>
+        <p>Yes. All calculations, charts, reminders and the savings report work fully offline, because they happen on the device. A connection is only needed for iCloud sync and for purchasing Premium.</p>
+      </details>
+
+      <details>
+        <summary>How does it handle bills that change every time?</summary>
+        <p>You can mark an expense as variable: from the calendar you record the amount actually paid at each due date, and for future ones the app shows an estimate based on the average of the most recent recorded amounts, marked with a tilde. If an amount rises compared with the previous one, the savings report flags it.</p>
+      </details>
+
+      <details>
+        <summary>Which devices and languages does it support?</summary>
+        <p>It runs on iPhone with iOS 17 or later. The interface is available in Italian, English, Spanish, French and German, and the language can be chosen in the app's settings independently of the system language.</p>
+      </details>
+
+      <details>
+        <summary>Are there ads or tracking?</summary>
+        <p>No. The app shows no ads, uses no ad networks, does not use the IDFA and does not carry out tracking as defined by Apple's rules. It collects only anonymous, aggregated usage statistics, which never include the names or amounts of your expenses and which you can switch off at any time from Options, Privacy section.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="container" style="padding-bottom:76px">
+  <div class="closing">
+    <h2>Find out the moment it lands</h2>
+    <p>The app is on its way to the App Store. For questions or reports you can write to us already.</p>
+    <span class="store-badge">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+      <span><span class="small">Coming soon on the</span><span class="big">App Store</span></span>
+    </span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+    <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+    <span class="spacer">© 2026 dontknowif</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+# robots.txt — dontknowif.github.io
+#
+# Il sito è pubblico e vogliamo essere indicizzati sia dai motori di ricerca
+# tradizionali sia dagli assistenti AI. Alcuni crawler AI (Google-Extended,
+# Applebot-Extended) funzionano per esclusione: sono ammessi finché non
+# compaiono in un Disallow, ma qui li elenchiamo esplicitamente perché
+# l'intenzione resti evidente a chiunque legga questo file.
+
+# ---------- Motori di ricerca ----------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ---------- Assistenti e crawler AI ----------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# ---------- Tutti gli altri ----------
+User-agent: *
+Allow: /
+
+Sitemap: https://dontknowif.github.io/sitemap.xml

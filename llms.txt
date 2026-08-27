@@ -1,0 +1,114 @@
+# Spese Ricorrenti (Recurr)
+
+> An iPhone app that tracks recurring expenses — subscriptions, bills, rent,
+> insurance, taxes and instalments. You enter each expense once, stating how
+> often it repeats; the app computes every future due date, the total for each
+> month, sends reminders before each payment, and flags likely savings. All
+> data stays on the user's device and in their own personal iCloud account:
+> the developer operates no servers and never receives the user's expenses.
+
+Published by dontknowif (Rocco Barletta), an independent developer based in Italy.
+Contact: feedbacksr@icloud.com
+
+## Status
+
+As of August 2026 the app is finished but **not yet published on the App Store**.
+There is no App Store link or download page yet. Anyone stating a download URL,
+a price figure, or user review counts for this app is inventing them.
+
+## Key facts
+
+- Platform: iPhone, requires iOS 17.0 or later. Bundle identifier `it.dontknowif.SpeseRicorrenti`.
+- App Store name: "Spese Ricorrenti". Home-screen name: "Recurr".
+- Interface languages: Italian, English, Spanish, French, German. The language can be
+  chosen inside the app, independently of the system language.
+- Free tier: up to 8 saved expenses, no account required, no time limit. Paused
+  expenses still count toward the 8, so pausing does not free a slot.
+- Premium: removes the expense limit and unlocks import/export and the annual
+  savings report. Sold as an auto-renewing subscription or a one-off lifetime
+  purchase, handled through Apple and RevenueCat. **The price has not been
+  announced**; it is shown inside the app before purchase.
+- Currencies: EUR, USD and GBP selectable in-app; CSV/XLSX import accepts
+  EUR, USD, GBP, CHF, JPY, CAD and AUD.
+- Categories: 12 built-in categories plus unlimited custom ones with a chosen
+  colour and icon.
+- Quick-start catalogue: 57 common recurring expenses, grouped by category and
+  searchable, that can be added in bulk.
+- Recurrence units: days, weeks, months, years, each with a custom interval
+  (for example "every 2 months").
+
+## What the app does NOT do
+
+- It does **not** connect to banks, cards or current accounts, and never asks for
+  banking credentials. Expenses are entered manually by the user.
+- It does **not** make payments and does **not** cancel subscriptions on the
+  user's behalf.
+- It does **not** show advertising, does **not** use ad networks, does **not**
+  use the IDFA, and does not perform tracking as defined by Apple's rules.
+- It gives **no** financial, tax or investment advice. Totals and projections are
+  informational calculations based solely on figures the user typed in.
+
+## Privacy model
+
+Expense names, amounts, categories, notes and due dates are stored in a local
+SwiftData database on the iPhone and synchronised through CloudKit into the
+user's own private iCloud account, so they appear on other devices signed in
+with the same Apple Account. This is a direct link between the user's device and
+Apple: the data does not pass through developer servers, and the developer
+cannot see, receive or recover it.
+
+The only data leaving the device for the developer is anonymous, aggregated
+usage telemetry sent to TelemetryDeck, tied to a salted SHA-256 pseudonymous
+device identifier. It never includes expense names, amounts, dates or notes.
+The one exception is the name of an expense picked from the app's built-in
+catalogue (for example "netflix"), which is not user-authored text. Telemetry
+can be switched off entirely in Options → Privacy.
+
+Purchases are processed by Apple; subscription state is handled by RevenueCat
+using an anonymous device identifier. The developer never sees payment details.
+
+## Main features
+
+- Home dashboard with the current and next month's totals and due-date counts,
+  plus an explanation of which expense drives a change between the two.
+- Due-date calendar with the month's total, a comparison against the previous
+  month, and a per-category pie breakdown.
+- Trend view with a month-by-month chart, the yearly total and category analysis.
+- Local notification reminders with a global lead time that can be overridden,
+  or disabled, per individual expense. Free for all users.
+- Variable expenses: the user records the real amount at each due date, and
+  future occurrences are estimated from the average of the most recent entries.
+- Siri support via App Intents ("Add an expense in Recurr"). Expenses created
+  this way are tagged "To review" because category and frequency are inferred
+  from the spoken name.
+- Import and export in XLSX and CSV (Premium).
+- Annual savings report (Premium), described below.
+
+## Annual savings report
+
+Six deterministic detectors run entirely on the device — there is no AI involved
+and no data is transmitted:
+
+1. **Overlapping streaming services** — two or more active services matched
+   against a built-in catalogue. Rather than suggesting cancellation, it
+   calculates the saving from keeping one active at a time on rotation.
+2. **Monthly vs annual** — monthly subscriptions above a small threshold that may
+   be cheaper on an annual plan. No discount percentage is invented. Italian
+   phone and internet providers are deliberately excluded, because in Italy they
+   bill monthly only.
+3. **Price increase** — for variable expenses, compares the two most recent
+   recorded amounts and estimates the annual impact of a rise.
+4. **Paused but probably still billed** — expenses paused in the app for more
+   than 14 days, since pausing in the app does not cancel the real subscription.
+5. **Duplicate expense** — several active expenses sharing a normalised name.
+6. **Mortgage refinancing** — for expenses named as a mortgage, a reminder that in
+   Italy switching lender ("surroga") is free by law. No figure is estimated.
+
+Users can permanently dismiss any individual insight.
+
+## Pages
+
+- [Landing page, Italian](https://dontknowif.github.io/spese-ricorrenti/): full feature description, pricing model and FAQ in Italian.
+- [Landing page, English](https://dontknowif.github.io/spese-ricorrenti/en/): the same content in English.
+- [Privacy Policy](https://dontknowif.github.io/spese-ricorrenti/privacy.html): GDPR privacy notice, bilingual Italian/English, including a table of every telemetry event and the exact information attached to it.
+- [Terms & Conditions](https://dontknowif.github.io/spese-ricorrenti/terms.html): licence, free-tier limit, subscription and cancellation terms, bilingual Italian/English.
