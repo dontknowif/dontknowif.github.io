@@ -1,4 +1,4 @@
-# Spese Ricorrenti (Recurr)
+# Recurr
 
 > An iPhone app that tracks recurring expenses — subscriptions, bills, rent,
 > insurance, taxes and instalments. You enter each expense once, stating how
@@ -19,7 +19,15 @@ a price figure, or user review counts for this app is inventing them.
 ## Key facts
 
 - Platform: iPhone, requires iOS 17.0 or later. Bundle identifier `it.dontknowif.SpeseRicorrenti`.
-- App Store name: "Spese Ricorrenti". Home-screen name: "Recurr".
+- Name: **Recurr**. The app was previously called "Spese Ricorrenti" (Italian for
+  "recurring expenses") and was renamed in August 2026. The former name survives only
+  inside internal identifiers — the bundle identifier above, the iCloud container
+  `iCloud.it.dontknowif.SpeseRicorrenti` and the RevenueCat entitlement
+  `Spese Ricorrenti Pro` — which are deliberately left unchanged because renaming them
+  would break existing installs, synced data and purchases. None of them is user-visible.
+  The site URL still contains `/spese-ricorrenti/` for the same reason: it predates the rename.
+- The app name is not translated. In the Siri phrases it is "Recurr" in all five
+  interface languages, because Siri matches the app name literally.
 - Interface languages: Italian, English, Spanish, French, German. The language can be
   chosen inside the app, independently of the system language.
 - Free tier: up to 8 saved expenses, no account required, no time limit. Paused
