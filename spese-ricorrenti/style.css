@@ -67,6 +67,21 @@ header.top {
   flex: none;
 }
 
+/* Le pagine di Recurr mostrano l'icona vera dell'app al posto del quadratino
+   gradiente; la home di dontknowif tiene il quadratino, perché è il publisher
+   e non una singola app.
+   L'icona ha lo sfondo bianco: su barra chiara il suo contorno sparirebbe,
+   quindi un anello sottile le ridà il bordo in entrambi i temi. */
+.brand img.dot {
+  background: none;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand img.dot { box-shadow: 0 0 0 1px rgba(255, 255, 255, .14); }
+}
+
 .langs { display: flex; gap: 6px; }
 
 .langs button {

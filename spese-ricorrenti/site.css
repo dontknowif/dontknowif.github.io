@@ -70,8 +70,9 @@ body.landing { padding: 0; }
 
 .nav .brand { font-size: 17px; margin-right: auto; }
 
+/* Niente background qui: il segnaposto gradiente vincerebbe per specificità
+   sull'icona vera impostata in style.css. */
 .nav .brand .dot {
-  background: var(--brand);
   width: 28px;
   height: 28px;
   border-radius: 8px;
