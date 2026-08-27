@@ -583,22 +583,16 @@
 </main>
 
 <!--
-  ANALYTICS DEL SITO — DA ATTIVARE.
+  Cloudflare Web Analytics: senza cookie, non profila i singoli visitatori e
+  non richiede un banner di consenso. Il token non è un segreto: viaggia in
+  chiaro nell'HTML di ogni pagina pubblica, serve solo a dire a Cloudflare
+  a quale sito appartengono i dati.
 
-  Cloudflare Web Analytics: gratuito, senza cookie, non profila i singoli
-  visitatori. Scelto al posto di Google Analytics perché non richiede un banner
-  di consenso e non contraddice la dicitura «0 pubblicità e tracker» in pagina.
-
-  Per attivarlo servono due cose INSIEME, mai una sola:
-    1. sostituire IL_TUO_TOKEN qui sotto e togliere i commenti attorno al tag;
-    2. pubblicare la sezione «Questo sito web» nella Privacy Policy.
-
-  Finché il tag resta commentato il sito non raccoglie nulla, e infatti la
-  Privacy Policy non ne parla.
-
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "IL_TUO_TOKEN"}'></script>
+  Questo tag e la sezione «Questo sito web» della Privacy Policy vanno tenuti
+  allineati: se un giorno si toglie l'uno, va tolta anche l'altra.
 -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c71e538f281a4296b8b84c74ad2b43ad"}'></script>
 
 <footer>
   <div class="container">
