@@ -397,5 +397,17 @@
 })();
 </script>
 
+<!--
+  Cloudflare Web Analytics: senza cookie, non profila i singoli visitatori e
+  non richiede un banner di consenso. Il token non è un segreto: viaggia in
+  chiaro nell'HTML di ogni pagina pubblica, serve solo a dire a Cloudflare
+  a quale sito appartengono i dati.
+
+  Questo tag e la sezione «Questo sito web» della Privacy Policy vanno tenuti
+  allineati: se un giorno si toglie l'uno, va tolta anche l'altra.
+-->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c71e538f281a4296b8b84c74ad2b43ad"}'></script>
+
 </body>
 </html>
