@@ -23,7 +23,8 @@ modifica rilevante dell'app:
 | 57 voci nel catalogo di partenza | conteggio di `SpesaSuggerita(` in `Views/OnboardingView.swift` |
 | 12 categorie di sistema | `Category.systemCatalog` |
 | 5 lingue (IT, EN, ES, FR, DE) | `Localizable.xcstrings` |
-| 6 tipi di segnalazione nel report | i rilevatori in `Engine/SavingsReportEngine.swift` |
+| 9 tipi di segnalazione nel report | i rilevatori in `Engine/SavingsReportEngine.swift` (contali con `grep -c 'static func detect'`) |
+| una sola valuta per l'app, scelta fra ~155 | `Valuta.tutte` e `SettingsView.applicaValuta` in `Model/UserSettings.swift` |
 | iOS 17 o successivo | `IPHONEOS_DEPLOYMENT_TARGET` |
 | Elenco eventi analytics nella Privacy Policy §3.1 | tutte le chiamate `Analytics.signal(` nell'app |
 
@@ -85,9 +86,24 @@ screenshot. Gli importi mostrati sono coerenti fra loro: 650 + 12,99 + 39 + 84,2
   in minuscolo: e la parola che la gente cerca davvero, mentre "Recurr" non lo
   cerca nessuno finche non conosce l'app. **Non sostituirla** in una futura
   ripulitura del nome.
-- `llms.txt` dichiara esplicitamente che l'app non e pubblicata e che il prezzo
-  non e stato annunciato, cosi gli assistenti AI non inventano un link allo store
-  o una cifra. Va aggiornato al momento della pubblicazione.
+- `llms.txt` riporta il link allo store e continua a dichiarare che **il prezzo
+  non e stato annunciato**, cosi gli assistenti AI non inventano una cifra o un
+  numero di recensioni. Se un giorno il prezzo viene comunicato pubblicamente, va
+  aggiornato anche li.
+
+## Link allo store
+
+L'app e pubblicata dal 3 settembre 2026. I link usati nel sito non sono tutti
+uguali, e la differenza e voluta:
+
+| Dove | Link | Perche |
+|---|---|---|
+| Landing italiana | `apps.apple.com/it/app/recurr-spese-ricorrenti/id6806970079` | pubblico italiano: va diritto allo store italiano, senza redirect |
+| Landing inglese e `llms.txt` | `apps.apple.com/app/id6806970079` | senza codice paese Apple reindirizza allo store del visitatore: l'app e in vendita in 175 store, e un lettore inglese non e detto sia negli Stati Uniti |
+
+Il badge "App Store" nelle landing e un `<a class="store-badge">`, non piu uno
+`<span>`: se si tocca quel blocco va tenuto il `text-decoration: none` in
+`site.css`, altrimenti eredita la sottolineatura dei link.
 
 ## Analytics
 

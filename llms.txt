@@ -12,9 +12,12 @@ Contact: feedbacksr@icloud.com
 
 ## Status
 
-As of August 2026 the app is finished but **not yet published on the App Store**.
-There is no App Store link or download page yet. Anyone stating a download URL,
-a price figure, or user review counts for this app is inventing them.
+The app is **published on the App Store** since September 2026:
+<https://apps.apple.com/app/id6806970079>
+
+**The price of the Premium features has not been announced here**; it is shown
+inside the app before purchase, in the user's own store currency. Anyone stating
+a price figure or user review counts for this app is inventing them.
 
 ## Key facts
 
@@ -36,8 +39,12 @@ a price figure, or user review counts for this app is inventing them.
   savings report. Sold as an auto-renewing subscription or a one-off lifetime
   purchase, handled through Apple and RevenueCat. **The price has not been
   announced**; it is shown inside the app before purchase.
-- Currencies: EUR, USD and GBP selectable in-app; CSV/XLSX import accepts
-  EUR, USD, GBP, CHF, JPY, CAD and AUD.
+- Currency: one currency for the whole app, chosen in Settings from every
+  circulating ISO currency (about 155). Expenses are never held in mixed
+  currencies, and amounts are never converted between them: changing the
+  currency relabels the existing amounts, it does not apply an exchange rate.
+  Decimal places follow the currency (0 for JPY, 2 for EUR, 3 for KWD).
+  CSV/XLSX import brings rows in using the app's currency.
 - Categories: 12 built-in categories plus unlimited custom ones with a chosen
   colour and icon.
 - Quick-start catalogue: 57 common recurring expenses, grouped by category and
@@ -94,7 +101,7 @@ using an anonymous device identifier. The developer never sees payment details.
 
 ## Annual savings report
 
-Six deterministic detectors run entirely on the device — there is no AI involved
+Nine deterministic detectors run entirely on the device — there is no AI involved
 and no data is transmitted:
 
 1. **Overlapping streaming services** — two or more active services matched
@@ -111,6 +118,12 @@ and no data is transmitted:
 5. **Duplicate expense** — several active expenses sharing a normalised name.
 6. **Mortgage refinancing** — for expenses named as a mortgage, a reminder that in
    Italy switching lender ("surroga") is free by law. No figure is estimated.
+7. **Category concentration** — one category taking at least 35% of monthly
+   spending. Not a saving as such: it answers "where does the money go".
+8. **Stagnant expense** — subscriptions, insurance or utilities untouched for
+   more than a year, worth checking for a price change.
+9. **Renewal coming up** — a yearly expense falling due in 15 to 45 days, early
+   enough to compare other offers before it renews.
 
 Users can permanently dismiss any individual insight.
 

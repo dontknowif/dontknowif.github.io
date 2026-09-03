@@ -159,6 +159,10 @@ body.landing { padding: 0; }
 /* Badge "Presto su App Store": informativo, non è un link —
    l'app non è ancora pubblicata. */
 .store-badge {
+  /* E' un link alla scheda su App Store: senza queste due righe erediterebbe
+     sottolineatura e colore dei link del testo. */
+  text-decoration: none;
+  transition: transform .12s ease, opacity .12s ease;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -172,6 +176,8 @@ body.landing { padding: 0; }
 .store-badge svg { width: 26px; height: 26px; flex: none; fill: currentColor; }
 .store-badge .small { display: block; font-size: 11px; opacity: .8; }
 .store-badge .big { display: block; font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+.store-badge:hover { transform: translateY(-1px); opacity: .9; }
+.store-badge:focus-visible { outline: 3px solid var(--accent, #0071e3); outline-offset: 3px; }
 
 .hero-note { font-size: 14px; color: var(--text-dim); margin: 18px 0 0; }
 
