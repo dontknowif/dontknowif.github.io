@@ -49,7 +49,26 @@ legale, non solo di forma.
 /spese-ricorrenti/style.css        stile base, condiviso con le pagine legali
 /spese-ricorrenti/site.css         stile della sola landing
 /spese-ricorrenti/og-image.png     anteprima social 1200x630
+/spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
 ```
+
+### La pagina "Funzionalità" non è pubblica
+
+`/spese-ricorrenti/funzionalita.html` presenta le funzionalità dell'app (widget,
+Siri, spese manuali, addebito automatico, pausa personalizzata) in 5 lingue, ma
+è **deliberatamente non indicizzata**: `<meta name="robots" content="noindex,
+nofollow">`, nessuna voce in `sitemap.xml`, nessun link da `index.html` o dalle
+altre pagine. Ci si arriva solo da un link nelle Impostazioni dell'app, che
+apre l'URL con `?lang=<codice>` per aprirla già nella lingua corrente
+dell'utente. Se un giorno diventa una pagina pubblica, va tolto il meta
+`noindex`, aggiunta a `sitemap.xml` e — probabilmente — spezzata in un URL per
+lingua come le landing, invece dell'unico file con tutte e 5 dentro.
+
+Segue lo stesso pattern di selettore lingua di `privacy.html`
+(`data-lang`/`data-set-lang`, salvataggio in `localStorage`), esteso da 2 a 5
+lingue e con l'aggiunta della lettura di `?lang=` dall'URL come priorità
+massima — le pagine legali non ne hanno bisogno perché non si aprono da un
+link generato dall'app.
 
 Il percorso contiene ancora `spese-ricorrenti` perche precede il rinominamento
 dell'app in Recurr. E stato lasciato di proposito: cambiarlo obbligherebbe a
