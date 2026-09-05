@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recurr — Funzionalità</title>
+<title>Skurda — Funzionalità</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -44,13 +44,21 @@
   .notif-banner .wm-dot { width: 20px; height: 20px; border-radius: 6px; margin-top: 1px; }
   .notif-banner b { font-size: 12.5px; display: block; }
   .notif-banner p { margin: 2px 0 0; font-size: 12.5px; color: var(--text-dim); }
+
+  /* La riga di una spesa in pausa come la si vede nell'elenco dell'app: nome
+     attenuato, badge arancione e data di ripresa. */
+  .pause-mock { width: 244px; max-width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 12px 14px; text-align: left; }
+  .pause-mock-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pause-mock-name { font-size: 13.5px; font-weight: 700; color: var(--text-dim); }
+  .pause-mock-sub { margin-top: 7px; font-size: 12px; color: var(--text-dim); }
+  .pause-mock-sub b { color: #c9750a; font-weight: 600; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header class="top">
-  <a class="brand" href="index.html"><img class="dot" src="icon-96.png" width="26" height="26" alt=""> Recurr</a>
+  <a class="brand" href="index.html"><img class="dot" src="icon-96.png" width="26" height="26" alt=""> Skurda</a>
   <div class="langs">
     <button type="button" data-set-lang="it" aria-pressed="true">Italiano</button>
     <button type="button" data-set-lang="en" aria-pressed="false">English</button>
@@ -63,7 +71,7 @@
 <!-- ==================== ITALIANO ==================== -->
 <div data-lang="it">
 
-<h1>Tutto quello che Recurr fa per te</h1>
+<h1>Tutto quello che Skurda fa per te</h1>
 <p class="lede feat-lede">Le funzionalità pensate per farti dimenticare le scadenze, non per costringerti a controllarle.</p>
 
 <div class="hero-phone" style="margin:32px 0">
@@ -101,7 +109,7 @@
   <article class="feature">
     <div class="feat-visual">
       <div class="widget-mock">
-        <div class="widget-mock-head"><span class="wm-dot"></span>Recurr</div>
+        <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
         <div class="widget-mock-sub">tra 3 giorni · 12,99 €</div>
       </div>
@@ -113,11 +121,11 @@
     <div class="feat-visual">
       <div class="siri-bubble">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg>
-        <span>«Aggiungi una spesa su Recurr»</span>
+        <span>«Aggiungi una spesa su Skurda»</span>
       </div>
     </div>
     <h3>Aggiungi parlando</h3>
-    <p>«Aggiungi una spesa su Recurr» e Siri fa il resto. La spesa nasce con il badge <em>Da rivedere</em>, così controlli importo e data con calma.</p>
+    <p>«Aggiungi una spesa su Skurda» e Siri fa il resto. La spesa nasce con il badge <em>Da rivedere</em>, così controlli importo e data con calma.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -137,7 +145,7 @@
     <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
-        <div><b>Recurr</b><p>Netflix scade tra 3 giorni — 12,99 €</p></div>
+        <div><b>Skurda</b><p>Netflix scade tra 3 giorni — 12,99 €</p></div>
       </div>
     </div>
     <h3>Notifiche selettive</h3>
@@ -145,10 +153,16 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
-      <span class="ph-tag paused big">In pausa fino al 4 dic 2026</span>
+      <div class="pause-mock">
+        <div class="pause-mock-top">
+          <span class="pause-mock-name">Nuoto Luca</span>
+          <span class="ph-tag paused">In pausa</span>
+        </div>
+        <div class="pause-mock-sub">Riprende il <b>15 set 2026</b></div>
+      </div>
     </div>
     <h3>Pausa personalizzata</h3>
-    <p>Metti in pausa una spesa per un mese, tre mesi o una data precisa: riparte da sola, senza che tu debba ricordartene.</p>
+    <p>Metti in pausa una spesa per tutto il tempo che vuoi: un mese, tre mesi o una data che scegli tu. Il corso di nuoto di tuo figlio si ferma a giugno e riprende a settembre? Lo metti in pausa fino al 15 settembre: sparisce dai totali dell'estate e riparte da solo, senza che tu debba ricordartene.</p>
   </article>
 </div>
 
@@ -163,7 +177,7 @@
 <!-- ==================== ENGLISH ==================== -->
 <div data-lang="en">
 
-<h1>Everything Recurr does for you</h1>
+<h1>Everything Skurda does for you</h1>
 <p class="lede feat-lede">A look at the features built to help you forget about due dates — not keep checking them.</p>
 
 <div class="hero-phone" style="margin:32px 0">
@@ -201,7 +215,7 @@
   <article class="feature">
     <div class="feat-visual">
       <div class="widget-mock">
-        <div class="widget-mock-head"><span class="wm-dot"></span>Recurr</div>
+        <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
         <div class="widget-mock-sub">in 3 days · €12.99</div>
       </div>
@@ -213,11 +227,11 @@
     <div class="feat-visual">
       <div class="siri-bubble">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg>
-        <span>"Add an expense to Recurr"</span>
+        <span>"Add an expense to Skurda"</span>
       </div>
     </div>
     <h3>Add by talking</h3>
-    <p>Say "Add an expense to Recurr" and Siri does the rest. The expense starts with a <em>Needs review</em> badge, so you can double-check the amount and date later.</p>
+    <p>Say "Add an expense to Skurda" and Siri does the rest. The expense starts with a <em>Needs review</em> badge, so you can double-check the amount and date later.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -237,7 +251,7 @@
     <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
-        <div><b>Recurr</b><p>Netflix is due in 3 days — €12.99</p></div>
+        <div><b>Skurda</b><p>Netflix is due in 3 days — €12.99</p></div>
       </div>
     </div>
     <h3>Selective notifications</h3>
@@ -245,10 +259,16 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
-      <span class="ph-tag paused big">Paused until Dec 4, 2026</span>
+      <div class="pause-mock">
+        <div class="pause-mock-top">
+          <span class="pause-mock-name">Luca's swimming</span>
+          <span class="ph-tag paused">Paused</span>
+        </div>
+        <div class="pause-mock-sub">Resumes on <b>Sep 15, 2026</b></div>
+      </div>
     </div>
     <h3>Custom pause</h3>
-    <p>Pause an expense for a month, three months, or a specific date — it picks back up on its own, so you don't have to remember.</p>
+    <p>Pause an expense for as long as you like: a month, three months, or a date you pick yourself. Your child's swimming course stops in June and starts again in September? Pause it until 15 September: it drops out of your summer totals and picks back up on its own, so you don't have to remember.</p>
   </article>
 </div>
 
@@ -263,7 +283,7 @@
 <!-- ==================== ESPAÑOL ==================== -->
 <div data-lang="es">
 
-<h1>Todo lo que Recurr hace por ti</h1>
+<h1>Todo lo que Skurda hace por ti</h1>
 <p class="lede feat-lede">Un vistazo a las funciones pensadas para que te olvides de los vencimientos, no para que tengas que estar pendiente de ellos.</p>
 
 <div class="hero-phone" style="margin:32px 0">
@@ -301,7 +321,7 @@
   <article class="feature">
     <div class="feat-visual">
       <div class="widget-mock">
-        <div class="widget-mock-head"><span class="wm-dot"></span>Recurr</div>
+        <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
         <div class="widget-mock-sub">en 3 días · 12,99 €</div>
       </div>
@@ -313,11 +333,11 @@
     <div class="feat-visual">
       <div class="siri-bubble">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg>
-        <span>«Añade un gasto a Recurr»</span>
+        <span>«Añade un gasto a Skurda»</span>
       </div>
     </div>
     <h3>Añade hablando</h3>
-    <p>Di «Añade un gasto a Recurr» y Siri hace el resto. El gasto se crea con la etiqueta <em>Por revisar</em>, para que compruebes el importe y la fecha con calma.</p>
+    <p>Di «Añade un gasto a Skurda» y Siri hace el resto. El gasto se crea con la etiqueta <em>Por revisar</em>, para que compruebes el importe y la fecha con calma.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -337,7 +357,7 @@
     <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
-        <div><b>Recurr</b><p>Netflix vence en 3 días — 12,99 €</p></div>
+        <div><b>Skurda</b><p>Netflix vence en 3 días — 12,99 €</p></div>
       </div>
     </div>
     <h3>Notificaciones selectivas</h3>
@@ -345,10 +365,16 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
-      <span class="ph-tag paused big">En pausa hasta el 4 dic 2026</span>
+      <div class="pause-mock">
+        <div class="pause-mock-top">
+          <span class="pause-mock-name">Natación de Luca</span>
+          <span class="ph-tag paused">En pausa</span>
+        </div>
+        <div class="pause-mock-sub">Se reanuda el <b>15 sept 2026</b></div>
+      </div>
     </div>
     <h3>Pausa personalizada</h3>
-    <p>Pon en pausa un gasto durante un mes, tres meses o una fecha concreta: se reactiva solo, sin que tengas que acordarte.</p>
+    <p>Pon en pausa un gasto durante todo el tiempo que quieras: un mes, tres meses o una fecha que elijas tú. ¿El curso de natación de tu hijo para en junio y vuelve en septiembre? Lo pones en pausa hasta el 15 de septiembre: desaparece de los totales del verano y se reactiva solo, sin que tengas que acordarte.</p>
   </article>
 </div>
 
@@ -363,7 +389,7 @@
 <!-- ==================== FRANÇAIS ==================== -->
 <div data-lang="fr">
 
-<h1>Tout ce que Recurr fait pour vous</h1>
+<h1>Tout ce que Skurda fait pour vous</h1>
 <p class="lede feat-lede">Un aperçu des fonctionnalités pensées pour vous faire oublier les échéances, pas pour vous obliger à les surveiller.</p>
 
 <div class="hero-phone" style="margin:32px 0">
@@ -401,7 +427,7 @@
   <article class="feature">
     <div class="feat-visual">
       <div class="widget-mock">
-        <div class="widget-mock-head"><span class="wm-dot"></span>Recurr</div>
+        <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
         <div class="widget-mock-sub">dans 3 jours · 12,99 €</div>
       </div>
@@ -413,11 +439,11 @@
     <div class="feat-visual">
       <div class="siri-bubble">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg>
-        <span>« Ajoute une dépense sur Recurr »</span>
+        <span>« Ajoute une dépense sur Skurda »</span>
       </div>
     </div>
     <h3>Ajoutez à la voix</h3>
-    <p>Dites « Ajoute une dépense sur Recurr » et Siri s'occupe du reste. La dépense apparaît avec le badge <em>À vérifier</em>, pour contrôler le montant et la date plus tard.</p>
+    <p>Dites « Ajoute une dépense sur Skurda » et Siri s'occupe du reste. La dépense apparaît avec le badge <em>À vérifier</em>, pour contrôler le montant et la date plus tard.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -437,7 +463,7 @@
     <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
-        <div><b>Recurr</b><p>Netflix arrive à échéance dans 3 jours — 12,99 €</p></div>
+        <div><b>Skurda</b><p>Netflix arrive à échéance dans 3 jours — 12,99 €</p></div>
       </div>
     </div>
     <h3>Notifications sélectives</h3>
@@ -445,10 +471,16 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
-      <span class="ph-tag paused big">En pause jusqu'au 4 déc. 2026</span>
+      <div class="pause-mock">
+        <div class="pause-mock-top">
+          <span class="pause-mock-name">Natation de Luca</span>
+          <span class="ph-tag paused">En pause</span>
+        </div>
+        <div class="pause-mock-sub">Reprend le <b>15 sept. 2026</b></div>
+      </div>
     </div>
     <h3>Pause personnalisée</h3>
-    <p>Mettez une dépense en pause pendant un mois, trois mois ou jusqu'à une date précise : elle repart toute seule, sans que vous ayez à y penser.</p>
+    <p>Mettez une dépense en pause aussi longtemps que vous voulez : un mois, trois mois ou une date que vous choisissez. Le cours de natation de votre enfant s'arrête en juin et reprend en septembre ? Vous le mettez en pause jusqu'au 15 septembre : il disparaît des totaux de l'été et repart tout seul, sans que vous ayez à y penser.</p>
   </article>
 </div>
 
@@ -463,7 +495,7 @@
 <!-- ==================== DEUTSCH ==================== -->
 <div data-lang="de">
 
-<h1>Alles, was Recurr für dich tut</h1>
+<h1>Alles, was Skurda für dich tut</h1>
 <p class="lede feat-lede">Ein Blick auf die Funktionen, die dafür sorgen, dass du Fälligkeiten vergisst — statt sie ständig im Auge behalten zu müssen.</p>
 
 <div class="hero-phone" style="margin:32px 0">
@@ -501,7 +533,7 @@
   <article class="feature">
     <div class="feat-visual">
       <div class="widget-mock">
-        <div class="widget-mock-head"><span class="wm-dot"></span>Recurr</div>
+        <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
         <div class="widget-mock-sub">in 3 Tagen · 12,99 €</div>
       </div>
@@ -513,11 +545,11 @@
     <div class="feat-visual">
       <div class="siri-bubble">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7v10"/><path d="M16 7v10"/><path d="M4 10v4"/><path d="M20 10v4"/></svg>
-        <span>„Füge eine Ausgabe zu Recurr hinzu"</span>
+        <span>„Füge eine Ausgabe zu Skurda hinzu"</span>
       </div>
     </div>
     <h3>Per Sprachbefehl hinzufügen</h3>
-    <p>Sag „Füge eine Ausgabe zu Recurr hinzu" und Siri erledigt den Rest. Die Ausgabe wird mit dem Hinweis <em>Zu überprüfen</em> angelegt, damit du Betrag und Datum in Ruhe kontrollierst.</p>
+    <p>Sag „Füge eine Ausgabe zu Skurda hinzu" und Siri erledigt den Rest. Die Ausgabe wird mit dem Hinweis <em>Zu überprüfen</em> angelegt, damit du Betrag und Datum in Ruhe kontrollierst.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -537,7 +569,7 @@
     <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
-        <div><b>Recurr</b><p>Netflix ist in 3 Tagen fällig — 12,99 €</p></div>
+        <div><b>Skurda</b><p>Netflix ist in 3 Tagen fällig — 12,99 €</p></div>
       </div>
     </div>
     <h3>Individuelle Benachrichtigungen</h3>
@@ -545,10 +577,16 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
-      <span class="ph-tag paused big">Pausiert bis 4. Dez. 2026</span>
+      <div class="pause-mock">
+        <div class="pause-mock-top">
+          <span class="pause-mock-name">Schwimmkurs Luca</span>
+          <span class="ph-tag paused">Pausiert</span>
+        </div>
+        <div class="pause-mock-sub">Läuft weiter ab <b>15. Sep. 2026</b></div>
+      </div>
     </div>
     <h3>Individuelle Pause</h3>
-    <p>Pausiere eine Ausgabe für einen Monat, drei Monate oder ein bestimmtes Datum — sie läuft von selbst wieder an, ohne dass du daran denken musst.</p>
+    <p>Pausiere eine Ausgabe so lange du willst: einen Monat, drei Monate oder bis zu einem Datum deiner Wahl. Der Schwimmkurs deines Kindes hört im Juni auf und geht im September weiter? Du pausierst ihn bis zum 15. September: er verschwindet aus den Sommer-Summen und läuft von selbst wieder an, ohne dass du daran denken musst.</p>
   </article>
 </div>
 

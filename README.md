@@ -1,6 +1,6 @@
 # dontknowif.github.io — sito pubblico
 
-Sito di **dontknowif** e dell'app **Recurr**, ospitato su GitHub Pages e online
+Sito di **dontknowif** e dell'app **Skurda**, ospitato su GitHub Pages e online
 su <https://dontknowif.github.io/>.
 
 Contiene anche Privacy Policy e Termini e condizioni: sono documenti **pubblici e
@@ -70,11 +70,11 @@ lingue e con l'aggiunta della lettura di `?lang=` dall'URL come priorità
 massima — le pagine legali non ne hanno bisogno perché non si aprono da un
 link generato dall'app.
 
-Il percorso contiene ancora `spese-ricorrenti` perche precede il rinominamento
-dell'app in Recurr. E stato lasciato di proposito: cambiarlo obbligherebbe a
-rifare la verifica su Bing e a reindicizzare tutto, e la parola chiave nell'URL ha
-comunque valore. Se un giorno si passa a un dominio proprio, quello e il momento
-giusto per sistemarlo.
+Il percorso contiene ancora `spese-ricorrenti` perche precede i rinominamenti
+dell'app (prima in Recurr, poi in Skurda). E stato lasciato di proposito: cambiarlo
+obbligherebbe a rifare la verifica su Bing e a reindicizzare tutto, e la parola
+chiave nell'URL ha comunque valore. Se un giorno si passa a un dominio proprio,
+quello e il momento giusto per sistemarlo.
 
 ### Due lingue, due URL
 
@@ -101,8 +101,8 @@ screenshot. Gli importi mostrati sono coerenti fra loro: 650 + 12,99 + 39 + 84,2
   ingannevole.
 - `alternateName: "Spese Ricorrenti"` e volutamente rimasto nei dati strutturati:
   serve a farsi trovare da chi cerca il vecchio nome.
-- Il marchio e "Recurr", ma le frasi descrittive dicono ancora "spese ricorrenti"
-  in minuscolo: e la parola che la gente cerca davvero, mentre "Recurr" non lo
+- Il marchio e "Skurda", ma le frasi descrittive dicono ancora "spese ricorrenti"
+  in minuscolo: e la parola che la gente cerca davvero, mentre "Skurda" non lo
   cerca nessuno finche non conosce l'app. **Non sostituirla** in una futura
   ripulitura del nome.
 - `llms.txt` riporta il link allo store e continua a dichiarare che **il prezzo
@@ -181,3 +181,24 @@ uno o due minuti a pubblicare.
 Sito online e allineato con `origin/main`. Ultimo intervento: rinominamento in
 Recurr e pulizia della home del dominio, che ora e un semplice elenco di app senza
 riferimenti a una in particolare, pronta per le prossime.
+
+## Stato al 5 settembre 2026
+
+Secondo rinominamento dell'app, da Recurr a **Skurda** (il primo, da "Spese
+Ricorrenti" a Recurr, risale ad agosto), pubblicato insieme al rilascio della
+build con il nuovo nome. Il lavoro era stato preparato il 4 settembre e tenuto
+fermo di proposito fino all'approvazione di Apple, per non avere un periodo in
+cui il sito diceva Skurda e lo store ancora Recurr.
+
+Sostituito il brand in tutte le pagine HTML (landing IT/EN, `funzionalita.html`,
+`privacy.html`, `terms.html`, home del dominio) e nella documentazione
+(`llms.txt`, questo file), lasciando invariati i termini generici
+("ricorrenti"/"recurring") e gli URL App Store correnti, che contengono ancora
+`recurr` nello slug e cambieranno se Apple li aggiorna in autonomia — non e
+garantito che lo faccia, quindi vanno ricontrollati fra qualche giorno.
+
+Nella stessa passata, la card "Pausa personalizzata" di `funzionalita.html` e
+stata riscritta nelle cinque lingue con un esempio concreto (lo sport del figlio
+che si ferma d'estate) e un mockup nuovo, `.pause-mock`: la riga di una spesa in
+pausa con badge arancione e data di ripresa, nello stesso linguaggio visivo
+degli altri mockup ricostruiti in HTML/CSS.

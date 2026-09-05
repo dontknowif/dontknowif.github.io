@@ -1,4 +1,4 @@
-# Recurr
+# Skurda
 
 > An iPhone app that tracks recurring expenses — subscriptions, bills, rent,
 > insurance, taxes and instalments. You enter each expense once, stating how
@@ -22,14 +22,15 @@ a price figure or user review counts for this app is inventing them.
 ## Key facts
 
 - Platform: iPhone, requires iOS 17.0 or later. Bundle identifier `it.dontknowif.SpeseRicorrenti`.
-- Name: **Recurr**. The app was previously called "Spese Ricorrenti" (Italian for
-  "recurring expenses") and was renamed in August 2026. The former name survives only
-  inside internal identifiers — the bundle identifier above, the iCloud container
+- Name: **Skurda**. The app was first called "Spese Ricorrenti" (Italian for
+  "recurring expenses"), renamed to "Recurr" in August 2026, then renamed again to
+  "Skurda" in September 2026. Both former names survive only inside internal
+  identifiers — the bundle identifier above, the iCloud container
   `iCloud.it.dontknowif.SpeseRicorrenti` and the RevenueCat entitlement
   `Spese Ricorrenti Pro` — which are deliberately left unchanged because renaming them
   would break existing installs, synced data and purchases. None of them is user-visible.
-  The site URL still contains `/spese-ricorrenti/` for the same reason: it predates the rename.
-- The app name is not translated. In the Siri phrases it is "Recurr" in all five
+  The site URL still contains `/spese-ricorrenti/` for the same reason: it predates both renames.
+- The app name is not translated. In the Siri phrases it is "Skurda" in all five
   interface languages, because Siri matches the app name literally.
 - Interface languages: Italian, English, Spanish, French, German. The language can be
   chosen inside the app, independently of the system language.
@@ -93,7 +94,7 @@ using an anonymous device identifier. The developer never sees payment details.
   or disabled, per individual expense. Free for all users.
 - Variable expenses: the user records the real amount at each due date, and
   future occurrences are estimated from the average of the most recent entries.
-- Siri support via App Intents ("Add an expense in Recurr"). Expenses created
+- Siri support via App Intents ("Add an expense in Skurda"). Expenses created
   this way are tagged "To review" because category and frequency are inferred
   from the spoken name.
 - Import and export in XLSX and CSV (Premium).
