@@ -52,6 +52,24 @@
   .pause-mock-name { font-size: 13.5px; font-weight: 700; color: var(--text-dim); }
   .pause-mock-sub { margin-top: 7px; font-size: 12px; color: var(--text-dim); }
   .pause-mock-sub b { color: #c9750a; font-weight: 600; }
+
+  /* Riga "spesa eliminata" con Annulla e barra di countdown, come appare
+     davvero nell'elenco per 5 secondi dopo lo swipe. */
+  .undo-mock { width: 244px; max-width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 12px 14px; text-align: left; }
+  .undo-mock-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .undo-mock-top span { font-size: 13px; color: var(--text-dim); }
+  .undo-mock-top b { color: var(--accent); font-size: 13px; font-weight: 600; }
+  .undo-mock-bar { margin-top: 9px; height: 3px; border-radius: 2px; background: var(--border); overflow: hidden; }
+  .undo-mock-bar i { display: block; height: 100%; width: 38%; background: #e64949; border-radius: 2px; }
+
+  /* Due righe di storico prezzi, vecchio importo barrato -> nuovo, come nella
+     card in fondo alla scheda spesa. */
+  .history-mock { width: 244px; max-width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 12px 14px; text-align: left; }
+  .history-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12.5px; }
+  .history-row + .history-row { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+  .history-row > span:first-child { color: var(--text-dim); }
+  .history-row s { color: var(--text-dim); font-weight: 400; }
+  .history-row b { font-weight: 600; margin-left: 4px; }
 </style>
 </head>
 <body>
@@ -164,6 +182,29 @@
     <h3>Pausa personalizzata</h3>
     <p>Metti in pausa una spesa per tutto il tempo che vuoi: un mese, tre mesi o una data che scegli tu. Il corso di nuoto di tuo figlio si ferma a giugno e riprende a settembre? Lo metti in pausa fino al 15 settembre: sparisce dai totali dell'estate e riparte da solo, senza che tu debba ricordartene.</p>
   </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="undo-mock">
+        <div class="undo-mock-top">
+          <span>"Netflix" eliminata</span>
+          <b>Annulla</b>
+        </div>
+        <div class="undo-mock-bar"><i></i></div>
+      </div>
+    </div>
+    <h3>Annulla eliminazione</h3>
+    <p>Hai eliminato una spesa per sbaglio? Hai 5 secondi per toccare Annulla prima che sparisca per davvero — niente "sei sicuro?" che rallenta anche le volte in cui la volevi cancellare sul serio.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="history-mock">
+        <div class="history-row"><span>9 gen 2026</span><span><s>32,00 €</s> → <b>35,00 €</b></span></div>
+        <div class="history-row"><span>9 giu 2026</span><span><s>35,00 €</s> → <b>39,00 €</b></span></div>
+      </div>
+    </div>
+    <h3>Storico prezzi</h3>
+    <p>Ogni volta che il prezzo di un abbonamento cambia, resta scritto: apri la spesa e vedi quando è aumentato e di quanto — funziona anche per gli importi variabili come le bollette.</p>
+  </article>
 </div>
 
 <footer>
@@ -269,6 +310,29 @@
     </div>
     <h3>Custom pause</h3>
     <p>Pause an expense for as long as you like: a month, three months, or a date you pick yourself. Your child's swimming course stops in June and starts again in September? Pause it until 15 September: it drops out of your summer totals and picks back up on its own, so you don't have to remember.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="undo-mock">
+        <div class="undo-mock-top">
+          <span>"Netflix" deleted</span>
+          <b>Cancel</b>
+        </div>
+        <div class="undo-mock-bar"><i></i></div>
+      </div>
+    </div>
+    <h3>Undo delete</h3>
+    <p>Deleted an expense by mistake? You've got 5 seconds to tap Cancel before it's really gone — no "are you sure?" popup slowing down the times you actually meant it.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="history-mock">
+        <div class="history-row"><span>Jan 9, 2026</span><span><s>€32.00</s> → <b>€35.00</b></span></div>
+        <div class="history-row"><span>Jun 9, 2026</span><span><s>€35.00</s> → <b>€39.00</b></span></div>
+      </div>
+    </div>
+    <h3>Price history</h3>
+    <p>Every time a subscription's price changes, it's written down: open the expense and see when it went up and by how much — works for variable amounts like utility bills too.</p>
   </article>
 </div>
 
@@ -376,6 +440,29 @@
     <h3>Pausa personalizada</h3>
     <p>Pon en pausa un gasto durante todo el tiempo que quieras: un mes, tres meses o una fecha que elijas tú. ¿El curso de natación de tu hijo para en junio y vuelve en septiembre? Lo pones en pausa hasta el 15 de septiembre: desaparece de los totales del verano y se reactiva solo, sin que tengas que acordarte.</p>
   </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="undo-mock">
+        <div class="undo-mock-top">
+          <span>"Netflix" eliminado</span>
+          <b>Cancelar</b>
+        </div>
+        <div class="undo-mock-bar"><i></i></div>
+      </div>
+    </div>
+    <h3>Deshacer eliminación</h3>
+    <p>¿Borraste un gasto por error? Tienes 5 segundos para tocar Cancelar antes de que desaparezca de verdad — sin un «¿seguro?» que frene las veces que sí querías borrarlo.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="history-mock">
+        <div class="history-row"><span>9 ene 2026</span><span><s>32,00 €</s> → <b>35,00 €</b></span></div>
+        <div class="history-row"><span>9 jun 2026</span><span><s>35,00 €</s> → <b>39,00 €</b></span></div>
+      </div>
+    </div>
+    <h3>Historial de precios</h3>
+    <p>Cada vez que cambia el precio de una suscripción, queda registrado: abre el gasto y mira cuándo subió y cuánto — también funciona con importes variables como las facturas.</p>
+  </article>
 </div>
 
 <footer>
@@ -482,6 +569,29 @@
     <h3>Pause personnalisée</h3>
     <p>Mettez une dépense en pause aussi longtemps que vous voulez : un mois, trois mois ou une date que vous choisissez. Le cours de natation de votre enfant s'arrête en juin et reprend en septembre ? Vous le mettez en pause jusqu'au 15 septembre : il disparaît des totaux de l'été et repart tout seul, sans que vous ayez à y penser.</p>
   </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="undo-mock">
+        <div class="undo-mock-top">
+          <span>« Netflix » supprimée</span>
+          <b>Annuler</b>
+        </div>
+        <div class="undo-mock-bar"><i></i></div>
+      </div>
+    </div>
+    <h3>Annuler la suppression</h3>
+    <p>Vous avez supprimé une dépense par erreur ? Vous avez 5 secondes pour toucher Annuler avant qu'elle disparaisse pour de bon — pas de « êtes-vous sûr ? » qui ralentit les fois où vous le vouliez vraiment.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="history-mock">
+        <div class="history-row"><span>9 janv. 2026</span><span><s>32,00 €</s> → <b>35,00 €</b></span></div>
+        <div class="history-row"><span>9 juin 2026</span><span><s>35,00 €</s> → <b>39,00 €</b></span></div>
+      </div>
+    </div>
+    <h3>Historique des prix</h3>
+    <p>Chaque fois que le prix d'un abonnement change, c'est enregistré : ouvrez la dépense et voyez quand il a augmenté et de combien — fonctionne aussi pour les montants variables comme les factures.</p>
+  </article>
 </div>
 
 <footer>
@@ -587,6 +697,29 @@
     </div>
     <h3>Individuelle Pause</h3>
     <p>Pausiere eine Ausgabe so lange du willst: einen Monat, drei Monate oder bis zu einem Datum deiner Wahl. Der Schwimmkurs deines Kindes hört im Juni auf und geht im September weiter? Du pausierst ihn bis zum 15. September: er verschwindet aus den Sommer-Summen und läuft von selbst wieder an, ohne dass du daran denken musst.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="undo-mock">
+        <div class="undo-mock-top">
+          <span>„Netflix" gelöscht</span>
+          <b>Abbrechen</b>
+        </div>
+        <div class="undo-mock-bar"><i></i></div>
+      </div>
+    </div>
+    <h3>Löschen rückgängig machen</h3>
+    <p>Eine Ausgabe versehentlich gelöscht? Du hast 5 Sekunden, um auf Abbrechen zu tippen, bevor sie wirklich weg ist — kein „Bist du sicher?", das dich ausbremst, wenn du es wirklich löschen wolltest.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="history-mock">
+        <div class="history-row"><span>9. Jan. 2026</span><span><s>32,00 €</s> → <b>35,00 €</b></span></div>
+        <div class="history-row"><span>9. Juni 2026</span><span><s>35,00 €</s> → <b>39,00 €</b></span></div>
+      </div>
+    </div>
+    <h3>Preisverlauf</h3>
+    <p>Jede Preisänderung eines Abos wird festgehalten: Öffne die Ausgabe und sieh, wann sie gestiegen ist und um wie viel — funktioniert auch bei variablen Beträgen wie Nebenkostenabrechnungen.</p>
   </article>
 </div>
 
