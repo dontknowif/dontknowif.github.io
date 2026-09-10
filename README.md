@@ -27,6 +27,7 @@ modifica rilevante dell'app:
 | una sola valuta per l'app, scelta fra ~155 | `Valuta.tutte` e `SettingsView.applicaValuta` in `Model/UserSettings.swift` |
 | iOS 17 o successivo | `IPHONEOS_DEPLOYMENT_TARGET` |
 | Elenco eventi analytics nella Privacy Policy §3.1 | tutte le chiamate `Analytics.signal(` nell'app |
+| 5 secondi per annullare l'eliminazione di una spesa (card "Annulla eliminazione" in `funzionalita.html`) | `DashboardView.pendingDeleteWindow` |
 
 L'ultima riga e la piu delicata: aggiungere un evento analytics nell'app senza
 elencarlo nella Privacy Policy rende la policy incompleta, e questo ha rilevanza
@@ -202,3 +203,18 @@ stata riscritta nelle cinque lingue con un esempio concreto (lo sport del figlio
 che si ferma d'estate) e un mockup nuovo, `.pause-mock`: la riga di una spesa in
 pausa con badge arancione e data di ripresa, nello stesso linguaggio visivo
 degli altri mockup ricostruiti in HTML/CSS.
+
+## Stato al 10 settembre 2026
+
+Aggiunte due card a `funzionalita.html`, in tutte e 5 le lingue, per due
+funzionalità nuove dell'app: **Annulla eliminazione** (swipe-to-delete con 5
+secondi per tornare indietro prima che la spesa sparisca davvero) e **Storico
+prezzi** (una card in fondo alla scheda spesa con i prezzi precedenti e quando
+sono cambiati). Due nuovi mockup HTML/CSS, `.undo-mock` e `.history-mock`,
+stesso principio degli altri: nessuno screenshot, solo ricostruzioni fedeli
+allo stile reale dell'app.
+
+I testi dei mockup riprendono le stringhe vere dell'app invece di inventarne
+di nuove: il bottone "Annulla"/"Cancel"/"Cancelar"/"Annuler"/"Abbrechen" e la
+frase `"%@" eliminata` sono le stesse di `Localizable.xcstrings`, comprese le
+virgolette tipografiche per francese (`« … »`) e tedesco (`„…"`).
