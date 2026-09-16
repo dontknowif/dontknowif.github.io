@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skurda — Automazione pagamenti Wallet</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Solo per questa pagina: video di dimostrazione e galleria di screenshot. */
+  .video-wrap { margin: 20px 0 28px; }
+  .video-wrap video { width: 100%; max-width: 420px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); display: block; }
+  .video-wrap p { margin: 0 0 10px; font-size: 14px; color: var(--text-dim); }
+
+  .shot-grid { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+  .shot-grid figure { margin: 0; width: 200px; }
+  .shot-grid img { width: 100%; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow); display: block; }
+  .shot-grid figcaption { margin-top: 6px; font-size: 12.5px; color: var(--text-dim); text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="index.html"><img class="dot" src="icon-96.png" width="26" height="26" alt=""> Skurda</a>
+  <div class="langs">
+    <button type="button" data-set-lang="it" aria-pressed="true">Italiano</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    <button type="button" data-set-lang="es" aria-pressed="false">Español</button>
+    <button type="button" data-set-lang="fr" aria-pressed="false">Français</button>
+    <button type="button" data-set-lang="de" aria-pressed="false">Deutsch</button>
+  </div>
+</header>
+
+<!-- ==================== ITALIANO ==================== -->
+<div data-lang="it">
+
+<h1>Registra automaticamente i pagamenti con Wallet</h1>
+<p class="lede">Con questa automazione, ogni volta che paghi avvicinando una carta o un biglietto salvato in Wallet, il telefono ti propone di registrare la spesa in Skurda, senza aprire l'app a mano.</p>
+
+<div class="video-wrap">
+  <p>Guarda il video con tutti i passaggi:</p>
+  <video controls playsinline preload="metadata" poster="assets/wallet-guide/01-automazioni.png">
+    <source src="assets/wallet-guide/demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<ol>
+  <li>Apri l'app <strong>Comandi Rapidi</strong></li>
+  <li>Vai alla scheda <strong>Automazioni</strong> (in basso)</li>
+  <li>Tocca il <strong>+</strong> in alto a destra</li>
+  <li>Cerca e seleziona <strong>Wallet</strong> come trigger</li>
+  <li>Scegli le carte/biglietti da monitorare (in questo esempio: tutte)</li>
+  <li>Lascia selezionate tutte le <strong>categorie</strong></li>
+  <li>Lascia <strong>Filtra esercenti</strong> senza applicare filtri</li>
+  <li>Seleziona <strong>Esegui immediatamente</strong></li>
+  <li>Lascia disattivata <strong>Notifica in caso di esecuzione</strong> — o attivala se vuoi vedere quando viene eseguita, ma ti consiglio comunque di toglierla</li>
+  <li>Tocca <strong>Avanti</strong></li>
+  <li>Nella barra "Cerca azioni", digita <strong>Skurda</strong></li>
+  <li>Seleziona l'azione <strong>Registra pagamento</strong></li>
+  <li>Comparirà il blocco "Registra <strong>Importo</strong> pagati a <strong>Esercente</strong>"</li>
+  <li>Tocca il campo <strong>Importo</strong>: sopra la tastiera comparirà un suggerimento "<strong>Input comando rapido</strong>" — toccalo per inserirlo</li>
+  <li>Fai lo stesso con il campo <strong>pagati a</strong>: toccalo e poi tocca "<strong>Input comando rapido</strong>" nel suggerimento sopra la tastiera</li>
+  <li>Ora entrambi i campi mostrano il segnaposto generico "Input comando rapido". Tocca il primo (quello dell'Importo) e, dal menu che si apre, seleziona <strong>Importo</strong></li>
+  <li>Tocca il secondo (quello di pagati a) e seleziona <strong>Esercente</strong></li>
+  <li>Conferma con il segno di spunta blu in alto a destra</li>
+</ol>
+
+<div class="shot-grid">
+  <figure>
+    <img src="assets/wallet-guide/01-automazioni.png" alt="Scheda Automazioni in Comandi Rapidi, con il pulsante + in alto a destra.">
+    <figcaption>1–3. Comandi Rapidi → Automazioni → +</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Elenco dei trigger di sistema con Wallet evidenziato.">
+    <figcaption>4. Seleziona Wallet come trigger</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Schermata categorie con tutte le voci selezionate ed Esegui immediatamente attivo.">
+    <figcaption>6–9. Categorie ed Esegui immediatamente</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Ricerca di Skurda tra le azioni, con Registra pagamento tra i risultati.">
+    <figcaption>11–12. Cerca «Skurda» → Registra pagamento</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/05-blocco-registra.png" alt="Blocco Registra Importo pagati a Esercente appena aggiunto, campi ancora vuoti.">
+    <figcaption>13. Il blocco appena aggiunto</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Entrambi i campi mostrano il segnaposto Input comando rapido.">
+    <figcaption>14–15. «Input comando rapido» in entrambi i campi</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Menu Input comando rapido con Importo pronto per essere selezionato.">
+    <figcaption>16. Seleziona Importo dal menu</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Blocco finale: Registra Importo pagati a Esercente con entrambe le variabili collegate.">
+    <figcaption>17. Importo ed Esercente collegati</figcaption>
+  </figure>
+</div>
+
+<p>Fatto: da ora ogni pagamento tramite Wallet verrà registrato automaticamente su Skurda.</p>
+
+<p class="lede" style="font-size:15px">Hai avuto difficoltà a configurarla? Scrivici a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Termini e condizioni</a>
+</footer>
+
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div data-lang="en">
+
+<h1>Automatically log payments with Wallet</h1>
+<p class="lede">With this automation, every time you pay by tapping a card or pass saved in Wallet, your phone will prompt you to log the expense in Skurda — no need to open the app manually.</p>
+
+<div class="video-wrap">
+  <p>Watch the video walkthrough:</p>
+  <video controls playsinline preload="metadata" poster="assets/wallet-guide/01-automazioni.png">
+    <source src="assets/wallet-guide/demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<ol>
+  <li>Open the <strong>Shortcuts</strong> app</li>
+  <li>Go to the <strong>Automation</strong> tab (bottom)</li>
+  <li>Tap the <strong>+</strong> in the top right</li>
+  <li>Search for and select <strong>Wallet</strong> as the trigger</li>
+  <li>Choose which cards/passes to monitor (in this example: all of them)</li>
+  <li>Leave all <strong>categories</strong> selected</li>
+  <li>Leave <strong>Filter Merchants</strong> without applying any filter</li>
+  <li>Select <strong>Run Immediately</strong></li>
+  <li>Leave <strong>Notify When Run</strong> turned off — or turn it on if you want to see when it runs, but I'd still recommend leaving it off</li>
+  <li>Tap <strong>Next</strong></li>
+  <li>In the "Search actions" bar, type <strong>Skurda</strong></li>
+  <li>Select the <strong>Record Payment</strong> action</li>
+  <li>You'll see the block "Record <strong>Amount</strong> paid to <strong>Merchant</strong>"</li>
+  <li>Tap the <strong>Amount</strong> field: a suggestion saying "<strong>Shortcut Input</strong>" will appear above the keyboard — tap it to insert it</li>
+  <li>Do the same for the <strong>paid to</strong> field: tap it, then tap "<strong>Shortcut Input</strong>" from the suggestion above the keyboard</li>
+  <li>Both fields now show the generic "Shortcut Input" placeholder. Tap the first one (Amount) and, from the menu that opens, select <strong>Amount</strong></li>
+  <li>Tap the second one (paid to) and select <strong>Merchant</strong></li>
+  <li>Confirm with the blue checkmark in the top right</li>
+</ol>
+
+<div class="shot-grid">
+  <figure>
+    <img src="assets/wallet-guide/01-automazioni.png" alt="Automation tab in Shortcuts, with the + button in the top right.">
+    <figcaption>1–3. Shortcuts → Automation → +</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="List of system triggers with Wallet highlighted.">
+    <figcaption>4. Select Wallet as the trigger</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Categories screen with every item selected and Run Immediately turned on.">
+    <figcaption>6–9. Categories and Run Immediately</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Searching for Skurda among the actions, with Record Payment in the results.">
+    <figcaption>11–12. Search “Skurda” → Record Payment</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/05-blocco-registra.png" alt="The Record Amount paid to Merchant block just added, fields still empty.">
+    <figcaption>13. The block you just added</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Both fields showing the generic Shortcut Input placeholder.">
+    <figcaption>14–15. “Shortcut Input” in both fields</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Shortcut Input menu with Amount ready to be selected.">
+    <figcaption>16. Select Amount from the menu</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Final block: Record Amount paid to Merchant with both variables linked.">
+    <figcaption>17. Amount and Merchant linked</figcaption>
+  </figure>
+</div>
+
+<p>Done: from now on, every Wallet payment will be automatically logged in Skurda.</p>
+
+<p class="lede" style="font-size:15px">Having trouble setting it up? Email us at <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms &amp; Conditions</a>
+</footer>
+
+</div>
+
+<!-- ==================== ESPAÑOL ==================== -->
+<div data-lang="es">
+
+<h1>Registra automáticamente los pagos con Wallet</h1>
+<p class="lede">Con esta automatización, cada vez que pagues acercando una tarjeta o un pase guardado en Wallet, tu teléfono te propondrá registrar el gasto en Skurda, sin necesidad de abrir la app manualmente.</p>
+
+<div class="video-wrap">
+  <p>Mira el vídeo con todos los pasos:</p>
+  <video controls playsinline preload="metadata" poster="assets/wallet-guide/01-automazioni.png">
+    <source src="assets/wallet-guide/demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<ol>
+  <li>Abre la app <strong>Atajos</strong></li>
+  <li>Ve a la pestaña <strong>Automatización</strong> (abajo)</li>
+  <li>Toca el <strong>+</strong> en la parte superior derecha</li>
+  <li>Busca y selecciona <strong>Wallet</strong> como disparador</li>
+  <li>Elige las tarjetas/pases a monitorizar (en este ejemplo: todas)</li>
+  <li>Deja todas las <strong>categorías</strong> seleccionadas</li>
+  <li>Deja <strong>Filtrar comercios</strong> sin aplicar ningún filtro</li>
+  <li>Selecciona <strong>Ejecutar inmediatamente</strong></li>
+  <li>Deja desactivado <strong>Notificar en caso de ejecución</strong> — o actívalo si quieres ver cuándo se ejecuta, pero de todos modos te recomiendo desactivarlo</li>
+  <li>Toca <strong>Siguiente</strong></li>
+  <li>En la barra "Buscar acciones", escribe <strong>Skurda</strong></li>
+  <li>Selecciona la acción <strong>Registrar pago</strong></li>
+  <li>Aparecerá el bloque "Registrar <strong>Importe</strong> pagado a <strong>Comercio</strong>"</li>
+  <li>Toca el campo <strong>Importe</strong>: encima del teclado aparecerá una sugerencia "<strong>Entrada de acceso directo</strong>" — tócala para insertarla</li>
+  <li>Haz lo mismo con el campo <strong>pagado a</strong>: tócalo y luego toca "<strong>Entrada de acceso directo</strong>" en la sugerencia sobre el teclado</li>
+  <li>Ambos campos mostrarán ahora el marcador genérico "Entrada de acceso directo". Toca el primero (Importe) y, en el menú que se abre, selecciona <strong>Importe</strong></li>
+  <li>Toca el segundo (pagado a) y selecciona <strong>Comercio</strong></li>
+  <li>Confirma con la marca de verificación azul en la parte superior derecha</li>
+</ol>
+
+<div class="shot-grid">
+  <figure>
+    <img src="assets/wallet-guide/01-automazioni.png" alt="Pestaña Automatización en Atajos, con el botón + arriba a la derecha.">
+    <figcaption>1–3. Atajos → Automatización → +</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Lista de disparadores del sistema con Wallet resaltado.">
+    <figcaption>4. Selecciona Wallet como disparador</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Pantalla de categorías con todas seleccionadas y Ejecutar inmediatamente activo.">
+    <figcaption>6–9. Categorías y Ejecutar inmediatamente</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Búsqueda de Skurda entre las acciones, con Registrar pago entre los resultados.">
+    <figcaption>11–12. Busca «Skurda» → Registrar pago</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/05-blocco-registra.png" alt="Bloque Registrar Importe pagado a Comercio recién añadido, campos aún vacíos.">
+    <figcaption>13. El bloque recién añadido</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Ambos campos muestran el marcador genérico Entrada de acceso directo.">
+    <figcaption>14–15. «Entrada de acceso directo» en ambos campos</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Menú Entrada de acceso directo con Importe listo para seleccionar.">
+    <figcaption>16. Selecciona Importe del menú</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Bloque final: Registrar Importe pagado a Comercio con ambas variables conectadas.">
+    <figcaption>17. Importe y Comercio conectados</figcaption>
+  </figure>
+</div>
+
+<p>Listo: a partir de ahora, cada pago mediante Wallet se registrará automáticamente en Skurda.</p>
+
+<p class="lede" style="font-size:15px">¿Tuviste dificultades para configurarla? Escríbenos a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Términos y condiciones</a>
+</footer>
+
+</div>
+
+<!-- ==================== FRANÇAIS ==================== -->
+<div data-lang="fr">
+
+<h1>Enregistrez automatiquement les paiements avec Wallet</h1>
+<p class="lede">Avec cette automatisation, chaque fois que vous payez en approchant une carte ou un billet enregistré dans Wallet, votre téléphone vous proposera d'enregistrer la dépense dans Skurda, sans avoir à ouvrir l'application manuellement.</p>
+
+<div class="video-wrap">
+  <p>Regardez la vidéo avec toutes les étapes :</p>
+  <video controls playsinline preload="metadata" poster="assets/wallet-guide/01-automazioni.png">
+    <source src="assets/wallet-guide/demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<ol>
+  <li>Ouvrez l'application <strong>Raccourcis</strong></li>
+  <li>Allez dans l'onglet <strong>Automatisation</strong> (en bas)</li>
+  <li>Appuyez sur le <strong>+</strong> en haut à droite</li>
+  <li>Recherchez et sélectionnez <strong>Wallet</strong> comme déclencheur</li>
+  <li>Choisissez les cartes/billets à surveiller (dans cet exemple : tous)</li>
+  <li>Laissez toutes les <strong>catégories</strong> sélectionnées</li>
+  <li>Laissez <strong>Filtrer les marchands</strong> sans appliquer de filtre</li>
+  <li>Sélectionnez <strong>Exécuter immédiatement</strong></li>
+  <li>Laissez <strong>Notifier en cas d'exécution</strong> désactivé — ou activez-le si vous voulez voir quand elle s'exécute, mais je vous conseille quand même de le désactiver</li>
+  <li>Appuyez sur <strong>Suivant</strong></li>
+  <li>Dans la barre "Rechercher des actions", tapez <strong>Skurda</strong></li>
+  <li>Sélectionnez l'action <strong>Enregistrer un paiement</strong></li>
+  <li>Le bloc "Enregistrer <strong>Montant</strong> payé à <strong>Marchand</strong>" apparaît</li>
+  <li>Touchez le champ <strong>Montant</strong> : une suggestion "<strong>Entrée du raccourci</strong>" apparaîtra au-dessus du clavier — touchez-la pour l'insérer</li>
+  <li>Faites de même pour le champ <strong>payé à</strong> : touchez-le, puis touchez "<strong>Entrée du raccourci</strong>" dans la suggestion au-dessus du clavier</li>
+  <li>Les deux champs affichent maintenant le terme générique "Entrée du raccourci". Touchez le premier (Montant) et, dans le menu qui s'ouvre, sélectionnez <strong>Montant</strong></li>
+  <li>Touchez le second (payé à) et sélectionnez <strong>Marchand</strong></li>
+  <li>Confirmez avec la coche bleue en haut à droite</li>
+</ol>
+
+<div class="shot-grid">
+  <figure>
+    <img src="assets/wallet-guide/01-automazioni.png" alt="Onglet Automatisation dans Raccourcis, avec le bouton + en haut à droite.">
+    <figcaption>1–3. Raccourcis → Automatisation → +</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Liste des déclencheurs système avec Wallet mis en évidence.">
+    <figcaption>4. Sélectionnez Wallet comme déclencheur</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Écran des catégories, toutes sélectionnées, avec Exécuter immédiatement activé.">
+    <figcaption>6–9. Catégories et Exécuter immédiatement</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Recherche de Skurda parmi les actions, avec Enregistrer un paiement dans les résultats.">
+    <figcaption>11–12. Cherchez « Skurda » → Enregistrer un paiement</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/05-blocco-registra.png" alt="Bloc Enregistrer Montant payé à Marchand tout juste ajouté, champs encore vides.">
+    <figcaption>13. Le bloc qui vient d'être ajouté</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Les deux champs affichent le terme générique Entrée du raccourci.">
+    <figcaption>14–15. « Entrée du raccourci » dans les deux champs</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Menu Entrée du raccourci avec Montant prêt à être sélectionné.">
+    <figcaption>16. Sélectionnez Montant dans le menu</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Bloc final : Enregistrer Montant payé à Marchand avec les deux variables reliées.">
+    <figcaption>17. Montant et Marchand reliés</figcaption>
+  </figure>
+</div>
+
+<p>Terminé : désormais, chaque paiement via Wallet sera automatiquement enregistré dans Skurda.</p>
+
+<p class="lede" style="font-size:15px">Des difficultés à la configurer ? Écrivez-nous à <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Conditions d'utilisation</a>
+</footer>
+
+</div>
+
+<!-- ==================== DEUTSCH ==================== -->
+<div data-lang="de">
+
+<h1>Wallet-Zahlungen automatisch erfassen</h1>
+<p class="lede">Mit dieser Automation schlägt dir dein Handy bei jeder Zahlung mit einer in Wallet gespeicherten Karte oder einem Pass vor, die Ausgabe in Skurda zu erfassen — ohne die App manuell öffnen zu müssen.</p>
+
+<div class="video-wrap">
+  <p>Schau dir das Video mit allen Schritten an:</p>
+  <video controls playsinline preload="metadata" poster="assets/wallet-guide/01-automazioni.png">
+    <source src="assets/wallet-guide/demo.mp4" type="video/mp4">
+  </video>
+</div>
+
+<ol>
+  <li>Öffne die App <strong>Kurzbefehle</strong></li>
+  <li>Gehe zum Tab <strong>Automation</strong> (unten)</li>
+  <li>Tippe oben rechts auf das <strong>+</strong></li>
+  <li>Suche <strong>Wallet</strong> und wähle es als Auslöser</li>
+  <li>Wähle die zu überwachenden Karten/Pässe aus (in diesem Beispiel: alle)</li>
+  <li>Lasse alle <strong>Kategorien</strong> ausgewählt</li>
+  <li>Lasse <strong>Händler filtern</strong> ohne Filter</li>
+  <li>Wähle <strong>Sofort ausführen</strong></li>
+  <li>Lasse <strong>Bei Ausführung benachrichtigen</strong> deaktiviert — oder aktiviere es, wenn du sehen möchtest, wann sie ausgeführt wird, aber ich empfehle dir trotzdem, es zu deaktivieren</li>
+  <li>Tippe auf <strong>Weiter</strong></li>
+  <li>Gib in der Leiste "Aktionen suchen" <strong>Skurda</strong> ein</li>
+  <li>Wähle die Aktion <strong>Zahlung erfassen</strong></li>
+  <li>Der Block "<strong>Betrag</strong> bezahlt an <strong>Händler</strong> erfassen" erscheint</li>
+  <li>Tippe auf das Feld <strong>Betrag</strong>: über der Tastatur erscheint ein Vorschlag "<strong>Kurzbefehl-Eingabe</strong>" — tippe darauf, um ihn einzufügen</li>
+  <li>Mach dasselbe mit dem Feld <strong>bezahlt an</strong>: tippe darauf und dann auf "<strong>Kurzbefehl-Eingabe</strong>" im Vorschlag über der Tastatur</li>
+  <li>Beide Felder zeigen jetzt den allgemeinen Platzhalter "Kurzbefehl-Eingabe". Tippe auf den ersten (Betrag) und wähle im sich öffnenden Menü <strong>Betrag</strong></li>
+  <li>Tippe auf den zweiten (bezahlt an) und wähle <strong>Händler</strong></li>
+  <li>Bestätige mit dem blauen Häkchen oben rechts</li>
+</ol>
+
+<div class="shot-grid">
+  <figure>
+    <img src="assets/wallet-guide/01-automazioni.png" alt="Tab Automation in Kurzbefehle, mit dem Plus-Button oben rechts.">
+    <figcaption>1–3. Kurzbefehle → Automation → +</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Liste der System-Auslöser mit hervorgehobenem Wallet.">
+    <figcaption>4. Wähle Wallet als Auslöser</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Kategorien-Bildschirm mit allen ausgewählten Einträgen und aktiviertem Sofort ausführen.">
+    <figcaption>6–9. Kategorien und Sofort ausführen</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Suche nach Skurda unter den Aktionen, mit Zahlung erfassen in den Ergebnissen.">
+    <figcaption>11–12. „Skurda“ suchen → Zahlung erfassen</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/05-blocco-registra.png" alt="Der gerade hinzugefügte Block Betrag bezahlt an Händler erfassen, Felder noch leer.">
+    <figcaption>13. Der gerade hinzugefügte Block</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Beide Felder zeigen den allgemeinen Platzhalter Kurzbefehl-Eingabe.">
+    <figcaption>14–15. „Kurzbefehl-Eingabe“ in beiden Feldern</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Menü Kurzbefehl-Eingabe mit Betrag bereit zur Auswahl.">
+    <figcaption>16. Betrag aus dem Menü wählen</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Letzter Block: Betrag bezahlt an Händler erfassen mit beiden verknüpften Variablen.">
+    <figcaption>17. Betrag und Händler verknüpft</figcaption>
+  </figure>
+</div>
+
+<p>Fertig: Ab jetzt wird jede Wallet-Zahlung automatisch in Skurda erfasst.</p>
+
+<p class="lede" style="font-size:15px">Hattest du Schwierigkeiten bei der Einrichtung? Schreib uns an <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">AGB</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'sr-automation-lang';
+  var SUPPORTED = ['it', 'en', 'es', 'fr', 'de'];
+  var buttons = document.querySelectorAll('[data-set-lang]');
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+    });
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+
+  // Priorità: ?lang= nell'URL (lo passa l'app) > scelta salvata > lingua del
+  // browser > italiano.
+  var fromQuery = null;
+  try { fromQuery = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) {}
+  var fromBrowser = (navigator.language || 'it').slice(0, 2).toLowerCase();
+
+  var initial = [fromQuery, stored, fromBrowser].find(function (l) {
+    return l && SUPPORTED.indexOf(l) !== -1;
+  }) || 'it';
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
+  });
+
+  apply(initial);
+})();
+</script>
+
+</div>
+</body>
+</html>
