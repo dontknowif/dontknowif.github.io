@@ -222,14 +222,15 @@ di nuove: il bottone "Annulla"/"Cancel"/"Cancelar"/"Annuler"/"Abbrechen" e la
 frase `"%@" eliminata` sono le stesse di `Localizable.xcstrings`, comprese le
 virgolette tipografiche per francese (`« … »`) e tedesco (`„…"`).
 
-## Stato al 17 settembre 2026
+## Stato al 17-20 settembre 2026
 
-Preparazione del sito per la **versione 3.0** dell'app, che introduce le spese
+Aggiornamento del sito per la **versione 3.0** dell'app, che introduce le spese
 quotidiane (automatiche via automazione Wallet, da foto scontrino, o a mano)
-accanto alle spese ricorrenti. Le modifiche sono state **preparate ma non
-pubblicate**: l'app non è ancora andata live con la 3.0, il push resta in
-sospeso fino a un via libera esplicito (stesso schema già usato per il rename
-Recurr→Skurda, vedi sopra).
+accanto alle spese ricorrenti. Preparato il 17 settembre e tenuto **di
+proposito non pubblicato** fino al via libera dell'utente (stesso schema già
+usato per il rename Recurr→Skurda, vedi sopra) — l'app non era ancora andata
+live con la 3.0. **Pubblicato il 20 settembre 2026**, commit `a622976`, dopo
+che l'utente ha confermato che l'app è live sullo Store.
 
 Tocchi fatti:
 
