@@ -51,12 +51,15 @@ legale, non solo di forma.
 /spese-ricorrenti/site.css         stile della sola landing
 /spese-ricorrenti/og-image.png     anteprima social 1200x630
 /spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
+/spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
+/spese-ricorrenti/assets/wallet-guide/     screenshot e video della guida qui sopra
 ```
 
 ### La pagina "Funzionalità" non è pubblica
 
 `/spese-ricorrenti/funzionalita.html` presenta le funzionalità dell'app (widget,
-Siri, spese manuali, addebito automatico, pausa personalizzata) in 5 lingue, ma
+Siri, spese manuali, addebito automatico, pausa personalizzata, spese quotidiane)
+in 5 lingue, ma
 è **deliberatamente non indicizzata**: `<meta name="robots" content="noindex,
 nofollow">`, nessuna voce in `sitemap.xml`, nessun link da `index.html` o dalle
 altre pagine. Ci si arriva solo da un link nelle Impostazioni dell'app, che
@@ -218,3 +221,56 @@ I testi dei mockup riprendono le stringhe vere dell'app invece di inventarne
 di nuove: il bottone "Annulla"/"Cancel"/"Cancelar"/"Annuler"/"Abbrechen" e la
 frase `"%@" eliminata` sono le stesse di `Localizable.xcstrings`, comprese le
 virgolette tipografiche per francese (`« … »`) e tedesco (`„…"`).
+
+## Stato al 17 settembre 2026
+
+Preparazione del sito per la **versione 3.0** dell'app, che introduce le spese
+quotidiane (automatiche via automazione Wallet, da foto scontrino, o a mano)
+accanto alle spese ricorrenti. Le modifiche sono state **preparate ma non
+pubblicate**: l'app non è ancora andata live con la 3.0, il push resta in
+sospeso fino a un via libera esplicito (stesso schema già usato per il rename
+Recurr→Skurda, vedi sopra).
+
+Tocchi fatti:
+
+- **`funzionalita.html`**: nuova card "Spese quotidiane" (5 lingue), con un
+  nuovo mockup `.daily-modes` — tre badge (automatica, scontrino, a mano) sullo
+  stesso principio visivo di `.tp-badge`. Testo adattato da quello già scritto
+  e approvato per `fastlane/metadata/*/description.txt` nell'app.
+- **`automazione-wallet.html`**: aggiunta una riga che spiega cosa succede a un
+  pagamento che non corrisponde a nessuna spesa ricorrente — diventa una spesa
+  quotidiana invece di andare perso. Prima non lo diceva.
+- **Landing IT/EN**: title/meta/OG/Twitter aggiornati, `featureList` e
+  `applicationSubCategory` nel JSON-LD estesi, una nuova card in `#funzioni`,
+  una nuova FAQ sulle spese quotidiane e la FAQ "si collega alla banca?"
+  precisata per menzionare l'automazione Wallet — in entrambi i casi il testo
+  è identico parola per parola fra JSON-LD e HTML visibile (verificato con
+  uno script, non solo a occhio).
+- **`privacy.html`** (bilingue IT/EN): la sezione "Cosa non facciamo" diceva
+  che l'app non accede alle foto — non più vero con lo scontrino fotografato,
+  corretto. Aggiunto un paragrafo nella sezione 2 che spiega l'OCR on-device
+  (Vision) per lo scontrino — l'immagine non viene mai salvata né trasmessa —
+  e uno sul fatto che l'automazione Wallet parla con l'app tramite URL scheme
+  locale, senza server.
+- **`llms.txt`**: nuova sezione "Daily expenses" con le tre modalità, intro e
+  "What the app does NOT do" aggiornati di conseguenza.
+- **Home del dominio** (`index.html` root): riga descrittiva di Skurda
+  aggiornata per menzionare anche le spese quotidiane.
+- **Nome dell'app**: secondo quanto indicato dall'utente, il nome pubblico è
+  ora, per lingua: IT "Skurda - Gestione Spese Budget", FR "Skurda - Suivi des
+  Dépenses", DE "Skurda - Haushaltsbuch Budget", ES "Skurda - Control de
+  Gastos" (EN invariato, "Skurda - All your expenses" da fastlane). **Nota di
+  disallineamento scoperta durante il lavoro**: `fastlane/metadata/it/name.txt`
+  nel repo dell'app ha invece "Skurda - Spese in tasca" (deciso e caricato su
+  App Store Connect il 16 settembre 2026, vedi `ROADMAP.md` dell'app,
+  sezione «Versione 3.0») — il sito non mostra comunque la stringa completa
+  "Skurda - X" in nessun punto letterale, quindi qui non c'è stato bisogno di
+  scegliere fra le due; ma se `fastlane/metadata/it/name.txt` non viene
+  allineato al nuovo nome, resta un disallineamento fra quello che l'utente
+  intende e cosa dice davvero l'App Store.
+
+Volutamente non toccati in questa sessione: `terms.html` (nessuna clausola
+dipende dalle spese quotidiane), gli screenshot marketing su App Store Connect
+(fuori da questo repo, già preparati dall'utente in
+`Screenshot Marketing Quotidiane/`), e i benefici del paywall su RevenueCat
+(dashboard, non file di questo repo).

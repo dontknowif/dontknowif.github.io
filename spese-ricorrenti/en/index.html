@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Skurda — iPhone app for recurring expenses, subscriptions and bills</title>
-<meta name="description" content="iPhone app that keeps track of subscriptions, bills, rent and insurance. Reminders before every due date, monthly totals and a savings report. Free for up to 8 expenses, no account, no ads.">
+<title>Skurda — Recurring and daily expenses on iPhone</title>
+<meta name="description" content="iPhone app for subscriptions, bills and rent, and now for everyday expenses too: logged automatically when you pay by phone, from a receipt photo, or by hand. Reminders before every due date, savings report. Free for up to 8 expenses, no account.">
 <link rel="canonical" href="https://dontknowif.github.io/spese-ricorrenti/en/">
 
 <link rel="alternate" hreflang="it" href="https://dontknowif.github.io/spese-ricorrenti/">
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Skurda">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="it_IT">
-<meta property="og:title" content="Skurda — iPhone app for recurring expenses, subscriptions and bills">
-<meta property="og:description" content="Keep subscriptions, bills and recurring expenses under control. Reminders before every due date and a savings report. Free for up to 8 expenses, no account.">
+<meta property="og:title" content="Skurda — Recurring and daily expenses on iPhone">
+<meta property="og:description" content="Subscriptions, bills and recurring expenses — and now everyday ones too, logged automatically, from a receipt, or by hand. Reminders before every due date and a savings report. Free for up to 8 expenses, no account.">
 <meta property="og:url" content="https://dontknowif.github.io/spese-ricorrenti/en/">
 <meta property="og:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -29,8 +29,8 @@
 <meta property="og:image:alt" content="The Skurda app icon next to the app name and the line: subscriptions, bills and due dates always under control.">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Skurda — iPhone app for subscriptions and bills">
-<meta name="twitter:description" content="Reminders before every due date, monthly totals and a savings report. Free for up to 8 expenses, no account.">
+<meta name="twitter:title" content="Skurda — Recurring and daily expenses on iPhone">
+<meta name="twitter:description" content="Reminders before every due date, daily expenses logged automatically or from a receipt, and a savings report. Free for up to 8 expenses, no account.">
 <meta name="twitter:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
 
 <link rel="icon" href="../favicon-32.png" sizes="32x32">
@@ -49,13 +49,13 @@
       "name": "Skurda",
       "alternateName": "Spese Ricorrenti",
       "applicationCategory": "FinanceApplication",
-      "applicationSubCategory": "Recurring expense and subscription tracker",
+      "applicationSubCategory": "Recurring, daily expense and subscription tracker",
       "operatingSystem": "iOS 17.0 or later",
       "url": "https://dontknowif.github.io/spese-ricorrenti/en/",
       "image": "https://dontknowif.github.io/spese-ricorrenti/icon-512.png",
       "screenshot": "https://dontknowif.github.io/spese-ricorrenti/og-image.png",
       "inLanguage": ["it", "en", "es", "fr", "de"],
-      "description": "iPhone app that tracks recurring expenses such as subscriptions, bills, rent, insurance and taxes. It shows the monthly total, sends reminders before each due date and flags possible savings. Data stays on the device and in the user's own iCloud account: the developer runs no servers.",
+      "description": "iPhone app that tracks recurring expenses such as subscriptions, bills, rent, insurance and taxes, and daily expenses — logged automatically when paying by phone, from a receipt photo, or by hand. It shows the monthly total, sends reminders before each due date and flags possible savings. Data stays on the device and in the user's own iCloud account: the developer runs no servers.",
       "featureList": [
         "Current and next month summary",
         "Due-date calendar with monthly total",
@@ -65,6 +65,8 @@
         "Add expenses with Siri",
         "Catalogue of 57 common recurring expenses for quick setup",
         "12 built-in categories plus custom ones",
+        "Daily expenses logged automatically when paying by phone",
+        "Daily expenses from a receipt photo, with automatic text recognition",
         "Annual savings report with nine types of insight",
         "Import and export in XLSX and CSV",
         "Sync with the user's personal iCloud account"
@@ -122,10 +124,18 @@
         },
         {
           "@type": "Question",
+          "name": "How do daily expenses work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They're everything you spend day to day — gas, groceries, a coffee — always kept separate from recurring expenses. You can log one three ways: automatically when you pay with your phone, through an automation you set up once; by snapping a photo of the receipt, with the merchant, amount and date recognized on their own and the photo never saved; or by hand, in a few seconds."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does the app connect to my bank account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Skurda does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf. It is a note-keeping tool: you enter the expenses yourself, which is why it never needs to ask for banking credentials."
+            "text": "No. Skurda does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf, and never asks for banking credentials. The only automation available is the one you build yourself in Shortcuts to read Wallet notifications on the same phone: it is not a bank connection or an official Apple Pay integration."
           }
         },
         {
@@ -213,6 +223,8 @@
       <p class="hero-sub">
         Enter an expense once. Skurda works out every future due date,
         tells you what you spend each month, and warns you <strong>before</strong> the charge lands.
+        And now your everyday expenses too: logged automatically when you pay by phone,
+        from a receipt photo, or by hand.
       </p>
       <div class="hero-actions">
         <a class="store-badge" href="https://apps.apple.com/app/id6806970079">
@@ -312,7 +324,7 @@
 <section class="section" id="features">
   <div class="container">
     <div class="section-head">
-      <h2>Everything you pay for every month, in one place</h2>
+      <h2>Everything you pay for every month — and every day — in one place</h2>
       <p>No bank connection, no statements to import. Enter an expense once and the app takes it from there.</p>
     </div>
 
@@ -321,6 +333,12 @@
         <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
         <h3>The month at a glance</h3>
         <p>What you spend this month and what you'll spend next, with the number of due dates. If the total changes, the app tells you which expense makes the difference.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div>
+        <h3>Everyday expenses</h3>
+        <p>Gas, the weekly grocery run, a coffee at the bar: logged on their own when you pay with your phone, read from a photo of the receipt — never saved — or written down by hand in a few seconds. Always kept separate from recurring expenses, never quietly added together.</p>
       </article>
 
       <article class="feature">
@@ -534,8 +552,13 @@
       </details>
 
       <details>
+        <summary>How do daily expenses work?</summary>
+        <p>They're everything you spend day to day — gas, groceries, a coffee — always kept separate from recurring expenses. You can log one three ways: automatically when you pay with your phone, through an automation you set up once; by snapping a photo of the receipt, with the merchant, amount and date recognized on their own and the photo never saved; or by hand, in a few seconds.</p>
+      </details>
+
+      <details>
         <summary>Does the app connect to my bank account?</summary>
-        <p>No. Skurda does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf. It is a note-keeping tool: you enter the expenses yourself, which is why it never needs to ask for banking credentials.</p>
+        <p>No. Skurda does not connect to banks, cards or current accounts, does not make payments and does not cancel subscriptions on your behalf, and never asks for banking credentials. The only automation available is the one you build yourself in Shortcuts to read Wallet notifications on the same phone: it is not a bank connection or an official Apple Pay integration.</p>
       </details>
 
       <details>

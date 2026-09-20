@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Skurda — App iPhone per spese ricorrenti, abbonamenti e bollette</title>
-<meta name="description" content="App iPhone per tenere sotto controllo abbonamenti, bollette, affitto e assicurazioni. Promemoria prima di ogni scadenza, totale del mese, report di risparmio. Gratis fino a 8 spese, senza account e senza pubblicità.">
+<title>Skurda — Spese ricorrenti e quotidiane su iPhone</title>
+<meta name="description" content="App iPhone per abbonamenti, bollette e affitto, e ora anche per le spese di tutti i giorni: in automatico quando paghi col telefono, da foto dello scontrino o a mano. Promemoria prima di ogni scadenza, report di risparmio. Gratis fino a 8 spese, senza account.">
 <link rel="canonical" href="https://dontknowif.github.io/spese-ricorrenti/">
 
 <link rel="alternate" hreflang="it" href="https://dontknowif.github.io/spese-ricorrenti/">
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Skurda">
 <meta property="og:locale" content="it_IT">
 <meta property="og:locale:alternate" content="en_GB">
-<meta property="og:title" content="Skurda — App iPhone per spese ricorrenti, abbonamenti e bollette">
-<meta property="og:description" content="Tieni sotto controllo abbonamenti, bollette e spese ricorrenti. Promemoria prima di ogni scadenza e report di risparmio. Gratis fino a 8 spese, senza account.">
+<meta property="og:title" content="Skurda — Spese ricorrenti e quotidiane su iPhone">
+<meta property="og:description" content="Abbonamenti, bollette e spese ricorrenti — e ora anche quelle di tutti i giorni, in automatico, da scontrino o a mano. Promemoria prima di ogni scadenza e report di risparmio. Gratis fino a 8 spese, senza account.">
 <meta property="og:url" content="https://dontknowif.github.io/spese-ricorrenti/">
 <meta property="og:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -29,8 +29,8 @@
 <meta property="og:image:alt" content="Icona dell'app Skurda accanto al nome e alla frase: abbonamenti, bollette e scadenze sempre sotto controllo.">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Skurda — App iPhone per abbonamenti e bollette">
-<meta name="twitter:description" content="Promemoria prima di ogni scadenza, totale del mese e report di risparmio. Gratis fino a 8 spese, senza account.">
+<meta name="twitter:title" content="Skurda — Spese ricorrenti e quotidiane su iPhone">
+<meta name="twitter:description" content="Promemoria prima di ogni scadenza, spese quotidiane in automatico da scontrino o a mano, report di risparmio. Gratis fino a 8 spese, senza account.">
 <meta name="twitter:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
 
 <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -49,13 +49,13 @@
       "name": "Skurda",
       "alternateName": "Spese Ricorrenti",
       "applicationCategory": "FinanceApplication",
-      "applicationSubCategory": "Gestione spese ricorrenti e abbonamenti",
+      "applicationSubCategory": "Gestione spese ricorrenti, quotidiane e abbonamenti",
       "operatingSystem": "iOS 17.0 o successivo",
       "url": "https://dontknowif.github.io/spese-ricorrenti/",
       "image": "https://dontknowif.github.io/spese-ricorrenti/icon-512.png",
       "screenshot": "https://dontknowif.github.io/spese-ricorrenti/og-image.png",
       "inLanguage": ["it", "en", "es", "fr", "de"],
-      "description": "App per iPhone che tiene traccia di spese ricorrenti come abbonamenti, bollette, affitto, assicurazioni e tasse. Mostra il totale del mese, invia promemoria prima di ogni scadenza e segnala possibili risparmi. I dati restano sul dispositivo e nell'account iCloud personale dell'utente: non esistono server dello sviluppatore.",
+      "description": "App per iPhone che tiene traccia di spese ricorrenti come abbonamenti, bollette, affitto, assicurazioni e tasse, e delle spese quotidiane — aggiunte in automatico quando si paga col telefono, da foto dello scontrino o a mano. Mostra il totale del mese, invia promemoria prima di ogni scadenza e segnala possibili risparmi. I dati restano sul dispositivo e nell'account iCloud personale dell'utente: non esistono server dello sviluppatore.",
       "featureList": [
         "Riepilogo del mese corrente e del mese successivo",
         "Calendario delle scadenze con totale mensile",
@@ -65,6 +65,8 @@
         "Aggiunta di spese tramite Siri",
         "Catalogo di 57 spese ricorrenti comuni per l'inserimento rapido",
         "12 categorie di sistema più categorie personalizzate",
+        "Spese quotidiane registrate in automatico quando si paga col telefono",
+        "Spese quotidiane da foto dello scontrino, con lettura automatica del testo",
         "Report di risparmio annuale con nove tipi di segnalazione",
         "Import ed export in formato XLSX e CSV",
         "Sincronizzazione con l'account iCloud personale"
@@ -122,10 +124,18 @@
         },
         {
           "@type": "Question",
+          "name": "Come funzionano le spese quotidiane?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sono tutto quello che spendi ogni giorno — benzina, spesa, un caffè — tenute sempre separate dalle spese ricorrenti. Si aggiungono in tre modi: in automatico quando paghi col telefono, tramite un'automazione che imposti una volta sola; fotografando lo scontrino, con negozio, importo e data riconosciuti da soli e la foto mai salvata; oppure a mano, in pochi secondi."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "L'app si collega al mio conto bancario?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Skurda non si collega a banche, carte o conti correnti, non effettua pagamenti e non disdice abbonamenti al posto tuo. È uno strumento di annotazione: sei tu a inserire le spese, e per questo non deve chiederti alcuna credenziale bancaria."
+            "text": "No. Skurda non si collega a banche, carte o conti correnti, non effettua pagamenti e non disdice abbonamenti al posto tuo, e non ti chiede mai una credenziale bancaria. L'unica automazione disponibile è quella che costruisci tu in Comandi per leggere le notifiche di Wallet sullo stesso telefono: non è un collegamento bancario né un'integrazione ufficiale con Apple Pay."
           }
         },
         {
@@ -213,6 +223,8 @@
       <p class="hero-sub">
         Inserisci una spesa una volta sola. Skurda calcola tutte le scadenze future,
         ti dice quanto spendi ogni mese e ti avvisa <strong>prima</strong> che ti arrivi l'addebito.
+        E ora anche le spese di tutti i giorni: in automatico quando paghi col telefono,
+        da foto dello scontrino o a mano.
       </p>
       <div class="hero-actions">
         <a class="store-badge" href="https://apps.apple.com/it/app/recurr-spese-ricorrenti/id6806970079">
@@ -312,7 +324,7 @@
 <section class="section" id="funzioni">
   <div class="container">
     <div class="section-head">
-      <h2>Tutto quello che paghi ogni mese, in un posto solo</h2>
+      <h2>Tutto quello che paghi ogni mese — e ogni giorno — in un posto solo</h2>
       <p>Non serve collegare la banca né importare estratti conto. Inserisci la spesa una volta e l'app fa il resto.</p>
     </div>
 
@@ -321,6 +333,12 @@
         <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
         <h3>Il mese a colpo d'occhio</h3>
         <p>Quanto spendi questo mese e quanto spenderai il prossimo, con il numero di scadenze. Se il totale cambia, l'app ti spiega quale spesa fa la differenza.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div>
+        <h3>Le spese di ogni giorno</h3>
+        <p>Il carburante, la spesa al supermercato, un caffè al bar: si registrano da sole quando paghi col telefono, si leggono da una foto dello scontrino — mai salvata — oppure le scrivi tu in pochi secondi. Sempre distinte dalle spese ricorrenti, mai sommate in silenzio.</p>
       </article>
 
       <article class="feature">
@@ -534,8 +552,13 @@
       </details>
 
       <details>
+        <summary>Come funzionano le spese quotidiane?</summary>
+        <p>Sono tutto quello che spendi ogni giorno — benzina, spesa, un caffè — tenute sempre separate dalle spese ricorrenti. Si aggiungono in tre modi: in automatico quando paghi col telefono, tramite un'automazione che imposti una volta sola; fotografando lo scontrino, con negozio, importo e data riconosciuti da soli e la foto mai salvata; oppure a mano, in pochi secondi.</p>
+      </details>
+
+      <details>
         <summary>L'app si collega al mio conto bancario?</summary>
-        <p>No. Skurda non si collega a banche, carte o conti correnti, non effettua pagamenti e non disdice abbonamenti al posto tuo. È uno strumento di annotazione: sei tu a inserire le spese, e per questo non deve chiederti alcuna credenziale bancaria.</p>
+        <p>No. Skurda non si collega a banche, carte o conti correnti, non effettua pagamenti e non disdice abbonamenti al posto tuo, e non ti chiede mai una credenziale bancaria. L'unica automazione disponibile è quella che costruisci tu in Comandi per leggere le notifiche di Wallet sullo stesso telefono: non è un collegamento bancario né un'integrazione ufficiale con Apple Pay.</p>
       </details>
 
       <details>

@@ -1,10 +1,12 @@
 # Skurda
 
-> An iPhone app that tracks recurring expenses — subscriptions, bills, rent,
-> insurance, taxes and instalments. You enter each expense once, stating how
-> often it repeats; the app computes every future due date, the total for each
-> month, sends reminders before each payment, and flags likely savings. All
-> data stays on the user's device and in their own personal iCloud account:
+> An iPhone app that tracks two kinds of expenses in one place: recurring ones —
+> subscriptions, bills, rent, insurance, taxes and instalments — and daily ones,
+> everything spent day to day, logged automatically when paying by phone, from a
+> receipt photo, or by hand. For a recurring expense, the user enters it once,
+> stating how often it repeats; the app computes every future due date, the total
+> for each month, sends reminders before each payment, and flags likely savings.
+> All data stays on the user's device and in their own personal iCloud account:
 > the developer operates no servers and never receives the user's expenses.
 
 Published by dontknowif (Rocco Barletta), an independent developer based in Italy.
@@ -56,7 +58,9 @@ a price figure or user review counts for this app is inventing them.
 ## What the app does NOT do
 
 - It does **not** connect to banks, cards or current accounts, and never asks for
-  banking credentials. Expenses are entered manually by the user.
+  banking credentials. The Wallet automation described below reads local payment
+  notifications on the device through a user-built Shortcuts automation — it is
+  not a bank integration and does not use any Apple Pay API.
 - It does **not** make payments and does **not** cancel subscriptions on the
   user's behalf.
 - It does **not** show advertising, does **not** use ad networks, does **not**
@@ -80,6 +84,12 @@ The one exception is the name of an expense picked from the app's built-in
 catalogue (for example "netflix"), which is not user-authored text. Telemetry
 can be switched off entirely in Options → Privacy.
 
+Receipt photos used to log a daily expense are processed entirely on-device
+(Apple's Vision OCR framework) and are never saved or transmitted anywhere;
+only the recognized text (merchant, amount, date) becomes a normal daily
+expense entry. The Wallet automation talks to the app through a direct
+on-device URL scheme, not through any server.
+
 Purchases are processed by Apple; subscription state is handled by RevenueCat
 using an anonymous device identifier. The developer never sees payment details.
 
@@ -99,6 +109,25 @@ using an anonymous device identifier. The developer never sees payment details.
   from the spoken name.
 - Import and export in XLSX and CSV (Premium).
 - Annual savings report (Premium), described below.
+
+## Daily expenses
+
+Introduced in version 3.0 (September 2026), alongside recurring expenses.
+A payment that doesn't match a tracked recurring expense isn't discarded — it
+becomes a daily expense. Three ways to log one:
+
+1. **Automatically** — a Shortcuts automation the user builds themselves
+   (trigger: Wallet) calls a custom URL scheme whenever they pay with a card or
+   pass saved in Apple Wallet. If the payment matches an existing recurring
+   expense, that expense is marked paid instead.
+2. **From a receipt photo** — camera or photo library; on-device OCR extracts
+   merchant, amount and date. The photo is never saved or transmitted.
+3. **By hand** — a short form with name, amount, category, date and notes.
+
+The merchant's category is learned automatically after the first time. Recurring
+and daily totals are always shown separately, never silently summed together.
+Adding a daily expense (any of the three ways) is a Premium feature; daily
+expenses already logged stay visible and editable for free users.
 
 ## Annual savings report
 

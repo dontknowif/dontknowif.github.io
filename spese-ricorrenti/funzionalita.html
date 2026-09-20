@@ -39,6 +39,15 @@
   .tp-badge.manual svg { stroke: #6e6e73; }
   .tp-badge.auto { background: var(--brand-tint); }
   .tp-badge.auto svg { stroke: var(--accent); }
+  .tp-badge.photo { background: #ece7fb; }
+  .tp-badge.photo svg { stroke: #6c5ce7; }
+
+  /* Le tre icone "tre modi per registrare una spesa quotidiana", in fila. */
+  .daily-modes { display: flex; gap: 16px; align-items: flex-end; }
+  .daily-mode { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .daily-mode span { font-size: 10.5px; font-weight: 600; color: var(--text-dim); white-space: nowrap; }
+  .tp-badge.small { width: 44px; height: 44px; border-radius: 13px; }
+  .tp-badge.small svg { width: 20px; height: 20px; }
 
   .notif-banner { display: flex; gap: 10px; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 12px 14px; box-shadow: var(--shadow); max-width: 240px; text-align: left; }
   .notif-banner .wm-dot { width: 20px; height: 20px; border-radius: 6px; margin-top: 1px; }
@@ -158,6 +167,17 @@
     </div>
     <h3>Addebito automatico</h3>
     <p>Per le spese addebitate su carta o conto: le segni come automatiche e non pensi più a pagarle a mano.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="daily-modes">
+        <div class="daily-mode"><div class="tp-badge auto small"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><span>Automatica</span></div>
+        <div class="daily-mode"><div class="tp-badge photo small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div><span>Scontrino</span></div>
+        <div class="daily-mode"><div class="tp-badge manual small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></div><span>A mano</span></div>
+      </div>
+    </div>
+    <h3>Spese quotidiane</h3>
+    <p>Il carburante, la spesa al supermercato, un caffè al bar: tutto quello che spendi ogni giorno, in tre modi. In automatico quando paghi col telefono, fotografando lo scontrino — la foto non viene mai salvata — oppure a mano in pochi secondi. Ricorrenti e quotidiane restano sempre separate, mai sommate in silenzio.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -311,6 +331,17 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
+      <div class="daily-modes">
+        <div class="daily-mode"><div class="tp-badge auto small"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><span>Automatic</span></div>
+        <div class="daily-mode"><div class="tp-badge photo small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div><span>Receipt</span></div>
+        <div class="daily-mode"><div class="tp-badge manual small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></div><span>By hand</span></div>
+      </div>
+    </div>
+    <h3>Daily expenses</h3>
+    <p>Gas, the weekly grocery run, a coffee at the bar: everything you spend day to day, three ways. Automatically when you pay with your phone, by snapping a photo of the receipt — never saved anywhere — or by hand in a few seconds. Recurring and daily expenses stay separate, never quietly added together.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
         <div><b>Skurda</b><p>Netflix is due in 3 days — €12.99</p></div>
@@ -458,6 +489,17 @@
     </div>
     <h3>Domiciliación automática</h3>
     <p>Para los gastos con cargo en tarjeta o cuenta: los marcas como automáticos y dejas de pensar en pagarlos a mano.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="daily-modes">
+        <div class="daily-mode"><div class="tp-badge auto small"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><span>Automático</span></div>
+        <div class="daily-mode"><div class="tp-badge photo small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div><span>Ticket</span></div>
+        <div class="daily-mode"><div class="tp-badge manual small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></div><span>A mano</span></div>
+      </div>
+    </div>
+    <h3>Gastos del día a día</h3>
+    <p>La gasolina, la compra del súper, un café: todo lo que gastas cada día, de tres formas. En automático cuando pagas con el teléfono, fotografiando el ticket — la foto nunca se guarda — o a mano en pocos segundos. Los gastos recurrentes y los del día a día siempre están separados, nunca se suman en silencio.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -611,6 +653,17 @@
   </article>
   <article class="feature">
     <div class="feat-visual">
+      <div class="daily-modes">
+        <div class="daily-mode"><div class="tp-badge auto small"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><span>Automatique</span></div>
+        <div class="daily-mode"><div class="tp-badge photo small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div><span>Ticket</span></div>
+        <div class="daily-mode"><div class="tp-badge manual small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></div><span>À la main</span></div>
+      </div>
+    </div>
+    <h3>Dépenses du quotidien</h3>
+    <p>L'essence, les courses, un café : tout ce que vous dépensez au quotidien, de trois façons. Automatiquement quand vous payez avec votre téléphone, en photographiant le ticket — jamais enregistré — ou à la main en quelques secondes. Dépenses récurrentes et quotidiennes restent toujours distinctes, jamais additionnées en silence.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="notif-banner">
         <span class="wm-dot"></span>
         <div><b>Skurda</b><p>Netflix arrive à échéance dans 3 jours — 12,99 €</p></div>
@@ -758,6 +811,17 @@
     </div>
     <h3>Automatische Abbuchung</h3>
     <p>Für Ausgaben, die per Karte oder Konto abgebucht werden: Markiere sie als automatisch und denk nicht mehr ans manuelle Zahlen.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="daily-modes">
+        <div class="daily-mode"><div class="tp-badge auto small"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div><span>Automatisch</span></div>
+        <div class="daily-mode"><div class="tp-badge photo small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div><span>Beleg</span></div>
+        <div class="daily-mode"><div class="tp-badge manual small"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></div><span>Von Hand</span></div>
+      </div>
+    </div>
+    <h3>Alltagsausgaben</h3>
+    <p>Tanken, der Wocheneinkauf, ein Kaffee: alles, was du im Alltag ausgibst, auf drei Wegen. Automatisch beim Bezahlen mit dem Handy, per Beleg-Foto — nie gespeichert — oder von Hand in wenigen Sekunden. Wiederkehrende und alltägliche Ausgaben bleiben immer getrennt, nie still zusammengezählt.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
