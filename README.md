@@ -320,3 +320,10 @@ scrivendo a `feedbacksr@icloud.com`, senza garanzia tecnica di poter fermare
 la raccolta per un singolo dispositivo. Le landing e `llms.txt` non erano
 mai stati allineati a quel cambiamento. Corretto ora in entrambe le lingue e
 in `llms.txt`, con lo stesso testo di `privacy.html` §7.
+
+**Quarta correzione, stessa giornata**: la sezione Prezzi (piano Premium e
+FAQ "L'app è gratuita?", testo visibile + JSON-LD, IT+EN) non menzionava le
+spese quotidiane da nessuna parte, pur essendo una funzione Premium dal
+lancio della 3.0 — segnalato dall'utente con uno screenshot della card
+Premium. Aggiunta una riga alla lista Premium e un inciso alla FAQ, in
+entrambe le lingue.
