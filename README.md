@@ -275,3 +275,36 @@ dipende dalle spese quotidiane), gli screenshot marketing su App Store Connect
 (fuori da questo repo, già preparati dall'utente in
 `Screenshot Marketing Quotidiane/`), e i benefici del paywall su RevenueCat
 (dashboard, non file di questo repo).
+
+## Stato al 21 settembre 2026
+
+L'utente ha segnalato che il sito era rimasto indietro rispetto alla **versione
+3.1** dell'app (share extension "Condividi scontrino", pubblicata lo stesso
+giorno): mancava ovunque il quarto modo di registrare una spesa quotidiana,
+oltre ad automatico/foto/a mano.
+
+- **Landing IT/EN**: hero, card "Le spese di ogni giorno"/"Everyday expenses",
+  FAQ "Come funzionano le spese quotidiane?" e relativo JSON-LD (`featureList`
+  e testo della FAQ, verificati identici parola per parola con uno script)
+  aggiornati per menzionare la condivisione dello screenshot dal foglio
+  "Condividi" di iOS.
+- **`funzionalita.html`**, tutte e 5 le lingue: nuovo badge "Condividi" (icona
+  share, colore verde `#e4f6ea`/`#2ba14f`, nuova classe `.tp-badge.share`)
+  inserito fra "Automatica" e "Scontrino" nella card "Spese quotidiane"; testo
+  aggiornato da "tre modi" a "più modi" in tutte le lingue.
+- **`automazione-wallet.html`**, tutte e 5 le lingue: nuovo paragrafo dopo la
+  spiegazione di cosa succede a un pagamento senza corrispondenza, che
+  segnala la condivisione dello screenshot come alternativa per chi preferisce
+  non configurare l'automazione.
+- **`llms.txt`**: sezione "Daily expenses" aggiornata da "Three ways" a
+  quattro, con la nuova voce introdotta in versione 3.1; aggiornata anche la
+  riga di sintesi in cima al file.
+- **Correzione non collegata, trovata mentre si verificava il file**:
+  `llms.txt` dichiarava bundle id (`it.dontknowif.SpeseRicorrenti`), container
+  iCloud e entitlement RevenueCat (`Spese Ricorrenti Pro`) come se fossero
+  rimasti fermi al nome originale — nel codice sono invece fermi al **primo**
+  rename, `Recurr` (`it.dontknowif.Recurr`, `iCloud.it.dontknowif.Recurr`,
+  `Recurr Pro`). Corretto.
+
+Verificato in anteprima locale (`python3 -m http.server`) che i 4 badge non
+rompono il layout della card, in italiano e in inglese.

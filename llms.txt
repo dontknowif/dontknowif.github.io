@@ -2,8 +2,9 @@
 
 > An iPhone app that tracks two kinds of expenses in one place: recurring ones —
 > subscriptions, bills, rent, insurance, taxes and instalments — and daily ones,
-> everything spent day to day, logged automatically when paying by phone, from a
-> receipt photo, or by hand. For a recurring expense, the user enters it once,
+> everything spent day to day, logged automatically when paying by phone, by
+> sharing a payment notification, from a receipt photo, or by hand. For a
+> recurring expense, the user enters it once,
 > stating how often it repeats; the app computes every future due date, the total
 > for each month, sends reminders before each payment, and flags likely savings.
 > All data stays on the user's device and in their own personal iCloud account:
@@ -23,13 +24,13 @@ a price figure or user review counts for this app is inventing them.
 
 ## Key facts
 
-- Platform: iPhone, requires iOS 17.0 or later. Bundle identifier `it.dontknowif.SpeseRicorrenti`.
+- Platform: iPhone, requires iOS 17.0 or later. Bundle identifier `it.dontknowif.Recurr`.
 - Name: **Skurda**. The app was first called "Spese Ricorrenti" (Italian for
   "recurring expenses"), renamed to "Recurr" in August 2026, then renamed again to
-  "Skurda" in September 2026. Both former names survive only inside internal
-  identifiers — the bundle identifier above, the iCloud container
-  `iCloud.it.dontknowif.SpeseRicorrenti` and the RevenueCat entitlement
-  `Spese Ricorrenti Pro` — which are deliberately left unchanged because renaming them
+  "Skurda" in September 2026. The middle name, "Recurr", survives only inside
+  internal identifiers — the bundle identifier above, the iCloud container
+  `iCloud.it.dontknowif.Recurr` and the RevenueCat entitlement
+  `Recurr Pro` — which are deliberately left unchanged because renaming them
   would break existing installs, synced data and purchases. None of them is user-visible.
   The site URL still contains `/spese-ricorrenti/` for the same reason: it predates both renames.
 - The app name is not translated. In the Siri phrases it is "Skurda" in all five
@@ -114,19 +115,24 @@ using an anonymous device identifier. The developer never sees payment details.
 
 Introduced in version 3.0 (September 2026), alongside recurring expenses.
 A payment that doesn't match a tracked recurring expense isn't discarded — it
-becomes a daily expense. Three ways to log one:
+becomes a daily expense. Several ways to log one:
 
 1. **Automatically** — a Shortcuts automation the user builds themselves
    (trigger: Wallet) calls a custom URL scheme whenever they pay with a card or
    pass saved in Apple Wallet. If the payment matches an existing recurring
    expense, that expense is marked paid instead.
-2. **From a receipt photo** — camera or photo library; on-device OCR extracts
+2. **By sharing a payment notification** — introduced in version 3.1
+   (September 2026). The user shares a screenshot of a payment notification
+   with Skurda from iOS's Share sheet (a Share Extension); the same on-device
+   OCR reads merchant, amount and date, and the confirmation screen opens
+   before anything is saved.
+3. **From a receipt photo** — camera or photo library; on-device OCR extracts
    merchant, amount and date. The photo is never saved or transmitted.
-3. **By hand** — a short form with name, amount, category, date and notes.
+4. **By hand** — a short form with name, amount, category, date and notes.
 
 The merchant's category is learned automatically after the first time. Recurring
 and daily totals are always shown separately, never silently summed together.
-Adding a daily expense (any of the three ways) is a Premium feature; daily
+Adding a daily expense (any of these ways) is a Premium feature; daily
 expenses already logged stay visible and editable for free users.
 
 ## Annual savings report
