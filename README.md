@@ -308,3 +308,15 @@ oltre ad automatico/foto/a mano.
 
 Verificato in anteprima locale (`python3 -m http.server`) che i 4 badge non
 rompono il layout della card, in italiano e in inglese.
+
+**Correzione successiva, stessa giornata**: la card privacy "Statistiche
+disattivabili"/"Statistics you can switch off" e la FAQ "Ci sono pubblicità o
+tracciamento?" (landing IT/EN, testo visibile e JSON-LD) dicevano ancora che
+un interruttore in Opzioni spegne le statistiche — falso dal **04/09/2026**,
+quando quel toggle è stato rimosso dall'app e `privacy.html` aggiornata di
+conseguenza (commit `983e69b`, vedi `ROADMAP.md` dell'app, sezione
+«Rimozione del toggle statistiche d'uso»): l'opposizione si esercita solo
+scrivendo a `feedbacksr@icloud.com`, senza garanzia tecnica di poter fermare
+la raccolta per un singolo dispositivo. Le landing e `llms.txt` non erano
+mai stati allineati a quel cambiamento. Corretto ora in entrambe le lingue e
+in `llms.txt`, con lo stesso testo di `privacy.html` §7.

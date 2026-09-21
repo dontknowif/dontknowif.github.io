@@ -82,8 +82,12 @@ The only data leaving the device for the developer is anonymous, aggregated
 usage telemetry sent to TelemetryDeck, tied to a salted SHA-256 pseudonymous
 device identifier. It never includes expense names, amounts, dates or notes.
 The one exception is the name of an expense picked from the app's built-in
-catalogue (for example "netflix"), which is not user-authored text. Telemetry
-can be switched off entirely in Options → Privacy.
+catalogue (for example "netflix"), which is not user-authored text. There is
+no in-app toggle to disable telemetry; the user can exercise their right to
+object at any time by emailing feedbacksr@icloud.com. Because events are tied
+to a pseudonymous identifier rather than a name, honouring a request means
+locating and deleting that person's data on request, not stopping collection
+for a specific device going forward.
 
 Receipt photos used to log a daily expense are processed entirely on-device
 (Apple's Vision OCR framework) and are never saved or transmitted anywhere;
