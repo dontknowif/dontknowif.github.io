@@ -327,3 +327,10 @@ spese quotidiane da nessuna parte, pur essendo una funzione Premium dal
 lancio della 3.0 — segnalato dall'utente con uno screenshot della card
 Premium. Aggiunta una riga alla lista Premium e un inciso alla FAQ, in
 entrambe le lingue.
+
+**Quinta correzione, stessa giornata**: la primissima FAQ, "Che cos'è
+Skurda?" — quella aperta di default, la prima cosa che chi arriva sul sito
+legge — descriveva l'app come se facesse solo spese ricorrenti, senza una
+parola sulle quotidiane. Segnalato dall'utente con uno screenshot.
+Riscritta per presentare entrambi i tipi di spesa fin dall'inizio, IT+EN,
+testo visibile e JSON-LD verificati identici.
