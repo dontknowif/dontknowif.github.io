@@ -10,17 +10,95 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="site.css">
 <style>
-  /* Solo per questa pagina: video di dimostrazione e galleria di screenshot. */
+  /* Solo per questa pagina: video, passaggi con lo screenshot accanto, spunte. */
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
   .video-wrap { margin: 20px 0 28px; }
   .video-wrap video { width: 100%; max-width: 420px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); display: block; }
   .video-wrap p { margin: 0 0 10px; font-size: 14px; color: var(--text-dim); }
 
-  .shot-grid { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
-  .shot-grid figure { margin: 0; width: 200px; }
-  .shot-grid img { width: 100%; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow); display: block; }
-  .shot-grid figcaption { margin-top: 6px; font-size: 12.5px; color: var(--text-dim); text-align: center; }
-
   .ios-note { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 12px; padding: 12px 16px; margin: 0 0 20px; font-size: 14px; color: var(--text); }
+
+  /* Intestazione dei passaggi: come funzionano le spunte, e come azzerarle. */
+  .steps-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+    margin: 32px 0 8px; padding-top: 22px; border-top: 1px solid var(--border);
+  }
+  .steps-head p { margin: 0; font-size: 14px; color: var(--text-dim); flex: 1 1 280px; }
+  .steps-reset {
+    flex: 0 0 auto;
+    font: inherit; font-size: 14px; color: var(--accent);
+    background: none; border: 1px solid var(--border); border-radius: 980px;
+    padding: 5px 14px; cursor: pointer;
+  }
+  .steps-reset:hover { border-color: var(--accent); }
+
+  /* Un passaggio = numero spuntabile + testo + il suo screenshot, insieme. */
+  .steps { counter-reset: step; list-style: none; margin: 0; padding: 0; }
+
+  .step {
+    counter-increment: step;
+    display: flex; gap: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+
+  .step-mark { flex: 0 0 auto; cursor: pointer; line-height: 0; }
+  .step-mark input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .step-num {
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: var(--bg);
+    font-size: 15px; font-weight: 600; line-height: 1; color: var(--text-dim);
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .step-num::before { content: counter(step); }
+  .step-mark:hover .step-num { border-color: var(--accent); color: var(--accent); }
+  .step-mark input:focus-visible + .step-num { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .step-mark input:checked + .step-num {
+    background: var(--accent); border-color: var(--accent); color: #fff;
+  }
+  .step-mark input:checked + .step-num::before { content: "\2713"; font-size: 17px; }
+
+  .step-body { flex: 1 1 auto; min-width: 0; display: flex; gap: 20px; align-items: flex-start; }
+  .step-text { flex: 1 1 260px; min-width: 0; }
+  .step-text p { margin: 0; padding-top: 3px; }
+  .step-note { margin-top: 8px !important; font-size: 14px; color: var(--text-dim); }
+
+  .step-shots { flex: 0 0 auto; display: flex; gap: 12px; }
+  .step-shots figure { margin: 0; width: 186px; }
+  .step-shots img { width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); display: block; }
+  .step-shots figcaption { margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: var(--text-dim); }
+
+  /* Passaggio già spuntato: resta leggibile, ma esce dal campo visivo.
+     La classe la mette il JS: l'input sta dentro la label, quindi da CSS non
+     è fratello di .step-body e nessun selettore di pari lo raggiunge. */
+  .step.is-done .step-body { opacity: .45; }
+  .step-body { transition: opacity .15s ease; }
+
+  .check-box {
+    background: var(--accent-soft); border-radius: 14px;
+    padding: 18px 20px; margin: 28px 0;
+  }
+  .check-box h2 { margin: 0 0 8px; font-size: 19px; border: none; padding: 0; }
+  .check-box p { margin: 0 0 10px; font-size: 15px; }
+  .check-box p:last-child { margin-bottom: 0; }
+
+  /* Sotto i 720px lo screenshot va sotto il suo testo, non di fianco. */
+  @media (max-width: 720px) {
+    .step-body { flex-direction: column; gap: 14px; }
+    /* In colonna, flex-basis vale sull'altezza: senza questo reset il testo
+       terrebbe 260px di altezza e aprirebbe un buco sopra lo screenshot. */
+    .step-text { flex: 0 0 auto; }
+    .step-shots { width: 100%; }
+    .step-shots figure { width: 100%; max-width: 230px; }
+  }
 </style>
 </head>
 <body>
@@ -52,61 +130,172 @@
   </video>
 </div>
 
-<ol>
-  <li>Apri l'app <strong>Comandi Rapidi</strong></li>
-  <li>Vai alla scheda <strong>Automazioni</strong> (in basso)</li>
-  <li>Tocca il <strong>+</strong> in alto a destra</li>
-  <li>Cerca e seleziona <strong>Wallet</strong> come trigger</li>
-  <li>Lascia la schermata com'è: <strong>tutte le carte</strong> monitorate, <strong>tutte le categorie</strong> selezionate, <strong>Filtra esercenti</strong> senza filtri (se preferisci seguirne una sola, scegli quella)</li>
-  <li>Seleziona <strong>Esegui immediatamente</strong></li>
-  <li>Lascia disattivata <strong>Notifica in caso di esecuzione</strong> — o attivala se vuoi vedere quando viene eseguita, ma ti consiglio comunque di toglierla</li>
-  <li>Tocca <strong>Avanti</strong></li>
-  <li>Tocca <strong>Crea nuovo comando rapido</strong></li>
-  <li>Nella barra "Cerca azioni", digita <strong>Skurda</strong></li>
-  <li>Seleziona l'azione <strong>Registra pagamento</strong></li>
-  <li>Comparirà il blocco "Registra <strong>Importo</strong> pagati a <strong>Esercente</strong>"</li>
-  <li>Tocca il campo <strong>Importo</strong>: sopra la tastiera comparirà un suggerimento "<strong>Input comando rapido</strong>" — toccalo per inserirlo</li>
-  <li>Fai lo stesso con il campo <strong>pagati a</strong>: toccalo e poi tocca "<strong>Input comando rapido</strong>" nel suggerimento sopra la tastiera</li>
-  <li>Ora entrambi i campi mostrano il segnaposto generico "Input comando rapido". Tocca il primo (quello dell'Importo) e, dal menu che si apre, seleziona <strong>Importo</strong></li>
-  <li>Tocca il secondo (quello di pagati a) e seleziona <strong>Esercente</strong></li>
-  <li>Conferma con il segno di spunta blu in alto a destra</li>
-</ol>
-
-<div class="shot-grid">
-  <figure>
-    <img src="assets/wallet-guide/01-automazioni.png" alt="Scheda Automazioni in Comandi Rapidi, con il pulsante + in alto a destra.">
-    <figcaption>1–3. Comandi Rapidi → Automazioni → +</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Elenco dei trigger di sistema con Wallet evidenziato.">
-    <figcaption>4. Seleziona Wallet come trigger</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Schermata categorie con tutte le voci selezionate, Esegui immediatamente attivo e il pulsante Avanti in alto a destra.">
-    <figcaption>5–8. Carte, categorie, Esegui immediatamente e Avanti</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Ricerca di Skurda tra le azioni, con Registra pagamento tra i risultati.">
-    <figcaption>10–11. Cerca «Skurda» → Registra pagamento</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Campo Importo appena toccato, con il suggerimento Input comando rapido sopra la tastiera.">
-    <figcaption>13–14. Tocca Importo, poi Esercente: scegli «Input comando rapido» per entrambi</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Entrambi i campi mostrano ora il segnaposto Input comando rapido.">
-    <figcaption>13–14. Fatto: entrambi i campi mostrano «Input comando rapido»</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide/08-risultato-finale.png" alt="Blocco finale: Registra Importo pagati a Esercente con entrambe le variabili collegate, menu Input comando rapido con Esercente selezionato.">
-    <figcaption>15–16. Seleziona Importo, poi Esercente, dal menu</figcaption>
-  </figure>
+<div class="steps-head">
+  <p>Tocca i numeri per segnare i passaggi che hai fatto: il telefono se li ricorda, anche se esci e torni. Nelle immagini, le frecce rosse indicano dove toccare, in ordine.</p>
+  <button type="button" class="steps-reset">Azzera</button>
 </div>
 
-<p>Fatto: da ora ogni pagamento tramite Wallet verrà registrato automaticamente su Skurda.</p>
+<ol class="steps">
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Apri <strong>Comandi Rapidi</strong>, vai alla scheda <strong>Automazioni</strong> in basso, poi tocca il <strong>+</strong> in alto a destra.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/01-automazioni.png" alt="Scheda Automazioni in Comandi Rapidi, con il pulsante + in alto a destra." loading="lazy" decoding="async">
+          <figcaption>La scheda Automazioni e il + in alto a destra.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Nell'elenco dei trigger, scorri fino a <strong>Wallet</strong> e selezionalo.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/02-trigger-wallet.png" alt="Elenco dei trigger di sistema con Wallet evidenziato." loading="lazy" decoding="async">
+          <figcaption>Wallet, nel gruppo insieme ad App e Allenamento Apple Watch.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Non cambiare niente su carte e categorie: lasciale tutte selezionate. Scegli <strong>Esegui immediatamente</strong>, lascia disattivata <strong>Notifica in caso di esecuzione</strong> e tocca <strong>Avanti</strong>.</p>
+        <p class="step-note">Se preferisci seguire una sola carta, scegli quella in cima alla schermata. La notifica puoi anche attivarla, ma poi ne ricevi una a ogni pagamento.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/03-categorie-esegui-subito.png" alt="Schermata categorie con tutte le voci selezionate, Esegui immediatamente attivo e il pulsante Avanti in alto a destra." loading="lazy" decoding="async">
+          <figcaption>Esegui immediatamente, poi Avanti.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tocca <strong>Crea nuovo comando rapido</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Nella barra <strong>Cerca azioni</strong> scrivi <strong>Skurda</strong>, poi tocca l'azione <strong>Registra pagamento</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/04-cerca-skurda.png" alt="Ricerca di Skurda tra le azioni, con Registra pagamento tra i risultati." loading="lazy" decoding="async">
+          <figcaption>Cerca «Skurda», poi Registra pagamento.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Compare il blocco «Registra <strong>Importo</strong> pagati a <strong>Esercente</strong>». Tocca il campo <strong>Importo</strong>: sopra la tastiera appare <strong>Input comando rapido</strong> — toccalo. Poi fai la stessa cosa con il campo dopo <strong>pagati a</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/06-input-comando-rapido.png" alt="Campo Importo appena toccato, con il suggerimento Input comando rapido sopra la tastiera." loading="lazy" decoding="async">
+          <figcaption>Tocca il campo, poi Input comando rapido sopra la tastiera — una volta per campo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Fermati un attimo e controlla: <strong>tutti e due</strong> i campi devono dire «Input comando rapido». È il punto in cui ci si ferma più spesso. Se ne vedi uno solo, ripeti il passaggio precedente sull'altro campo.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/07-seleziona-importo.png" alt="Entrambi i campi mostrano il segnaposto Input comando rapido." loading="lazy" decoding="async">
+          <figcaption>Così devono essere i due campi prima di andare avanti.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tocca il primo <strong>Input comando rapido</strong> e scegli <strong>Importo</strong> dal menu. Tocca il secondo e scegli <strong>Esercente</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide/08-risultato-finale.png" alt="Blocco finale: Registra Importo pagati a Esercente con entrambe le variabili collegate, menu Input comando rapido con Esercente selezionato." loading="lazy" decoding="async">
+          <figcaption>Dal menu: Importo per il primo campo, Esercente per il secondo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Segna questo passaggio come fatto</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Conferma con la <strong>spunta blu</strong> in alto a destra. L'automazione è attiva.</p>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Come capire se ha funzionato</h2>
+  <p>Non devi provare niente adesso: al primo pagamento contactless ci pensa il telefono. Dopo averlo fatto, apri Skurda — se il pagamento corrisponde a una spesa ricorrente che già segui, la trovi spuntata come pagata; altrimenti lo trovi tra le spese quotidiane, con il nome dell'esercente.</p>
+  <p>Se non è successo niente, torna in Comandi Rapidi → Automazioni e controlla che l'automazione ci sia e non sia disattivata.</p>
+</div>
 
 <p>Se il pagamento corrisponde a una spesa ricorrente che hai già in Skurda, viene spuntata come pagata; se non corrisponde a nessuna, diventa una nuova <strong>spesa quotidiana</strong> — non va persa.</p>
-
 <p>Preferisci non configurare l'automazione? Puoi comunque registrare un pagamento in un tocco: condividi lo screenshot della notifica di pagamento con Skurda dal foglio "Condividi" di iOS — negozio, importo e data si riconoscono da soli, tu confermi prima di salvare.</p>
 
 <p class="lede" style="font-size:15px">Hai avuto difficoltà a configurarla? Scrivici a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
@@ -134,65 +323,176 @@
   </video>
 </div>
 
-<ol>
-  <li>Open the <strong>Shortcuts</strong> app</li>
-  <li>Go to the <strong>Automation</strong> tab (bottom)</li>
-  <li>Tap the <strong>+</strong> in the top right</li>
-  <li>Search for and select <strong>Wallet</strong> as the trigger</li>
-  <li>Leave the screen as it is: <strong>all cards</strong> monitored, <strong>all categories</strong> selected, <strong>Filter Merchants</strong> with no filter (if you'd rather track just one card, pick that one)</li>
-  <li>Select <strong>Run Immediately</strong></li>
-  <li>Leave <strong>Notify When Run</strong> turned off — or turn it on if you want to see when it runs, but I'd still recommend leaving it off</li>
-  <li>Tap <strong>Next</strong></li>
-  <li>Tap <strong>Create New Shortcut</strong></li>
-  <li>In the "Search actions" bar, type <strong>Skurda</strong></li>
-  <li>Select the <strong>Record Payment</strong> action</li>
-  <li>You'll see the block "Record <strong>Amount</strong> paid to <strong>Merchant</strong>"</li>
-  <li>Tap the <strong>Amount</strong> field: a suggestion saying "<strong>Shortcut Input</strong>" will appear above the keyboard — tap it to insert it</li>
-  <li>Do the same for the <strong>paid to</strong> field: tap it, then tap "<strong>Shortcut Input</strong>" from the suggestion above the keyboard</li>
-  <li>Both fields now show the generic "Shortcut Input" placeholder. Tap the first one (Amount) and, from the menu that opens, select <strong>Amount</strong></li>
-  <li>Tap the second one (paid to) and select <strong>Merchant</strong></li>
-  <li>Confirm with the blue checkmark in the top right</li>
-</ol>
-
-<div class="shot-grid">
-  <figure>
-    <img src="assets/wallet-guide-en/01-automation.png" alt="Automation tab in Shortcuts, with the + button in the top right.">
-    <figcaption>1–3. Shortcuts → Automation → +</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="List of system triggers with Wallet highlighted.">
-    <figcaption>4. Select Wallet as the trigger</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Categories screen with everything selected and Run Immediately on.">
-    <figcaption>5–7. Cards, categories and Run Immediately</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Shortcuts action screen with Create New Shortcut highlighted.">
-    <figcaption>9. Tap Create New Shortcut</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Search for Skurda among the actions, with Record Payment among the results.">
-    <figcaption>10–11. Search "Skurda" → Record Payment</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="The new block, tapping the Amount field to bring up the Shortcut Input suggestion.">
-    <figcaption>12–13. The new block → tap Amount for Shortcut Input</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/07-select-amount.png" alt="Shortcut Input menu with Amount selected, now shown as a linked chip.">
-    <figcaption>15. Select Amount from the menu</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Final block with both Amount and Merchant linked, confirming with the checkmark.">
-    <figcaption>16–17. Select Merchant → confirm</figcaption>
-  </figure>
+<div class="steps-head">
+  <p>Tap the numbers to mark the steps you've done: your phone remembers them, even if you leave and come back. In the pictures, the red arrows show where to tap, in order.</p>
+  <button type="button" class="steps-reset">Reset</button>
 </div>
 
-<p>Done: from now on, every Wallet payment will be automatically logged in Skurda.</p>
+<ol class="steps">
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Open <strong>Shortcuts</strong>, go to the <strong>Automation</strong> tab at the bottom, then tap <strong>+</strong> in the top right.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/01-automation.png" alt="Automation tab in Shortcuts, with the + button in the top right." loading="lazy" decoding="async">
+          <figcaption>The Automation tab and the + in the top right.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>In the list of triggers, scroll down to <strong>Wallet</strong> and select it.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="List of system triggers with Wallet highlighted." loading="lazy" decoding="async">
+          <figcaption>Wallet, in the group with App and Apple Watch Workout.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Don't change anything about cards and categories — leave them all selected. Choose <strong>Run Immediately</strong>, leave <strong>Notify When Run</strong> off, and tap <strong>Next</strong>.</p>
+        <p class="step-note">If you'd rather follow a single card, pick it at the top of the screen. You can turn the notification on, but then you'll get one with every payment.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Categories screen with everything selected and Run Immediately on." loading="lazy" decoding="async">
+          <figcaption>Run Immediately, then Next.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tap <strong>Create New Shortcut</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Shortcuts action screen with Create New Shortcut highlighted." loading="lazy" decoding="async">
+          <figcaption>Create New Shortcut.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>In the <strong>Search actions</strong> bar type <strong>Skurda</strong>, then tap the <strong>Record Payment</strong> action.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Search for Skurda among the actions, with Record Payment among the results." loading="lazy" decoding="async">
+          <figcaption>Search "Skurda", then Record Payment.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>The block "Record <strong>Amount</strong> paid to <strong>Merchant</strong>" appears. Tap the <strong>Amount</strong> field: <strong>Shortcut Input</strong> appears above the keyboard — tap it. Then do the same with the field after <strong>paid to</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="The new block, tapping the Amount field to bring up the Shortcut Input suggestion." loading="lazy" decoding="async">
+          <figcaption>Tap the field, then Shortcut Input above the keyboard — once per field.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Stop for a second and check: <strong>both</strong> fields must say "Shortcut Input". This is where people get stuck most often. If you only see one, repeat the previous step on the other field.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tap the first <strong>Shortcut Input</strong> and choose <strong>Amount</strong> from the menu. Tap the second one and choose <strong>Merchant</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/07-select-amount.png" alt="Shortcut Input menu with Amount selected, now shown as a linked chip." loading="lazy" decoding="async">
+          <figcaption>From the menu, Amount for the first field.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Final block with both Amount and Merchant linked, confirming with the checkmark." loading="lazy" decoding="async">
+          <figcaption>Merchant for the second field, then the blue checkmark.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Mark this step as done</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Confirm with the <strong>blue checkmark</strong> in the top right. The automation is live.</p>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>How to tell it worked</h2>
+  <p>There's nothing to test right now: your phone handles it at your first contactless payment. Once you've made one, open Skurda — if the payment matches a recurring expense you already track, you'll find it ticked as paid; otherwise you'll find it among your daily expenses, under the merchant's name.</p>
+  <p>If nothing happened, go back to Shortcuts → Automation and check that the automation is there and hasn't been turned off.</p>
+</div>
 
 <p>If the payment matches a recurring expense you already track, Skurda marks it as paid; if it doesn't match any, it becomes a new <strong>daily expense</strong> instead — nothing gets lost.</p>
-
 <p>Would rather not set up the automation? You can still log a payment with a single tap: share the payment notification's screenshot with Skurda from iOS's "Share" sheet — merchant, amount and date are recognised on their own, and you confirm before anything is saved.</p>
 
 <p class="lede" style="font-size:15px">Having trouble setting it up? Email us at <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
@@ -220,65 +520,176 @@
   </video>
 </div>
 
-<ol>
-  <li>Abre la app <strong>Atajos</strong></li>
-  <li>Ve a la pestaña <strong>Automatización</strong> (abajo)</li>
-  <li>Toca el <strong>+</strong> en la parte superior derecha</li>
-  <li>Busca y selecciona <strong>Wallet</strong> como disparador</li>
-  <li>Deja la pantalla como está: <strong>todas las tarjetas</strong> monitorizadas, <strong>todas las categorías</strong> seleccionadas, <strong>Filtrar comercios</strong> sin filtros (si prefieres seguir solo una tarjeta, elige esa)</li>
-  <li>Selecciona <strong>Ejecutar inmediatamente</strong></li>
-  <li>Deja desactivado <strong>Notificar en caso de ejecución</strong> — o actívalo si quieres ver cuándo se ejecuta, pero de todos modos te recomiendo desactivarlo</li>
-  <li>Toca <strong>Siguiente</strong></li>
-  <li>Toca <strong>Crear nuevo atajo</strong></li>
-  <li>En la barra "Buscar acciones", escribe <strong>Skurda</strong></li>
-  <li>Selecciona la acción <strong>Registrar pago</strong></li>
-  <li>Aparecerá el bloque "Registrar <strong>Importe</strong> pagado a <strong>Comercio</strong>"</li>
-  <li>Toca el campo <strong>Importe</strong>: encima del teclado aparecerá una sugerencia "<strong>Entrada de acceso directo</strong>" — tócala para insertarla</li>
-  <li>Haz lo mismo con el campo <strong>pagado a</strong>: tócalo y luego toca "<strong>Entrada de acceso directo</strong>" en la sugerencia sobre el teclado</li>
-  <li>Ambos campos mostrarán ahora el marcador genérico "Entrada de acceso directo". Toca el primero (Importe) y, en el menú que se abre, selecciona <strong>Importe</strong></li>
-  <li>Toca el segundo (pagado a) y selecciona <strong>Comercio</strong></li>
-  <li>Confirma con la marca de verificación azul en la parte superior derecha</li>
-</ol>
-
-<div class="shot-grid">
-  <figure>
-    <img src="assets/wallet-guide-en/01-automation.png" alt="Pestaña Automatización en Atajos, con el botón + arriba a la derecha.">
-    <figcaption>1–3. Atajos → Automatización → +</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Lista de disparadores del sistema con Wallet resaltado.">
-    <figcaption>4. Selecciona Wallet como disparador</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Pantalla de categorías con todo seleccionado y Ejecutar inmediatamente activo.">
-    <figcaption>5–7. Tarjetas, categorías y Ejecutar inmediatamente</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Pantalla de acciones de Atajos con Crear nuevo atajo resaltado.">
-    <figcaption>9. Toca Crear nuevo atajo</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Búsqueda de Skurda entre las acciones, con Registrar pago entre los resultados.">
-    <figcaption>10–11. Busca «Skurda» → Registrar pago</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="El bloque nuevo, tocando el campo Importe para que aparezca la sugerencia Entrada de acceso directo.">
-    <figcaption>12–13. El bloque nuevo → toca Importe para Entrada de acceso directo</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menú Entrada de acceso directo con Importe seleccionado, ya mostrado como variable enlazada.">
-    <figcaption>15. Selecciona Importe en el menú</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Bloque final con Importe y Comercio enlazados, confirmando con la marca de verificación.">
-    <figcaption>16–17. Selecciona Comercio → confirma</figcaption>
-  </figure>
+<div class="steps-head">
+  <p>Toca los números para marcar los pasos que ya has hecho: el teléfono los recuerda, aunque salgas y vuelvas. En las imágenes, las flechas rojas indican dónde tocar, en orden.</p>
+  <button type="button" class="steps-reset">Reiniciar</button>
 </div>
 
-<p>Listo: a partir de ahora, cada pago mediante Wallet se registrará automáticamente en Skurda.</p>
+<ol class="steps">
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Abre <strong>Atajos</strong>, ve a la pestaña <strong>Automatización</strong> (abajo) y toca el <strong>+</strong> arriba a la derecha.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/01-automation.png" alt="Pestaña Automatización en Atajos, con el botón + arriba a la derecha." loading="lazy" decoding="async">
+          <figcaption>La pestaña Automatización y el + arriba a la derecha.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>En la lista de disparadores, baja hasta <strong>Wallet</strong> y selecciónalo.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Lista de disparadores del sistema con Wallet resaltado." loading="lazy" decoding="async">
+          <figcaption>Wallet, en el grupo junto a App y Entrenamiento del Apple Watch.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>No cambies nada en tarjetas y categorías: déjalas todas seleccionadas. Elige <strong>Ejecutar inmediatamente</strong>, deja desactivado <strong>Notificar en caso de ejecución</strong> y toca <strong>Siguiente</strong>.</p>
+        <p class="step-note">Si prefieres seguir una sola tarjeta, elígela arriba en la pantalla. Puedes activar la notificación, pero entonces recibirás una con cada pago.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Pantalla de categorías con todo seleccionado y Ejecutar inmediatamente activo." loading="lazy" decoding="async">
+          <figcaption>Ejecutar inmediatamente, después Siguiente.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Toca <strong>Crear nuevo atajo</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Pantalla de acciones de Atajos con Crear nuevo atajo resaltado." loading="lazy" decoding="async">
+          <figcaption>Crear nuevo atajo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>En la barra <strong>Buscar acciones</strong> escribe <strong>Skurda</strong> y toca la acción <strong>Registrar pago</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Búsqueda de Skurda entre las acciones, con Registrar pago entre los resultados." loading="lazy" decoding="async">
+          <figcaption>Busca «Skurda», después Registrar pago.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Aparece el bloque «Registrar <strong>Importe</strong> pagado a <strong>Comercio</strong>». Toca el campo <strong>Importe</strong>: encima del teclado aparece <strong>Entrada de acceso directo</strong> — tócala. Después haz lo mismo con el campo que sigue a <strong>pagado a</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="El bloque nuevo, tocando el campo Importe para que aparezca la sugerencia Entrada de acceso directo." loading="lazy" decoding="async">
+          <figcaption>Toca el campo y después Entrada de acceso directo encima del teclado — una vez por campo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Párate un momento y comprueba: <strong>los dos</strong> campos deben decir «Entrada de acceso directo». Es donde más gente se queda atascada. Si solo ves uno, repite el paso anterior en el otro campo.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Toca la primera <strong>Entrada de acceso directo</strong> y elige <strong>Importe</strong> en el menú. Toca la segunda y elige <strong>Comercio</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menú Entrada de acceso directo con Importe seleccionado, ya mostrado como variable enlazada." loading="lazy" decoding="async">
+          <figcaption>En el menú, Importe para el primer campo.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Bloque final con Importe y Comercio enlazados, confirmando con la marca de verificación." loading="lazy" decoding="async">
+          <figcaption>Comercio para el segundo campo y luego la marca azul.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marcar este paso como hecho</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Confirma con la <strong>marca de verificación azul</strong> arriba a la derecha. La automatización ya está activa.</p>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Cómo saber si ha funcionado</h2>
+  <p>No tienes que probar nada ahora: en el primer pago contactless se encarga el teléfono. Cuando lo hayas hecho, abre Skurda — si el pago coincide con un gasto recurrente que ya tienes, lo encontrarás marcado como pagado; si no, lo encontrarás entre los gastos del día a día, con el nombre del comercio.</p>
+  <p>Si no ha pasado nada, vuelve a Atajos → Automatización y comprueba que la automatización esté ahí y no esté desactivada.</p>
+</div>
 
 <p>Si el pago coincide con un gasto recurrente que ya tienes en Skurda, se marca como pagado; si no coincide con ninguno, se convierte en un nuevo <strong>gasto del día a día</strong> — no se pierde nada.</p>
-
 <p>¿Prefieres no configurar la automatización? Puedes registrar un pago igualmente con un toque: comparte la captura de la notificación de pago con Skurda desde el panel "Compartir" de iOS — comercio, importe y fecha se reconocen solos, y confirmas antes de guardar nada.</p>
 
 <p class="lede" style="font-size:15px">¿Tuviste dificultades para configurarla? Escríbenos a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
@@ -306,65 +717,176 @@
   </video>
 </div>
 
-<ol>
-  <li>Ouvrez l'application <strong>Raccourcis</strong></li>
-  <li>Allez dans l'onglet <strong>Automatisation</strong> (en bas)</li>
-  <li>Appuyez sur le <strong>+</strong> en haut à droite</li>
-  <li>Recherchez et sélectionnez <strong>Wallet</strong> comme déclencheur</li>
-  <li>Laissez l'écran tel quel : <strong>toutes les cartes</strong> surveillées, <strong>toutes les catégories</strong> sélectionnées, <strong>Filtrer les marchands</strong> sans filtre (si vous préférez ne suivre qu'une seule carte, choisissez-la)</li>
-  <li>Sélectionnez <strong>Exécuter immédiatement</strong></li>
-  <li>Laissez <strong>Notifier en cas d'exécution</strong> désactivé — ou activez-le si vous voulez voir quand elle s'exécute, mais je vous conseille quand même de le désactiver</li>
-  <li>Appuyez sur <strong>Suivant</strong></li>
-  <li>Appuyez sur <strong>Créer un nouveau raccourci</strong></li>
-  <li>Dans la barre "Rechercher des actions", tapez <strong>Skurda</strong></li>
-  <li>Sélectionnez l'action <strong>Enregistrer un paiement</strong></li>
-  <li>Le bloc "Enregistrer <strong>Montant</strong> payé à <strong>Marchand</strong>" apparaît</li>
-  <li>Touchez le champ <strong>Montant</strong> : une suggestion "<strong>Entrée du raccourci</strong>" apparaîtra au-dessus du clavier — touchez-la pour l'insérer</li>
-  <li>Faites de même pour le champ <strong>payé à</strong> : touchez-le, puis touchez "<strong>Entrée du raccourci</strong>" dans la suggestion au-dessus du clavier</li>
-  <li>Les deux champs affichent maintenant le terme générique "Entrée du raccourci". Touchez le premier (Montant) et, dans le menu qui s'ouvre, sélectionnez <strong>Montant</strong></li>
-  <li>Touchez le second (payé à) et sélectionnez <strong>Marchand</strong></li>
-  <li>Confirmez avec la coche bleue en haut à droite</li>
-</ol>
-
-<div class="shot-grid">
-  <figure>
-    <img src="assets/wallet-guide-en/01-automation.png" alt="Onglet Automatisation dans Raccourcis, avec le bouton + en haut à droite.">
-    <figcaption>1–3. Raccourcis → Automatisation → +</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Liste des déclencheurs système avec Wallet mis en évidence.">
-    <figcaption>4. Sélectionnez Wallet comme déclencheur</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Écran des catégories, tout sélectionné, avec Exécuter immédiatement activé.">
-    <figcaption>5–7. Cartes, catégories et Exécuter immédiatement</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Écran d'ajout d'action de Raccourcis avec Créer un nouveau raccourci mis en évidence.">
-    <figcaption>9. Appuyez sur Créer un nouveau raccourci</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Recherche de Skurda parmi les actions, avec Enregistrer un paiement parmi les résultats.">
-    <figcaption>10–11. Recherchez « Skurda » → Enregistrer un paiement</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="Le nouveau bloc, en appuyant sur le champ Montant pour faire apparaître la suggestion Entrée du raccourci.">
-    <figcaption>12–13. Le nouveau bloc → touchez Montant pour Entrée du raccourci</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menu Entrée du raccourci avec Montant sélectionné, désormais affiché comme variable liée.">
-    <figcaption>15. Sélectionnez Montant dans le menu</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Bloc final avec Montant et Marchand liés, confirmation avec la coche.">
-    <figcaption>16–17. Sélectionnez Marchand → confirmez</figcaption>
-  </figure>
+<div class="steps-head">
+  <p>Touchez les numéros pour cocher les étapes déjà faites : votre téléphone s'en souvient, même si vous quittez la page et revenez. Sur les images, les flèches rouges indiquent où appuyer, dans l'ordre.</p>
+  <button type="button" class="steps-reset">Réinitialiser</button>
 </div>
 
-<p>Terminé : désormais, chaque paiement via Wallet sera automatiquement enregistré dans Skurda.</p>
+<ol class="steps">
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Ouvrez <strong>Raccourcis</strong>, allez dans l'onglet <strong>Automatisation</strong> (en bas), puis appuyez sur le <strong>+</strong> en haut à droite.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/01-automation.png" alt="Onglet Automatisation dans Raccourcis, avec le bouton + en haut à droite." loading="lazy" decoding="async">
+          <figcaption>L'onglet Automatisation et le + en haut à droite.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Dans la liste des déclencheurs, descendez jusqu'à <strong>Wallet</strong> et sélectionnez-le.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Liste des déclencheurs système avec Wallet mis en évidence." loading="lazy" decoding="async">
+          <figcaption>Wallet, dans le groupe avec App et Entraînement Apple Watch.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Ne changez rien aux cartes ni aux catégories : laissez tout sélectionné. Choisissez <strong>Exécuter immédiatement</strong>, laissez <strong>Notifier en cas d'exécution</strong> désactivé, puis appuyez sur <strong>Suivant</strong>.</p>
+        <p class="step-note">Si vous préférez ne suivre qu'une seule carte, choisissez-la en haut de l'écran. Vous pouvez activer la notification, mais vous en recevrez une à chaque paiement.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Écran des catégories, tout sélectionné, avec Exécuter immédiatement activé." loading="lazy" decoding="async">
+          <figcaption>Exécuter immédiatement, puis Suivant.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Appuyez sur <strong>Créer un nouveau raccourci</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Écran d'ajout d'action de Raccourcis avec Créer un nouveau raccourci mis en évidence." loading="lazy" decoding="async">
+          <figcaption>Créer un nouveau raccourci.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Dans la barre <strong>Rechercher des actions</strong>, tapez <strong>Skurda</strong>, puis appuyez sur l'action <strong>Enregistrer un paiement</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Recherche de Skurda parmi les actions, avec Enregistrer un paiement parmi les résultats." loading="lazy" decoding="async">
+          <figcaption>Recherchez « Skurda », puis Enregistrer un paiement.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Le bloc « Enregistrer <strong>Montant</strong> payé à <strong>Marchand</strong> » apparaît. Touchez le champ <strong>Montant</strong> : <strong>Entrée du raccourci</strong> apparaît au-dessus du clavier — touchez-la. Faites ensuite la même chose avec le champ après <strong>payé à</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="Le nouveau bloc, en appuyant sur le champ Montant pour faire apparaître la suggestion Entrée du raccourci." loading="lazy" decoding="async">
+          <figcaption>Touchez le champ, puis Entrée du raccourci au-dessus du clavier — une fois par champ.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Arrêtez-vous un instant et vérifiez : <strong>les deux</strong> champs doivent afficher « Entrée du raccourci ». C'est là qu'on se bloque le plus souvent. Si vous n'en voyez qu'un, refaites l'étape précédente sur l'autre champ.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Touchez la première <strong>Entrée du raccourci</strong> et choisissez <strong>Montant</strong> dans le menu. Touchez la seconde et choisissez <strong>Marchand</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menu Entrée du raccourci avec Montant sélectionné, désormais affiché comme variable liée." loading="lazy" decoding="async">
+          <figcaption>Dans le menu, Montant pour le premier champ.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Bloc final avec Montant et Marchand liés, confirmation avec la coche." loading="lazy" decoding="async">
+          <figcaption>Marchand pour le second champ, puis la coche bleue.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Marquer cette étape comme faite</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Confirmez avec la <strong>coche bleue</strong> en haut à droite. L'automatisation est active.</p>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Comment savoir si ça a marché</h2>
+  <p>Rien à tester maintenant : au premier paiement sans contact, le téléphone s'en charge. Une fois que c'est fait, ouvrez Skurda — si le paiement correspond à une dépense récurrente que vous suivez déjà, vous la trouverez cochée comme payée ; sinon, vous le trouverez parmi les dépenses quotidiennes, au nom du commerçant.</p>
+  <p>Si rien ne s'est passé, retournez dans Raccourcis → Automatisation et vérifiez que l'automatisation est bien là et qu'elle n'a pas été désactivée.</p>
+</div>
 
 <p>Si le paiement correspond à une dépense récurrente déjà suivie dans Skurda, elle est marquée comme payée ; sinon, il devient une nouvelle <strong>dépense quotidienne</strong> — rien n'est perdu.</p>
-
 <p>Vous préférez ne pas configurer l'automatisation ? Vous pouvez tout de même enregistrer un paiement en un geste : partagez la capture de la notification de paiement avec Skurda depuis le panneau « Partager » d'iOS — commerçant, montant et date sont reconnus seuls, et vous confirmez avant tout enregistrement.</p>
 
 <p class="lede" style="font-size:15px">Des difficultés à la configurer ? Écrivez-nous à <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
@@ -392,65 +914,176 @@
   </video>
 </div>
 
-<ol>
-  <li>Öffne die App <strong>Kurzbefehle</strong></li>
-  <li>Gehe zum Tab <strong>Automation</strong> (unten)</li>
-  <li>Tippe oben rechts auf das <strong>+</strong></li>
-  <li>Suche <strong>Wallet</strong> und wähle es als Auslöser</li>
-  <li>Lass den Bildschirm, wie er ist: <strong>alle Karten</strong> überwacht, <strong>alle Kategorien</strong> ausgewählt, <strong>Händler filtern</strong> ohne Filter (wenn du lieber nur eine Karte verfolgen möchtest, wähle diese aus)</li>
-  <li>Wähle <strong>Sofort ausführen</strong></li>
-  <li>Lasse <strong>Bei Ausführung benachrichtigen</strong> deaktiviert — oder aktiviere es, wenn du sehen möchtest, wann sie ausgeführt wird, aber ich empfehle dir trotzdem, es zu deaktivieren</li>
-  <li>Tippe auf <strong>Weiter</strong></li>
-  <li>Tippe auf <strong>Neuen Kurzbefehl erstellen</strong></li>
-  <li>Gib in der Leiste "Aktionen suchen" <strong>Skurda</strong> ein</li>
-  <li>Wähle die Aktion <strong>Zahlung erfassen</strong></li>
-  <li>Der Block "<strong>Betrag</strong> bezahlt an <strong>Händler</strong> erfassen" erscheint</li>
-  <li>Tippe auf das Feld <strong>Betrag</strong>: über der Tastatur erscheint ein Vorschlag "<strong>Kurzbefehl-Eingabe</strong>" — tippe darauf, um ihn einzufügen</li>
-  <li>Mach dasselbe mit dem Feld <strong>bezahlt an</strong>: tippe darauf und dann auf "<strong>Kurzbefehl-Eingabe</strong>" im Vorschlag über der Tastatur</li>
-  <li>Beide Felder zeigen jetzt den allgemeinen Platzhalter "Kurzbefehl-Eingabe". Tippe auf den ersten (Betrag) und wähle im sich öffnenden Menü <strong>Betrag</strong></li>
-  <li>Tippe auf den zweiten (bezahlt an) und wähle <strong>Händler</strong></li>
-  <li>Bestätige mit dem blauen Häkchen oben rechts</li>
-</ol>
-
-<div class="shot-grid">
-  <figure>
-    <img src="assets/wallet-guide-en/01-automation.png" alt="Tab Automation in Kurzbefehle, mit dem Plus-Button oben rechts.">
-    <figcaption>1–3. Kurzbefehle → Automation → +</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Liste der System-Auslöser mit hervorgehobenem Wallet.">
-    <figcaption>4. Wallet als Auslöser wählen</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Kategorien-Bildschirm mit allem ausgewählt und aktiviertem Sofort ausführen.">
-    <figcaption>5–7. Karten, Kategorien und Sofort ausführen</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Aktionen-Bildschirm von Kurzbefehle mit hervorgehobenem Neuen Kurzbefehl erstellen.">
-    <figcaption>9. Auf Neuen Kurzbefehl erstellen tippen</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Suche nach Skurda unter den Aktionen, mit Zahlung erfassen unter den Ergebnissen.">
-    <figcaption>10–11. „Skurda" suchen → Zahlung erfassen</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="Der neue Block, Tippen auf das Feld Betrag, um den Vorschlag Kurzbefehl-Eingabe einzublenden.">
-    <figcaption>12–13. Der neue Block → auf Betrag tippen für Kurzbefehl-Eingabe</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menü Kurzbefehl-Eingabe mit ausgewähltem Betrag, jetzt als verknüpfte Variable angezeigt.">
-    <figcaption>15. Betrag im Menü auswählen</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Letzter Block mit verknüpftem Betrag und Händler, Bestätigung mit dem Häkchen.">
-    <figcaption>16–17. Händler auswählen → bestätigen</figcaption>
-  </figure>
+<div class="steps-head">
+  <p>Tippe auf die Nummern, um erledigte Schritte abzuhaken: dein Handy merkt sie sich, auch wenn du die Seite verlässt und zurückkommst. Auf den Bildern zeigen die roten Pfeile der Reihe nach, wo du tippen musst.</p>
+  <button type="button" class="steps-reset">Zurücksetzen</button>
 </div>
 
-<p>Fertig: Ab jetzt wird jede Wallet-Zahlung automatisch in Skurda erfasst.</p>
+<ol class="steps">
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Öffne <strong>Kurzbefehle</strong>, geh zum Tab <strong>Automation</strong> (unten) und tippe oben rechts auf das <strong>+</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/01-automation.png" alt="Tab Automation in Kurzbefehle, mit dem Plus-Button oben rechts." loading="lazy" decoding="async">
+          <figcaption>Der Tab Automation und das + oben rechts.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Scrolle in der Liste der Auslöser zu <strong>Wallet</strong> und wähle es aus.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/02-trigger-wallet.png" alt="Liste der System-Auslöser mit hervorgehobenem Wallet." loading="lazy" decoding="async">
+          <figcaption>Wallet, in der Gruppe mit App und Apple Watch Workout.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Ändere nichts an Karten und Kategorien — lass alle ausgewählt. Wähle <strong>Sofort ausführen</strong>, lass <strong>Bei Ausführung benachrichtigen</strong> deaktiviert und tippe auf <strong>Weiter</strong>.</p>
+        <p class="step-note">Wenn du lieber nur eine Karte verfolgen möchtest, wähle sie oben auf dem Bildschirm aus. Die Benachrichtigung kannst du einschalten, dann bekommst du aber bei jeder Zahlung eine.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/03-categories-run-immediately.png" alt="Kategorien-Bildschirm mit allem ausgewählt und aktiviertem Sofort ausführen." loading="lazy" decoding="async">
+          <figcaption>Sofort ausführen, dann Weiter.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tippe auf <strong>Neuen Kurzbefehl erstellen</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/04-create-new-shortcut.png" alt="Aktionen-Bildschirm von Kurzbefehle mit hervorgehobenem Neuen Kurzbefehl erstellen." loading="lazy" decoding="async">
+          <figcaption>Neuen Kurzbefehl erstellen.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Gib in der Leiste <strong>Aktionen suchen</strong> <strong>Skurda</strong> ein und tippe dann auf die Aktion <strong>Zahlung erfassen</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/05-search-skurda.png" alt="Suche nach Skurda unter den Aktionen, mit Zahlung erfassen unter den Ergebnissen." loading="lazy" decoding="async">
+          <figcaption>„Skurda" suchen, dann Zahlung erfassen.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Der Block „<strong>Betrag</strong> bezahlt an <strong>Händler</strong> erfassen" erscheint. Tippe auf das Feld <strong>Betrag</strong>: über der Tastatur erscheint <strong>Kurzbefehl-Eingabe</strong> — tippe darauf. Mach dann dasselbe mit dem Feld nach <strong>bezahlt an</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/06-tap-amount-shortcut-input.png" alt="Der neue Block, Tippen auf das Feld Betrag, um den Vorschlag Kurzbefehl-Eingabe einzublenden." loading="lazy" decoding="async">
+          <figcaption>Auf das Feld tippen, dann auf Kurzbefehl-Eingabe über der Tastatur — einmal pro Feld.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Halt kurz inne und prüfe: <strong>beide</strong> Felder müssen „Kurzbefehl-Eingabe" anzeigen. Hier bleiben die meisten hängen. Wenn du nur eines siehst, wiederhole den vorherigen Schritt beim anderen Feld.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tippe auf die erste <strong>Kurzbefehl-Eingabe</strong> und wähle im Menü <strong>Betrag</strong>. Tippe auf die zweite und wähle <strong>Händler</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-en/07-select-amount.png" alt="Menü Kurzbefehl-Eingabe mit ausgewähltem Betrag, jetzt als verknüpfte Variable angezeigt." loading="lazy" decoding="async">
+          <figcaption>Im Menü: Betrag für das erste Feld.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/wallet-guide-en/08-select-merchant-confirm.png" alt="Letzter Block mit verknüpftem Betrag und Händler, Bestätigung mit dem Häkchen." loading="lazy" decoding="async">
+          <figcaption>Händler für das zweite Feld, dann das blaue Häkchen.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <label class="step-mark">
+      <input type="checkbox" class="step-done">
+      <span class="step-num" aria-hidden="true"></span>
+      <span class="sr-only">Diesen Schritt als erledigt markieren</span>
+    </label>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Bestätige mit dem <strong>blauen Häkchen</strong> oben rechts. Die Automation ist aktiv.</p>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Woran du merkst, dass es funktioniert</h2>
+  <p>Du musst jetzt nichts testen: bei der ersten kontaktlosen Zahlung übernimmt das Handy. Danach öffnest du Skurda — passt die Zahlung zu einer wiederkehrenden Ausgabe, die du schon erfasst, findest du sie als bezahlt markiert; sonst findest du sie unter den Alltagsausgaben, mit dem Namen des Händlers.</p>
+  <p>Ist nichts passiert, geh zurück zu Kurzbefehle → Automation und prüfe, ob die Automation da und nicht deaktiviert ist.</p>
+</div>
 
 <p>Passt die Zahlung zu einer bereits erfassten wiederkehrenden Ausgabe, wird sie als bezahlt markiert; passt sie zu keiner, wird daraus eine neue <strong>Alltagsausgabe</strong> — nichts geht verloren.</p>
-
 <p>Lieber keine Automatisierung einrichten? Du kannst eine Zahlung trotzdem mit einem Tipp erfassen: Teile den Screenshot der Zahlungsbenachrichtigung mit Skurda über das „Teilen"-Menü von iOS — Geschäft, Betrag und Datum werden von selbst erkannt, und du bestätigst, bevor irgendetwas gespeichert wird.</p>
 
 <p class="lede" style="font-size:15px">Hattest du Schwierigkeiten bei der Einrichtung? Schreib uns an <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
@@ -462,7 +1095,6 @@
 </footer>
 
 </div>
-
 <script>
 (function () {
   var KEY = 'sr-automation-lang';
@@ -497,6 +1129,60 @@
   });
 
   apply(initial);
+})();
+
+(function () {
+  // I passaggi spuntati. La guida si legge sullo stesso telefono su cui si
+  // configura l'automazione, quindi si esce da Safari a ogni passaggio: senza
+  // memoria, ogni rientro costringe a ricercare il punto in cui si era.
+  //
+  // L'indice vale per tutte le lingue — i passaggi sono gli stessi nove — così
+  // cambiare lingua a metà strada non azzera i progressi.
+  var KEY = 'sr-automation-done';
+  var lists = document.querySelectorAll('.steps');
+  if (!lists.length) return;
+
+  function load() {
+    try {
+      var raw = JSON.parse(localStorage.getItem(KEY));
+      return Array.isArray(raw) ? raw : [];
+    } catch (e) { return []; }
+  }
+
+  function save(done) {
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {}
+  }
+
+  function paint(done) {
+    lists.forEach(function (list) {
+      list.querySelectorAll('.step-done').forEach(function (box, i) {
+        box.checked = !!done[i];
+        var step = box.closest('.step');
+        if (step) { step.classList.toggle('is-done', !!done[i]); }
+      });
+    });
+  }
+
+  var done = load();
+  paint(done);
+
+  lists.forEach(function (list) {
+    list.querySelectorAll('.step-done').forEach(function (box, i) {
+      box.addEventListener('change', function () {
+        done[i] = box.checked;
+        save(done);
+        paint(done);   // tiene allineate anche le altre lingue
+      });
+    });
+  });
+
+  document.querySelectorAll('.steps-reset').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      done = [];
+      save(done);
+      paint(done);
+    });
+  });
 })();
 </script>
 
