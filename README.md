@@ -53,6 +53,7 @@ legale, non solo di forma.
 /spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/assets/wallet-guide/     screenshot e video della guida qui sopra
+/spese-ricorrenti/assets/social/           asset per social/community esterne (es. banner subreddit) — non linkati da nessuna pagina del sito
 ```
 
 ### La pagina "Funzionalità" non è pubblica
