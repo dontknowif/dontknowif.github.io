@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skurda — Feature reel</title>
+<meta name="description" content="A quick interactive tour of Skurda: recurring bills, daily expenses, reminders, trends, the savings report and privacy — one scene at a time.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://dontknowif.github.io/spese-ricorrenti/reel.html">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skurda — Feature reel">
+<meta property="og:description" content="A quick interactive tour of Skurda's features — tap or let it play.">
+<meta property="og:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-1:#3fc1ef;
+    --brand-2:#5ba8f1;
+    --brand-3:#9868f5;
+    --ink:#0c0e14;
+    --paper:#f4f6fa;
+    --white:#ffffff;
+    --dim:rgba(255,255,255,.78);
+    --faint:rgba(255,255,255,.5);
+    --glass:rgba(255,255,255,.14);
+    --glass-brd:rgba(255,255,255,.28);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--white);
+    font:16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overflow:hidden;
+  }
+  .display{ font-family:'Fraunces', Georgia, 'Times New Roman', serif; }
+
+  /* ---------- stage ---------- */
+  .stage{
+    position:relative;
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding: calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 18px);
+    isolation:isolate;
+  }
+
+  /* crossfading gradient backgrounds, one per scene */
+  .bg{
+    position:absolute; inset:0; z-index:-2;
+    background: radial-gradient(120% 90% at 15% 10%, var(--bg-1,var(--brand-1)), transparent 60%),
+                radial-gradient(120% 90% at 85% 100%, var(--bg-3,var(--brand-3)), transparent 60%),
+                linear-gradient(135deg, var(--bg-1,var(--brand-1)), var(--bg-2,var(--brand-2)) 45%, var(--bg-3,var(--brand-3)));
+    transition: --bg-1 .6s, --bg-2 .6s, --bg-3 .6s;
+    opacity:1;
+  }
+  .blob{
+    position:absolute; z-index:-1; border-radius:50%;
+    filter:blur(60px); opacity:.55; mix-blend-mode:screen;
+    animation: drift 16s ease-in-out infinite;
+  }
+  .blob.b1{ width:46vmax; height:46vmax; background:var(--brand-3); top:-18vmax; right:-14vmax; animation-duration:19s;}
+  .blob.b2{ width:36vmax; height:36vmax; background:var(--brand-1); bottom:-14vmax; left:-10vmax; animation-duration:23s; animation-delay:-6s;}
+  @keyframes drift{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(3%, -4%) scale(1.08); }
+  }
+
+  /* ---------- progress bars (story style) ---------- */
+  .progress{
+    width:100%; max-width:460px;
+    display:flex; gap:6px;
+    margin-bottom:18px;
+    flex-shrink:0;
+  }
+  .progress .seg{
+    flex:1; height:3px; border-radius:3px;
+    background:rgba(255,255,255,.28);
+    cursor:pointer; position:relative; overflow:hidden;
+  }
+  .progress .seg i{
+    display:block; height:100%; width:0%;
+    background:var(--white); border-radius:3px;
+    transform-origin:left;
+  }
+  .progress .seg.done i{ width:100%; }
+  .progress .seg.active i{ animation: fill var(--dur,4200ms) linear forwards; }
+  @keyframes fill{ from{width:0%;} to{width:100%;} }
+
+  /* ---------- header row ---------- */
+  .topbar{
+    width:100%; max-width:460px;
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:10px; flex-shrink:0;
+  }
+  .brand-mark{ display:flex; align-items:center; gap:8px; font-weight:700; letter-spacing:-.01em; font-size:15px;}
+  .brand-mark .dot{ width:20px; height:20px; border-radius:6px; background:var(--white); display:grid; place-items:center; overflow:hidden; }
+  .brand-mark .dot img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .brand-mark svg{ width:12px; height:12px; }
+  .iconbtn{
+    width:32px; height:32px; border-radius:50%;
+    border:1px solid var(--glass-brd); background:var(--glass);
+    color:var(--white); display:grid; place-items:center; cursor:pointer;
+  }
+  .iconbtn svg{ width:14px; height:14px; fill:currentColor; }
+
+  /* ---------- main content ---------- */
+  .content{
+    flex:1; min-height:0; width:100%; max-width:460px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:16px; position:relative;
+  }
+  .kicker{
+    font-size:12.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--faint); text-align:center;
+  }
+  .headline{
+    font-size:clamp(30px,7.5vw,42px); font-weight:700; text-align:center; line-height:1.04;
+    text-wrap:balance; margin:0;
+  }
+  .headline em{ font-style:italic; font-weight:600; }
+
+  /* ---------- phone ---------- */
+  .phone-wrap{ position:relative; }
+  .phone{
+    width:252px; height:517px;
+    border-radius:44px;
+    background:#050608;
+    padding:12px;
+    box-shadow: 0 30px 70px rgba(0,0,0,.45), inset 0 0 0 2px rgba(255,255,255,.08);
+    position:relative;
+  }
+  .phone::before{ /* island */
+    content:""; position:absolute; top:22px; left:50%; transform:translateX(-50%);
+    width:70px; height:20px; border-radius:12px; background:#050608; z-index:5;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .screen{
+    width:100%; height:100%; border-radius:32px; overflow:hidden;
+    background:var(--paper); color:#1d1d1f; position:relative;
+  }
+  .scene-inner{
+    position:absolute; inset:0;
+    opacity:0; transform:scale(1.05);
+    transition: opacity .5s ease;
+    display:flex; flex-direction:column;
+    padding:34px 14px 14px;
+  }
+  .scene-inner.active{
+    opacity:1;
+    animation: kenburns var(--dur,4200ms) ease-out forwards;
+  }
+  @keyframes kenburns{
+    from{ transform:scale(1.09); }
+    to{ transform:scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scene-inner.active{ animation:none; transform:scale(1); }
+    .blob{ animation:none; }
+  }
+
+  .caption{
+    font-size:14.5px; color:var(--dim); text-align:center; max-width:340px;
+    margin:0;
+  }
+
+  /* ---------- nav ---------- */
+  .navzone{ position:absolute; inset:0; display:flex; z-index:3; }
+  .navzone .half{ flex:1; }
+
+  .bottombar{
+    width:100%; max-width:460px; display:flex; align-items:center; justify-content:center;
+    gap:14px; margin-top:16px; flex-shrink:0;
+  }
+  .arrow{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--glass-brd); background:var(--glass);
+    color:var(--white); display:grid; place-items:center; cursor:pointer;
+  }
+  .arrow svg{ width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .cta{
+    display:flex; align-items:center; gap:8px;
+    background:var(--white); color:#0c0e14; font-weight:700; font-size:14px;
+    padding:9px 18px; border-radius:999px; text-decoration:none; white-space:nowrap;
+  }
+  .cta svg{ width:15px; height:15px; }
+
+  /* ---------- shared phone UI bits ---------- */
+  .ph-status{ position:absolute; top:12px; left:14px; right:14px; display:flex; justify-content:space-between; font-size:11px; font-weight:600; color:#1d1d1f; }
+  .greet{ font-size:12px; color:#6e6e73; margin:0 0 6px; font-weight:600; }
+  .cards{ display:flex; gap:8px; margin-bottom:10px; }
+  .card{ flex:1; background:#fff; border-radius:12px; padding:8px 9px; box-shadow:0 1px 2px rgba(0,0,0,.06), 0 6px 16px rgba(0,0,0,.05); }
+  .card span{ display:block; font-size:9.5px; color:#6e6e73; font-weight:600; }
+  .card b{ display:block; font-size:16px; font-weight:800; margin:1px 0; letter-spacing:-.01em; }
+  .card small{ font-size:8.5px; color:#6e6e73; }
+  .card.next{ background:linear-gradient(135deg,var(--brand-1),var(--brand-2) 45%,var(--brand-3)); }
+  .card.next span, .card.next small{ color:rgba(255,255,255,.85); }
+  .card.next b{ color:#fff; }
+  .list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .row{ display:flex; align-items:center; gap:8px; background:#fff; border-radius:10px; padding:7px 8px; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .ico{ width:26px; height:26px; border-radius:7px; display:grid; place-items:center; flex-shrink:0; }
+  .ico svg{ width:13px; height:13px; }
+  .rname{ flex:1; min-width:0; }
+  .rname b{ display:block; font-size:10.5px; font-weight:700; }
+  .rname span{ display:block; font-size:8.5px; color:#6e6e73; }
+  .ramt{ text-align:right; }
+  .ramt b{ display:block; font-size:11px; font-weight:800; }
+  .ramt span{ display:block; font-size:8px; color:#6e6e73; }
+  .tag{ display:inline-block; font-size:7px; font-weight:800; color:#c2410c; background:#fdeae3; padding:1px 5px; border-radius:5px; margin-left:4px; }
+
+  .notif{ margin-top:auto; margin-bottom:auto; background:rgba(255,255,255,.9); backdrop-filter:blur(6px); border-radius:16px; padding:11px 12px; display:flex; gap:9px; box-shadow:0 10px 30px rgba(0,0,0,.15); }
+  .notif .nico{ width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--brand-1),var(--brand-3)); display:grid; place-items:center; flex-shrink:0; }
+  .notif .nico svg{ width:15px; height:15px; stroke:#fff; fill:none; stroke-width:2; }
+  .notif .ntxt b{ display:block; font-size:10.5px; }
+  .notif .ntxt span{ display:block; font-size:9.5px; color:#555; margin-top:1px; }
+  .notif .ntime{ font-size:8px; color:#8a8a8a; margin-left:auto; align-self:flex-start; }
+
+  .waysgrid{ display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:8px; }
+  .way{ background:#fff; border-radius:12px; padding:10px 8px; text-align:center; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .way .wico{ width:30px; height:30px; margin:0 auto 5px; border-radius:9px; display:grid; place-items:center; }
+  .way .wico svg{ width:14px; height:14px; }
+  .way b{ font-size:9px; display:block; }
+  .ocrcard{ margin-top:10px; background:#fff; border-radius:12px; padding:9px 10px; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .ocrcard .oc-top{ display:flex; justify-content:space-between; font-size:8.5px; color:#6e6e73; font-weight:700; text-transform:uppercase; letter-spacing:.04em; margin-bottom:5px; }
+  .ocrcard b{ font-size:13px; }
+  .ocrcard .oc-amt{ font-size:15px; font-weight:800; }
+
+  .chart{ background:#fff; border-radius:12px; padding:10px; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .chips{ display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+  .chip{ font-size:8px; font-weight:700; padding:3px 7px; border-radius:999px; display:flex; align-items:center; gap:4px; }
+  .chip i{ width:6px; height:6px; border-radius:50%; display:inline-block; }
+
+  .insight{ margin-top:10px; background:#fff; border-radius:14px; padding:12px; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .insight .badge{ display:inline-block; font-size:8px; font-weight:800; padding:3px 8px; border-radius:6px; background:#fdeae3; color:#c2410c; margin-bottom:7px; }
+  .insight b{ display:block; font-size:12px; margin-bottom:4px; }
+  .insight p{ margin:0; font-size:9.5px; color:#6e6e73; line-height:1.4; }
+  .insight .save{ margin-top:8px; font-size:9.5px; font-weight:800; color:#2ba14f; }
+
+  .privline{ display:flex; align-items:center; gap:9px; background:#fff; border-radius:11px; padding:9px 10px; margin-top:7px; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .privline .check{ width:22px; height:22px; border-radius:50%; background:#e4f6ea; display:grid; place-items:center; flex-shrink:0; }
+  .privline .check svg{ width:11px; height:11px; stroke:#2ba14f; fill:none; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+  .privline b{ font-size:10.5px; }
+
+  .final-icon{ width:88px; height:88px; border-radius:22px; margin:0 auto 14px; background:#fff; display:grid; place-items:center; box-shadow:0 16px 40px rgba(0,0,0,.35); overflow:hidden; }
+  .final-icon img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .free-note{ font-size:12.5px; color:var(--faint); text-align:center; margin-top:2px; }
+
+  @media (max-width:380px){
+    .phone{ width:222px; height:456px; }
+  }
+  @media (max-height:680px){
+    .phone{ width:210px; height:431px; }
+    .headline{ font-size:clamp(26px,7vw,34px); }
+  }
+</style>
+
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="bg" id="bg"></div>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+
+  <div class="topbar">
+    <div class="brand-mark">
+      <span class="dot">
+        <img src="icon-512.png" alt="" width="20" height="20">
+      </span>
+      Skurda
+    </div>
+    <button class="iconbtn" id="playBtn" aria-label="Pause">
+      <svg id="playIcon" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+    </button>
+  </div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="content">
+    <p class="kicker" id="kicker">Every subscription, one glance</p>
+    <h1 class="headline display" id="headline">See it all<br><em>at once.</em></h1>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="ph-status">
+          <span>9:41</span><span>●●●</span>
+        </div>
+        <div class="screen" id="screen">
+          <!-- Scene 0: Home -->
+          <div class="scene-inner active" data-scene="0">
+            <p class="greet">Good morning</p>
+            <div class="cards">
+              <div class="card"><span>This month</span><b>€786.19</b><small>4 due dates</small></div>
+              <div class="card next"><span>Next month</span><b>€701.99</b><small>3 due dates</small></div>
+            </div>
+            <ul class="list">
+              <li class="row">
+                <span class="ico" style="background:#e3effc"><svg viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
+                <span class="rname"><b>Rent</b><span>Home · 1 Sep</span></span>
+                <span class="ramt"><b>€650.00</b><span>Monthly</span></span>
+              </li>
+              <li class="row">
+                <span class="ico" style="background:#fdeae3"><svg viewBox="0 0 24 24" fill="#e8590c"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="rname"><b>Netflix<span class="tag">3d</span></b><span>Leisure · 5 Sep</span></span>
+                <span class="ramt"><b>€12.99</b><span>Monthly</span></span>
+              </li>
+              <li class="row">
+                <span class="ico" style="background:#e4f6ea"><svg viewBox="0 0 24 24" fill="none" stroke="#2ba14f" stroke-width="2" stroke-linecap="round"><path d="M4 9v6M8 6v12M16 6v12M20 9v6M8 12h8"/></svg></span>
+                <span class="rname"><b>Gym</b><span>Health · 8 Sep</span></span>
+                <span class="ramt"><b>€39.00</b><span>Monthly</span></span>
+              </li>
+              <li class="row">
+                <span class="ico" style="background:#fdf3dc"><svg viewBox="0 0 24 24" fill="#e0a01e"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+                <span class="rname"><b>Gas &amp; electricity</b><span>Utilities · 14 Sep</span></span>
+                <span class="ramt"><b>~€84.20</b><span>Every 2mo</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Scene 1: Reminders -->
+          <div class="scene-inner" data-scene="1">
+            <p class="greet">Reminders</p>
+            <div class="notif">
+              <span class="nico"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-7 7c0 3.5-1.5 5-2 5.5h18c-.5-.5-2-2-2-5.5a7 7 0 0 0-7-7Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg></span>
+              <span class="ntxt"><b>Skurda</b><span>Netflix charges in 3 days · €12.99</span></span>
+              <span class="ntime">now</span>
+            </div>
+            <div class="notif" style="margin-top:10px; opacity:.7;">
+              <span class="nico" style="background:linear-gradient(135deg,#9868f5,#5ba8f1)"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-7 7c0 3.5-1.5 5-2 5.5h18c-.5-.5-2-2-2-5.5a7 7 0 0 0-7-7Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg></span>
+              <span class="ntxt"><b>Skurda</b><span>Gym renews tomorrow · €39.00</span></span>
+              <span class="ntime">1h</span>
+            </div>
+          </div>
+
+          <!-- Scene 2: Daily expenses -->
+          <div class="scene-inner" data-scene="2">
+            <p class="greet">Today</p>
+            <div class="waysgrid">
+              <div class="way"><span class="wico" style="background:#e3effc"><svg viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="13" rx="2.5"/><path d="M2 10h20"/></svg></span><b>Wallet tap</b></div>
+              <div class="way"><span class="wico" style="background:#e8e4fd"><svg viewBox="0 0 24 24" fill="none" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><rect x="4" y="15" width="16" height="6" rx="2"/></svg></span><b>Share sheet</b></div>
+              <div class="way"><span class="wico" style="background:#fdf3dc"><svg viewBox="0 0 24 24" fill="none" stroke="#a16207" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2.5"/><circle cx="12" cy="13" r="3.4"/></svg></span><b>Receipt photo</b></div>
+              <div class="way"><span class="wico" style="background:#e4f6ea"><svg viewBox="0 0 24 24" fill="none" stroke="#2ba14f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.2-4.4L16.6 4.2a1.6 1.6 0 0 1 2.3 0l1 1a1.6 1.6 0 0 1 0 2.3L8.4 18.8z"/></svg></span><b>By hand</b></div>
+            </div>
+            <div class="ocrcard">
+              <div class="oc-top"><span>Detected</span><span>Just now</span></div>
+              <b>Bar Centrale</b>
+              <div class="oc-amt">€4.50</div>
+            </div>
+          </div>
+
+          <!-- Scene 3: Trend -->
+          <div class="scene-inner" data-scene="3">
+            <p class="greet">Trend</p>
+            <div class="chart">
+              <svg viewBox="0 0 220 90" width="100%" height="70">
+                <g fill="#5ba8f1">
+                  <rect x="4"   y="46" width="18" height="40" rx="3"/>
+                  <rect x="34"  y="30" width="18" height="56" rx="3"/>
+                  <rect x="64"  y="52" width="18" height="34" rx="3" fill="#9868f5"/>
+                  <rect x="94"  y="18" width="18" height="68" rx="3"/>
+                  <rect x="124" y="38" width="18" height="48" rx="3"/>
+                  <rect x="154" y="10" width="18" height="76" rx="3" fill="#3fc1ef"/>
+                  <rect x="184" y="42" width="18" height="44" rx="3"/>
+                </g>
+              </svg>
+            </div>
+            <div class="chips">
+              <span class="chip" style="background:#e3effc;color:#0071e3"><i style="background:#0071e3"></i>Home 42%</span>
+              <span class="chip" style="background:#fdeae3;color:#c2410c"><i style="background:#c2410c"></i>Leisure 21%</span>
+              <span class="chip" style="background:#e4f6ea;color:#2ba14f"><i style="background:#2ba14f"></i>Health 14%</span>
+              <span class="chip" style="background:#fdf3dc;color:#a16207"><i style="background:#a16207"></i>Utilities 23%</span>
+            </div>
+          </div>
+
+          <!-- Scene 4: Savings report -->
+          <div class="scene-inner" data-scene="4">
+            <p class="greet">Savings report</p>
+            <div class="insight">
+              <span class="badge">Overlapping streaming</span>
+              <b>4 video subscriptions running at once</b>
+              <p>Keep one active at a time on rotation — you still watch it all.</p>
+              <div class="save">Save ≈ €19/mo</div>
+            </div>
+            <div class="insight" style="margin-top:8px;">
+              <span class="badge" style="background:#fdf3dc;color:#a16207">Paused, still billed?</span>
+              <b>Paused 3 weeks ago</b>
+              <p>Pausing in-app doesn't cancel it with the provider.</p>
+            </div>
+          </div>
+
+          <!-- Scene 5: Privacy -->
+          <div class="scene-inner" data-scene="5">
+            <p class="greet">Privacy</p>
+            <div class="privline"><span class="check"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><b>No bank connection, ever</b></div>
+            <div class="privline"><span class="check"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><b>Synced to your own iCloud</b></div>
+            <div class="privline"><span class="check"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><b>Zero ads, zero tracking</b></div>
+            <div class="privline"><span class="check"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><b>No servers of ours to breach</b></div>
+          </div>
+
+          <!-- Scene 6: CTA -->
+          <div class="scene-inner" data-scene="6" style="align-items:center; justify-content:center; text-align:center; padding-top:0;">
+            <div class="final-icon">
+              <img src="icon-512.png" alt="Skurda" width="60" height="60">
+            </div>
+            <b style="font-size:20px;">Skurda</b>
+            <p style="font-size:11px;color:#6e6e73;margin-top:4px;">Free for up to 8 expenses<br>No account required</p>
+          </div>
+        </div>
+      </div>
+      <div class="navzone">
+        <div class="half" id="prevZone"></div>
+        <div class="half" id="nextZone"></div>
+      </div>
+    </div>
+
+    <p class="caption" id="caption">This month vs next month, and exactly which due dates make up each total.</p>
+  </div>
+
+  <div class="bottombar" id="bottombar">
+    <button class="arrow" id="prevBtn" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <a class="cta" href="https://apps.apple.com/app/id6806970079" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+      Get Skurda
+    </a>
+    <button class="arrow" id="nextBtn" aria-label="Next">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var scenes = [
+    { grad:['#3fc1ef','#5ba8f1','#9868f5'], kicker:'Every subscription, one glance', headline:'See it all<br><em>at once.</em>', caption:'This month vs next month, and exactly which due dates make up each total.' },
+    { grad:['#5ba8f1','#7c8ff5','#9868f5'], kicker:'Before it charges you', headline:'Never<br><em>blindsided.</em>', caption:'Local reminders, timed exactly how you want — for every single expense.' },
+    { grad:['#9868f5','#c06ae0','#f06e9e'], kicker:'Every coffee counts too', headline:'Log it,<br><em>your way.</em>', caption:'Automatically from Wallet, by sharing a screenshot, from a receipt, or by hand.' },
+    { grad:['#f06e9e','#e08a5a','#f5b942'], kicker:'Where the money goes', headline:'See the<br><em>pattern.</em>', caption:'Month by month, and a breakdown by category — tap to see what is inside.' },
+    { grad:['#f5b942','#7fc86e','#2ba14f'], kicker:'Nine ways to save', headline:'Stop the<br><em>leaks.</em>', caption:'Overlapping subscriptions, price hikes, forgotten renewals — flagged automatically.' },
+    { grad:['#2ba14f','#3fc1ef','#5ba8f1'], kicker:'Your data, your device', headline:'Nothing<br>leaves your <em>phone.</em>', caption:'No bank connection. No servers of ours. No ads, ever.' },
+    { grad:['#3fc1ef','#5ba8f1','#9868f5'], kicker:'Recurring & daily, in one app', headline:'Skurda', caption:'Free for up to 8 expenses. No account. iOS 17 or later.' }
+  ];
+  var DUR = 4200;
+  var i = 0, playing = true, timer = null, startTs = 0, remaining = DUR;
+
+  var stage = document.getElementById('stage');
+  var bg = document.getElementById('bg');
+  var progressEl = document.getElementById('progress');
+  var kicker = document.getElementById('kicker');
+  var headline = document.getElementById('headline');
+  var caption = document.getElementById('caption');
+  var scenesEls = Array.prototype.slice.call(document.querySelectorAll('.scene-inner'));
+  var playBtn = document.getElementById('playBtn');
+  var playIcon = document.getElementById('playIcon');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // build progress segments
+  scenes.forEach(function(_, idx){
+    var seg = document.createElement('div');
+    seg.className = 'seg';
+    seg.dataset.i = idx;
+    var bar = document.createElement('i');
+    seg.appendChild(bar);
+    seg.addEventListener('click', function(){ goTo(idx, true); });
+    progressEl.appendChild(seg);
+  });
+  var segs = Array.prototype.slice.call(progressEl.children);
+
+  function applyScene(idx, restartAnim){
+    var s = scenes[idx];
+    bg.style.setProperty('--bg-1', s.grad[0]);
+    bg.style.setProperty('--bg-2', s.grad[1]);
+    bg.style.setProperty('--bg-3', s.grad[2]);
+    kicker.textContent = s.kicker;
+    headline.innerHTML = s.headline;
+    caption.textContent = s.caption;
+
+    scenesEls.forEach(function(el){
+      var si = +el.dataset.scene;
+      if (si === idx){
+        el.classList.remove('active');
+        if (restartAnim){
+          void el.offsetWidth; // reflow to restart animation
+        }
+        el.style.setProperty('--dur', DUR + 'ms');
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+
+    segs.forEach(function(seg, si){
+      seg.classList.toggle('done', si < idx);
+      seg.classList.toggle('active', si === idx);
+      var bar = seg.querySelector('i');
+      if (si === idx){
+        bar.style.animation = 'none';
+        void bar.offsetWidth;
+        seg.style.setProperty('--dur', DUR + 'ms');
+      } else if (si < idx){
+        bar.style.animation = 'none';
+        bar.style.width = '100%';
+      } else {
+        bar.style.animation = 'none';
+        bar.style.width = '0%';
+      }
+    });
+  }
+
+  function clearTimer(){ if (timer){ clearTimeout(timer); timer = null; } }
+
+  function scheduleNext(ms){
+    clearTimer();
+    if (!playing || reduced) return;
+    startTs = Date.now();
+    remaining = ms;
+    timer = setTimeout(function(){ goTo((i + 1) % scenes.length, true); }, ms);
+  }
+
+  function goTo(idx, resetDur){
+    i = idx;
+    applyScene(i, true);
+    if (playing) scheduleNext(DUR);
+  }
+
+  function togglePlay(force){
+    playing = (typeof force === 'boolean') ? force : !playing;
+    if (playing){
+      playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
+      playBtn.setAttribute('aria-label','Pause');
+      var seg = segs[i];
+      seg.querySelector('i').style.animation = 'fill ' + remaining + 'ms linear forwards';
+      startTs = Date.now();
+      timer = setTimeout(function(){ goTo((i + 1) % scenes.length, true); }, remaining);
+    } else {
+      playIcon.innerHTML = '<path d="M7 5l12 7-12 7z"/>';
+      playBtn.setAttribute('aria-label','Play');
+      clearTimer();
+      if (startTs){ remaining = Math.max(0, remaining - (Date.now() - startTs)); }
+      var activeBar = segs[i].querySelector('i');
+      var cs = getComputedStyle(activeBar);
+      activeBar.style.width = cs.width;
+      activeBar.style.animation = 'none';
+    }
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', function(){ goTo((i - 1 + scenes.length) % scenes.length, true); });
+  document.getElementById('nextBtn').addEventListener('click', function(){ goTo((i + 1) % scenes.length, true); });
+  document.getElementById('prevZone').addEventListener('click', function(){ goTo((i - 1 + scenes.length) % scenes.length, true); });
+  document.getElementById('nextZone').addEventListener('click', function(){ goTo((i + 1) % scenes.length, true); });
+  playBtn.addEventListener('click', function(){ togglePlay(); });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight'){ goTo((i + 1) % scenes.length, true); }
+    else if (e.key === 'ArrowLeft'){ goTo((i - 1 + scenes.length) % scenes.length, true); }
+    else if (e.key === ' '){ e.preventDefault(); togglePlay(); }
+  });
+
+  // basic swipe support
+  var touchX = null;
+  stage.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', function(e){
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40){
+      if (dx < 0) goTo((i + 1) % scenes.length, true);
+      else goTo((i - 1 + scenes.length) % scenes.length, true);
+    }
+    touchX = null;
+  }, {passive:true});
+
+  var wasPlayingBeforeHide = playing;
+  try {
+    document.addEventListener('visibilitychange', function(){
+      if (document.hidden){
+        wasPlayingBeforeHide = playing;
+        if (playing) togglePlay(false);
+      } else if (wasPlayingBeforeHide && !reduced) {
+        togglePlay(true);
+      }
+    });
+  } catch(e){}
+
+  applyScene(0, false);
+  if (!reduced){ scheduleNext(DUR); } else { togglePlay(false); }
+})();
+</script>
+</body>
+</html>

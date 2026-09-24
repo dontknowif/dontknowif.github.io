@@ -52,6 +52,7 @@ legale, non solo di forma.
 /spese-ricorrenti/og-image.png     anteprima social 1200x630
 /spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
+/spese-ricorrenti/reel.html                reel interattivo di presentazione (EN, story-style, autoplay) — non indicizzata, per condivisione diretta (Reddit, social, stampa)
 /spese-ricorrenti/assets/wallet-guide/     screenshot e video della guida qui sopra
 /spese-ricorrenti/assets/social/           asset per social/community esterne (es. banner subreddit) — non linkati da nessuna pagina del sito
 ```
