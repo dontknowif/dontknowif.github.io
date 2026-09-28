@@ -50,7 +50,7 @@ legale, non solo di forma.
 /spese-ricorrenti/terms.html       Termini e condizioni, bilingue IT/EN
 /spese-ricorrenti/style.css        stile base, condiviso con le pagine legali
 /spese-ricorrenti/site.css         stile della sola landing
-/spese-ricorrenti/og-image.png     anteprima social 1200x630
+/spese-ricorrenti/og-image.png     anteprima social 1200x630 (IT; og-image-en.png per le pagine inglesi)
 /spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/reel.html                reel interattivo di presentazione (EN, story-style, autoplay) — non indicizzata, per condivisione diretta (Reddit, social, stampa)
