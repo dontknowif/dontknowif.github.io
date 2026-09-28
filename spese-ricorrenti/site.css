@@ -186,6 +186,18 @@ body.landing { padding: 0; }
   .hero-phone { justify-self: center; }
 }
 
+/* ---------- Screenshot della Home (ritagliato dagli screenshot dello Store) ----------
+   Il PNG ha già angoli arrotondati trasparenti e la dissolvenza in basso:
+   qui solo dimensione e ombra. Sorgenti in assets/home/, una per lingua. */
+
+.phone-shot {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(20, 30, 60, .18));
+}
+
 /* ---------- Mockup iPhone (ricostruito in HTML/CSS) ---------- */
 
 .hero-phone { display: flex; justify-content: center; }
