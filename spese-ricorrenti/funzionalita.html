@@ -45,6 +45,8 @@
   .tp-badge.share svg { stroke: #2ba14f; }
   .tp-badge.people { background: #f2ecfd; }
   .tp-badge.people svg { stroke: #9868f5; }
+  .tp-badge.home { background: #fff1e0; }
+  .tp-badge.home svg { stroke: #e8830c; }
 
   /* Le tre icone "tre modi per registrare una spesa quotidiana", in fila. */
   .daily-modes { display: flex; gap: 16px; align-items: flex-end; }
@@ -139,6 +141,20 @@
 <div class="grid">
   <article class="feature">
     <div class="feat-visual">
+      <div class="tp-badge auto"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none" style="fill:var(--accent)"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    </div>
+    <h3>Paghi col telefono. Si segna da sola.</h3>
+    <p>Imposti l'automazione una volta e ogni pagamento con Apple Pay finisce da solo tra le tue spese: negozio, importo e data, senza aprire l'app. Poi non ci pensi più.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="tp-badge home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg></div>
+    </div>
+    <h3>Una Home che ti mostra il mese</h3>
+    <p>Apri l'app e vedi subito il tuo mese: ricorrenti e spese di tutti i giorni insieme, le prossime scadenze, le ultime spese e le azioni rapide per aggiungerne una in un tocco. Le ricorrenti hanno una tab tutta loro.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="widget-mock">
         <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
@@ -182,14 +198,14 @@
       </div>
     </div>
     <h3>Spese quotidiane</h3>
-    <p>Il carburante, la spesa al supermercato, un caffè al bar: tutto quello che spendi ogni giorno, in più modi. In automatico quando paghi col telefono, condividendo con un tocco la notifica del pagamento, fotografando lo scontrino — la foto non viene mai salvata — oppure a mano in pochi secondi. Ricorrenti e quotidiane restano sempre separate, mai sommate in silenzio.</p>
+    <p>Il carburante, la spesa al supermercato, un caffè al bar: tutto quello che spendi ogni giorno, in più modi. In automatico quando paghi col telefono, condividendo con un tocco la notifica del pagamento, fotografando lo scontrino — la foto non viene mai salvata — oppure a mano in pochi secondi. Ricorrenti e quotidiane restano sempre separate, mai sommate in silenzio. A mano o da scontrino sono gratis fino a 20 al mese.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
       <div class="tp-badge people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
     </div>
     <h3>Spese condivise <span class="beta-badge">Beta</span></h3>
-    <p>Le tue spese quotidiane e quelle di chi vuoi — partner, famiglia — in un unico totale, sincronizzate direttamente fra i vostri iCloud: nessun server nostro nel mezzo. Scegli cosa condividere, un filtro separa sempre "Io" dall'altra persona. In arrivo prossimamente.</p>
+    <p>Invita il partner, chi vive con te o chi vuoi tu e scegliete cosa mettere in comune, ricorrenti e quotidiane. Le sue spese restano separate dalle tue e un filtro mostra quelle di tutti, solo le tue o solo le sue. Sincronizzate direttamente fra i vostri iCloud: nessun server nostro nel mezzo.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -308,6 +324,20 @@
 <div class="grid">
   <article class="feature">
     <div class="feat-visual">
+      <div class="tp-badge auto"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none" style="fill:var(--accent)"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    </div>
+    <h3>Pay with your phone. It logs itself.</h3>
+    <p>Set up the automation once and every Apple Pay payment lands in your expenses on its own: merchant, amount and date, without opening the app. Then forget about it.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="tp-badge home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg></div>
+    </div>
+    <h3>A Home that shows you the month</h3>
+    <p>Open the app and see your month right away: recurring and everyday expenses together, upcoming bills, your latest spending and quick actions to add one in a tap. Recurring expenses have a tab of their own.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="widget-mock">
         <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
@@ -351,14 +381,14 @@
       </div>
     </div>
     <h3>Daily expenses</h3>
-    <p>Gas, the weekly grocery run, a coffee at the bar: everything you spend day to day, several ways. Automatically when you pay with your phone, by sharing the payment notification with a tap, by snapping a photo of the receipt — never saved anywhere — or by hand in a few seconds. Recurring and daily expenses stay separate, never quietly added together.</p>
+    <p>Gas, the weekly grocery run, a coffee at the bar: everything you spend day to day, several ways. Automatically when you pay with your phone, by sharing the payment notification with a tap, by snapping a photo of the receipt — never saved anywhere — or by hand in a few seconds. Recurring and daily expenses stay separate, never quietly added together. By hand or from a receipt, they're free up to 20 a month.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
       <div class="tp-badge people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
     </div>
     <h3>Shared expenses <span class="beta-badge">Beta</span></h3>
-    <p>Your daily expenses and someone else's — a partner, your family — combined into one total, synced directly between your own iCloud accounts: no servers of ours in between. Choose what to share; a filter always keeps "Me" separate from them. Coming soon.</p>
+    <p>Invite your partner, a housemate or anyone you like, and choose what to put in common, recurring and daily. Their expenses stay separate from yours, and one filter shows everyone's, only yours or only theirs. Synced directly between your own iCloud accounts: no servers of ours in between.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -477,6 +507,20 @@
 <div class="grid">
   <article class="feature">
     <div class="feat-visual">
+      <div class="tp-badge auto"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none" style="fill:var(--accent)"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    </div>
+    <h3>Pagas con el móvil. Se apunta sola.</h3>
+    <p>Configuras la automatización una vez y cada pago con Apple Pay se añade solo a tus gastos: comercio, importe y fecha, sin abrir la app. Luego te olvidas.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="tp-badge home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg></div>
+    </div>
+    <h3>Un Inicio que te muestra el mes</h3>
+    <p>Abres la app y ves tu mes de un vistazo: gastos recurrentes y del día a día juntos, los próximos vencimientos, los últimos gastos y acciones rápidas para añadir uno con un toque. Los recurrentes tienen su propia pestaña.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="widget-mock">
         <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
@@ -520,14 +564,14 @@
       </div>
     </div>
     <h3>Gastos del día a día</h3>
-    <p>La gasolina, la compra del súper, un café: todo lo que gastas cada día, de varias formas. En automático cuando pagas con el teléfono, compartiendo con un toque la notificación del pago, fotografiando el ticket — la foto nunca se guarda — o a mano en pocos segundos. Los gastos recurrentes y los del día a día siempre están separados, nunca se suman en silencio.</p>
+    <p>La gasolina, la compra del súper, un café: todo lo que gastas cada día, de varias formas. En automático cuando pagas con el teléfono, compartiendo con un toque la notificación del pago, fotografiando el ticket — la foto nunca se guarda — o a mano en pocos segundos. Los gastos recurrentes y los del día a día siempre están separados, nunca se suman en silencio. A mano o desde el tique son gratis hasta 20 al mes.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
       <div class="tp-badge people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
     </div>
     <h3>Gastos compartidos <span class="beta-badge">Beta</span></h3>
-    <p>Tus gastos del día a día y los de quien tú quieras —tu pareja, tu familia— en un único total, sincronizados directamente entre vuestras cuentas de iCloud: sin servidores nuestros de por medio. Eliges qué compartir; un filtro separa siempre "Yo" de la otra persona. Próximamente.</p>
+    <p>Invita a tu pareja, a quien vive contigo o a quien quieras, y elegid qué poner en común, recurrentes y del día a día. Sus gastos se quedan separados de los tuyos y un filtro muestra los de todos, solo los tuyos o solo los suyos. Sincronizados directamente entre vuestras cuentas de iCloud: sin servidores nuestros de por medio.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -646,6 +690,20 @@
 <div class="grid">
   <article class="feature">
     <div class="feat-visual">
+      <div class="tp-badge auto"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none" style="fill:var(--accent)"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    </div>
+    <h3>Vous payez avec votre téléphone. Ça s'enregistre tout seul.</h3>
+    <p>Configurez l'automatisation une fois et chaque paiement Apple Pay arrive tout seul dans vos dépenses : commerçant, montant et date, sans ouvrir l'app. Ensuite, vous n'y pensez plus.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="tp-badge home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg></div>
+    </div>
+    <h3>Un accueil qui vous montre le mois</h3>
+    <p>Ouvrez l'app et voyez tout de suite votre mois : dépenses récurrentes et du quotidien réunies, prochaines échéances, dernières dépenses et actions rapides pour en ajouter une en un geste. Les récurrentes ont leur propre onglet.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="widget-mock">
         <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
@@ -689,14 +747,14 @@
       </div>
     </div>
     <h3>Dépenses du quotidien</h3>
-    <p>L'essence, les courses, un café : tout ce que vous dépensez au quotidien, de plusieurs façons. Automatiquement quand vous payez avec votre téléphone, en partageant d'un geste la notification de paiement, en photographiant le ticket — jamais enregistré — ou à la main en quelques secondes. Dépenses récurrentes et quotidiennes restent toujours distinctes, jamais additionnées en silence.</p>
+    <p>L'essence, les courses, un café : tout ce que vous dépensez au quotidien, de plusieurs façons. Automatiquement quand vous payez avec votre téléphone, en partageant d'un geste la notification de paiement, en photographiant le ticket — jamais enregistré — ou à la main en quelques secondes. Dépenses récurrentes et quotidiennes restent toujours distinctes, jamais additionnées en silence. À la main ou depuis le ticket, elles sont gratuites jusqu'à 20 par mois.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
       <div class="tp-badge people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
     </div>
     <h3>Dépenses partagées <span class="beta-badge">Beta</span></h3>
-    <p>Vos dépenses du quotidien et celles de qui vous voulez — partenaire, famille — réunies en un seul total, synchronisées directement entre vos comptes iCloud : aucun serveur de notre part. Vous choisissez quoi partager ; un filtre distingue toujours « Moi » de l'autre personne. Bientôt disponible.</p>
+    <p>Invitez votre partenaire, votre colocataire ou qui vous voulez, et choisissez ensemble ce que vous mettez en commun, récurrentes et quotidiennes. Ses dépenses restent séparées des vôtres, et un filtre affiche celles de tout le monde, seulement les vôtres ou seulement les siennes. Synchronisées directement entre vos comptes iCloud : aucun serveur de notre part.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
@@ -815,6 +873,20 @@
 <div class="grid">
   <article class="feature">
     <div class="feat-visual">
+      <div class="tp-badge auto"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none" style="fill:var(--accent)"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+    </div>
+    <h3>Mit dem Handy bezahlen. Es trägt sich von selbst ein.</h3>
+    <p>Richte die Automatisierung einmal ein, und jede Apple-Pay-Zahlung landet von selbst in deinen Ausgaben: Geschäft, Betrag und Datum, ohne die App zu öffnen. Danach musst du nicht mehr daran denken.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
+      <div class="tp-badge home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg></div>
+    </div>
+    <h3>Eine Startseite, die dir den Monat zeigt</h3>
+    <p>App öffnen und sofort den ganzen Monat sehen: wiederkehrende und alltägliche Ausgaben zusammen, die nächsten Fälligkeiten, die letzten Ausgaben und Schnellaktionen, um mit einem Tipp eine neue hinzuzufügen. Wiederkehrende Ausgaben haben einen eigenen Tab.</p>
+  </article>
+  <article class="feature">
+    <div class="feat-visual">
       <div class="widget-mock">
         <div class="widget-mock-head"><span class="wm-dot"></span>Skurda</div>
         <div class="widget-mock-name">Netflix</div>
@@ -858,14 +930,14 @@
       </div>
     </div>
     <h3>Alltagsausgaben</h3>
-    <p>Tanken, der Wocheneinkauf, ein Kaffee: alles, was du im Alltag ausgibst, auf mehreren Wegen. Automatisch beim Bezahlen mit dem Handy, durch Teilen der Zahlungsbenachrichtigung mit einem Tipp, per Beleg-Foto — nie gespeichert — oder von Hand in wenigen Sekunden. Wiederkehrende und alltägliche Ausgaben bleiben immer getrennt, nie still zusammengezählt.</p>
+    <p>Tanken, der Wocheneinkauf, ein Kaffee: alles, was du im Alltag ausgibst, auf mehreren Wegen. Automatisch beim Bezahlen mit dem Handy, durch Teilen der Zahlungsbenachrichtigung mit einem Tipp, per Beleg-Foto — nie gespeichert — oder von Hand in wenigen Sekunden. Wiederkehrende und alltägliche Ausgaben bleiben immer getrennt, nie still zusammengezählt. Von Hand oder per Kassenbon sind sie bis zu 20 pro Monat kostenlos.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">
       <div class="tp-badge people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
     </div>
     <h3>Geteilte Ausgaben <span class="beta-badge">Beta</span></h3>
-    <p>Deine Alltagsausgaben und die einer anderen Person — Partner, Familie — in einer gemeinsamen Summe, direkt zwischen euren eigenen iCloud-Konten synchronisiert: ohne unsere Server. Du entscheidest, was geteilt wird; ein Filter trennt immer „Ich" von der anderen Person. Demnächst verfügbar.</p>
+    <p>Lade deine Partnerin oder deinen Partner, Mitbewohner oder wen du möchtest ein und wählt gemeinsam, was ihr teilt – wiederkehrende und alltägliche Ausgaben. Die Ausgaben der anderen Person bleiben von deinen getrennt, und ein Filter zeigt alle, nur deine oder nur ihre. Direkt zwischen euren eigenen iCloud-Konten synchronisiert: ohne unsere Server.</p>
   </article>
   <article class="feature">
     <div class="feat-visual">

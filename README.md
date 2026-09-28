@@ -19,7 +19,8 @@ modifica rilevante dell'app:
 
 | Cosa dice il sito | Dove sta la verita nell'app |
 |---|---|
-| 8 spese gratis | `SpeseStore.freeLimit` |
+| 10 spese ricorrenti gratis | `SpeseStore.freeLimit` |
+| 20 spese quotidiane gratis al mese (a mano / da scontrino) | `SpeseStore.freeLimitQuotidiane` |
 | 57 voci nel catalogo di partenza | conteggio di `SpesaSuggerita(` in `Views/OnboardingView.swift` |
 | 12 categorie di sistema | `Category.systemCatalog` |
 | 5 lingue (IT, EN, ES, FR, DE) | `Localizable.xcstrings` |

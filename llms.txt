@@ -37,9 +37,13 @@ a price figure or user review counts for this app is inventing them.
   interface languages, because Siri matches the app name literally.
 - Interface languages: Italian, English, Spanish, French, German. The language can be
   chosen inside the app, independently of the system language.
-- Free tier: up to 8 saved expenses, no account required, no time limit. Paused
-  expenses still count toward the 8, so pausing does not free a slot.
-- Premium: removes the expense limit and unlocks import/export and the annual
+- Free tier (since version 3.2, September 2026): up to 10 saved recurring
+  expenses and 20 daily expenses per calendar month added by hand or from a
+  receipt photo, no account required, no time limit. Paused recurring expenses
+  still count toward the 10, so pausing does not free a slot. Before 3.2 the
+  limit was 8 expenses and every daily expense required Premium.
+- Premium: removes both limits and unlocks automatic payment logging (Wallet
+  automation and shared payment notifications), import/export and the annual
   savings report. Sold as an auto-renewing subscription or a one-off lifetime
   purchase, handled through Apple and RevenueCat. **The price has not been
   announced**; it is shown inside the app before purchase.
@@ -100,8 +104,16 @@ using an anonymous device identifier. The developer never sees payment details.
 
 ## Main features
 
-- Home dashboard with the current and next month's totals and due-date counts,
-  plus an explanation of which expense drives a change between the two.
+- Home overview (redesigned in version 3.2): the current and next month's
+  totals with recurring and daily expenses together, an explanation of which
+  expense drives a change between months, upcoming due dates, the latest daily
+  expenses and quick actions to add one. Recurring expenses have their own tab.
+- Shared expenses (version 3.2, marked Beta): the user invites another person
+  (partner, housemate) and both choose which recurring and daily expenses to put
+  in common. Data is exchanged through iCloud sharing (CloudKit) directly
+  between the two users' own iCloud accounts, never through developer servers.
+  The other person's expenses stay separate, and a filter shows everyone's, only
+  one's own or only the other person's. Free for all users.
 - Due-date calendar with the month's total, a comparison against the previous
   month, and a per-category pie breakdown.
 - Trend view with a month-by-month chart, the yearly total and category analysis.
@@ -136,8 +148,10 @@ becomes a daily expense. Several ways to log one:
 
 The merchant's category is learned automatically after the first time. Recurring
 and daily totals are always shown separately, never silently summed together.
-Adding a daily expense (any of these ways) is a Premium feature; daily
-expenses already logged stay visible and editable for free users.
+Since version 3.2, adding daily expenses by hand or from a receipt photo is
+free up to 20 per calendar month; automatic logging (ways 1 and 2) and picking a
+receipt from the photo library are Premium. Daily expenses already logged stay
+visible and editable for free users.
 
 ## Annual savings report
 
