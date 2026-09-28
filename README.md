@@ -55,6 +55,7 @@ legale, non solo di forma.
 /spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
 /spese-ricorrenti/reel.html                reel interattivo di presentazione (EN, story-style, autoplay) — non indicizzata, per condivisione diretta (Reddit, social, stampa)
 /spese-ricorrenti/assets/wallet-guide/     screenshot e video della guida qui sopra
+/spese-ricorrenti/assets/home/             la Home dell'app, una per lingua (home-it/en/es/fr/de.webp): landing e Funzionalità
 /spese-ricorrenti/assets/social/           asset per social/community esterne (es. banner subreddit) — non linkati da nessuna pagina del sito
 ```
 
@@ -93,12 +94,26 @@ HTML e un selettore JavaScript. E una struttura peggiore per l'indicizzazione, m
 sono documenti di riferimento, non pagine da posizionare. Se si tocca privacy o
 termini, va aggiornato **il testo in entrambe le lingue** nello stesso file.
 
-### Il mockup dell'iPhone
+### La schermata dell'iPhone
 
-Nella landing la schermata dell'app e ricostruita in HTML/CSS, non e uno
-screenshot. Gli importi mostrati sono coerenti fra loro: 650 + 12,99 + 39 + 84,20
-= 786,19 € questo mese; il mese dopo la bolletta bimestrale non ricade, quindi
-701,99 €. Se si cambiano i numeri vanno rifatti i conti, in entrambe le lingue.
+Dalla 3.2 la Home mostrata in landing (IT/EN) e in cima a `funzionalita.html`
+(5 lingue) **non e piu ricostruita in HTML/CSS**: e il telefono ritagliato dagli
+screenshot dello Store, uno per lingua, in `assets/home/home-<lingua>.webp`
+(600 px di larghezza, mostrati a 300: angoli trasparenti e dissolvenza in basso
+gia dentro l'immagine; il CSS e solo `.phone-shot` in `site.css`).
+
+Sorgenti: `~/Desktop/DEF screen/export/<lingua>/01-home.png` (1290x2796, gli
+stessi caricati su App Store Connect). Il ritaglio e fisso: il telefono in quegli
+screenshot sta fra x 145-1145 e parte da y 1004, con angoli di raggio ~150 px.
+Se cambia il layout degli screenshot dello Store, quei numeri vanno rimisurati.
+
+Le immagini social (`og-image.png` in italiano, `og-image-en.png` per la landing
+inglese e il reel, 1200x630) sono generate con Pillow dallo stesso ritaglio,
+con icona, titolo e «Paghi col telefono. Si segna da sola.».
+
+I mockup piu piccoli dentro le card di `funzionalita.html` (widget, notifica,
+pausa, storico prezzi, ecc.) restano in HTML/CSS: le classi `.ph-*` in
+`site.css` servono ancora a quelli.
 
 ## SEO e visibilita sulle AI
 
@@ -182,6 +197,10 @@ cd ~/Documents/spese-ricorrenti-legal && python3 -m http.server 8765
 
 Poi <http://localhost:8765/spese-ricorrenti/>. Dopo il push, GitHub Pages impiega
 uno o due minuti a pubblicare.
+
+Per vedere un ramo non ancora pubblicato (per esempio `release-3.2`), prima
+`git checkout <ramo>`, e finita l'anteprima `git checkout main`: il server mostra
+i file della cartella, quindi del ramo in cui ci si trova in quel momento.
 
 ## Stato al 27 agosto 2026
 
@@ -337,3 +356,32 @@ legge — descriveva l'app come se facesse solo spese ricorrenti, senza una
 parola sulle quotidiane. Segnalato dall'utente con uno screenshot.
 Riscritta per presentare entrambi i tipi di spesa fin dall'inizio, IT+EN,
 testo visibile e JSON-LD verificati identici.
+
+## Versione 3.2 dell'app: ramo `release-3.2` (28 settembre 2026)
+
+GitHub Pages pubblica solo `main`. Le modifiche che descrivono la 3.2 non
+possono andare online prima che Apple approvi l'app (prezzi e limiti gratis
+cambiano davvero solo con la nuova versione), quindi stanno sul ramo
+`release-3.2`, pushato ma non mergiato. Scelta dell'utente, al posto di un
+badge "SOON" su `main` o di modifiche lasciate non committate.
+
+Cosa contiene:
+
+- **Limiti gratis**: 10 spese ricorrenti (erano 8) e 20 quotidiane al mese
+  aggiunte a mano o da scontrino; l'automazione (Wallet e notifica condivisa)
+  resta Premium. Aggiornati landing IT/EN (meta, JSON-LD, prezzi, FAQ visibili
+  e JSON-LD), Termini IT/EN (§3 riscritto, data 28/09/2026, versione app 3.2),
+  `llms.txt`, reel e la tabella della regola di manutenzione qui sopra.
+- **Landing**: titolo come gli screenshot dello Store, «Tutte le tue spese,
+  in un posto solo.» / «All your expenses, in one place.», con «Paghi col
+  telefono e si segna da sola» nel testo sotto e nel titolo della card delle
+  spese di ogni giorno. La card «Il mese a colpo d'occhio» descrive la Home nuova.
+- **Funzionalità** (5 lingue): card nuove «Paghi col telefono. Si segna da
+  sola.» e della Home; la condivisione non e piu «in arrivo» (resta il badge
+  Beta, come nell'app); limite di 20 quotidiane gratis nella card relativa.
+- **Immagini**: Home 3.2 e og-image nuove (vedi «La schermata dell'iPhone»).
+
+**Il giorno dell'approvazione**: portare la data dei Termini (IT e EN) al
+giorno reale di uscita, poi `git checkout main && git merge release-3.2 &&
+git push`. Le anteprime gia in cache su WhatsApp/Facebook si aggiornano da sole
+nel giro di qualche giorno.
