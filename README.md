@@ -357,20 +357,21 @@ parola sulle quotidiane. Segnalato dall'utente con uno screenshot.
 Riscritta per presentare entrambi i tipi di spesa fin dall'inizio, IT+EN,
 testo visibile e JSON-LD verificati identici.
 
-## Versione 3.2 dell'app: ramo `release-3.2` (28 settembre 2026)
+## Versione 3.2 dell'app: online dal 29 settembre 2026
 
-GitHub Pages pubblica solo `main`. Le modifiche che descrivono la 3.2 non
-possono andare online prima che Apple approvi l'app (prezzi e limiti gratis
-cambiano davvero solo con la nuova versione), quindi stanno sul ramo
-`release-3.2`, pushato ma non mergiato. Scelta dell'utente, al posto di un
-badge "SOON" su `main` o di modifiche lasciate non committate.
+**Mergiata in `main` il 29 settembre 2026**, il giorno in cui l'utente ha
+segnalato la 3.2 uscita sullo Store. Fino ad allora le modifiche erano sul
+ramo `release-3.2`: GitHub Pages pubblica solo `main`, e prezzi e limiti gratis
+cambiano davvero solo con la nuova versione. Scelta dell'utente, al posto di
+un badge "SOON" su `main` o di modifiche lasciate non committate. Lo stesso
+schema vale per le versioni future.
 
 Cosa contiene:
 
 - **Limiti gratis**: 10 spese ricorrenti (erano 8) e 20 quotidiane al mese
   aggiunte a mano o da scontrino; l'automazione (Wallet e notifica condivisa)
   resta Premium. Aggiornati landing IT/EN (meta, JSON-LD, prezzi, FAQ visibili
-  e JSON-LD), Termini IT/EN (§3 riscritto, data 28/09/2026, versione app 3.2),
+  e JSON-LD), Termini IT/EN (§3 riscritto, data 29/09/2026, versione app 3.2),
   `llms.txt`, reel e la tabella della regola di manutenzione qui sopra.
 - **Landing**: titolo come gli screenshot dello Store, «Tutte le tue spese,
   in un posto solo.» / «All your expenses, in one place.», con «Paghi col
@@ -381,7 +382,7 @@ Cosa contiene:
   Beta, come nell'app); limite di 20 quotidiane gratis nella card relativa.
 - **Immagini**: Home 3.2 e og-image nuove (vedi «La schermata dell'iPhone»).
 
-**Il giorno dell'approvazione**: portare la data dei Termini (IT e EN) al
-giorno reale di uscita, poi `git checkout main && git merge release-3.2 &&
+**Il giorno dell'uscita** (fatto il 29/09/2026): data dei Termini (IT e EN)
+portata al giorno reale, poi `git checkout main && git merge release-3.2 &&
 git push`. Le anteprime gia in cache su WhatsApp/Facebook si aggiornano da sole
 nel giro di qualche giorno.
