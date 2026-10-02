@@ -52,9 +52,10 @@ legale, non solo di forma.
 /spese-ricorrenti/site.css         stile della sola landing
 /spese-ricorrenti/og-image.png     anteprima social 1200x630 (IT; og-image-en.png per le pagine inglesi)
 /spese-ricorrenti/funzionalita.html  pagina funzionalità, IT/EN/ES/FR/DE — non indicizzata
-/spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata
+/spese-ricorrenti/automazione-wallet.html  guida all'automazione Wallet→Skurda, IT/EN/ES/FR/DE — non indicizzata; due guide (iOS ≤26 e iOS 27+ col comando pronto), scelta da ?ios=<versione> o dai due bottoni
 /spese-ricorrenti/reel.html                reel interattivo di presentazione (EN, story-style, autoplay) — non indicizzata, per condivisione diretta (Reddit, social, stampa)
 /spese-ricorrenti/assets/wallet-guide/     screenshot e video della guida qui sopra
+/spese-ricorrenti/assets/wallet-guide-ios27/  screenshot della guida iOS 27 (it.png, en.png; es/fr/de usano en.png)
 /spese-ricorrenti/assets/home/             la Home dell'app, una per lingua (home-it/en/es/fr/de.webp): landing e Funzionalità
 /spese-ricorrenti/assets/social/           asset per social/community esterne (es. banner subreddit) — non linkati da nessuna pagina del sito
 ```

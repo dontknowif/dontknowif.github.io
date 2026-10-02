@@ -90,6 +90,22 @@
   .check-box p { margin: 0 0 10px; font-size: 15px; }
   .check-box p:last-child { margin-bottom: 0; }
 
+
+  /* Guida iOS 27: pulsante del comando pronto, scelta della versione. */
+  span.step-mark { cursor: default; }
+  .cta-wrap { margin: 22px 0 6px; }
+  .cta {
+    display: inline-block; background: var(--accent); color: #fff; font-weight: 600;
+    font-size: 17px; padding: 12px 24px; border-radius: 980px; text-decoration: none;
+  }
+  .cta:hover { opacity: .9; }
+  .cta-note { margin: 0 0 8px; font-size: 14px; color: var(--text-dim); }
+  .ios-choice { margin: 28px 0; padding: 20px; background: var(--accent-soft); border-radius: 14px; }
+  .ios-choice h2 { margin: 0 0 6px; font-size: 20px; border: none; padding: 0; }
+  .ios-choice p { margin: 0 0 14px; font-size: 15px; }
+  .ios-where { color: var(--text-dim); }
+  .ios-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 0 !important; }
+
   /* Sotto i 720px lo screenshot va sotto il suo testo, non di fianco. */
   @media (max-width: 720px) {
     .step-body { flex-direction: column; gap: 14px; }
@@ -116,12 +132,12 @@
 </header>
 
 <!-- ==================== ITALIANO ==================== -->
-<div data-lang="it">
+<div data-lang="it" data-ios="26">
 
 <h1>Registra automaticamente i pagamenti con Wallet</h1>
 <p class="lede">Con questa automazione, ogni volta che paghi avvicinando una carta o un biglietto salvato in Wallet, il telefono ti propone di registrare la spesa in Skurda, senza aprire l'app a mano.</p>
 
-<p class="ios-note">Guida valida fino a <strong>iOS 26</strong>. Da <strong>iOS 27</strong> l'app Comandi ha cambiato un po' interfaccia: alcuni passaggi potrebbero essere leggermente diversi da quelli descritti e mostrati qui sotto.</p>
+<p class="ios-note">Questa guida è per <strong>iOS 26 e precedenti</strong>. Hai <strong>iOS 27</strong> o successivo? <a href="#" data-set-ios="27">Apri la guida per iOS 27</a>, con il comando già pronto.</p>
 
 <div class="video-wrap">
   <p>Guarda il video con tutti i passaggi:</p>
@@ -309,12 +325,12 @@
 </div>
 
 <!-- ==================== ENGLISH ==================== -->
-<div data-lang="en">
+<div data-lang="en" data-ios="26">
 
 <h1>Automatically log payments with Wallet</h1>
 <p class="lede">With this automation, every time you pay by tapping a card or pass saved in Wallet, your phone will prompt you to log the expense in Skurda — no need to open the app manually.</p>
 
-<p class="ios-note">This guide is valid through <strong>iOS 26</strong>. From <strong>iOS 27</strong> onward, the Shortcuts app interface has changed a bit: some steps below may look slightly different.</p>
+<p class="ios-note">This guide is for <strong>iOS 26 and earlier</strong>. Do you have <strong>iOS 27</strong> or later? <a href="#" data-set-ios="27">Open the iOS 27 guide</a>, with a ready-made shortcut.</p>
 
 <div class="video-wrap">
   <p>Watch the video walkthrough:</p>
@@ -506,12 +522,12 @@
 </div>
 
 <!-- ==================== ESPAÑOL ==================== -->
-<div data-lang="es">
+<div data-lang="es" data-ios="26">
 
 <h1>Registra automáticamente los pagos con Wallet</h1>
 <p class="lede">Con esta automatización, cada vez que pagues acercando una tarjeta o un pase guardado en Wallet, tu teléfono te propondrá registrar el gasto en Skurda, sin necesidad de abrir la app manualmente.</p>
 
-<p class="ios-note">Esta guía es válida hasta <strong>iOS 26</strong>. Desde <strong>iOS 27</strong>, la interfaz de la app Atajos ha cambiado un poco: algunos pasos de aquí abajo podrían verse ligeramente distintos.</p>
+<p class="ios-note">Esta guía es para <strong>iOS 26 y anteriores</strong>. ¿Tienes <strong>iOS 27</strong> o posterior? <a href="#" data-set-ios="27">Abre la guía para iOS 27</a>, con el atajo ya preparado.</p>
 
 <div class="video-wrap">
   <p>Mira el vídeo con todos los pasos:</p>
@@ -703,12 +719,12 @@
 </div>
 
 <!-- ==================== FRANÇAIS ==================== -->
-<div data-lang="fr">
+<div data-lang="fr" data-ios="26">
 
 <h1>Enregistrez automatiquement les paiements avec Wallet</h1>
 <p class="lede">Avec cette automatisation, chaque fois que vous payez en approchant une carte ou un billet enregistré dans Wallet, votre téléphone vous proposera d'enregistrer la dépense dans Skurda, sans avoir à ouvrir l'application manuellement.</p>
 
-<p class="ios-note">Ce guide est valable jusqu'à <strong>iOS 26</strong>. À partir d'<strong>iOS 27</strong>, l'interface de l'application Raccourcis a un peu changé : certaines étapes ci-dessous pourraient être légèrement différentes.</p>
+<p class="ios-note">Ce guide est pour <strong>iOS 26 et versions antérieures</strong>. Vous avez <strong>iOS 27</strong> ou plus récent ? <a href="#" data-set-ios="27">Ouvrez le guide pour iOS 27</a>, avec le raccourci déjà prêt.</p>
 
 <div class="video-wrap">
   <p>Regardez la vidéo avec toutes les étapes :</p>
@@ -900,12 +916,12 @@
 </div>
 
 <!-- ==================== DEUTSCH ==================== -->
-<div data-lang="de">
+<div data-lang="de" data-ios="26">
 
 <h1>Wallet-Zahlungen automatisch erfassen</h1>
 <p class="lede">Mit dieser Automation schlägt dir dein Handy bei jeder Zahlung mit einer in Wallet gespeicherten Karte oder einem Pass vor, die Ausgabe in Skurda zu erfassen — ohne die App manuell öffnen zu müssen.</p>
 
-<p class="ios-note">Diese Anleitung gilt bis <strong>iOS 26</strong>. Ab <strong>iOS 27</strong> hat sich die Oberfläche der App Kurzbefehle etwas verändert: einzelne Schritte weiter unten könnten leicht anders aussehen.</p>
+<p class="ios-note">Diese Anleitung gilt für <strong>iOS 26 und früher</strong>. Du hast <strong>iOS 27</strong> oder neuer? <a href="#" data-set-ios="27">Öffne die Anleitung für iOS 27</a>, mit fertigem Kurzbefehl.</p>
 
 <div class="video-wrap">
   <p>Schau dir das Video mit allen Schritten an:</p>
@@ -1095,20 +1111,448 @@
 </footer>
 
 </div>
+<div data-lang="it" data-ios="27">
+
+<h1>Registra automaticamente i pagamenti con Wallet</h1>
+<p class="lede">Con questa automazione, ogni volta che paghi avvicinando una carta o un biglietto salvato in Wallet, il telefono registra la spesa in Skurda, senza aprire l'app a mano.</p>
+<p class="lede" style="font-size:16px">Da iOS 27 è più semplice: il comando è già pronto, devi solo aggiungerlo e accenderlo.</p>
+
+<p class="cta-wrap"><a class="cta" href="https://www.icloud.com/shortcuts/830ae60e01fc4e06bda60569ee206cab">Aggiungi il comando</a></p>
+<p class="cta-note">Si apre in Comandi Rapidi. Apri prima Skurda almeno una volta, così il comando la trova.</p>
+
+<ol class="steps">
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tocca <strong>Aggiungi il comando</strong> qui sopra e, in Comandi Rapidi, conferma con <strong>Aggiungi comando rapido</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>In Comandi Rapidi vai su <strong>Libreria</strong> → <strong>Automazioni</strong> e apri <strong>Skurda-Wallet</strong>. Arriva spento: vedi «L'automazione è disattivata».</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Nel riquadro in alto («Quando <strong>Qualsiasi carta</strong> viene avvicinata») tocca la freccia e attiva l'interruttore <strong>Automazione</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-ios27/it.png" alt="Il comando Skurda-Wallet in Comandi Rapidi, con l'interruttore Automazione acceso." loading="lazy" decoding="async">
+          <figcaption>L'interruttore Automazione, acceso.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Come capire se ha funzionato</h2>
+  <p>Non devi provare niente adesso: al primo pagamento contactless ci pensa il telefono. Dopo averlo fatto, apri Skurda: se il pagamento corrisponde a una spesa ricorrente che già segui, la trovi spuntata come pagata; altrimenti lo trovi tra le spese quotidiane, con il nome dell'esercente.</p>
+  <p>Vuoi vedere una conferma dopo ogni pagamento? Nel comando, sull'azione «Registra» (tocca la freccia per aprirla), attiva <strong>Mostra quando viene eseguito</strong>. Se non è successo niente, torna in Comandi Rapidi → Automazioni e controlla che l'automazione sia accesa.</p>
+</div>
+
+<p>Se il pagamento corrisponde a una spesa ricorrente che hai già in Skurda, viene spuntata come pagata; se non corrisponde a nessuna, diventa una nuova <strong>spesa quotidiana</strong>: non va persa.</p>
+<p>Preferisci non usare l'automazione? Puoi comunque registrare un pagamento in un tocco: condividi lo screenshot della notifica di pagamento con Skurda dal foglio "Condividi" di iOS: negozio, importo e data si riconoscono da soli, tu confermi prima di salvare.</p>
+
+<p class="lede" style="font-size:15px">Qualcosa non funziona? Scrivici a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a> e ti aiutiamo.</p>
+<p class="lede" style="font-size:15px">Hai iOS 26 o precedente? <a href="#" data-set-ios="26">Apri la guida per iOS 26</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Termini e condizioni</a>
+</footer>
+
+</div>
+
+<div data-lang="it" data-ios="choose">
+
+<h1>Registra automaticamente i pagamenti con Wallet</h1>
+<p class="lede">Con questa automazione, ogni volta che paghi avvicinando una carta o un biglietto salvato in Wallet, il telefono registra la spesa in Skurda, senza aprire l'app a mano.</p>
+
+<div class="ios-choice">
+  <h2>Che versione di iOS hai?</h2>
+  <p>La guida cambia un po' da una versione all'altra: scegli la tua. <span class="ios-where">Lo vedi in Impostazioni → Generali → Info.</span></p>
+  <p class="ios-btns">
+    <a class="cta" href="#" data-set-ios="26">iOS 26 o precedente</a>
+    <a class="cta" href="#" data-set-ios="27">iOS 27 o successivo</a>
+  </p>
+</div>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Termini e condizioni</a>
+</footer>
+
+</div>
+
+<div data-lang="en" data-ios="27">
+
+<h1>Automatically log payments with Wallet</h1>
+<p class="lede">With this automation, every time you pay by tapping a card or pass saved in Wallet, your phone logs the expense in Skurda — no need to open the app manually.</p>
+<p class="lede" style="font-size:16px">On iOS 27 it's simpler: the shortcut is ready-made, you just add it and turn it on.</p>
+
+<p class="cta-wrap"><a class="cta" href="https://www.icloud.com/shortcuts/830ae60e01fc4e06bda60569ee206cab">Add the shortcut</a></p>
+<p class="cta-note">It opens in Shortcuts. Open Skurda at least once first, so the shortcut can find it.</p>
+
+<ol class="steps">
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tap <strong>Add the shortcut</strong> above and, in Shortcuts, confirm with <strong>Add Shortcut</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>In Shortcuts, go to <strong>Library</strong> → <strong>Automations</strong> and open <strong>Skurda-Wallet</strong>. It arrives switched off.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>In the card at the top (the Wallet trigger), tap the arrow and turn on the <strong>Automation</strong> switch.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-ios27/en.png" alt="The Skurda-Wallet shortcut in Shortcuts, with the Automation switch turned on." loading="lazy" decoding="async">
+          <figcaption>The Automation switch, turned on.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>How to tell it worked</h2>
+  <p>You don't need to test anything now: your phone takes care of it at your first contactless payment. After that, open Skurda: if the payment matches a recurring expense you already track, you'll find it ticked as paid; otherwise it appears among your daily expenses, with the merchant's name.</p>
+  <p>Want to see a confirmation after every payment? In the shortcut, on the "Record" action, tap the arrow and turn on <strong>Show When Run</strong>. If nothing happened, go back to Shortcuts → Automations and check that the automation is turned on.</p>
+</div>
+
+<p>If the payment matches a recurring expense you already have in Skurda, it's ticked as paid; if it matches none, it becomes a new <strong>daily expense</strong> — it won't get lost.</p>
+<p>Prefer not to use the automation? You can still log a payment in one tap: share the screenshot of the payment notification with Skurda from the iOS "Share" sheet — the store, amount and date are recognized automatically, and you confirm before saving.</p>
+
+<p class="lede" style="font-size:15px">Something not working? Email us at <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a> and we'll help.</p>
+<p class="lede" style="font-size:15px">Do you have iOS 26 or earlier? <a href="#" data-set-ios="26">Open the iOS 26 guide</a>.</p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms & Conditions</a>
+</footer>
+
+</div>
+
+<div data-lang="en" data-ios="choose">
+
+<h1>Automatically log payments with Wallet</h1>
+<p class="lede">With this automation, every time you pay by tapping a card or pass saved in Wallet, your phone logs the expense in Skurda — no need to open the app manually.</p>
+
+<div class="ios-choice">
+  <h2>Which version of iOS do you have?</h2>
+  <p>The guide differs a little between versions: pick yours. <span class="ios-where">You can check it in Settings → General → About.</span></p>
+  <p class="ios-btns">
+    <a class="cta" href="#" data-set-ios="26">iOS 26 or earlier</a>
+    <a class="cta" href="#" data-set-ios="27">iOS 27 or later</a>
+  </p>
+</div>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms & Conditions</a>
+</footer>
+
+</div>
+
+<div data-lang="es" data-ios="27">
+
+<h1>Registra automáticamente los pagos con Wallet</h1>
+<p class="lede">Con esta automatización, cada vez que pagues acercando una tarjeta o un pase guardado en Wallet, tu teléfono registrará el gasto en Skurda, sin necesidad de abrir la app manualmente.</p>
+<p class="lede" style="font-size:16px">Con iOS 27 es más sencillo: el atajo ya está preparado, solo tienes que añadirlo y activarlo.</p>
+
+<p class="cta-wrap"><a class="cta" href="https://www.icloud.com/shortcuts/830ae60e01fc4e06bda60569ee206cab">Añadir el atajo</a></p>
+<p class="cta-note">Se abre en Atajos. Abre Skurda al menos una vez antes, para que el atajo la encuentre.</p>
+
+<ol class="steps">
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Toca <strong>Añadir el atajo</strong> aquí arriba y, en Atajos, confirma con <strong>Añadir atajo</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>En Atajos, ve a <strong>Biblioteca</strong> → <strong>Automatizaciones</strong> y abre <strong>Skurda-Wallet</strong>. Llega desactivado.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>En el recuadro de arriba (el disparador de Wallet), toca la flecha y activa el interruptor de la <strong>automatización</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-ios27/en.png" alt="El atajo Skurda-Wallet en Atajos, con el interruptor de la automatización activado." loading="lazy" decoding="async">
+          <figcaption>El interruptor de la automatización, activado.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Cómo saber si ha funcionado</h2>
+  <p>No tienes que probar nada ahora: en el primer pago contactless se encarga el teléfono. Después, abre Skurda: si el pago corresponde a un gasto recurrente que ya sigues, lo verás marcado como pagado; si no, aparecerá entre los gastos diarios, con el nombre del comercio.</p>
+  <p>¿Quieres ver una confirmación tras cada pago? En el atajo, en la acción de debajo del disparador, toca la flecha y activa <strong>Mostrar al ejecutar</strong>. Si no ha pasado nada, vuelve a Atajos → Automatizaciones y comprueba que la automatización esté activada.</p>
+</div>
+
+<p>Si el pago corresponde a un gasto recurrente que ya tienes en Skurda, se marca como pagado; si no corresponde a ninguno, se convierte en un nuevo <strong>gasto diario</strong>: no se pierde.</p>
+<p>¿Prefieres no usar la automatización? Aun así puedes registrar un pago con un toque: comparte la captura de la notificación de pago con Skurda desde la hoja «Compartir» de iOS: el comercio, el importe y la fecha se reconocen solos, y confirmas antes de guardar.</p>
+
+<p class="lede" style="font-size:15px">¿Algo no funciona? Escríbenos a <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a> y te ayudamos.</p>
+<p class="lede" style="font-size:15px">¿Tienes iOS 26 o anterior? <a href="#" data-set-ios="26">Abre la guía para iOS 26</a>.</p>
+
+<footer>
+  <a href="index.html">Inicio</a>
+  <a href="privacy.html">Política de privacidad</a>
+  <a href="terms.html">Términos y condiciones</a>
+</footer>
+
+</div>
+
+<div data-lang="es" data-ios="choose">
+
+<h1>Registra automáticamente los pagos con Wallet</h1>
+<p class="lede">Con esta automatización, cada vez que pagues acercando una tarjeta o un pase guardado en Wallet, tu teléfono registrará el gasto en Skurda, sin necesidad de abrir la app manualmente.</p>
+
+<div class="ios-choice">
+  <h2>¿Qué versión de iOS tienes?</h2>
+  <p>La guía cambia un poco entre versiones: elige la tuya. <span class="ios-where">Lo ves en Ajustes → General → Información.</span></p>
+  <p class="ios-btns">
+    <a class="cta" href="#" data-set-ios="26">iOS 26 o anterior</a>
+    <a class="cta" href="#" data-set-ios="27">iOS 27 o posterior</a>
+  </p>
+</div>
+
+<footer>
+  <a href="index.html">Inicio</a>
+  <a href="privacy.html">Política de privacidad</a>
+  <a href="terms.html">Términos y condiciones</a>
+</footer>
+
+</div>
+
+<div data-lang="fr" data-ios="27">
+
+<h1>Enregistrez automatiquement les paiements avec Wallet</h1>
+<p class="lede">Avec cette automatisation, chaque fois que vous payez en approchant une carte ou un billet enregistré dans Wallet, votre téléphone enregistre la dépense dans Skurda, sans avoir à ouvrir l'application manuellement.</p>
+<p class="lede" style="font-size:16px">Avec iOS 27, c'est plus simple : le raccourci est déjà prêt, il suffit de l'ajouter et de l'activer.</p>
+
+<p class="cta-wrap"><a class="cta" href="https://www.icloud.com/shortcuts/830ae60e01fc4e06bda60569ee206cab">Ajouter le raccourci</a></p>
+<p class="cta-note">Il s'ouvre dans Raccourcis. Ouvrez d'abord Skurda au moins une fois, pour que le raccourci la trouve.</p>
+
+<ol class="steps">
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Touchez <strong>Ajouter le raccourci</strong> ci-dessus et, dans Raccourcis, confirmez avec <strong>Ajouter le raccourci</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Dans Raccourcis, allez dans <strong>Bibliothèque</strong> → <strong>Automatisations</strong> et ouvrez <strong>Skurda-Wallet</strong>. Il arrive désactivé.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Dans le cadre en haut (le déclencheur Wallet), touchez la flèche et activez l'interrupteur de l'<strong>automatisation</strong>.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-ios27/en.png" alt="Le raccourci Skurda-Wallet dans Raccourcis, avec l'interrupteur de l'automatisation activé." loading="lazy" decoding="async">
+          <figcaption>L'interrupteur de l'automatisation, activé.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>Comment savoir si ça a fonctionné</h2>
+  <p>Vous n'avez rien à tester maintenant : au premier paiement sans contact, c'est le téléphone qui s'en charge. Ensuite, ouvrez Skurda : si le paiement correspond à une dépense récurrente que vous suivez déjà, vous la trouverez cochée comme payée ; sinon, elle apparaît parmi les dépenses quotidiennes, avec le nom du commerçant.</p>
+  <p>Vous voulez voir une confirmation après chaque paiement ? Dans le raccourci, sur l'action située sous le déclencheur, touchez la flèche et activez <strong>Afficher lors de l'exécution</strong>. S'il ne s'est rien passé, retournez dans Raccourcis → Automatisations et vérifiez que l'automatisation est activée.</p>
+</div>
+
+<p>Si le paiement correspond à une dépense récurrente que vous avez déjà dans Skurda, elle est cochée comme payée ; s'il ne correspond à aucune, il devient une nouvelle <strong>dépense quotidienne</strong> : il n'est pas perdu.</p>
+<p>Vous préférez ne pas utiliser l'automatisation ? Vous pouvez quand même enregistrer un paiement d'un geste : partagez la capture d'écran de la notification de paiement avec Skurda depuis la feuille « Partager » d'iOS : le commerçant, le montant et la date sont reconnus automatiquement, et vous confirmez avant d'enregistrer.</p>
+
+<p class="lede" style="font-size:15px">Quelque chose ne fonctionne pas ? Écrivez-nous à <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a> et nous vous aiderons.</p>
+<p class="lede" style="font-size:15px">Vous avez iOS 26 ou antérieur ? <a href="#" data-set-ios="26">Ouvrez le guide pour iOS 26</a>.</p>
+
+<footer>
+  <a href="index.html">Accueil</a>
+  <a href="privacy.html">Politique de confidentialité</a>
+  <a href="terms.html">Conditions générales</a>
+</footer>
+
+</div>
+
+<div data-lang="fr" data-ios="choose">
+
+<h1>Enregistrez automatiquement les paiements avec Wallet</h1>
+<p class="lede">Avec cette automatisation, chaque fois que vous payez en approchant une carte ou un billet enregistré dans Wallet, votre téléphone enregistre la dépense dans Skurda, sans avoir à ouvrir l'application manuellement.</p>
+
+<div class="ios-choice">
+  <h2>Quelle version d'iOS avez-vous ?</h2>
+  <p>Le guide change un peu d'une version à l'autre : choisissez la vôtre. <span class="ios-where">Vous la trouvez dans Réglages → Général → Informations.</span></p>
+  <p class="ios-btns">
+    <a class="cta" href="#" data-set-ios="26">iOS 26 ou antérieur</a>
+    <a class="cta" href="#" data-set-ios="27">iOS 27 ou plus récent</a>
+  </p>
+</div>
+
+<footer>
+  <a href="index.html">Accueil</a>
+  <a href="privacy.html">Politique de confidentialité</a>
+  <a href="terms.html">Conditions générales</a>
+</footer>
+
+</div>
+
+<div data-lang="de" data-ios="27">
+
+<h1>Wallet-Zahlungen automatisch erfassen</h1>
+<p class="lede">Mit dieser Automation erfasst dein Handy bei jeder Zahlung mit einer in Wallet gespeicherten Karte oder einem Pass die Ausgabe in Skurda — ohne die App manuell öffnen zu müssen.</p>
+<p class="lede" style="font-size:16px">Mit iOS 27 ist es einfacher: Der Kurzbefehl ist fertig, du musst ihn nur hinzufügen und einschalten.</p>
+
+<p class="cta-wrap"><a class="cta" href="https://www.icloud.com/shortcuts/830ae60e01fc4e06bda60569ee206cab">Kurzbefehl hinzufügen</a></p>
+<p class="cta-note">Er öffnet sich in Kurzbefehle. Öffne vorher Skurda mindestens einmal, damit der Kurzbefehl die App findet.</p>
+
+<ol class="steps">
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tippe oben auf <strong>Kurzbefehl hinzufügen</strong> und bestätige in Kurzbefehle mit <strong>Kurzbefehl hinzufügen</strong>.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Gehe in Kurzbefehle zu <strong>Mediathek</strong> → <strong>Automationen</strong> und öffne <strong>Skurda-Wallet</strong>. Er kommt ausgeschaltet an.</p>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <span class="step-mark"><span class="step-num" aria-hidden="true"></span></span>
+    <div class="step-body">
+      <div class="step-text">
+        <p>Tippe im Feld oben (dem Wallet-Auslöser) auf den Pfeil und schalte den Schalter der <strong>Automation</strong> ein.</p>
+      </div>
+      <div class="step-shots">
+        <figure>
+          <img src="assets/wallet-guide-ios27/en.png" alt="Der Kurzbefehl Skurda-Wallet in Kurzbefehle, mit eingeschaltetem Automations-Schalter." loading="lazy" decoding="async">
+          <figcaption>Der Automations-Schalter, eingeschaltet.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </li>
+</ol>
+
+<div class="check-box">
+  <h2>So erkennst du, dass es geklappt hat</h2>
+  <p>Du musst jetzt nichts testen: Bei deiner ersten kontaktlosen Zahlung übernimmt das Handy. Öffne danach Skurda: Passt die Zahlung zu einer wiederkehrenden Ausgabe, die du schon verfolgst, ist sie als bezahlt abgehakt; sonst findest du sie bei den täglichen Ausgaben, mit dem Namen des Händlers.</p>
+  <p>Möchtest du nach jeder Zahlung eine Bestätigung sehen? Tippe im Kurzbefehl bei der Aktion unter dem Auslöser auf den Pfeil und schalte <strong>Beim Ausführen anzeigen</strong> ein. Ist nichts passiert, geh zurück zu Kurzbefehle → Automationen und prüfe, ob die Automation eingeschaltet ist.</p>
+</div>
+
+<p>Passt die Zahlung zu einer wiederkehrenden Ausgabe, die du schon in Skurda hast, wird sie als bezahlt abgehakt; passt sie zu keiner, wird sie zu einer neuen <strong>täglichen Ausgabe</strong> — sie geht nicht verloren.</p>
+<p>Du möchtest die Automation lieber nicht nutzen? Du kannst eine Zahlung trotzdem mit einem Tipp erfassen: Teile den Screenshot der Zahlungsbenachrichtigung über das iOS-Menü „Teilen“ mit Skurda — Geschäft, Betrag und Datum werden automatisch erkannt, und du bestätigst vor dem Speichern.</p>
+
+<p class="lede" style="font-size:15px">Etwas funktioniert nicht? Schreib uns an <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>, wir helfen dir.</p>
+<p class="lede" style="font-size:15px">Du hast iOS 26 oder früher? <a href="#" data-set-ios="26">Öffne die Anleitung für iOS 26</a>.</p>
+
+<footer>
+  <a href="index.html">Startseite</a>
+  <a href="privacy.html">Datenschutzerklärung</a>
+  <a href="terms.html">Nutzungsbedingungen</a>
+</footer>
+
+</div>
+
+<div data-lang="de" data-ios="choose">
+
+<h1>Wallet-Zahlungen automatisch erfassen</h1>
+<p class="lede">Mit dieser Automation erfasst dein Handy bei jeder Zahlung mit einer in Wallet gespeicherten Karte oder einem Pass die Ausgabe in Skurda — ohne die App manuell öffnen zu müssen.</p>
+
+<div class="ios-choice">
+  <h2>Welche iOS-Version hast du?</h2>
+  <p>Die Anleitung unterscheidet sich etwas je nach Version: Wähle deine. <span class="ios-where">Du findest sie unter Einstellungen → Allgemein → Info.</span></p>
+  <p class="ios-btns">
+    <a class="cta" href="#" data-set-ios="26">iOS 26 oder früher</a>
+    <a class="cta" href="#" data-set-ios="27">iOS 27 oder neuer</a>
+  </p>
+</div>
+
+<footer>
+  <a href="index.html">Startseite</a>
+  <a href="privacy.html">Datenschutzerklärung</a>
+  <a href="terms.html">Nutzungsbedingungen</a>
+</footer>
+
+</div>
+
 <script>
 (function () {
   var KEY = 'sr-automation-lang';
   var SUPPORTED = ['it', 'en', 'es', 'fr', 'de'];
   var buttons = document.querySelectorAll('[data-set-lang]');
+  var state = { lang: 'it', ios: 'choose' };
 
-  function apply(lang) {
-    document.documentElement.lang = lang;
+  function render() {
+    document.documentElement.lang = state.lang;
     document.querySelectorAll('[data-lang]').forEach(function (el) {
-      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      var show = el.getAttribute('data-lang') === state.lang &&
+                 el.getAttribute('data-ios') === state.ios;
+      el.style.display = show ? 'block' : 'none';
     });
     buttons.forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === state.lang));
     });
+  }
+
+  function apply(lang) {
+    state.lang = lang;
+    render();
     try { localStorage.setItem(KEY, lang); } catch (e) {}
   }
 
@@ -1124,8 +1568,23 @@
     return l && SUPPORTED.indexOf(l) !== -1;
   }) || 'it';
 
+  // Versione di iOS: ?ios= nell'URL (lo passa l'app) → 27 o più = guida iOS 27,
+  // meno = guida precedente. Senza parametro (o non valido) si chiede all'utente:
+  // la versione non si ricava dallo user agent, che Safari ha congelato.
+  var fromIos = NaN;
+  try { fromIos = parseInt(new URLSearchParams(location.search).get('ios'), 10); } catch (e) {}
+  if (fromIos > 0) { state.ios = fromIos >= 27 ? '27' : '26'; }
+
   buttons.forEach(function (b) {
     b.addEventListener('click', function () { apply(b.getAttribute('data-set-lang')); });
+  });
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('[data-set-ios]');
+    if (!a) return;
+    ev.preventDefault();
+    state.ios = a.getAttribute('data-set-ios');
+    render();
+    window.scrollTo(0, 0);
   });
 
   apply(initial);
