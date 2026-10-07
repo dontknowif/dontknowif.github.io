@@ -187,3 +187,42 @@ Users can permanently dismiss any individual insight.
 - [Landing page, English](https://dontknowif.github.io/spese-ricorrenti/en/): the same content in English.
 - [Privacy Policy](https://dontknowif.github.io/spese-ricorrenti/privacy.html): GDPR privacy notice, bilingual Italian/English, including a table of every telemetry event and the exact information attached to it.
 - [Terms & Conditions](https://dontknowif.github.io/spese-ricorrenti/terms.html): licence, free-tier limit, subscription and cancellation terms, bilingual Italian/English.
+
+
+---
+
+# HomeOffice
+
+> An iPhone and iPad app for hybrid workers who must spend a minimum share of their
+> workdays at the office. The user logs each day (office, home, business trip,
+> vacation, sick, time off, closure; half days supported) and the app works out
+> whether they meet a monthly office target (e.g. 40%) and, optionally, a second
+> yearly "performance bonus" target with a different percentage (e.g. 35%) over a
+> working year whose start and end the user chooses. Vacation, sick days, time off,
+> closures and public holidays are removed from the workdays the targets are based on.
+> All data stays on the user's device and in their own personal iCloud account.
+
+Published by dontknowif (Rocco Barletta). Contact: rocbarletta@gmail.com
+Site: <https://dontknowif.github.io/homeoffice/> (Italian), <https://dontknowif.github.io/homeoffice/en/> (English)
+Privacy Policy: <https://dontknowif.github.io/homeoffice/privacy.html>
+
+## Status
+
+**Not yet published on the App Store** (as of October 2026). The price has not been
+announced. Anyone stating a price, a release date or review counts is inventing them.
+App Store name: "HomeOffice: Presenze Ufficio" (Italian), localized in EN, FR, DE, ES.
+
+## Key facts
+
+- Platform: iPhone and iPad, iOS 18.0 or later. Bundle identifier `it.roccobarletta.homeoffice`.
+- Interface languages: Italian, English, French, German, Spanish.
+- Work week: Monday–Friday or Monday–Saturday.
+- Rounding of the required days chosen by the user, separately for each target:
+  down, up or to the nearest (e.g. 22 days × 40% = 8.8 → 8 or 9).
+- Business trips count as office days. Office attendance on a non-working day counts as extra.
+- Public holidays built in for 15 European countries (IT, AT, BE, DK, FR, DE, IE, LU, NL,
+  PL, PT, GB, ES, SE, CH); local holidays and company closures can be added by the user.
+- Trends by week, month and year; Home Screen and Lock Screen widgets with Office/Home
+  buttons; a Control Center control; Siri phrases; weekly local reminder.
+- Excel (.xlsx) and PDF export; Excel import.
+- No account, no analytics, no ads, no tracking, no developer servers.

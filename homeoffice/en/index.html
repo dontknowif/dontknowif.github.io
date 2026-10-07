@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HomeOffice — Office attendance tracker for hybrid work on iPhone</title>
+<meta name="description" content="iPhone app for hybrid workers: log your office and home days and always know whether you meet your monthly office target (e.g. 40%) and your yearly performance bonus target (e.g. 35%). Vacation, sick days and holidays excluded automatically. No account, data only on iPhone and iCloud.">
+<link rel="canonical" href="https://dontknowif.github.io/homeoffice/en/">
+
+<link rel="alternate" hreflang="it" href="https://dontknowif.github.io/homeoffice/">
+<link rel="alternate" hreflang="en" href="https://dontknowif.github.io/homeoffice/en/">
+<link rel="alternate" hreflang="x-default" href="https://dontknowif.github.io/homeoffice/">
+
+<meta name="theme-color" content="#5856d6">
+<meta name="author" content="Rocco Barletta">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeOffice">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:title" content="HomeOffice — Office attendance tracker for hybrid work on iPhone">
+<meta property="og:description" content="Log office and home days with one tap and always know whether you meet your monthly target and your performance bonus target. Vacation and holidays excluded automatically.">
+<meta property="og:url" content="https://dontknowif.github.io/homeoffice/en/">
+<meta property="og:image" content="https://dontknowif.github.io/homeoffice/og-image-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HomeOffice — Office attendance tracker for hybrid work on iPhone">
+<meta name="twitter:description" content="Log office and home days with one tap and always know whether you meet your monthly target and your performance bonus target. Vacation and holidays excluded automatically.">
+<meta name="twitter:image" content="https://dontknowif.github.io/homeoffice/og-image-en.png">
+
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../icon-180.png">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "@id": "https://dontknowif.github.io/homeoffice/#app",
+      "name": "HomeOffice",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Office attendance and hybrid work",
+      "operatingSystem": "iOS 18.0 or later",
+      "url": "https://dontknowif.github.io/homeoffice/en/",
+      "image": "https://dontknowif.github.io/homeoffice/icon-512.png",
+      "screenshot": "https://dontknowif.github.io/homeoffice/og-image-en.png",
+      "inLanguage": [
+        "it",
+        "en",
+        "fr",
+        "de",
+        "es"
+      ],
+      "description": "iPhone and iPad app that logs days worked at the office and from home and checks compliance with a minimum office attendance percentage, monthly and yearly (performance bonus), excluding vacation, sick days, time off and public holidays. Data stays on the device and in the user's personal iCloud account: there are no developer servers.",
+      "featureList": [
+        "Log each day as office, home, business trip, vacation, sick, time off or closure",
+        "Half days",
+        "Monthly target with customisable percentage and rounding",
+        "Optional performance bonus over a custom working year",
+        "Public holidays for 15 European countries and custom holidays",
+        "Weekly, monthly and yearly trends",
+        "Widgets, Control Center control and Siri",
+        "Weekly reminder",
+        "Excel and PDF export, Excel import",
+        "Sync with the personal iCloud account"
+      ],
+      "author": {
+        "@id": "https://dontknowif.github.io/#publisher"
+      },
+      "publisher": {
+        "@id": "https://dontknowif.github.io/#publisher"
+      },
+      "privacyPolicy": "https://dontknowif.github.io/homeoffice/privacy.html"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dontknowif.github.io/#publisher",
+      "name": "dontknowif",
+      "url": "https://dontknowif.github.io/",
+      "founder": {
+        "@type": "Person",
+        "name": "Rocco Barletta"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dontknowif.github.io/homeoffice/en/#website",
+      "url": "https://dontknowif.github.io/homeoffice/en/",
+      "name": "HomeOffice",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://dontknowif.github.io/#publisher"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/homeoffice/en/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is HomeOffice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is an iPhone and iPad app for hybrid workers who must meet a minimum share of days at the office. You log each day as office, home, business trip, vacation, sick, time off or closure, and the app works out whether you meet your monthly target and, if your company has one, your performance bonus target."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the percentage calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It starts from the workdays in the period (Monday–Friday or Monday–Saturday), removes public holidays, vacation, sick days, time off and closures, then applies the required percentage. The result is rounded the way your company does it: for example 22 days at 40% is 8.8, which becomes 8 when rounding down or 9 when rounding up. Business trips count as office days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do vacation, sick days and holidays count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, they do not lower your percentage: they are removed from the workdays the target is based on. Public holidays for 15 European countries are built in; local holidays and company closures can be added in Settings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the performance bonus in the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is an optional second target with a different percentage (for example 35%) measured over a working year whose start and end you choose. The app shows how many days you have done, how many you need, how many days a week are still required and, if it is out of reach, the highest percentage you can still achieve."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I log half days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each day has a morning and an afternoon: for example morning at the office and afternoon at home, or half a day of vacation. Each half counts as 0.5 days in the calculation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does my data go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It stays in your iPhone's storage and is synced to your personal iCloud account, so you find it on your other devices signed in with the same Apple Account. There are no developer servers and the app contains no usage analytics or ads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my attendance from Excel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The app reads an .xlsx file with a Date column and a day type column, or with Morning and Afternoon columns. It recognises common labels in five languages, such as Office, Remote, Vacation or Business trip, and you can export everything to Excel and PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which devices and languages are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works on iPhone and iPad with iOS 18 or later. The interface is available in English, Italian, French, German and Spanish, and the app language can be chosen independently of the system language."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="landing">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="./"><img class="dot" src="../icon-96.png" width="28" height="28" alt=""> HomeOffice</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#calculation">Calculation</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="langs">
+      <a href="../" hreflang="it">IT</a>
+      <a href="./" aria-current="true" hreflang="en">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Office or home? Always on target.</p>
+      <h1>Your office days,<br><span class="grad">under control.</span></h1>
+      <p class="hero-sub">Does your company ask you to be at the office 40% of your workdays? And maybe your bonus depends on another 35% over the year? <strong>Log each day with one tap</strong> and HomeOffice tells you how many days you still need, automatically leaving out vacation, sick days, time off and public holidays.</p>
+      <div class="hero-actions">
+        <span class="store-badge soon" role="img" aria-label="Coming soon to the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+          <span><span class="small">Coming soon to the</span><span class="big">App Store</span></span>
+        </span>
+      </div>
+      <p class="hero-note">For iPhone and iPad, iOS 18 or later · No account · English, Italian, French, German, Spanish</p>
+    </div>
+
+    <div class="hero-phone">
+      <img class="phone-shot" src="../assets/calendar-en.webp" width="300" height="517" alt="HomeOffice calendar: October with office days in purple, home days in teal and a half day split in two; above it, the buttons to log today as Office, Home or Business trip." fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<!-- ===================== DATI CHIAVE ===================== -->
+<section class="container" aria-label="Key facts">
+  <div class="facts">
+    <div class="fact"><b>2</b><span>targets: monthly and performance bonus</span></div>
+    <div class="fact"><b>15</b><span>European countries with holidays built in</span></div>
+    <div class="fact"><b>5</b><span>languages: EN, IT, FR, DE, ES</span></div>
+    <div class="fact"><b>0</b><span>servers, accounts and ads</span></div>
+  </div>
+</section>
+
+<!-- ===================== FUNZIONI ===================== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <h2>Everything hybrid work needs</h2>
+      <p>Built for people with a company attendance policy who are tired of counting days on a calendar.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V9a1.5 1.5 0 0 1 3 0v2"/><path d="M15 11a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.6-2.1L4.5 15.6a1.5 1.5 0 0 1 2.2-2L9 15.5"/></svg></div>
+        <h3>One tap a day</h3>
+        <p>Office, home or business trip right from the main screen, the widget or Siri. Vacation, sick, time off and closure with one more tap.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg></div>
+        <h3>Half days too</h3>
+        <p>Morning at the office and afternoon at home, or half a day of vacation: each half counts as 0.5 days and the calendar shows it split in two.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></svg></div>
+        <h3>Monthly target</h3>
+        <p>Choose the percentage your company requires. See how many days you need this month, how many you have done and how many workdays are left.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4"/><path d="M12 13v4M8.5 20h7M10 17h4"/></svg></div>
+        <h3>Performance bonus</h3>
+        <p>Optional: a second target with a different percentage, measured over the working year you choose, with a projection of the days per week you need.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></div>
+        <h3>Holidays built in</h3>
+        <p>Public holidays for 15 European countries included. Add your local holidays and company closures, even yearly ones.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M12 20V7M19 20v-9"/></svg></div>
+        <h3>Trends</h3>
+        <p>Weekly, monthly and yearly charts: office percentage against your target and the split between office, home and absences.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/></svg></div>
+        <h3>Widgets, Control Center and Siri</h3>
+        <p>Home Screen and Lock Screen widgets with Office and Home buttons, a Control Center control and ready-made Siri phrases.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 3.5-1.5 5-2 5.5h18c-.5-.5-2-2-2-5.5a7 7 0 0 0-7-7Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Weekly reminder</h3>
+        <p>A notification on the day and time you choose, with the office days you still need this month.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg></div>
+        <h3>Excel and PDF</h3>
+        <p>Export everything to Excel or a PDF report to share, and import your attendance from an Excel file, even one you made by hand.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CALCOLO ===================== -->
+<section class="section section-alt" id="calculation">
+  <div class="container">
+    <div class="section-head">
+      <h2>The calculation, explained</h2>
+      <p>Vacation, sick days, time off and public holidays are not workdays: they are removed from the base. Business trips count as office days. The percentage is applied to what is left, rounded the way your company does it.</p>
+    </div>
+
+    <div class="calc">
+      <div><b>22</b><span>workdays in October</span></div>
+      <div><b>8.8</b><span>days required at 40%</span></div>
+      <div class="on"><b>9</b><span>when rounding up (8 when rounding down)</span></div>
+    </div>
+
+    <div class="shots" style="margin-top:44px">
+      <figure>
+        <img class="phone-shot" src="../assets/month-it.webp" width="260" height="448" alt="HomeOffice Month tab: ring with 2.5 office days out of 9 and the calculation breakdown." loading="lazy">
+        <figcaption>Month: progress ring and line-by-line calculation</figcaption>
+      </figure>
+      <figure>
+        <img class="phone-shot" src="../assets/bonus-en.webp" width="260" height="448" alt="HomeOffice Bonus tab: 86.5 days out of 85, target reached, and a monthly chart with the 35% line." loading="lazy">
+        <figcaption>Bonus: yearly target and month-by-month trend</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRIVACY ===================== -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head">
+      <h2>Your data stays yours</h2>
+      <p>Where you work and when you are on vacation or sick is personal information. That is why HomeOffice is built this way.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.9 7.5 9 4.3-1.1 7.5-4.5 7.5-9V6L12 3Z"/><path d="M9 12.2l2 2 4-4.2"/></svg></div>
+        <h3>No servers of ours</h3>
+        <p>Your days are stored on your iPhone and synced to <strong>your</strong> personal iCloud, directly between you and Apple. We never see them.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>No analytics, no ads</h3>
+        <p>The app contains no analytics tools or ad networks and does no tracking.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>No account</h3>
+        <p>No sign-up, and the app never asks for your company or employer: you only log where you worked.</p>
+      </article>
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.5-9A6 6 0 0 1 18 8a4 4 0 0 1 0 10z"/></svg></div>
+        <h3>Export any time</h3>
+        <p>Excel and PDF files are created on your phone and you decide where to save or send them.</p>
+      </article>
+    </div>
+
+    <p style="margin-top:26px">All the details are in the <a href="../privacy.html">Privacy Policy</a>.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head"><h2>Frequently asked questions</h2></div>
+
+    <div class="faq">
+      <details open>
+        <summary>What is HomeOffice?</summary>
+        <p>It is an iPhone and iPad app for hybrid workers who must meet a minimum share of days at the office. You log each day as office, home, business trip, vacation, sick, time off or closure, and the app works out whether you meet your monthly target and, if your company has one, your performance bonus target.</p>
+      </details>
+
+      <details>
+        <summary>How is the percentage calculated?</summary>
+        <p>It starts from the workdays in the period (Monday–Friday or Monday–Saturday), removes public holidays, vacation, sick days, time off and closures, then applies the required percentage. The result is rounded the way your company does it: for example 22 days at 40% is 8.8, which becomes 8 when rounding down or 9 when rounding up. Business trips count as office days.</p>
+      </details>
+
+      <details>
+        <summary>Do vacation, sick days and holidays count?</summary>
+        <p>No, they do not lower your percentage: they are removed from the workdays the target is based on. Public holidays for 15 European countries are built in; local holidays and company closures can be added in Settings.</p>
+      </details>
+
+      <details>
+        <summary>What is the performance bonus in the app?</summary>
+        <p>It is an optional second target with a different percentage (for example 35%) measured over a working year whose start and end you choose. The app shows how many days you have done, how many you need, how many days a week are still required and, if it is out of reach, the highest percentage you can still achieve.</p>
+      </details>
+
+      <details>
+        <summary>Can I log half days?</summary>
+        <p>Yes. Each day has a morning and an afternoon: for example morning at the office and afternoon at home, or half a day of vacation. Each half counts as 0.5 days in the calculation.</p>
+      </details>
+
+      <details>
+        <summary>Where does my data go?</summary>
+        <p>It stays in your iPhone&#x27;s storage and is synced to your personal iCloud account, so you find it on your other devices signed in with the same Apple Account. There are no developer servers and the app contains no usage analytics or ads.</p>
+      </details>
+
+      <details>
+        <summary>Can I import my attendance from Excel?</summary>
+        <p>Yes. The app reads an .xlsx file with a Date column and a day type column, or with Morning and Afternoon columns. It recognises common labels in five languages, such as Office, Remote, Vacation or Business trip, and you can export everything to Excel and PDF.</p>
+      </details>
+
+      <details>
+        <summary>Which devices and languages are supported?</summary>
+        <p>It works on iPhone and iPad with iOS 18 or later. The interface is available in English, Italian, French, German and Spanish, and the app language can be chosen independently of the system language.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CHIUSURA ===================== -->
+<section class="container" style="padding:76px 22px">
+  <div class="closing">
+    <h2>Coming soon to the App Store</h2>
+    <p>HomeOffice is on its way to the App Store. If you have questions or feedback, write to us any time.</p>
+    <span class="store-badge soon" role="img" aria-label="Coming soon to the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+          <span><span class="small">Coming soon to the</span><span class="big">App Store</span></span>
+        </span>
+  </div>
+</section>
+
+</main>
+
+<!--
+  Cloudflare Web Analytics: senza cookie, non profila i singoli visitatori e
+  non richiede un banner di consenso. Stesso token del resto del dominio.
+  This tag and the "This website" section of the Privacy Policy must be kept in sync.
+-->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c71e538f281a4296b8b84c74ad2b43ad"}'></script>
+
+<footer>
+  <div class="container">
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="mailto:rocbarletta@gmail.com">rocbarletta@gmail.com</a>
+    <span class="spacer">© 2026 dontknowif</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 # dontknowif.github.io — sito pubblico
 
-Sito di **dontknowif** e dell'app **Skurda**, ospitato su GitHub Pages e online
-su <https://dontknowif.github.io/>.
+Sito di **dontknowif** e delle app **Skurda** e **HomeOffice**, ospitato su GitHub
+Pages e online su <https://dontknowif.github.io/>.
 
 Contiene anche Privacy Policy e Termini e condizioni: sono documenti **pubblici e
 gia in vigore**, non bozze. Vanno trattati con la stessa cura del codice di
@@ -39,10 +39,14 @@ legale, non solo di forma.
 ```text
 /                                  home: elenco delle app, volutamente generica
 /robots.txt                        ammette esplicitamente i crawler AI
-/sitemap.xml                       5 URL, con alternate hreflang
-/llms.txt                          scheda fattuale dell'app per gli assistenti AI
+/sitemap.xml                       8 URL, con alternate hreflang
+/llms.txt                          scheda fattuale delle app per gli assistenti AI
 /googlea082b78555501c8d.html       verifica Google Search Console
 /BingSiteAuth.xml                  verifica Bing (copia anche in /spese-ricorrenti/)
+
+/homeoffice/                       landing italiana di HomeOffice (vedi sezione «HomeOffice»)
+/homeoffice/en/                    landing inglese di HomeOffice
+/homeoffice/privacy.html           Privacy Policy di HomeOffice, bilingue IT/EN
 
 /spese-ricorrenti/                 landing italiana — URL canonico dell'app
 /spese-ricorrenti/en/              landing inglese
@@ -387,3 +391,33 @@ Cosa contiene:
 portata al giorno reale, poi `git checkout main && git merge release-3.2 &&
 git push`. Le anteprime gia in cache su WhatsApp/Facebook si aggiornano da sole
 nel giro di qualche giorno.
+
+## HomeOffice (aggiunta l'8 ottobre 2026)
+
+Seconda app del dominio: registra i giorni in ufficio e da casa e verifica una
+percentuale minima di presenze (obiettivo mensile e premio di risultato facoltativo).
+Al momento della creazione delle pagine l'app **non e ancora sullo Store**: il badge
+"Presto su App Store" e uno `<span class="store-badge soon">`, non un link. Quando
+l'app esce va sostituito con il link reale (landing IT/EN, sezione di chiusura
+compresa), aggiunto `downloadUrl`/`installUrl` nel JSON-LD e aggiornati `llms.txt` e
+la riga in `index.html` ("In arrivo su App Store").
+
+Struttura identica a `spese-ricorrenti/`, ma indipendente: `style.css` e `site.css`
+sono **copie** con i colori del marchio cambiati (indaco ufficio → verde acqua casa)
+e alcune classi in coda a `site.css` (`.store-badge.soon`, `.shots`, `.calc`).
+Contatto delle pagine HomeOffice: `rocbarletta@gmail.com` (scelto dall'utente; la
+home del dominio e Skurda usano `feedbacksr@icloud.com`).
+
+Le pagine sono generate da uno script (testi in un solo posto, FAQ del JSON-LD
+identiche parola per parola a quelle visibili); se si modificano a mano va
+mantenuta questa uguaglianza. Gli screenshot in `homeoffice/assets/` vengono dal
+simulatore con dati di esempio (avvio dell'app con `-seedDemoData`, solo build di debug).
+
+| Cosa dice il sito | Dove sta la verita nell'app (repo HomeOffice) |
+|---|---|
+| 15 paesi con festività incluse | `HolidayCountry` in `Shared/Holidays.swift` (casi meno `.none`) |
+| 5 lingue (IT, EN, FR, DE, ES) | `CFBundleLocalizations` in `project.yml` |
+| iOS 18 o successivo, iPhone e iPad | `deploymentTarget` e `TARGETED_DEVICE_FAMILY` in `project.yml` |
+| 3 modi di arrotondare | `RoundingMode` in `Shared/AppSettings.swift` |
+| Nessuna statistica, nessun SDK di terze parti | nessuna dipendenza esterna nel progetto; se se ne aggiunge una va aggiornata la Privacy Policy **prima** del rilascio |
+| Esempio 22 giorni × 40% = 8,8 | calcolo in `Shared/ComplianceEngine.swift` |
