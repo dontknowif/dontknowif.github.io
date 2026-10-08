@@ -409,10 +409,24 @@ Contatto: `feedbacksr@icloud.com`, lo stesso di Skurda e della home del dominio.
 Bundle ID dell'app: `it.dontknowif.HomeOffice` (codice nel repo privato
 `roccobar/HomeOffice-iOS`).
 
-Le pagine sono generate da uno script (testi in un solo posto, FAQ del JSON-LD
-identiche parola per parola a quelle visibili); se si modificano a mano va
-mantenuta questa uguaglianza. Gli screenshot in `homeoffice/assets/` vengono dal
-simulatore con dati di esempio (avvio dell'app con `-seedDemoData`, solo build di debug).
+Le landing (`index.html`, `en/index.html`) e le immagini sono **generate da script
+che stanno nel repository dell'app** (`roccobar/HomeOffice-iOS`, cartella
+`AppStore/Site/`):
+
+- `generate-landing.py` — tutti i testi in un solo posto; verifica da solo che le FAQ
+  del JSON-LD siano identiche parola per parola a quelle visibili. Se si modificano
+  le landing a mano, va mantenuta questa uguaglianza (meglio: modificare lo script).
+- `make-assets.py` — screenshot ritagliati con cornice (`homeoffice/assets/*.webp`),
+  icone (favicon, 96, 180, 512) e anteprime social `og-image*.png`, a partire dagli
+  screenshot del simulatore fatti con i dati di esempio (avvio dell'app con
+  `-seedDemoData`, solo build di debug).
+
+`privacy.html` invece si modifica a mano, in entrambe le lingue.
+
+L'icona (palazzo + casa con le luci gialle, sfondo dall'alba al tramonto) è disegnata
+in codice nell'app da `AppStore/Icon/render-icon.swift`: se cambia, vanno rifatte le
+icone e le anteprime social con `make-assets.py`. Guida completa nel repository
+dell'app: `docs/BRAND-E-SITO.md`.
 
 | Cosa dice il sito | Dove sta la verita nell'app (repo HomeOffice) |
 |---|---|
