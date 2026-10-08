@@ -434,5 +434,5 @@ dell'app: `docs/BRAND-E-SITO.md`.
 | 5 lingue (IT, EN, FR, DE, ES) | `CFBundleLocalizations` in `project.yml` |
 | iOS 18 o successivo, iPhone e iPad | `deploymentTarget` e `TARGETED_DEVICE_FAMILY` in `project.yml` |
 | 3 modi di arrotondare | `RoundingMode` in `Shared/AppSettings.swift` |
-| Nessuna statistica, nessun SDK di terze parti | nessuna dipendenza esterna nel progetto; se se ne aggiunge una va aggiornata la Privacy Policy **prima** del rilascio |
+| Solo statistiche d'uso anonime (TelemetryDeck), nessun altro SDK di terze parti | `packages` in `project.yml` e `Analytics.swift`; se si aggiunge un servizio o un dato nuovo va aggiornata la Privacy Policy **prima** del rilascio. Il testo non elenca gli eventi (scelta voluta) |
 | Esempio 22 giorni × 40% = 8,8 | calcolo in `Shared/ComplianceEngine.swift` |

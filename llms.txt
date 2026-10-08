@@ -225,4 +225,5 @@ App Store name: "HomeOffice: Presenze Ufficio" (Italian), localized in EN, FR, D
 - Trends by week, month and year; Home Screen and Lock Screen widgets with Office/Home
   buttons; a Control Center control; Siri phrases; weekly local reminder.
 - Excel (.xlsx) and PDF export; Excel import.
-- No account, no analytics, no ads, no tracking, no developer servers.
+- No account, no ads, no tracking, no developer servers. Only anonymous usage statistics
+  (via TelemetryDeck), which never include the user's logged days or notes.
