@@ -405,8 +405,9 @@ la riga in `index.html` ("In arrivo su App Store").
 Struttura identica a `spese-ricorrenti/`, ma indipendente: `style.css` e `site.css`
 sono **copie** con i colori del marchio cambiati (indaco ufficio → verde acqua casa)
 e alcune classi in coda a `site.css` (`.store-badge.soon`, `.shots`, `.calc`).
-Contatto delle pagine HomeOffice: `rocbarletta@gmail.com` (scelto dall'utente; la
-home del dominio e Skurda usano `feedbacksr@icloud.com`).
+Contatto: `feedbacksr@icloud.com`, lo stesso di Skurda e della home del dominio.
+Bundle ID dell'app: `it.dontknowif.HomeOffice` (codice nel repo privato
+`roccobar/HomeOffice-iOS`).
 
 Le pagine sono generate da uno script (testi in un solo posto, FAQ del JSON-LD
 identiche parola per parola a quelle visibili); se si modificano a mano va

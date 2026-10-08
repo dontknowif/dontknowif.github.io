@@ -202,7 +202,7 @@ Users can permanently dismiss any individual insight.
 > closures and public holidays are removed from the workdays the targets are based on.
 > All data stays on the user's device and in their own personal iCloud account.
 
-Published by dontknowif (Rocco Barletta). Contact: rocbarletta@gmail.com
+Published by dontknowif (Rocco Barletta). Contact: feedbacksr@icloud.com
 Site: <https://dontknowif.github.io/homeoffice/> (Italian), <https://dontknowif.github.io/homeoffice/en/> (English)
 Privacy Policy: <https://dontknowif.github.io/homeoffice/privacy.html>
 
@@ -214,7 +214,7 @@ App Store name: "HomeOffice: Presenze Ufficio" (Italian), localized in EN, FR, D
 
 ## Key facts
 
-- Platform: iPhone and iPad, iOS 18.0 or later. Bundle identifier `it.roccobarletta.homeoffice`.
+- Platform: iPhone and iPad, iOS 18.0 or later. Bundle identifier `it.dontknowif.HomeOffice`.
 - Interface languages: Italian, English, French, German, Spanish.
 - Work week: Monday–Friday or Monday–Saturday.
 - Rounding of the required days chosen by the user, separately for each target:
