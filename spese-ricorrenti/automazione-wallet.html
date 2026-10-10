@@ -105,6 +105,12 @@
   .ios-choice p { margin: 0 0 14px; font-size: 15px; }
   .ios-where { color: var(--text-dim); }
   .ios-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 0 !important; }
+  /* Apre Comandi Rapidi già sulle automazioni (shortcuts://automations, non
+     documentato ma provato su iOS 26 e 27). Nascosto finché lo script non
+     vede un iPhone/iPad: da computer il link non porterebbe da nessuna parte. */
+  .open-shortcuts { display: none; margin: 12px 0 0; }
+  .is-ios .open-shortcuts { display: block; }
+  .cta-small { font-size: 15px; padding: 8px 18px; }
 
   /* Sotto i 720px lo screenshot va sotto il suo testo, non di fianco. */
   @media (max-width: 720px) {
@@ -161,6 +167,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Apri <strong>Comandi Rapidi</strong>, vai alla scheda <strong>Automazioni</strong> in basso, poi tocca il <strong>+</strong> in alto a destra.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Apri le automazioni in Comandi Rapidi</a></p>
       </div>
       <div class="step-shots">
         <figure>
@@ -354,6 +361,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Open <strong>Shortcuts</strong>, go to the <strong>Automation</strong> tab at the bottom, then tap <strong>+</strong> in the top right.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Open automations in Shortcuts</a></p>
       </div>
       <div class="step-shots">
         <figure>
@@ -551,6 +559,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Abre <strong>Atajos</strong>, ve a la pestaña <strong>Automatización</strong> (abajo) y toca el <strong>+</strong> arriba a la derecha.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Abrir las automatizaciones en Atajos</a></p>
       </div>
       <div class="step-shots">
         <figure>
@@ -748,6 +757,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Ouvrez <strong>Raccourcis</strong>, allez dans l'onglet <strong>Automatisation</strong> (en bas), puis appuyez sur le <strong>+</strong> en haut à droite.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Ouvrir les automatisations dans Raccourcis</a></p>
       </div>
       <div class="step-shots">
         <figure>
@@ -945,6 +955,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Öffne <strong>Kurzbefehle</strong>, geh zum Tab <strong>Automation</strong> (unten) und tippe oben rechts auf das <strong>+</strong>.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Automationen in Kurzbefehle öffnen</a></p>
       </div>
       <div class="step-shots">
         <figure>
@@ -1134,6 +1145,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>In Comandi Rapidi vai su <strong>Libreria</strong> → <strong>Automazioni</strong> e apri <strong>Skurda-Wallet</strong>. Arriva spento: vedi «L'automazione è disattivata».</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Apri le automazioni in Comandi Rapidi</a></p>
       </div>
     </div>
   </li>
@@ -1218,6 +1230,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>In Shortcuts, go to <strong>Library</strong> → <strong>Automations</strong> and open <strong>Skurda-Wallet</strong>. It arrives switched off.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Open automations in Shortcuts</a></p>
       </div>
     </div>
   </li>
@@ -1302,6 +1315,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>En Atajos, ve a <strong>Biblioteca</strong> → <strong>Automatizaciones</strong> y abre <strong>Skurda-Wallet</strong>. Llega desactivado.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Abrir las automatizaciones en Atajos</a></p>
       </div>
     </div>
   </li>
@@ -1386,6 +1400,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Dans Raccourcis, allez dans <strong>Bibliothèque</strong> → <strong>Automatisations</strong> et ouvrez <strong>Skurda-Wallet</strong>. Il arrive désactivé.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Ouvrir les automatisations dans Raccourcis</a></p>
       </div>
     </div>
   </li>
@@ -1470,6 +1485,7 @@
     <div class="step-body">
       <div class="step-text">
         <p>Gehe in Kurzbefehle zu <strong>Mediathek</strong> → <strong>Automationen</strong> und öffne <strong>Skurda-Wallet</strong>. Er kommt ausgeschaltet an.</p>
+        <p class="open-shortcuts"><a class="cta cta-small" href="shortcuts://automations">Automationen in Kurzbefehle öffnen</a></p>
       </div>
     </div>
   </li>
@@ -1532,6 +1548,11 @@
 </div>
 
 <script>
+// iPadOS si presenta come un Mac: lo distingue il touch.
+if (/iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1)) {
+  document.documentElement.classList.add('is-ios');
+}
 (function () {
   var KEY = 'sr-automation-lang';
   var SUPPORTED = ['it', 'en', 'es', 'fr', 'de'];
