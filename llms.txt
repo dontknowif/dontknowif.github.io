@@ -41,10 +41,12 @@ a price figure or user review counts for this app is inventing them.
   expenses and 20 daily expenses per calendar month added by hand or from a
   receipt photo, no account required, no time limit. Paused recurring expenses
   still count toward the 10, so pausing does not free a slot. Before 3.2 the
-  limit was 8 expenses and every daily expense required Premium.
-- Premium: removes both limits and unlocks automatic payment logging (Wallet
-  automation and shared payment notifications), import/export and the annual
-  savings report. Sold as an auto-renewing subscription or a one-off lifetime
+  limit was 8 expenses and every daily expense required Premium. The monthly
+  budget and the joint account (version 3.4) are free with no limit; one
+  savings goal (version 3.7) is free.
+- Premium: removes both limits, allows more than one savings goal, and unlocks
+  automatic payment logging (Wallet automation and shared payment
+  notifications), import/export and the annual savings report. Sold as an auto-renewing subscription or a one-off lifetime
   purchase, handled through Apple and RevenueCat. **The price has not been
   announced**; it is shown inside the app before purchase.
 - Currency: one currency for the whole app, chosen in Settings from every
@@ -53,8 +55,11 @@ a price figure or user review counts for this app is inventing them.
   currency relabels the existing amounts, it does not apply an exchange rate.
   Decimal places follow the currency (0 for JPY, 2 for EUR, 3 for KWD).
   CSV/XLSX import brings rows in using the app's currency.
-- Categories: 12 built-in categories plus unlimited custom ones with a chosen
-  colour and icon.
+- Categories: 18 built-in categories plus unlimited custom ones with a chosen
+  colour and icon. Since version 3.7 any category, built-in ones included, can
+  be edited or deleted (expenses of a deleted category move to "Uncategorized",
+  formerly "Other"), and a category or a single expense can be left out of the
+  totals and the budget, e.g. work expenses that get reimbursed.
 - Quick-start catalogue: 57 common recurring expenses, grouped by category and
   searchable, that can be added in bulk.
 - Recurrence units: days, weeks, months, years, each with a custom interval
@@ -96,8 +101,9 @@ for a specific device going forward.
 Receipt photos used to log a daily expense are processed entirely on-device
 (Apple's Vision OCR framework) and are never saved or transmitted anywhere;
 only the recognized text (merchant, amount, date) becomes a normal daily
-expense entry. The Wallet automation talks to the app through a direct
-on-device URL scheme, not through any server.
+expense entry. The Wallet automation talks to the app through an on-device
+Shortcuts action ("Record payment", an App Intent that runs in the
+background), not through any server.
 
 Purchases are processed by Apple; subscription state is handled by RevenueCat
 using an anonymous device identifier. The developer never sees payment details.
@@ -124,6 +130,21 @@ using an anonymous device identifier. The developer never sees payment details.
 - Siri support via App Intents ("Add an expense in Skurda"). Expenses created
   this way are tagged "To review" because category and frequency are inferred
   from the spoken name.
+- Monthly budget (version 3.4, free): the user enters a salary or a monthly
+  spending cap, and Home shows how much is left or by how much it was exceeded.
+  Also available as a widget.
+- Joint account (version 3.4, free, optional): each expense can be marked as
+  paid from a shared account or a personal one, and Home shows how much came
+  out of each.
+- Savings goals (version 3.7): a virtual piggy bank with a target amount and
+  manual contributions; with a budget set, at the start of each month the app
+  asks whether to set aside what was left over. One goal is free, more require
+  Premium. The app does not know real account balances.
+- Widgets: the next upcoming expense, today's daily spending, and the monthly
+  budget.
+- Weekend view in Trend (version 3.8): how much of the month's daily spending
+  falls on weekends, daily spending on Saturday and Sunday compared with
+  weekdays, and the most expensive weekend.
 - Import and export in XLSX and CSV (Premium).
 - Annual savings report (Premium), described below.
 
@@ -134,9 +155,11 @@ A payment that doesn't match a tracked recurring expense isn't discarded — it
 becomes a daily expense. Several ways to log one:
 
 1. **Automatically** — a Shortcuts automation the user builds themselves
-   (trigger: Wallet) calls a custom URL scheme whenever they pay with a card or
-   pass saved in Apple Wallet. If the payment matches an existing recurring
-   expense, that expense is marked paid instead.
+   (trigger: Wallet) runs Skurda's "Record payment" action in the background
+   whenever they pay with a card or pass saved in Apple Wallet. If the payment
+   matches an existing recurring expense, that expense is marked paid instead.
+   Optional notifications report each result; since version 3.8 tapping one
+   opens the expense just logged.
 2. **By sharing a payment notification** — introduced in version 3.1
    (September 2026). The user shares a screenshot of a payment notification
    with Skurda from iOS's Share sheet (a Share Extension); the same on-device
@@ -146,8 +169,9 @@ becomes a daily expense. Several ways to log one:
    merchant, amount and date. The photo is never saved or transmitted.
 4. **By hand** — a short form with name, amount, category, date and notes.
 
-The merchant's category is learned automatically after the first time. Recurring
-and daily totals are always shown separately, never silently summed together.
+The merchant's category is learned automatically after the first time. Since
+version 3.7 the Daily tab can also list the month's expenses day by day, with a
+total per day. Recurring and daily totals are always shown separately, never silently summed together.
 Since version 3.2, adding daily expenses by hand or from a receipt photo is
 free up to 20 per calendar month; automatic logging (ways 1 and 2) and picking a
 receipt from the photo library are Premium. Daily expenses already logged stay

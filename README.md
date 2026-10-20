@@ -22,13 +22,16 @@ modifica rilevante dell'app:
 | 10 spese ricorrenti gratis | `SpeseStore.freeLimit` |
 | 20 spese quotidiane gratis al mese (a mano / da scontrino) | `SpeseStore.freeLimitQuotidiane` |
 | 57 voci nel catalogo di partenza | conteggio di `SpesaSuggerita(` in `Views/OnboardingView.swift` |
-| 12 categorie di sistema | `Category.systemCatalog` |
+| 18 categorie preimpostate, modificabili ed eliminabili dalla 3.7 | `Category.systemCatalog` |
 | 5 lingue (IT, EN, ES, FR, DE) | `Localizable.xcstrings` |
 | 9 tipi di segnalazione nel report | i rilevatori in `Engine/SavingsReportEngine.swift` (contali con `grep -c 'static func detect'`) |
 | una sola valuta per l'app, scelta fra ~155 | `Valuta.tutte` e `SettingsView.applicaValuta` in `Model/UserSettings.swift` |
 | iOS 17 o successivo | `IPHONEOS_DEPLOYMENT_TARGET` |
 | Elenco eventi analytics nella Privacy Policy §3.1 | tutte le chiamate `Analytics.signal(` nell'app |
-| 5 secondi per annullare l'eliminazione di una spesa (card "Annulla eliminazione" in `funzionalita.html`) | `DashboardView.pendingDeleteWindow` |
+| 5 secondi per annullare l'eliminazione di una spesa (card "Annulla eliminazione" in `funzionalita.html`) | `RicorrentiView.pendingDeleteWindow` |
+| 1 obiettivo di risparmio gratis, di più con Premium | `SpeseStore.freeLimitObiettivi` |
+| Budget del mese e conto comune gratis, senza limiti | `STATO_PREMIUM.md` dell'app, sezioni «Budget del mese» e «Conto comune» |
+| 3 widget: prossima spesa, spese di oggi, budget del mese | `configurationDisplayName(` in `NextExpenseWidget/` |
 
 L'ultima riga e la piu delicata: aggiungere un evento analytics nell'app senza
 elencarlo nella Privacy Policy rende la policy incompleta, e questo ha rilevanza
@@ -436,3 +439,28 @@ dell'app: `docs/BRAND-E-SITO.md`.
 | 3 modi di arrotondare | `RoundingMode` in `Shared/AppSettings.swift` |
 | Solo statistiche d'uso anonime (TelemetryDeck), nessun altro SDK di terze parti | `packages` in `project.yml` e `Analytics.swift`; se si aggiunge un servizio o un dato nuovo va aggiornata la Privacy Policy **prima** del rilascio. Il testo non elenca gli eventi (scelta voluta) |
 | Esempio 22 giorni × 40% = 8,8 | calcolo in `Shared/ComplianceEngine.swift` |
+
+## Aggiornamento del 20 ottobre 2026: funzioni fino alla 3.8
+
+Il sito era fermo alla 3.2: mancavano budget del mese e conto comune (3.4),
+obiettivi, categorie modificabili/eliminabili e spese fuori dai totali (3.7),
+il weekend nel Trend (3.8), e diceva ancora «12 categorie» (sono 18). Testi
+presi dal popup Novità dell'app (già approvati e tradotti), con il «vous» in
+francese come nel resto di `funzionalita.html`. Preparato sul ramo
+`aggiornamento-3.8` e pubblicato solo dopo il via libera dell'utente.
+
+- **Landing IT/EN**: card nuove «Il budget del mese», «Obiettivi», «Il conto
+  comune»; card categorie e andamento aggiornate; prezzi (gratis: budget, conto
+  comune, un obiettivo; Premium: obiettivi senza limiti); FAQ «L'app è
+  gratuita?» e JSON-LD (`featureList`, `offers`) allineati parola per parola;
+  meta description con il budget.
+- **`funzionalita.html`** (5 lingue): card widget al plurale (sono tre) e cinque
+  card nuove: budget, obiettivi, conto comune, categorie, weekend.
+- **`llms.txt`**: limiti gratis/Premium, categorie, funzioni nuove; corretta
+  l'automazione Wallet, che dalla 3.x passa da un'azione di Comandi (App Intent
+  «Record payment») e non da un URL scheme.
+- **Home del dominio**: riga di Skurda con il budget del mese.
+
+Non toccati, per scelta dell'utente (Privacy e Termini solo per i limiti
+gratis): `privacy.html` descrive ancora l'automazione come «URL scheme locale».
+
