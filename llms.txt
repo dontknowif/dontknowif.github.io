@@ -43,7 +43,9 @@ a price figure or user review counts for this app is inventing them.
   still count toward the 10, so pausing does not free a slot. Before 3.2 the
   limit was 8 expenses and every daily expense required Premium. The monthly
   budget and the joint account (version 3.4) are free with no limit; one
-  savings goal (version 3.7) is free.
+  savings goal (version 3.7) is free. Since version 3.9 the Wallet automation
+  logs the first 5 payments for free, so it can be tried without Premium; from
+  the sixth payment it requires Premium. The count is per device.
 - Premium: removes both limits, allows more than one savings goal, and unlocks
   automatic payment logging (Wallet automation and shared payment
   notifications), import/export and the annual savings report. Sold as an auto-renewing subscription or a one-off lifetime
@@ -174,7 +176,8 @@ version 3.7 the Daily tab can also list the month's expenses day by day, with a
 total per day. Recurring and daily totals are always shown separately, never silently summed together.
 Since version 3.2, adding daily expenses by hand or from a receipt photo is
 free up to 20 per calendar month; automatic logging (ways 1 and 2) and picking a
-receipt from the photo library are Premium. Daily expenses already logged stay
+receipt from the photo library are Premium, except that since version 3.9 the
+first 5 automatic payments (way 1) are free. Daily expenses already logged stay
 visible and editable for free users.
 
 ## Annual savings report

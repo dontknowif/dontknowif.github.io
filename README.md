@@ -30,6 +30,7 @@ modifica rilevante dell'app:
 | Elenco eventi analytics nella Privacy Policy §3.1 | tutte le chiamate `Analytics.signal(` nell'app |
 | 5 secondi per annullare l'eliminazione di una spesa (card "Annulla eliminazione" in `funzionalita.html`) | `RicorrentiView.pendingDeleteWindow` |
 | 1 obiettivo di risparmio gratis, di più con Premium | `SpeseStore.freeLimitObiettivi` |
+| 5 pagamenti automatici gratis senza Premium (dalla 3.9) | `ProvaAutomazione.pagamentiGratis` in `Engine/RegistratorePagamenti.swift` |
 | Budget del mese e conto comune gratis, senza limiti | `STATO_PREMIUM.md` dell'app, sezioni «Budget del mese» e «Conto comune» |
 | 3 widget: prossima spesa, spese di oggi, budget del mese | `configurationDisplayName(` in `NextExpenseWidget/` |
 
@@ -463,4 +464,21 @@ francese come nel resto di `funzionalita.html`. Preparato sul ramo
 
 Non toccati, per scelta dell'utente (Privacy e Termini solo per i limiti
 gratis): `privacy.html` descrive ancora l'automazione come «URL scheme locale».
+
+## Versione 3.9 dell'app: ramo `release-3.9`, da mergiare all'uscita
+
+Nella 3.9 l'automazione Wallet si prova gratis: senza Premium registra i primi
+**5 pagamenti**, poi chiede Premium (`ProvaAutomazione` nell'app). Sul ramo
+`release-3.9` (partito da `aggiornamento-3.8`):
+
+- landing IT/EN: prezzi (gratis «I primi 5 pagamenti registrati in automatico,
+  per provarla», Premium «senza limiti»), FAQ «L'app è gratuita?» e JSON-LD,
+  card «Paghi col telefono. Si segna da sola.»;
+- `funzionalita.html` (5 lingue): una frase sui 5 pagamenti gratis nella prima card;
+- Termini IT/EN §3 e §4: i 5 pagamenti gratis e l'obiettivo gratis (limiti
+  gratuiti, l'eccezione alla regola «Termini non si toccano»); versione app 3.9;
+- `llms.txt` e la tabella della regola di manutenzione.
+
+**Il giorno dell'uscita**: data dei Termini (IT e EN) al giorno reale, poi
+`git checkout main && git merge release-3.9 && git push`.
 
