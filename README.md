@@ -400,11 +400,10 @@ nel giro di qualche giorno.
 
 Seconda app del dominio: registra i giorni in ufficio e da casa e verifica una
 percentuale minima di presenze (obiettivo mensile e premio di risultato facoltativo).
-Al momento della creazione delle pagine l'app **non e ancora sullo Store**: il badge
-"Presto su App Store" e uno `<span class="store-badge soon">`, non un link. Quando
-l'app esce va sostituito con il link reale (landing IT/EN, sezione di chiusura
-compresa), aggiunto `downloadUrl`/`installUrl` nel JSON-LD e aggiornati `llms.txt` e
-la riga in `index.html` ("In arrivo su App Store").
+L'app e **sullo Store dal 26 ottobre 2026** (ID 6820567004): i badge delle landing IT/EN
+sono link (`apps.apple.com/it/app/id6820567004` per l'italiana, `apps.apple.com/app/id6820567004`
+per l'inglese e `llms.txt`), con `downloadUrl`/`installUrl` nel JSON-LD. La classe
+`.store-badge.soon` in `site.css` non e piu usata.
 
 Struttura identica a `spese-ricorrenti/`, ma indipendente: `style.css` e `site.css`
 sono **copie** con i colori del marchio cambiati (indaco ufficio → verde acqua casa)

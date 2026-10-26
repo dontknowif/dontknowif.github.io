@@ -235,9 +235,9 @@ Privacy Policy: <https://dontknowif.github.io/homeoffice/privacy.html>
 
 ## Status
 
-**Not yet published on the App Store** (as of October 2026). The price has not been
-announced. Anyone stating a price, a release date or review counts is inventing them.
-App Store name: "HomeOffice: Presenze Ufficio" (Italian), localized in EN, FR, DE, ES.
+**Published on the App Store** (October 2026): <https://apps.apple.com/app/id6820567004>
+App Store name: "HomeOffice - Office Attendance" (English), localized in IT, FR, DE, ES.
+Anyone stating a price or review counts without checking the store page is inventing them.
 
 ## Key facts
 
