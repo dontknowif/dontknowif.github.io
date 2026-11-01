@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Skurda — Dépenses récurrentes et quotidiennes sur iPhone</title>
+<meta name="description" content="Application iPhone pour les abonnements, les factures et le loyer, et désormais aussi pour les dépenses du quotidien : enregistrées automatiquement quand vous payez avec votre téléphone, depuis une photo de ticket ou à la main. Rappels avant chaque échéance, budget mensuel et bilan des économies. Gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, sans compte.">
+<link rel="canonical" href="https://dontknowif.github.io/spese-ricorrenti/fr/">
+
+<link rel="alternate" hreflang="it" href="https://dontknowif.github.io/spese-ricorrenti/">
+<link rel="alternate" hreflang="en" href="https://dontknowif.github.io/spese-ricorrenti/en/">
+<link rel="alternate" hreflang="de" href="https://dontknowif.github.io/spese-ricorrenti/de/">
+<link rel="alternate" hreflang="fr" href="https://dontknowif.github.io/spese-ricorrenti/fr/">
+<link rel="alternate" hreflang="es" href="https://dontknowif.github.io/spese-ricorrenti/es/">
+<link rel="alternate" hreflang="x-default" href="https://dontknowif.github.io/spese-ricorrenti/">
+
+<meta name="theme-color" content="#5ba8f1">
+<meta name="author" content="Rocco Barletta">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Skurda">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:title" content="Skurda — Dépenses récurrentes et quotidiennes sur iPhone">
+<meta property="og:description" content="Abonnements, factures et dépenses récurrentes, et désormais aussi celles du quotidien, enregistrées automatiquement, depuis un ticket ou à la main. Rappels avant chaque échéance, budget mensuel et bilan des économies. Gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, sans compte.">
+<meta property="og:url" content="https://dontknowif.github.io/spese-ricorrenti/fr/">
+<meta property="og:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="L'icône de Skurda et la phrase : toutes vos dépenses, au même endroit. Payez avec votre téléphone, elle s'enregistre toute seule. À côté, l'écran d'accueil de l'app.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Skurda — Dépenses récurrentes et quotidiennes sur iPhone">
+<meta name="twitter:description" content="Rappels avant chaque échéance, budget mensuel, dépenses quotidiennes enregistrées automatiquement ou depuis un ticket, et bilan des économies. Gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, sans compte.">
+<meta name="twitter:image" content="https://dontknowif.github.io/spese-ricorrenti/og-image-en.png">
+
+<link rel="icon" href="../favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../icon-180.png">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MobileApplication",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/#app",
+      "name": "Skurda",
+      "alternateName": "Spese Ricorrenti",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Suivi des dépenses récurrentes, quotidiennes et des abonnements",
+      "operatingSystem": "iOS 17.0 ou version ultérieure",
+      "url": "https://dontknowif.github.io/spese-ricorrenti/fr/",
+      "image": "https://dontknowif.github.io/spese-ricorrenti/icon-512.png",
+      "screenshot": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
+      "inLanguage": ["it", "en", "es", "fr", "de"],
+      "description": "Application iPhone qui suit les dépenses récurrentes (abonnements, factures, loyer, assurances, impôts) et les dépenses quotidiennes, enregistrées automatiquement lors d'un paiement avec le téléphone, depuis une photo de ticket ou à la main. Elle affiche le total du mois, envoie des rappels avant chaque échéance et signale les économies possibles. Les données restent sur l'appareil et dans le compte iCloud de l'utilisateur : le développeur n'exploite aucun serveur.",
+      "featureList": [
+        "Résumé du mois en cours et du mois suivant",
+        "Calendrier des échéances avec total mensuel",
+        "Évolution des dépenses dans le temps et répartition par catégorie",
+        "Rappels par notification locale, personnalisables pour chaque dépense",
+        "Dépenses variables avec suivi du montant réel",
+        "Ajout de dépenses avec Siri",
+        "Catalogue de 57 dépenses récurrentes courantes pour démarrer vite",
+        "18 catégories prédéfinies modifiables ou supprimables, plus des catégories personnalisées",
+        "Catégories et dépenses exclues des totaux, pour les dépenses remboursées",
+        "Dépenses quotidiennes enregistrées automatiquement lors d'un paiement avec le téléphone",
+        "Dépenses quotidiennes partagées en un geste depuis la notification de paiement",
+        "Dépenses quotidiennes depuis une photo de ticket, avec reconnaissance automatique du texte",
+        "Bilan annuel des économies avec neuf types d'indications",
+        "Import et export en XLSX et CSV",
+        "Accueil avec une vue d'ensemble du mois : dépenses récurrentes et quotidiennes réunies",
+        "Dépenses partagées avec une autre personne, synchronisées via iCloud",
+        "Budget mensuel avec widget, gratuit",
+        "Objectifs d'épargne, avec une question en début de mois sur ce qu'il faut mettre de côté",
+        "Compte joint : pour chaque dépense, on indique si elle sort du compte commun ou du compte personnel",
+        "Synchronisation avec le compte iCloud personnel de l'utilisateur"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, ajoutées à la main ou depuis un ticket. Les fonctions Premium (dépenses illimitées, enregistrement automatique des paiements au-delà des 5 premiers, plusieurs objectifs d'épargne, import/export, bilan annuel des économies) sont proposées en abonnement ou en achat unique : le prix et la durée sont affichés dans l'app avant la confirmation."
+      },
+      "downloadUrl": "https://apps.apple.com/app/id6806970079",
+      "installUrl": "https://apps.apple.com/app/id6806970079",
+      "sameAs": ["https://apps.apple.com/app/id6806970079"],
+      "author": { "@id": "https://dontknowif.github.io/#publisher" },
+      "publisher": { "@id": "https://dontknowif.github.io/#publisher" },
+      "privacyPolicy": "https://dontknowif.github.io/spese-ricorrenti/privacy.html",
+      "termsOfService": "https://dontknowif.github.io/spese-ricorrenti/terms.html"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://dontknowif.github.io/#publisher",
+      "name": "dontknowif",
+      "url": "https://dontknowif.github.io/",
+      "email": "feedbacksr@icloud.com",
+      "founder": { "@type": "Person", "name": "Rocco Barletta" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/fr/#website",
+      "url": "https://dontknowif.github.io/spese-ricorrenti/fr/",
+      "name": "Skurda",
+      "inLanguage": "fr",
+      "publisher": { "@id": "https://dontknowif.github.io/#publisher" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/fr/#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que Skurda ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est une application iPhone qui suit deux types de dépenses au même endroit : celles qui se répètent dans le temps (abonnements, factures, loyer, assurances, impôts et échéances de crédit) et celles du quotidien, comme les courses ou un café. Pour une dépense récurrente, vous la saisissez une seule fois en indiquant sa fréquence : l'app calcule toutes les échéances à venir, le total de chaque mois et vous prévient avant chaque paiement. Les dépenses quotidiennes, elles, s'ajoutent automatiquement quand vous payez avec votre téléphone, en partageant la notification de paiement, depuis une photo de ticket ou à la main."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'application est-elle gratuite ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, ajoutées à la main ou depuis une photo de ticket, sans compte et sans limite de durée. Les rappels, le calendrier, les graphiques, la vue d'ensemble du mois, le budget mensuel, le compte joint, un objectif d'épargne et le partage avec une autre personne sont inclus dans la version gratuite, et vos 5 premiers paiements avec le téléphone sont enregistrés automatiquement gratuitement, pour que vous puissiez essayer. Premium est nécessaire pour dépasser ces limites, continuer à enregistrer automatiquement les paiements faits avec votre téléphone, avoir plusieurs objectifs, ainsi que pour l'import/export et le bilan annuel des économies : le prix et la durée sont affichés dans l'app avant que vous confirmiez l'achat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment fonctionnent les dépenses quotidiennes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ce sont toutes les dépenses du quotidien (carburant, courses, un café), toujours séparées des dépenses récurrentes. Vous pouvez les enregistrer de plusieurs façons : automatiquement quand vous payez avec votre téléphone, grâce à une automatisation à configurer une seule fois ; en partageant la notification de paiement en un geste, depuis la feuille « Partager » d'iOS ; en photographiant le ticket, le commerçant, le montant et la date étant reconnus tout seuls et la photo jamais conservée ; ou à la main, en quelques secondes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'application se connecte-t-elle à mon compte bancaire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Skurda ne se connecte ni aux banques, ni aux cartes, ni aux comptes courants, n'effectue aucun paiement, ne résilie aucun abonnement à votre place et ne demande jamais d'identifiants bancaires. La seule automatisation disponible est celle que vous créez vous-même dans Raccourcis pour lire les notifications Wallet sur le même téléphone : ce n'est ni une connexion bancaire ni une intégration officielle d'Apple Pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où vont mes données ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les noms, montants, catégories et notes restent dans la mémoire de votre iPhone et se synchronisent automatiquement avec votre compte iCloud personnel, afin que vous les retrouviez sur vos autres appareils connectés avec le même compte Apple. Il n'y a aucun serveur du développeur : celui qui a créé l'app ne peut ni voir, ni recevoir, ni conserver vos dépenses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment fonctionne le bilan des économies ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il lit les dépenses que vous avez déjà saisies et cherche neuf situations typiques où l'on gaspille de l'argent : plusieurs services de streaming actifs en même temps, abonnements mensuels qui coûteraient peut-être moins cher à l'année, hausses de prix détectées dans votre historique, dépenses mises en pause dans l'app mais probablement toujours facturées par le fournisseur, dépenses saisies en double par erreur, crédits immobiliers qui valent la peine d'être renégociés, une seule catégorie qui absorbe l'essentiel de vos dépenses, dépenses que vous n'avez pas revues depuis plus d'un an, et renouvellements annuels à venir qui méritent d'être comparés à d'autres offres. Ce sont des règles déterministes calculées sur l'appareil : il n'y a aucune intelligence artificielle et aucune donnée n'est envoyée où que ce soit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fonctionne-t-elle sans connexion internet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Tous les calculs, graphiques, rappels et le bilan des économies fonctionnent entièrement hors ligne, car tout se passe sur l'appareil. Une connexion n'est nécessaire que pour la synchronisation iCloud et pour acheter Premium."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment gère-t-elle les factures qui changent à chaque fois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous pouvez marquer une dépense comme variable : depuis le calendrier, vous enregistrez à chaque échéance le montant réellement payé, et pour les échéances futures l'app affiche une estimation fondée sur la moyenne des derniers montants enregistrés, signalée par un tilde. Si un montant augmente par rapport au précédent, le bilan des économies le signale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels appareils et quelles langues sont pris en charge ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elle fonctionne sur iPhone avec iOS 17 ou version ultérieure. L'interface est disponible en italien, anglais, espagnol, français et allemand, et la langue se choisit dans les réglages de l'app, indépendamment de celle du système."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il de la publicité ou du suivi ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. L'app n'affiche aucune publicité, n'utilise aucun réseau publicitaire, n'utilise pas l'IDFA et ne pratique pas le suivi tel que défini par les règles d'Apple. Elle ne collecte que des statistiques d'utilisation anonymes et agrégées, qui ne comprennent jamais le nom ni le montant de vos dépenses et auxquelles vous pouvez vous opposer à tout moment en écrivant à feedbacksr@icloud.com."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="landing">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="./"><img class="dot" src="../icon-96.png" width="28" height="28" alt=""> Skurda</a>
+    <div class="nav-links">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#savings">Économies</a>
+      <a href="#privacy">Confidentialité</a>
+      <a href="#pricing">Tarifs</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="langs">
+      <a href="../" hreflang="it">IT</a>
+      <a href="../en/" hreflang="en">EN</a>
+      <a href="../de/" hreflang="de">DE</a>
+      <a href="./" aria-current="true" hreflang="fr">FR</a>
+      <a href="../es/" hreflang="es">ES</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Vos dépenses restent sur votre iPhone</p>
+      <h1>Toutes vos dépenses,<br><span class="grad">au même endroit.</span></h1>
+      <p class="hero-sub">
+        Abonnements, factures et dépenses du quotidien au même endroit.
+        <strong>Payez avec votre téléphone, elle s'enregistre toute seule.</strong>
+        Skurda vous montre où vous dépensez le plus, vous prévient avant chaque prélèvement
+        et vous indique où vous pourriez économiser.
+      </p>
+      <div class="hero-actions">
+        <a class="store-badge" href="https://apps.apple.com/app/id6806970079">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+          <span><span class="small">Télécharger dans l'</span><span class="big">App Store</span></span>
+        </a>
+      </div>
+      <p class="hero-note">Pour iPhone, iOS 17 ou version ultérieure · Gratuite jusqu'à 10 dépenses récurrentes et 20 quotidiennes par mois, sans compte · Premium gratuit le premier mois</p>
+    </div>
+
+    <div class="hero-phone">
+      <!-- Recreation of the app interface. The figures add up: 650 + 12.99 + 39
+           + 84.20 = €786.19 this month; next month the gas &amp; electricity bill
+           does not fall due (every 2 months) → €701.99. -->
+      <img class="phone-shot" src="../assets/home/home-fr.webp" width="300" height="538" alt="Écran d'accueil de Skurda : un message de bienvenue, la prochaine dépense, des cartes avec le total de ce mois-ci et du mois prochain et les dépenses quotidiennes, les actions rapides À la main, Ticket et Récurrente, et les prochaines échéances." fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<!-- ===================== KEY FACTS ===================== -->
+<section class="container" aria-label="Points clés">
+  <div class="facts">
+    <div class="fact"><b>10</b><span>dépenses récurrentes gratuites, sans compte</span></div>
+    <div class="fact"><b>5</b><span>langues : IT, EN, ES, FR, DE</span></div>
+    <div class="fact"><b>0</b><span>publicité et traceurs</span></div>
+    <div class="fact"><b>iOS 17+</b><span>iPhone</span></div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <h2>Tout ce que vous payez chaque mois, et chaque jour, au même endroit</h2>
+      <p>Aucune connexion bancaire, aucun relevé à importer. Saisissez une dépense une fois, l'app s'occupe du reste.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>Le mois en un coup d'œil</h3>
+        <p>Ouvrez l'app et l'accueil vous montre votre mois : dépenses récurrentes et quotidiennes réunies, prochaines factures, vos dernières dépenses et des actions rapides pour en ajouter une en un geste. Si le total change, l'app vous dit quelle dépense fait la différence.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h1l1.2-2h5.6L15 6h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.6" r="3.2"/></svg></div>
+        <h3>Payez avec votre téléphone. Elle s'enregistre toute seule.</h3>
+        <p>Le carburant, les courses de la semaine, un café au comptoir : enregistrés tout seuls quand vous payez avec votre téléphone, partagés en un geste depuis la notification de paiement, lus sur une photo du ticket (jamais conservée) ou notés à la main en quelques secondes. Toujours séparés des dépenses récurrentes, jamais additionnés en silence. Vos 5 premiers paiements automatiques sont gratuits.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="18" cy="8.5" r="2.5"/><path d="M15.2 14.3c2.6.5 4.3 2.6 4.3 5.7"/></svg></div>
+        <h3>Dépenses partagées <span class="beta-badge">Beta</span></h3>
+        <p>Invitez votre conjoint, un colocataire ou qui vous voulez, et choisissez ce que vous mettez en commun : ses dépenses restent séparées des vôtres, et un filtre affiche celles de tout le monde, seulement les vôtres ou seulement les siennes. Synchronisé directement entre vos comptes iCloud, jamais par nos serveurs. Gratuit.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 11h16"/><path d="M15 15h2"/></svg></div>
+        <h3>Votre budget mensuel</h3>
+        <p>Saisissez votre salaire, ou ce que vous voulez dépenser chaque mois : sur l'accueil, vous voyez d'un coup d'œil combien il vous reste, ou de combien vous avez dépassé, et vous pouvez ajouter le widget « Budget du mois ». Facultatif et gratuit.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <h3>Objectifs</h3>
+        <p>Mettez de l'argent de côté pour des vacances, un nouveau téléphone ou la vignette de la voiture : choisissez la somme dont vous avez besoin, enregistrez ce que vous mettez de côté et voyez où vous en êtes. Si vous avez un budget, en début de mois nous vous demandons si vous voulez mettre de côté ce qui reste. Un objectif est gratuit.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg></div>
+        <h3>Le compte joint</h3>
+        <p>Si vous payez certaines dépenses depuis un compte commun et d'autres depuis le vôtre, choisissez pour chaque dépense le compte concerné : sur l'accueil, vous voyez combien est sorti du compte joint et combien de votre compte personnel. Facultatif et gratuit.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 3.5-1.5 5-2 5.5h18c-.5-.5-2-2-2-5.5a7 7 0 0 0-7-7Z"/><path d="M10 18.5a2 2 0 0 0 4 0"/></svg></div>
+        <h3>Des alertes avant le prélèvement</h3>
+        <p>Notifications locales avec le délai de préavis de votre choix, qui peut différer pour chaque dépense. Gratuit pour tous, sans Premium.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M12 20V7M19 20v-9"/></svg></div>
+        <h3>Évolution dans le temps</h3>
+        <p>Un graphique mois par mois, le total de l'année et un diagramme circulaire par catégorie : touchez une part pour voir quelles dépenses la composent. Vous voyez aussi quelle part de vos dépenses quotidiennes tombe le week-end.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h3>Des factures qui changent sans cesse</h3>
+        <p>Marquez une dépense comme variable et enregistrez le montant réel à chaque échéance. Pour les suivantes, l'app estime le chiffre à partir de la moyenne des derniers montants.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10"/><path d="M8.5 6.5 12 3l3.5 3.5"/><rect x="4" y="13" width="16" height="8" rx="3"/></svg></div>
+        <h3>Ajoutez en parlant</h3>
+        <p>« Ajoute une dépense dans Skurda » et Siri fait le reste. La dépense arrive marquée <em>À vérifier</em>, pour que vous contrôliez le montant et la date à votre rythme.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2.4"/></svg></div>
+        <h3>Un démarrage rapide</h3>
+        <p>Un catalogue de 57 dépenses courantes (streaming, charges, assurances, salle de sport) à cocher d'un coup, avec catégorie et fréquence déjà proposées.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v9M9.5 10h5M9.5 14h5"/></svg></div>
+        <h3>Vos propres catégories</h3>
+        <p>18 catégories prêtes à l'emploi, que vous pouvez modifier ou supprimer, plus celles que vous créez, avec la couleur et l'icône de votre choix. Les dépenses professionnelles remboursées restent dans la liste mais hors des totaux. Chaque dépense a sa propre fréquence, et vous choisissez la devise parmi toutes celles en circulation.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4"/><path d="M8 12l4 4 4-4"/><path d="M4 18v2h16v-2"/></svg></div>
+        <h3>Vos données vous appartiennent vraiment</h3>
+        <p>Exportez tout en XLSX ou CSV quand vous voulez, et réimportez le fichier modifié. Aucun format fermé, rien qui vous enferme.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SAVINGS REPORT ===================== -->
+<section class="section section-alt" id="savings">
+  <div class="container">
+    <div class="section-head">
+      <h2>Retrouvez l'argent que vous gaspillez</h2>
+      <p>
+        Le bilan des économies relit les dépenses saisies et cherche neuf situations
+        où l'on paie en général plus que nécessaire. Tout est calculé sur votre
+        iPhone : aucune intelligence artificielle, aucune donnée envoyée où que ce soit.
+      </p>
+    </div>
+
+    <div class="insights">
+      <div class="insight">
+        <span class="badge" style="background:#fdeae3;color:#c2410c">Streaming en double</span>
+        <div>
+          <b>Quatre abonnements vidéo en même temps</b>
+          <p>Au lieu de vous dire de tout résilier, elle calcule ce que vous économiseriez en n'en gardant qu'un seul actif à la fois, à tour de rôle : vous regardez tout, mais pas en même temps.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#fdf3dc;color:#a16207">Hausse de prix</span>
+        <div>
+          <b>Une facture a augmenté par rapport à la dernière fois</b>
+          <p>Elle compare les deux derniers montants enregistrés pour les dépenses variables et estime ce que la hausse vous coûtera sur un an.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e8e4fd;color:#6d28d9">Dépense en double</span>
+        <div>
+          <b>Le même service saisi deux fois</b>
+          <p>Cela arrive en important un fichier ou en ajoutant quelque chose à la hâte. L'app les repère même avec des majuscules ou des accents différents, et vous dit ce que coûte le doublon.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#fdf3dc;color:#a16207">En pause depuis un moment</span>
+        <div>
+          <b>En pause ici, mais peut-être toujours prélevée</b>
+          <p>Mettre une dépense en pause dans l'app ne résilie pas l'abonnement chez le fournisseur. Au bout de deux semaines, l'app vous le rappelle, avec le montant annuel que vous risquez de continuer à payer.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e3effc;color:#1d4ed8">Mieux à l'année ?</span>
+        <div>
+          <b>Des abonnements mensuels souvent moins chers à l'année</b>
+          <p>Elle vous invite à vérifier s'il existe une formule annuelle moins chère, sans inventer de pourcentages de remise. Les opérateurs téléphoniques et internet sont exclus : en Italie, ils facturent uniquement au mois.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <span class="badge" style="background:#e3effc;color:#1d4ed8">Renégociation du prêt immobilier</span>
+        <div>
+          <b>Avez-vous déjà regardé ce que proposent les autres banques ?</b>
+          <p>Un rappel qu'en Italie, transférer son prêt immobilier vers une autre banque est gratuit de par la loi, sans frais ni pénalités. Aucun chiffre inventé : juste une incitation à demander un devis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRIVACY ===================== -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head">
+      <h2>Vos dépenses ne nous parviennent jamais</h2>
+      <p>Une application de dépenses connaît des choses très privées : ce que vous gagnez, où vous habitez, quelles assurances vous avez, si vous payez un avocat ou un thérapeute. C'est pour cela qu'elle est conçue ainsi.</p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v6c0 4.5 3.2 7.9 7.5 9 4.3-1.1 7.5-4.5 7.5-9V6L12 3Z"/><path d="M9 12.2l2 2 4-4.2"/></svg></div>
+        <h3>Aucun serveur de notre part</h3>
+        <p>Les données restent sur votre iPhone et se synchronisent avec <strong>votre</strong> iCloud personnel, directement entre vous et Apple. Elles ne passent jamais par nous : nous ne pouvons ni les voir ni les récupérer.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+        <h3>Zéro publicité</h3>
+        <p>Aucun réseau publicitaire, aucun IDFA, aucun profil commercial. L'app ne pratique pas le suivi tel que défini par les règles d'Apple.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Pas de compte, pas de banque</h3>
+        <p>Vous n'avez pas besoin de vous inscrire pour l'utiliser. L'app ne se connecte ni aux comptes ni aux cartes et ne demande jamais d'identifiants bancaires : elle n'en a pas besoin.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18.5" cy="16.5" r="3"/></svg></div>
+        <h3>Vous pouvez refuser les statistiques</h3>
+        <p>Nous ne collectons que des données d'utilisation anonymes et agrégées, jamais le nom ni le montant des dépenses, pour comprendre ce qu'il faut améliorer. Vous pouvez exercer à tout moment votre droit d'opposition en écrivant à <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+      </article>
+    </div>
+
+    <p style="margin-top:26px">
+      Chaque détail, événement par événement, est listé dans la
+      <a href="../privacy.html">politique de confidentialité</a> (en italien et en anglais).
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2>Vraiment gratuite, Premium si vous en avez besoin</h2>
+      <p>La version gratuite n'est pas un essai limité dans le temps : elle reste gratuite, avec toutes les fonctions du quotidien.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Gratuit</h3>
+        <div class="price">Jusqu'à 10 dépenses récurrentes</div>
+        <p class="price-note">Sans compte, sans date d'expiration</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Résumé mensuel et prochaines échéances</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Calendrier et graphiques d'évolution</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Rappels avant chaque échéance</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Saisie avec Siri et catalogue de dépenses</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Dépenses variables et catégories personnalisées</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Dépenses quotidiennes à la main ou depuis un ticket, 20 par mois</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Dépenses partagées avec une autre personne</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Budget mensuel et compte joint</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Un objectif d'épargne</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Vos 5 premiers paiements enregistrés automatiquement, pour essayer</li>
+        </ul>
+      </div>
+
+      <div class="plan pro">
+        <h3>Premium</h3>
+        <div class="price">Dépenses illimitées</div>
+        <p class="price-note">Abonnement ou achat unique. Le prix et la durée sont affichés dans l'app avant que vous confirmiez.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Tout ce qui est dans la version gratuite</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Aucune limite sur les dépenses récurrentes et quotidiennes</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Payez avec votre téléphone et elle s'enregistre toute seule, sans limite : automatiquement ou depuis la notification de paiement</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Objectifs d'épargne illimités</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Bilan annuel des économies</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Import et export en XLSX et CSV</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Résiliable à tout moment via Apple</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top:22px;color:var(--text-dim);font-size:15px">
+      Si Premium prend fin et que vous avez plus de 10 dépenses récurrentes, vous n'en perdez aucune : les dépenses en trop sont
+      mises en pause et restent visibles, prêtes à redevenir actives si vous renouvelez.
+      Les conditions complètes figurent dans les <a href="../terms.html">conditions générales</a> (en italien et en anglais).
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head"><h2>Questions fréquentes</h2></div>
+
+    <div class="faq">
+      <details open>
+        <summary>Qu'est-ce que Skurda ?</summary>
+        <p>C'est une application iPhone qui suit deux types de dépenses au même endroit : celles qui se répètent dans le temps (abonnements, factures, loyer, assurances, impôts et échéances de crédit) et celles du quotidien, comme les courses ou un café. Pour une dépense récurrente, vous la saisissez une seule fois en indiquant sa fréquence : l'app calcule toutes les échéances à venir, le total de chaque mois et vous prévient avant chaque paiement. Les dépenses quotidiennes, elles, s'ajoutent automatiquement quand vous payez avec votre téléphone, en partageant la notification de paiement, depuis une photo de ticket ou à la main.</p>
+      </details>
+
+      <details>
+        <summary>L'application est-elle gratuite ?</summary>
+        <p>Oui, jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, ajoutées à la main ou depuis une photo de ticket, sans compte et sans limite de durée. Les rappels, le calendrier, les graphiques, la vue d'ensemble du mois, le budget mensuel, le compte joint, un objectif d'épargne et le partage avec une autre personne sont inclus dans la version gratuite, et vos 5 premiers paiements avec le téléphone sont enregistrés automatiquement gratuitement, pour que vous puissiez essayer. Premium est nécessaire pour dépasser ces limites, continuer à enregistrer automatiquement les paiements faits avec votre téléphone, avoir plusieurs objectifs, ainsi que pour l'import/export et le bilan annuel des économies : le prix et la durée sont affichés dans l'app avant que vous confirmiez l'achat.</p>
+      </details>
+
+      <details>
+        <summary>Comment fonctionnent les dépenses quotidiennes ?</summary>
+        <p>Ce sont toutes les dépenses du quotidien (carburant, courses, un café), toujours séparées des dépenses récurrentes. Vous pouvez les enregistrer de plusieurs façons : automatiquement quand vous payez avec votre téléphone, grâce à une automatisation à configurer une seule fois ; en partageant la notification de paiement en un geste, depuis la feuille « Partager » d'iOS ; en photographiant le ticket, le commerçant, le montant et la date étant reconnus tout seuls et la photo jamais conservée ; ou à la main, en quelques secondes.</p>
+      </details>
+
+      <details>
+        <summary>L'application se connecte-t-elle à mon compte bancaire ?</summary>
+        <p>Non. Skurda ne se connecte ni aux banques, ni aux cartes, ni aux comptes courants, n'effectue aucun paiement, ne résilie aucun abonnement à votre place et ne demande jamais d'identifiants bancaires. La seule automatisation disponible est celle que vous créez vous-même dans Raccourcis pour lire les notifications Wallet sur le même téléphone : ce n'est ni une connexion bancaire ni une intégration officielle d'Apple Pay.</p>
+      </details>
+
+      <details>
+        <summary>Où vont mes données ?</summary>
+        <p>Les noms, montants, catégories et notes restent dans la mémoire de votre iPhone et se synchronisent automatiquement avec votre compte iCloud personnel, afin que vous les retrouviez sur vos autres appareils connectés avec le même compte Apple. Il n'y a aucun serveur du développeur : celui qui a créé l'app ne peut ni voir, ni recevoir, ni conserver vos dépenses.</p>
+      </details>
+
+      <details>
+        <summary>Comment fonctionne le bilan des économies ?</summary>
+        <p>Il lit les dépenses que vous avez déjà saisies et cherche neuf situations typiques où l'on gaspille de l'argent : plusieurs services de streaming actifs en même temps, abonnements mensuels qui coûteraient peut-être moins cher à l'année, hausses de prix détectées dans votre historique, dépenses mises en pause dans l'app mais probablement toujours facturées par le fournisseur, dépenses saisies en double par erreur, crédits immobiliers qui valent la peine d'être renégociés, une seule catégorie qui absorbe l'essentiel de vos dépenses, dépenses que vous n'avez pas revues depuis plus d'un an, et renouvellements annuels à venir qui méritent d'être comparés à d'autres offres. Ce sont des règles déterministes calculées sur l'appareil : il n'y a aucune intelligence artificielle et aucune donnée n'est envoyée où que ce soit.</p>
+      </details>
+
+      <details>
+        <summary>Fonctionne-t-elle sans connexion internet ?</summary>
+        <p>Oui. Tous les calculs, graphiques, rappels et le bilan des économies fonctionnent entièrement hors ligne, car tout se passe sur l'appareil. Une connexion n'est nécessaire que pour la synchronisation iCloud et pour acheter Premium.</p>
+      </details>
+
+      <details>
+        <summary>Comment gère-t-elle les factures qui changent à chaque fois ?</summary>
+        <p>Vous pouvez marquer une dépense comme variable : depuis le calendrier, vous enregistrez à chaque échéance le montant réellement payé, et pour les échéances futures l'app affiche une estimation fondée sur la moyenne des derniers montants enregistrés, signalée par un tilde. Si un montant augmente par rapport au précédent, le bilan des économies le signale.</p>
+      </details>
+
+      <details>
+        <summary>Quels appareils et quelles langues sont pris en charge ?</summary>
+        <p>Elle fonctionne sur iPhone avec iOS 17 ou version ultérieure. L'interface est disponible en italien, anglais, espagnol, français et allemand, et la langue se choisit dans les réglages de l'app, indépendamment de celle du système.</p>
+      </details>
+
+      <details>
+        <summary>Y a-t-il de la publicité ou du suivi ?</summary>
+        <p>Non. L'app n'affiche aucune publicité, n'utilise aucun réseau publicitaire, n'utilise pas l'IDFA et ne pratique pas le suivi tel que défini par les règles d'Apple. Elle ne collecte que des statistiques d'utilisation anonymes et agrégées, qui ne comprennent jamais le nom ni le montant de vos dépenses et auxquelles vous pouvez vous opposer à tout moment en écrivant à <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="container" style="padding-bottom:76px">
+  <div class="closing">
+    <h2>Téléchargez-la maintenant</h2>
+    <p>L'application est disponible sur l'App Store. Pour toute question ou signalement, vous pouvez nous écrire à tout moment.</p>
+    <a class="store-badge" href="https://apps.apple.com/app/id6806970079">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.6-2.28 1.22-3 .78-.93 2.07-1.6 3.14-1.64.02.06.04.24.04.4zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+      <span><span class="small">Télécharger dans l'</span><span class="big">App Store</span></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- Cloudflare Web Analytics — voir la note dans la page italienne. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c71e538f281a4296b8b84c74ad2b43ad"}'></script>
+
+<footer>
+  <div class="container">
+    <a href="../privacy.html">Politique de confidentialité</a>
+    <a href="../terms.html">Conditions générales</a>
+    <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+    <span class="spacer">© 2026 dontknowif</span>
+  </div>
+</footer>
+
+</body>
+</html>

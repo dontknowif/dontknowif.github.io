@@ -43,7 +43,7 @@ legale, non solo di forma.
 ```text
 /                                  home: elenco delle app, volutamente generica
 /robots.txt                        ammette esplicitamente i crawler AI
-/sitemap.xml                       8 URL, con alternate hreflang
+/sitemap.xml                       11 URL, con alternate hreflang (it, en, de, fr, es + x-default)
 /llms.txt                          scheda fattuale delle app per gli assistenti AI
 /googlea082b78555501c8d.html       verifica Google Search Console
 /BingSiteAuth.xml                  verifica Bing (copia anche in /spese-ricorrenti/)
@@ -54,6 +54,7 @@ legale, non solo di forma.
 
 /spese-ricorrenti/                 landing italiana — URL canonico dell'app
 /spese-ricorrenti/en/              landing inglese
+/spese-ricorrenti/de/ fr/ es/      landing tedesca, francese, spagnola — stessa struttura di /en/ (traduzione delle stringhe di /en/; Privacy e Termini restano solo IT/EN)
 /spese-ricorrenti/privacy.html     Privacy Policy, bilingue IT/EN
 /spese-ricorrenti/terms.html       Termini e condizioni, bilingue IT/EN
 /spese-ricorrenti/style.css        stile base, condiviso con le pagine legali
@@ -93,9 +94,9 @@ obbligherebbe a rifare la verifica su Bing e a reindicizzare tutto, e la parola
 chiave nell'URL ha comunque valore. Se un giorno si passa a un dominio proprio,
 quello e il momento giusto per sistemarlo.
 
-### Due lingue, due URL
+### Una lingua, un URL (landing in 5 lingue)
 
-Le **landing** usano un URL per lingua, collegati da `hreflang` + `x-default`: e
+Le **landing** (IT, EN, DE, FR, ES) usano un URL per lingua, collegati da `hreflang` + `x-default`: e
 la struttura che i motori di ricerca interpretano correttamente.
 
 Le **pagine legali** usano invece un solo URL con entrambe le lingue nello stesso

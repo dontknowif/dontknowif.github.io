@@ -212,6 +212,9 @@ Users can permanently dismiss any individual insight.
 
 - [Landing page, Italian](https://dontknowif.github.io/spese-ricorrenti/): full feature description, pricing model and FAQ in Italian.
 - [Landing page, English](https://dontknowif.github.io/spese-ricorrenti/en/): the same content in English.
+- [Landing page, German](https://dontknowif.github.io/spese-ricorrenti/de/): the same content in German.
+- [Landing page, French](https://dontknowif.github.io/spese-ricorrenti/fr/): the same content in French.
+- [Landing page, Spanish](https://dontknowif.github.io/spese-ricorrenti/es/): the same content in Spanish.
 - [Privacy Policy](https://dontknowif.github.io/spese-ricorrenti/privacy.html): GDPR privacy notice, bilingual Italian/English, including a table of every telemetry event and the exact information attached to it.
 - [Terms & Conditions](https://dontknowif.github.io/spese-ricorrenti/terms.html): licence, free-tier limit, subscription and cancellation terms, bilingual Italian/English.
 
