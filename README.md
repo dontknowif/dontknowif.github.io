@@ -33,6 +33,7 @@ modifica rilevante dell'app:
 | 5 pagamenti automatici gratis senza Premium (dalla 3.9) | `ProvaAutomazione.pagamentiGratis` in `Engine/RegistratorePagamenti.swift` |
 | Budget del mese e conto comune gratis, senza limiti | `STATO_PREMIUM.md` dell'app, sezioni «Budget del mese» e «Conto comune» |
 | 3 widget: prossima spesa, spese di oggi, budget del mese | `configurationDisplayName(` in `NextExpenseWidget/` |
+| 5,0 su 5 con 6 valutazioni (`aggregateRating` nel JSON-LD delle 5 landing, solo App Store Italia, rilevato il 01/11/2026) | App Store: `curl "https://itunes.apple.com/lookup?id=6806970079&country=it"` → `averageUserRating`, `userRatingCount`. Se cambiano, aggiornare le 5 landing: un voto in markup diverso dal vero è markup ingannevole |
 
 L'ultima riga e la piu delicata: aggiungere un evento analytics nell'app senza
 elencarlo nella Privacy Policy rende la policy incompleta, e questo ha rilevanza
@@ -43,7 +44,7 @@ legale, non solo di forma.
 ```text
 /                                  home: elenco delle app, volutamente generica
 /robots.txt                        ammette esplicitamente i crawler AI
-/sitemap.xml                       11 URL, con alternate hreflang (it, en, de, fr, es + x-default)
+/sitemap.xml                       26 URL, con alternate hreflang (it, en, de, fr, es + x-default)
 /llms.txt                          scheda fattuale delle app per gli assistenti AI
 /googlea082b78555501c8d.html       verifica Google Search Console
 /BingSiteAuth.xml                  verifica Bing (copia anche in /spese-ricorrenti/)
@@ -54,6 +55,7 @@ legale, non solo di forma.
 
 /spese-ricorrenti/                 landing italiana — URL canonico dell'app
 /spese-ricorrenti/en/              landing inglese
+/spese-ricorrenti/guide/           3 guide (abbonamenti, Apple Pay, tenere traccia delle spese), IT; equivalenti in en/guides/, de/ratgeber/, fr/guides/, es/guias/ — generate da script, 15 pagine in tutto, indicizzate (hreflang + sitemap) e linkate dalla sezione «Guide» di ogni landing
 /spese-ricorrenti/de/ fr/ es/      landing tedesca, francese, spagnola — stessa struttura di /en/ (traduzione delle stringhe di /en/; Privacy e Termini restano solo IT/EN)
 /spese-ricorrenti/privacy.html     Privacy Policy, bilingue IT/EN
 /spese-ricorrenti/terms.html       Termini e condizioni, bilingue IT/EN

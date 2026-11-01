@@ -483,3 +483,19 @@ body.landing { padding: 0; }
 .landing footer .container { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
 .landing footer .spacer { margin-left: auto; }
 .landing footer a { margin: 0; }
+
+/* ---- Guide (pagine di contenuto) ---- */
+a.feature { display: block; text-decoration: none; color: inherit; }
+a.feature:hover h3 { color: var(--accent); }
+.guide { max-width: 720px; padding-top: 48px; padding-bottom: 40px; }
+.guide h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 16px; }
+.guide .lead { font-size: 19px; color: var(--text-dim); margin: 0 0 8px; }
+.guide h2 { font-size: clamp(21px, 3.5vw, 26px); letter-spacing: -.01em; margin: 38px 0 10px; }
+.guide p, .guide li { font-size: 17px; line-height: 1.65; }
+.guide ul, .guide ol { padding-left: 22px; }
+.guide li { margin: 8px 0; }
+.guide .note { margin-top: 28px; padding: 16px 18px; border-radius: 14px; background: var(--bg-soft); color: var(--text-dim); font-size: 16px; }
+.guide .guide-cta { margin: 36px 0 8px; }
+.guide .guide-cta h2 { margin-top: 0; }
+.guide .related { list-style: none; padding: 0; }
+.guide .related a { font-weight: 600; }
