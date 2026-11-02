@@ -60,6 +60,11 @@ review figures.
   currency relabels the existing amounts, it does not apply an exchange rate.
   Decimal places follow the currency (0 for JPY, 2 for EUR, 3 for KWD).
   CSV/XLSX import brings rows in using the app's currency.
+  One exception, travel mode (version 3.9.4, Premium): while it is on, payments
+  logged automatically in the trip's currency are converted into the app's
+  currency (exchange rate from Frankfurter, or one typed by the user), with the
+  original amount kept in the note; it turns itself off on the return date.
+  Expenses already saved are never converted.
 - Categories: 18 built-in categories plus unlimited custom ones with a chosen
   colour and icon. Since version 3.7 any category, built-in ones included, can
   be edited or deleted (expenses of a deleted category move to "Uncategorized",
@@ -150,6 +155,13 @@ using an anonymous device identifier. The developer never sees payment details.
 - Weekend view in Trend (version 3.8): how much of the month's daily spending
   falls on weekends, daily spending on Saturday and Sunday compared with
   weekdays, and the most expensive weekend.
+- Link to a recurring expense (version 3.9.5, free): a daily expense that was
+  really a bill, an instalment or the rent can be linked to the matching
+  recurring expense; its amount is recorded on that due date and the daily
+  expense is removed. In Italy, PagoPA payments (school canteen, TARI waste tax,
+  car tax) all carry the same generic descriptor, so since 3.9.5 the app never
+  matches them to a recurring expense by name and they are linked this way.
+- Travel mode (Premium), described under Currency above.
 - Import and export in XLSX and CSV (Premium).
 - Annual savings report (Premium), described below.
 
