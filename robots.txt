@@ -6,88 +6,118 @@
 # compaiono in un Disallow, ma qui li elenchiamo esplicitamente perché
 # l'intenzione resti evidente a chiunque legga questo file.
 
+# messaggi.json è il file (cifrato) che legge l'app: non è una pagina, non
+# va indicizzato.
+
 # ---------- Motori di ricerca ----------
 User-agent: Googlebot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Googlebot-Image
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Bingbot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Applebot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Yandex
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Baiduspider
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 # ---------- Assistenti e crawler AI ----------
 User-agent: GPTBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Claude-User
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: FacebookBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: DuckAssistBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: YouBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: CCBot
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 User-agent: MistralAI-User
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 # ---------- Tutti gli altri ----------
 User-agent: *
 Allow: /
+Disallow: /spese-ricorrenti/messaggi.json
 
 Sitemap: https://dontknowif.github.io/sitemap.xml
