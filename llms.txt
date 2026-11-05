@@ -161,6 +161,10 @@ using an anonymous device identifier. The developer never sees payment details.
   expense is removed. In Italy, PagoPA payments (school canteen, TARI waste tax,
   car tax) all carry the same generic descriptor, so since 3.9.5 the app never
   matches them to a recurring expense by name and they are linked this way.
+- "Spent this month" (version 3.9.8, optional, off by default): in Home, a figure for what has been spent so far this month, recurring and daily expenses together, shown in place of the next due date; enabled in Settings.
+- Appearance (version 3.9.8): light, dark or follow the system, chosen in Settings.
+- Home Screen quick actions (version 3.9.8): pressing and holding the app icon offers "New daily expense" and "New recurring expense" (the free-tier limits still apply), plus a "Before deleting it, write to us" shortcut above Remove App.
+- Payment notifications from some banks and wallets in Asia (for example HLB Connect, 2C2P, TNG eWallet toll payments) are read better since versions 3.9.6 and 3.9.7.
 - Travel mode (Premium), described under Currency above.
 - Import and export in XLSX and CSV (Premium).
 - Annual savings report (Premium), described below.
@@ -215,7 +219,7 @@ and no data is transmitted:
 6. **Mortgage refinancing** — for expenses named as a mortgage, a reminder that in
    Italy switching lender ("surroga") is free by law. No figure is estimated.
 7. **Category concentration** — one category taking at least 35% of monthly
-   spending. Not a saving as such: it answers "where does the money go".
+   spending, daily expenses included (since version 3.9.8). Not a saving as such: it answers "where does the money go". Since the same version the report also points out, for information only, the daily merchant that weighs most.
 8. **Stagnant expense** — subscriptions, insurance or utilities untouched for
    more than a year, worth checking for a price change.
 9. **Renewal coming up** — a yearly expense falling due in 15 to 45 days, early

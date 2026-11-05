@@ -484,3 +484,16 @@ Nella 3.9 l'automazione Wallet si prova gratis: senza Premium registra i primi
 **Il giorno dell'uscita**: data dei Termini (IT e EN) al giorno reale, poi
 `git checkout main && git merge release-3.9 && git push`.
 
+
+## Versione 3.9.8 dell'app (05/11/2026)
+
+Aggiornamento diretto su `main`, solo di cio che e gia live:
+
+- `funzionalita.html` (5 lingue): due card dopo «Il weekend, a parte»: «Speso
+  questo mese» con aspetto chiaro/scuro, e le azioni rapide dall'icona;
+- `llms.txt`: stesse novita, report risparmio con le quotidiane, notifiche
+  di banche asiatiche lette meglio (3.9.6-3.9.7).
+
+Rimasto fuori perche non ancora live (3.9.9 in revisione): valuta del telefono
+e spese suggerite per paese, recensione a 7 giorni, paywall di fine onboarding.
+Fuori anche i prelievi di contanti (in main nell'app, non rilasciati).
