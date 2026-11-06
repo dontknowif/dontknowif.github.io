@@ -21,7 +21,7 @@ modifica rilevante dell'app:
 |---|---|
 | 10 spese ricorrenti gratis | `SpeseStore.freeLimit` |
 | 20 spese quotidiane gratis al mese (a mano / da scontrino) | `SpeseStore.freeLimitQuotidiane` |
-| 57 voci nel catalogo di partenza | conteggio di `SpesaSuggerita(` in `Views/OnboardingView.swift` |
+| Catalogo di partenza per paese (nessun numero fisso sul sito) | `CatalogoSpese.perRegione` nell'app |
 | 18 categorie preimpostate, modificabili ed eliminabili dalla 3.7 | `Category.systemCatalog` |
 | 5 lingue (IT, EN, ES, FR, DE) | `Localizable.xcstrings` |
 | 9 tipi di segnalazione nel report | i rilevatori in `Engine/SavingsReportEngine.swift` (contali con `grep -c 'static func detect'`) |
@@ -497,3 +497,11 @@ Aggiornamento diretto su `main`, solo di cio che e gia live:
 Rimasto fuori perche non ancora live (3.9.9 in revisione): valuta del telefono
 e spese suggerite per paese, recensione a 7 giorni, paywall di fine onboarding.
 Fuori anche i prelievi di contanti (in main nell'app, non rilasciati).
+
+## Versione 3.9.9 dell'app (live dal 06/11/2026)
+
+Sul sito: catalogo di spese suggerite per paese e valuta del telefono al primo
+avvio (landing 5 lingue, le 5 guide sugli abbonamenti, JSON-LD, `llms.txt`); il
+numero fisso «57 spese» e stato tolto ovunque. Recensione a 7 giorni, paywall
+di fine onboarding e notifiche al momento giusto sono interni e non vanno sul
+sito. Prelievi di contanti: ancora non rilasciati.

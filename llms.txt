@@ -70,8 +70,17 @@ review figures.
   be edited or deleted (expenses of a deleted category move to "Uncategorized",
   formerly "Other"), and a category or a single expense can be left out of the
   totals and the budget, e.g. work expenses that get reimbursed.
-- Quick-start catalogue: 57 common recurring expenses, grouped by category and
-  searchable, that can be added in bulk.
+- Quick-start catalogue: common recurring expenses, grouped by category and
+  searchable, that can be added in bulk. Since version 3.9.9 the list depends on
+  the country of the phone: Italy and the United States have their own (for
+  example Deutschlandticket, Serafe, mutuelle, Council Tax, MOT, student loan,
+  health insurance), as do Germany, Austria, Switzerland, France, Spain and the
+  United Kingdom; every other country gets an international list without
+  single-country items. Earlier versions showed the Italian list to everyone.
+- First-launch currency (version 3.9.9): onboarding proposes the currency of the
+  phone's region (before, everyone started in euros); the user can change it
+  there or later in Settings, and no amount is ever converted. US users also get
+  American English wording.
 - Recurrence units: days, weeks, months, years, each with a custom interval
   (for example "every 2 months").
 
