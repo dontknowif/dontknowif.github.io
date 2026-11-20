@@ -55,7 +55,7 @@
       "description": "Pagas con el móvil y el gasto se apunta solo: cómo funcionan la automatización con Atajos, compartir la notificación y la foto del ticket en iPhone.",
       "inLanguage": "es",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-20",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/es/guias/gastos-apple-pay.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -67,6 +67,45 @@
       "about": {
         "@id": "https://dontknowif.github.io/spese-ricorrenti/#app"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/es/guias/gastos-apple-pay.html#faq",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Skurda ve mi cuenta o mi tarjeta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Solo lee el comercio, el importe y la fecha de la notificación de pago, en tu propio iPhone. Nunca pide credenciales bancarias, no ve tu saldo y no tiene acceso a tu tarjeta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que abrir la app cada vez que pago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Con la automatización de Atajos el pago se registra en segundo plano, sin abrir Skurda. Si activas las notificaciones de la automatización, recibes un aviso con el resultado y, al tocarlo, se abre el gasto recién guardado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si pago una factura que ya tengo entre los gastos recurrentes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si el pago coincide con un gasto recurrente que ya tienes, Skurda lo marca como pagado en lugar de crear un gasto nuevo, así no lo cuentas dos veces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Y los pagos con la tarjeta física o en efectivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La automatización funciona con las tarjetas guardadas en Wallet cuando pagas con el iPhone. Para todo lo demás están la foto del tique y el formulario manual, que lleva unos segundos."
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -102,6 +141,7 @@
 <article class="container guide">
 <h1>Cómo registrar tus pagos con Apple Pay como gastos</h1>
 <p class="lead">Casi siempre se deja de controlar los gastos por el mismo motivo: apuntarlos después es un trabajo. Pero si pagas con el móvil, el pago ya deja una huella: la notificación de Wallet. Se puede aprovechar.</p>
+<p class="updated"><time datetime="2026-11-20">Actualizado el 20 de noviembre de 2026</time></p>
 <h2>El problema de los pagos de cada día</h2>
 <p>Un café, la compra, la gasolina: pequeñas cantidades, muchas veces a la semana. Anotarlas a mano al final del día es olvidarse de la mitad. Funciona mucho mejor si se apuntan en el momento de pagar.</p>
 <h2>Cuatro formas de registrarlos, de la más automática</h2>
@@ -126,6 +166,34 @@
   <li>Abre Inicio: tus gastos diarios ya están ahí.</li>
 </ol>
 <p class="note">Skurda es gratis hasta 10 gastos recurrentes y 20 diarios al mes, sin cuenta. Tus datos permanecen en tu iPhone y en tu iCloud.</p>
+
+<section class="example">
+<h2>Un ejemplo concreto</h2>
+<p>Un día normal, con tres pagos con el móvil y una cena pagada en efectivo:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Dónde</th><th class="num">Importe</th><th>Cómo se registró</th></tr></thead>
+<tbody>
+<tr><td>Cafetería<br><small>08:10</small></td><td class="num">1,40 €</td><td>Automático</td></tr>
+<tr><td>Supermercado<br><small>12:45</small></td><td class="num">23,60 €</td><td>Automático</td></tr>
+<tr><td>Gasolinera<br><small>18:30</small></td><td class="num">50,00 €</td><td>Automático</td></tr>
+<tr><td>Pizzería (efectivo)<br><small>20:15</small></td><td class="num">18,00 €</td><td>Foto del tique</td></tr>
+</tbody>
+<tfoot><tr><td>Total del día</td><td class="num">93,00 €</td><td></td></tr></tfoot>
+</table></div>
+<p>Las tres primeras líneas no tuviste que escribirlas: se añadieron mientras pagabas. Para la cuarta bastó una foto. A final de mes, estas pequeñas cifras suelen ser la parte del gasto que más sorprende.</p>
+</section>
+
+<section class="faq-guide">
+<h2>Preguntas frecuentes</h2>
+<h3>¿Skurda ve mi cuenta o mi tarjeta?</h3>
+<p>No. Solo lee el comercio, el importe y la fecha de la notificación de pago, en tu propio iPhone. Nunca pide credenciales bancarias, no ve tu saldo y no tiene acceso a tu tarjeta.</p>
+<h3>¿Tengo que abrir la app cada vez que pago?</h3>
+<p>No. Con la automatización de Atajos el pago se registra en segundo plano, sin abrir Skurda. Si activas las notificaciones de la automatización, recibes un aviso con el resultado y, al tocarlo, se abre el gasto recién guardado.</p>
+<h3>¿Qué pasa si pago una factura que ya tengo entre los gastos recurrentes?</h3>
+<p>Si el pago coincide con un gasto recurrente que ya tienes, Skurda lo marca como pagado en lugar de crear un gasto nuevo, así no lo cuentas dos veces.</p>
+<h3>¿Y los pagos con la tarjeta física o en efectivo?</h3>
+<p>La automatización funciona con las tarjetas guardadas en Wallet cuando pagas con el iPhone. Para todo lo demás están la foto del tique y el formulario manual, que lleva unos segundos.</p>
+</section>
 
 <div class="guide-cta">
   <h2>Pruébala gratis</h2>

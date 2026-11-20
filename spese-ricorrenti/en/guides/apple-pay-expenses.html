@@ -55,7 +55,7 @@
       "description": "You pay with your phone and the expense logs itself: how the Shortcuts automation, sharing the payment notification and a receipt photo work on iPhone.",
       "inLanguage": "en",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-20",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/en/guides/apple-pay-expenses.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -67,6 +67,45 @@
       "about": {
         "@id": "https://dontknowif.github.io/spese-ricorrenti/#app"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/en/guides/apple-pay-expenses.html#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Skurda see my bank account or card?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It only reads the merchant, amount and date from the payment notification, on your own iPhone. It never asks for banking credentials, can't see your balance and has no access to your card."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to open the app every time I pay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. With the Shortcuts automation the payment is logged in the background, without opening Skurda. If you turn on the automation's notifications, you get a note with the result, and tapping it opens the expense just saved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I pay a bill I already track as a recurring expense?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the payment matches a recurring expense you already have, Skurda marks it as paid instead of creating a new expense, so it isn't counted twice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about payments with a physical card or in cash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The automation works with cards saved in Wallet when you pay with your iPhone. For everything else there's the receipt photo and the manual form, which takes a few seconds."
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -102,6 +141,7 @@
 <article class="container guide">
 <h1>How to log your Apple Pay payments as expenses</h1>
 <p class="lead">People stop tracking expenses almost always for the same reason: logging them afterwards is a chore. But if you pay with your phone, the payment already leaves a trace: the Wallet notification. You can use that.</p>
+<p class="updated"><time datetime="2026-11-20">Updated 20 November 2026</time></p>
 <h2>The problem with everyday payments</h2>
 <p>A coffee, the groceries, gas: small amounts, many times a week. Writing them down by hand at the end of the day means forgetting half of them. It works much better when they're logged the moment you pay.</p>
 <h2>Four ways to log them, from the most automatic</h2>
@@ -126,6 +166,34 @@
   <li>Open Home: your daily expenses are already there.</li>
 </ol>
 <p class="note">Skurda is free for up to 10 recurring and 20 daily expenses a month, no account. Your data stays on your iPhone and in your iCloud.</p>
+
+<section class="example">
+<h2>A worked example</h2>
+<p>An ordinary day, with three phone payments and one dinner paid in cash:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Where</th><th class="num">Amount</th><th>How it was logged</th></tr></thead>
+<tbody>
+<tr><td>Café<br><small>08:10</small></td><td class="num">€1.40</td><td>Automatic</td></tr>
+<tr><td>Supermarket<br><small>12:45</small></td><td class="num">€23.60</td><td>Automatic</td></tr>
+<tr><td>Petrol station<br><small>18:30</small></td><td class="num">€50.00</td><td>Automatic</td></tr>
+<tr><td>Pizzeria (cash)<br><small>20:15</small></td><td class="num">€18.00</td><td>Receipt photo</td></tr>
+</tbody>
+<tfoot><tr><td>Total for the day</td><td class="num">€93.00</td><td></td></tr></tfoot>
+</table></div>
+<p>You didn't have to type the first three lines: they appeared as you paid. The fourth took one photo. By the end of the month, these small amounts are often the part of your spending that surprises you most.</p>
+</section>
+
+<section class="faq-guide">
+<h2>Frequently asked questions</h2>
+<h3>Can Skurda see my bank account or card?</h3>
+<p>No. It only reads the merchant, amount and date from the payment notification, on your own iPhone. It never asks for banking credentials, can't see your balance and has no access to your card.</p>
+<h3>Do I have to open the app every time I pay?</h3>
+<p>No. With the Shortcuts automation the payment is logged in the background, without opening Skurda. If you turn on the automation's notifications, you get a note with the result, and tapping it opens the expense just saved.</p>
+<h3>What if I pay a bill I already track as a recurring expense?</h3>
+<p>If the payment matches a recurring expense you already have, Skurda marks it as paid instead of creating a new expense, so it isn't counted twice.</p>
+<h3>What about payments with a physical card or in cash?</h3>
+<p>The automation works with cards saved in Wallet when you pay with your iPhone. For everything else there's the receipt photo and the manual form, which takes a few seconds.</p>
+</section>
 
 <div class="guide-cta">
   <h2>Try it free</h2>

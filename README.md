@@ -151,7 +151,7 @@ uguali, e la differenza e voluta:
 
 | Dove | Link | Perche |
 |---|---|---|
-| Landing italiana | `apps.apple.com/it/app/recurr-spese-ricorrenti/id6806970079` | pubblico italiano: va diritto allo store italiano, senza redirect |
+| Landing italiana | `apps.apple.com/it/app/skurda-abbonamenti-e-spese/id6806970079` | pubblico italiano: va diritto allo store italiano, senza redirect |
 | Landing inglese e `llms.txt` | `apps.apple.com/app/id6806970079` | senza codice paese Apple reindirizza allo store del visitatore: l'app e in vendita in 175 store, e un lettore inglese non e detto sia negli Stati Uniti |
 
 Il badge "App Store" nelle landing e un `<a class="store-badge">`, non piu uno

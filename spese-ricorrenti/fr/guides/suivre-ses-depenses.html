@@ -55,7 +55,7 @@
       "description": "Une méthode en six étapes pour suivre vos dépenses sans tableur interminable : dépenses fixes et quotidiennes, budget mensuel et une application iPhone.",
       "inLanguage": "fr",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-20",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/fr/guides/suivre-ses-depenses.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -67,6 +67,37 @@
       "about": {
         "@id": "https://dontknowif.github.io/spese-ricorrenti/#app"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/fr/guides/suivre-ses-depenses.html#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de catégories faut-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dix ou douze suffisent : logement, énergie, courses, transports, santé, loisirs et quelques autres. Avec trop de catégories, la saisie devient lente et les graphiques ne disent plus rien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Plutôt un tableur ou une app ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un tableur convient très bien si vous le mettez vraiment à jour chaque semaine. Une app réduit le temps de saisie, et c'est ce qui fait la différence après le premier mois. Skurda sait aussi importer et exporter en XLSX et CSV (Premium) : vous ne perdez pas vos tableaux existants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment suivre les dépenses en espèces ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Photographiez le ticket ou saisissez la dépense à la main. Quand vous retirez de l'argent, Skurda range le retrait dans la catégorie Espèces et vous permet de le répartir entre les dépenses auxquelles il a vraiment servi."
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -102,6 +133,7 @@
 <article class="container guide">
 <h1>Comment suivre vos dépenses</h1>
 <p class="lead">Suivre ses dépenses n'exige ni tableur ni des heures de travail. Il faut une méthode assez simple pour la tenir chaque mois. Voici celle qui fonctionne, en six étapes.</p>
+<p class="updated"><time datetime="2026-11-20">Mis à jour le 20 novembre 2026</time></p>
 <h2>1. Séparez les dépenses fixes de celles du quotidien</h2>
 <p>Les dépenses fixes (loyer, abonnements, factures, assurances) se répètent et se prévoient : on les saisit une fois. Celles du quotidien (courses, carburant, café) s'enregistrent quand elles ont lieu. Les garder séparées évite de compter deux fois.</p>
 <h2>2. Commencez par les fixes</h2>
@@ -126,6 +158,38 @@
   <li>Vos données restent sur votre iPhone et dans votre iCloud : aucun serveur de notre part, aucune connexion bancaire.</li>
 </ul>
 <p class="note">Skurda est gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, sans compte.</p>
+
+<section class="example">
+<h2>Un exemple concret</h2>
+<p>Un mois type pour une personne seule avec un salaire de 1 800 €. Les dépenses fixes se saisissent une fois ; celles du quotidien s'additionnent au fil du mois :</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Dépense</th><th class="num">Dans le mois</th></tr></thead>
+<tbody>
+<tr class="group"><th colspan="2">Dépenses fixes (810,00 €)</th></tr>
+<tr><td>Loyer</td><td class="num">650,00 €</td></tr>
+<tr><td>Électricité et gaz</td><td class="num">95,00 €</td></tr>
+<tr><td>Téléphone et internet</td><td class="num">35,00 €</td></tr>
+<tr><td>Abonnements</td><td class="num">30,00 €</td></tr>
+<tr class="group"><th colspan="2">Dépenses du quotidien (630,00 €)</th></tr>
+<tr><td>Courses</td><td class="num">320,00 €</td></tr>
+<tr><td>Carburant</td><td class="num">120,00 €</td></tr>
+<tr><td>Cafés et restaurants</td><td class="num">110,00 €</td></tr>
+<tr><td>Divers</td><td class="num">80,00 €</td></tr>
+</tbody>
+<tfoot><tr><td>Total du mois</td><td class="num">1.440,00 €</td></tr><tr class="sub"><td>Revenus</td><td class="num">1.800,00 €</td></tr><tr><td>Reste</td><td class="num">360,00 €</td></tr></tfoot>
+</table></div>
+<p>Le chiffre utile n'est pas le total mais la proportion : les dépenses fixes sont connues dès le 1er du mois, celles du quotidien en représentent presque la moitié, et c'est là que se joue ce qui reste. D'où l'intérêt de les séparer et de les noter tout de suite.</p>
+</section>
+
+<section class="faq-guide">
+<h2>Questions fréquentes</h2>
+<h3>Combien de catégories faut-il ?</h3>
+<p>Dix ou douze suffisent : logement, énergie, courses, transports, santé, loisirs et quelques autres. Avec trop de catégories, la saisie devient lente et les graphiques ne disent plus rien.</p>
+<h3>Plutôt un tableur ou une app ?</h3>
+<p>Un tableur convient très bien si vous le mettez vraiment à jour chaque semaine. Une app réduit le temps de saisie, et c'est ce qui fait la différence après le premier mois. Skurda sait aussi importer et exporter en XLSX et CSV (Premium) : vous ne perdez pas vos tableaux existants.</p>
+<h3>Comment suivre les dépenses en espèces ?</h3>
+<p>Photographiez le ticket ou saisissez la dépense à la main. Quand vous retirez de l'argent, Skurda range le retrait dans la catégorie Espèces et vous permet de le répartir entre les dépenses auxquelles il a vraiment servi.</p>
+</section>
 
 <div class="guide-cta">
   <h2>Essayez-la gratuitement</h2>

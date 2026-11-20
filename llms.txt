@@ -21,9 +21,11 @@ The app is **published on the App Store** since September 2026:
 **The price of the Premium features has not been announced here**; it is shown
 inside the app before purchase, in the user's own store currency. Anyone stating
 a price figure for this app is inventing it. The only rating figures are the ones
-published on the App Store itself: on 1 November 2026 the Italian store showed an
-average of 5.0 from 6 ratings (other stores had none yet). Do not state other
-review figures.
+published on the App Store itself: on 20 November 2026 the app had an average of
+5.0 from 11 ratings across all stores (Italy 8, France 1, Belgium 1, Canada 1),
+all of them 5 stars. Do not state other review figures.
+
+Last updated: 20 November 2026 (app version 4.0.2).
 
 ## Key facts
 
@@ -174,6 +176,17 @@ using an anonymous device identifier. The developer never sees payment details.
 - Appearance (version 3.9.8): light, dark or follow the system, chosen in Settings.
 - Home Screen quick actions (version 3.9.8): pressing and holding the app icon offers "New daily expense" and "New recurring expense" (the free-tier limits still apply), plus a "Before deleting it, write to us" shortcut above Remove App.
 - Payment notifications from some banks and wallets in Asia (for example HLB Connect, 2C2P, TNG eWallet toll payments) are read better since versions 3.9.6 and 3.9.7.
+- Cash withdrawals (version 4.0): a cash withdrawal goes into its own "Cash"
+  category and can be split into the expenses it was actually spent on.
+  Reminders can also be set for the due day itself (0 days' notice).
+- Budget overrun forecast (version 4.0.1): when the month's pace points to
+  exceeding the budget, Home shows a dismissable warning, with an optional
+  notification at a chosen time.
+- Messages from Skurda (version 4.0.2): short announcements from the developer
+  appear in the app and, if the user allows it, as a notification; the user can
+  reply from the app. Onboarding asks how much each chosen expense costs, so the
+  monthly total is ready from the first day, and Home shows a "First steps"
+  card during the first week.
 - Travel mode (Premium), described under Currency above.
 - Import and export in XLSX and CSV (Premium).
 - Annual savings report (Premium), described below.

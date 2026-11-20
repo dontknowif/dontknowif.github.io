@@ -499,3 +499,20 @@ a.feature:hover h3 { color: var(--accent); }
 .guide .guide-cta h2 { margin-top: 0; }
 .guide .related { list-style: none; padding: 0; }
 .guide .related a { font-weight: 600; }
+.guide .updated { font-size: 14px; color: var(--text-dim); margin: 6px 0 0; }
+.guide h3 { font-size: 19px; line-height: 1.35; margin: 26px 0 6px; }
+.guide .table-wrap { overflow-x: auto; margin: 18px 0; -webkit-overflow-scrolling: touch; }
+.guide table { width: 100%; min-width: 0; border-collapse: collapse; font-size: 15.5px; }
+.guide th, .guide td { padding: 9px 8px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+.guide th { background: none; }
+.guide thead th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-dim); }
+.guide .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.guide td small { font-size: 13.5px; color: var(--text-dim); }
+.guide td:first-child { overflow-wrap: anywhere; hyphens: auto; }
+@media (max-width: 420px) {
+  .guide table { font-size: 14.5px; }
+  .guide th, .guide td { padding: 8px 5px; }
+}
+.guide tr.group th { padding-top: 16px; font-size: 14px; color: var(--text-dim); }
+.guide tfoot td { font-weight: 700; border-bottom: none; }
+.guide tfoot tr.sub td { font-weight: 400; color: var(--text-dim); }

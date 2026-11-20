@@ -55,7 +55,7 @@
       "description": "Vous payez avec votre téléphone et la dépense s'enregistre toute seule : comment fonctionnent l'automatisation Raccourcis, le partage de la notification et la photo du ticket sur iPhone.",
       "inLanguage": "fr",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-20",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/fr/guides/depenses-apple-pay.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -67,6 +67,45 @@
       "about": {
         "@id": "https://dontknowif.github.io/spese-ricorrenti/#app"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dontknowif.github.io/spese-ricorrenti/fr/guides/depenses-apple-pay.html#faq",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Skurda voit-il mon compte ou ma carte ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Il lit seulement le commerçant, le montant et la date dans la notification de paiement, sur votre propre iPhone. Il ne demande jamais d'identifiants bancaires, ne voit pas votre solde et n'a pas accès à votre carte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dois-je ouvrir l'app à chaque paiement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Avec l'automatisation de Raccourcis, le paiement est enregistré en arrière-plan, sans ouvrir Skurda. Si vous activez les notifications de l'automatisation, vous recevez un message avec le résultat ; en le touchant, vous ouvrez la dépense tout juste enregistrée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il si je paie une facture déjà suivie comme dépense récurrente ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si le paiement correspond à une dépense récurrente que vous avez déjà, Skurda la marque comme payée au lieu de créer une nouvelle dépense : elle n'est pas comptée deux fois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Et les paiements avec la carte physique ou en espèces ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'automatisation fonctionne avec les cartes enregistrées dans Wallet quand vous payez avec l'iPhone. Pour le reste, il y a la photo du ticket et le formulaire manuel, qui prend quelques secondes."
+          }
+        }
+      ]
     },
     {
       "@type": "Organization",
@@ -102,6 +141,7 @@
 <article class="container guide">
 <h1>Comment enregistrer vos paiements Apple Pay comme dépenses</h1>
 <p class="lead">On arrête de suivre ses dépenses presque toujours pour la même raison : les noter après coup est une corvée. Mais si vous payez avec votre téléphone, le paiement laisse déjà une trace : la notification Wallet. On peut s'en servir.</p>
+<p class="updated"><time datetime="2026-11-20">Mis à jour le 20 novembre 2026</time></p>
 <h2>Le problème des paiements de tous les jours</h2>
 <p>Un café, les courses, le carburant : de petits montants, plusieurs fois par semaine. Les noter à la main en fin de journée, c'est en oublier la moitié. Cela marche bien mieux si elles s'enregistrent au moment où vous payez.</p>
 <h2>Quatre façons de les enregistrer, de la plus automatique à la plus manuelle</h2>
@@ -126,6 +166,34 @@
   <li>Ouvrez l'accueil : vos dépenses quotidiennes y sont déjà.</li>
 </ol>
 <p class="note">Skurda est gratuite jusqu'à 10 dépenses récurrentes et 20 dépenses quotidiennes par mois, sans compte. Vos données restent sur votre iPhone et dans votre iCloud.</p>
+
+<section class="example">
+<h2>Un exemple concret</h2>
+<p>Une journée ordinaire, avec trois paiements par téléphone et un dîner payé en espèces :</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Où</th><th class="num">Montant</th><th>Enregistrée par</th></tr></thead>
+<tbody>
+<tr><td>Café<br><small>08:10</small></td><td class="num">1,40 €</td><td>Automatique</td></tr>
+<tr><td>Supermarché<br><small>12:45</small></td><td class="num">23,60 €</td><td>Automatique</td></tr>
+<tr><td>Station-service<br><small>18:30</small></td><td class="num">50,00 €</td><td>Automatique</td></tr>
+<tr><td>Pizzeria (espèces)<br><small>20:15</small></td><td class="num">18,00 €</td><td>Photo du ticket</td></tr>
+</tbody>
+<tfoot><tr><td>Total de la journée</td><td class="num">93,00 €</td><td></td></tr></tfoot>
+</table></div>
+<p>Vous n'avez pas eu à saisir les trois premières lignes : elles se sont ajoutées pendant que vous payiez. Pour la quatrième, une photo a suffi. En fin de mois, ce sont souvent ces petites sommes qui surprennent le plus.</p>
+</section>
+
+<section class="faq-guide">
+<h2>Questions fréquentes</h2>
+<h3>Skurda voit-il mon compte ou ma carte ?</h3>
+<p>Non. Il lit seulement le commerçant, le montant et la date dans la notification de paiement, sur votre propre iPhone. Il ne demande jamais d'identifiants bancaires, ne voit pas votre solde et n'a pas accès à votre carte.</p>
+<h3>Dois-je ouvrir l'app à chaque paiement ?</h3>
+<p>Non. Avec l'automatisation de Raccourcis, le paiement est enregistré en arrière-plan, sans ouvrir Skurda. Si vous activez les notifications de l'automatisation, vous recevez un message avec le résultat ; en le touchant, vous ouvrez la dépense tout juste enregistrée.</p>
+<h3>Que se passe-t-il si je paie une facture déjà suivie comme dépense récurrente ?</h3>
+<p>Si le paiement correspond à une dépense récurrente que vous avez déjà, Skurda la marque comme payée au lieu de créer une nouvelle dépense : elle n'est pas comptée deux fois.</p>
+<h3>Et les paiements avec la carte physique ou en espèces ?</h3>
+<p>L'automatisation fonctionne avec les cartes enregistrées dans Wallet quand vous payez avec l'iPhone. Pour le reste, il y a la photo du ticket et le formulaire manuel, qui prend quelques secondes.</p>
+</section>
 
 <div class="guide-cta">
   <h2>Essayez-la gratuitement</h2>
