@@ -55,7 +55,7 @@
       "description": "Pagas con el móvil y el gasto se apunta solo: cómo funcionan la automatización con Atajos, compartir la notificación y la foto del ticket en iPhone.",
       "inLanguage": "es",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-20",
+      "dateModified": "2026-11-21",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/es/guias/gastos-apple-pay.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -104,6 +104,14 @@
             "@type": "Answer",
             "text": "La automatización funciona con las tarjetas guardadas en Wallet cuando pagas con el iPhone. Para todo lo demás están la foto del tique y el formulario manual, que lleva unos segundos."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo probarlo sin pagar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los primeros 5 pagos registrados automáticamente son gratis, para que veas cómo funciona antes de decidir. A partir del sexto hace falta Premium; el registro a mano y por tique sigue siendo gratuito hasta 20 gastos al mes."
+          }
         }
       ]
     },
@@ -141,7 +149,7 @@
 <article class="container guide">
 <h1>Cómo registrar tus pagos con Apple Pay como gastos</h1>
 <p class="lead">Casi siempre se deja de controlar los gastos por el mismo motivo: apuntarlos después es un trabajo. Pero si pagas con el móvil, el pago ya deja una huella: la notificación de Wallet. Se puede aprovechar.</p>
-<p class="updated"><time datetime="2026-11-20">Actualizado el 20 de noviembre de 2026</time></p>
+<p class="updated"><time datetime="2026-11-21">Actualizado el 21 de noviembre de 2026</time></p>
 <h2>El problema de los pagos de cada día</h2>
 <p>Un café, la compra, la gasolina: pequeñas cantidades, muchas veces a la semana. Anotarlas a mano al final del día es olvidarse de la mitad. Funciona mucho mejor si se apuntan en el momento de pagar.</p>
 <h2>Cuatro formas de registrarlos, de la más automática</h2>
@@ -151,6 +159,34 @@
   <li>Foto del ticket: útil para efectivo u otras tarjetas. El comercio, el importe y la fecha se reconocen a partir del texto y la foto no se guarda nunca.</li>
   <li>A mano: unos segundos, siempre disponible.</li>
 </ul>
+<section class="extra">
+<h2>Cómo configurar la automatización, paso a paso</h2>
+<p>Se hace una sola vez, en pocos minutos, en la app Atajos que ya tienes en el iPhone:</p>
+<ol>
+  <li>Abre <strong>Atajos</strong>, ve a la pestaña <strong>Automatización</strong> y toca <strong>+</strong>.</li>
+  <li>Elige <strong>Wallet</strong> como disparador, deja todas las tarjetas seleccionadas y elige <strong>Ejecutar inmediatamente</strong>.</li>
+  <li>Crea un atajo nuevo, busca <strong>Skurda</strong> y añade la acción <strong>Registrar pago</strong>.</li>
+  <li>En los dos campos de la acción elige el <strong>Importe</strong> y el <strong>Comercio</strong> de la transacción y confirma.</li>
+</ol>
+<p>Desde ese momento, cada pago sin contacto con una tarjeta de Wallet llega solo a Skurda. La <a href="../../automazione-wallet.html?lang=es">guía completa con imágenes y vídeo</a> muestra cada pantalla; la misma guía está dentro de la app, y en iOS 27 hay un atajo ya hecho que se añade con un toque.</p>
+
+<h2>Qué método elegir</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Método</th><th>Conviene si</th><th>Coste</th></tr></thead>
+<tbody>
+<tr><td>Automatización</td><td>Pagas a menudo con el móvil y no quieres pensar en ello</td><td>Primeros 5 pagos gratis, luego Premium</td></tr>
+<tr><td>Compartir la notificación</td><td>Quieres decidir tú, pago a pago</td><td>Premium</td></tr>
+<tr><td>Foto del tique</td><td>Efectivo, tarjeta física, tiendas sin pago sin contacto</td><td>Gratis hasta 20 gastos al mes, junto con los manuales</td></tr>
+<tr><td>A mano</td><td>Siempre, en unos segundos</td><td>Gratis hasta 20 gastos al mes, junto con los de tique</td></tr>
+</tbody>
+</table></div>
+<p>Mucha gente usa dos métodos a la vez: la automatización para los pagos con el móvil y la foto del tique para el efectivo.</p>
+
+<h2>Qué se lee y qué no</h2>
+<p>De la notificación de pago Skurda solo toma tres cosas: <strong>comercio, importe y fecha</strong>. No lee el saldo, el número de la tarjeta ni los movimientos de la cuenta, y no tiene acceso a tu banco. Todo ocurre en el iPhone: los gastos se guardan en el teléfono y en tu iCloud, nunca en servidores nuestros. Si en alguna notificación falta el importe, el gasto se guarda igualmente y puedes completarlo después.</p>
+<p>La primera vez que pagas en una tienda eliges tú la categoría; a partir de ahí Skurda la recuerda para ese comercio.</p>
+</section>
+
 <h2>Lo que debes saber</h2>
 <ul>
   <li>No es una conexión con el banco ni una integración oficial de Apple Pay: Skurda solo lee la notificación de Wallet en tu propio teléfono y nunca pide credenciales bancarias.</li>
@@ -193,6 +229,8 @@
 <p>Si el pago coincide con un gasto recurrente que ya tienes, Skurda lo marca como pagado en lugar de crear un gasto nuevo, así no lo cuentas dos veces.</p>
 <h3>¿Y los pagos con la tarjeta física o en efectivo?</h3>
 <p>La automatización funciona con las tarjetas guardadas en Wallet cuando pagas con el iPhone. Para todo lo demás están la foto del tique y el formulario manual, que lleva unos segundos.</p>
+<h3>¿Puedo probarlo sin pagar?</h3>
+<p>Sí. Los primeros 5 pagos registrados automáticamente son gratis, para que veas cómo funciona antes de decidir. A partir del sexto hace falta Premium; el registro a mano y por tique sigue siendo gratuito hasta 20 gastos al mes.</p>
 </section>
 
 <div class="guide-cta">

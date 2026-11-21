@@ -55,7 +55,7 @@
       "description": "Vous payez avec votre téléphone et la dépense s'enregistre toute seule : comment fonctionnent l'automatisation Raccourcis, le partage de la notification et la photo du ticket sur iPhone.",
       "inLanguage": "fr",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-20",
+      "dateModified": "2026-11-21",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/fr/guides/depenses-apple-pay.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -104,6 +104,14 @@
             "@type": "Answer",
             "text": "L'automatisation fonctionne avec les cartes enregistrées dans Wallet quand vous payez avec l'iPhone. Pour le reste, il y a la photo du ticket et le formulaire manuel, qui prend quelques secondes."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je l'essayer sans payer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Les 5 premiers paiements enregistrés automatiquement sont gratuits, pour voir comment cela fonctionne avant de décider. À partir du sixième, il faut Premium ; la saisie à la main et par ticket reste gratuite jusqu'à 20 dépenses par mois."
+          }
         }
       ]
     },
@@ -141,7 +149,7 @@
 <article class="container guide">
 <h1>Comment enregistrer vos paiements Apple Pay comme dépenses</h1>
 <p class="lead">On arrête de suivre ses dépenses presque toujours pour la même raison : les noter après coup est une corvée. Mais si vous payez avec votre téléphone, le paiement laisse déjà une trace : la notification Wallet. On peut s'en servir.</p>
-<p class="updated"><time datetime="2026-11-20">Mis à jour le 20 novembre 2026</time></p>
+<p class="updated"><time datetime="2026-11-21">Mis à jour le 21 novembre 2026</time></p>
 <h2>Le problème des paiements de tous les jours</h2>
 <p>Un café, les courses, le carburant : de petits montants, plusieurs fois par semaine. Les noter à la main en fin de journée, c'est en oublier la moitié. Cela marche bien mieux si elles s'enregistrent au moment où vous payez.</p>
 <h2>Quatre façons de les enregistrer, de la plus automatique à la plus manuelle</h2>
@@ -151,6 +159,34 @@
   <li>Photo du ticket : utile pour les espèces ou une autre carte. Le commerçant, le montant et la date sont reconnus à partir du texte, et la photo n'est jamais conservée.</li>
   <li>À la main : quelques secondes, toujours disponible.</li>
 </ul>
+<section class="extra">
+<h2>Configurer l'automatisation, étape par étape</h2>
+<p>Cela se fait une seule fois, en quelques minutes, dans l'app Raccourcis déjà présente sur votre iPhone :</p>
+<ol>
+  <li>Ouvrez <strong>Raccourcis</strong>, allez dans l'onglet <strong>Automatisation</strong> et touchez <strong>+</strong>.</li>
+  <li>Choisissez <strong>Wallet</strong> comme déclencheur, laissez toutes les cartes sélectionnées et choisissez <strong>Exécuter immédiatement</strong>.</li>
+  <li>Créez un nouveau raccourci, cherchez <strong>Skurda</strong> et ajoutez l'action <strong>Enregistrer un paiement</strong>.</li>
+  <li>Dans les deux champs de l'action, choisissez le <strong>Montant</strong> et le <strong>Marchand</strong> de la transaction, puis validez.</li>
+</ol>
+<p>Dès lors, chaque paiement sans contact avec une carte Wallet arrive tout seul dans Skurda. Le <a href="../../automazione-wallet.html?lang=fr">guide complet avec images et vidéo</a> montre chaque écran ; le même guide se trouve dans l'app, et sous iOS 27 un raccourci prêt à l'emploi s'ajoute d'un toucher.</p>
+
+<h2>Quelle méthode choisir</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Méthode</th><th>Idéale si</th><th>Coût</th></tr></thead>
+<tbody>
+<tr><td>Automatisation</td><td>Vous payez souvent avec l'iPhone et ne voulez pas y penser</td><td>5 premiers paiements gratuits, puis Premium</td></tr>
+<tr><td>Partage de la notification</td><td>Vous voulez décider paiement par paiement</td><td>Premium</td></tr>
+<tr><td>Photo du ticket</td><td>Espèces, carte physique, commerces sans paiement sans contact</td><td>Gratuit jusqu'à 20 dépenses par mois, avec les saisies manuelles</td></tr>
+<tr><td>À la main</td><td>Toujours, en quelques secondes</td><td>Gratuit jusqu'à 20 dépenses par mois, avec les tickets</td></tr>
+</tbody>
+</table></div>
+<p>Beaucoup combinent deux méthodes : l'automatisation pour les paiements avec l'iPhone et la photo du ticket pour les espèces.</p>
+
+<h2>Ce qui est lu, et ce qui ne l'est pas</h2>
+<p>De la notification de paiement, Skurda ne retient que trois choses : <strong>le commerçant, le montant et la date</strong>. Il ne lit ni votre solde, ni le numéro de carte, ni les opérations du compte, et n'a aucun accès à votre banque. Tout se passe sur l'iPhone : les dépenses sont enregistrées sur l'appareil et dans votre iCloud, jamais sur nos serveurs. S'il manque le montant dans une notification, la dépense est enregistrée quand même et vous pouvez la compléter plus tard.</p>
+<p>La première fois que vous payez dans un commerce, vous choisissez la catégorie ; ensuite Skurda s'en souvient pour ce commerçant.</p>
+</section>
+
 <h2>Ce qu'il faut savoir</h2>
 <ul>
   <li>Ce n'est ni une connexion bancaire ni une intégration officielle d'Apple Pay : Skurda lit seulement la notification Wallet sur votre propre téléphone et ne demande jamais d'identifiants bancaires.</li>
@@ -193,6 +229,8 @@
 <p>Si le paiement correspond à une dépense récurrente que vous avez déjà, Skurda la marque comme payée au lieu de créer une nouvelle dépense : elle n'est pas comptée deux fois.</p>
 <h3>Et les paiements avec la carte physique ou en espèces ?</h3>
 <p>L'automatisation fonctionne avec les cartes enregistrées dans Wallet quand vous payez avec l'iPhone. Pour le reste, il y a la photo du ticket et le formulaire manuel, qui prend quelques secondes.</p>
+<h3>Puis-je l'essayer sans payer ?</h3>
+<p>Oui. Les 5 premiers paiements enregistrés automatiquement sont gratuits, pour voir comment cela fonctionne avant de décider. À partir du sixième, il faut Premium ; la saisie à la main et par ticket reste gratuite jusqu'à 20 dépenses par mois.</p>
 </section>
 
 <div class="guide-cta">
