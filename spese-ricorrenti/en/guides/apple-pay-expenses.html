@@ -55,7 +55,7 @@
       "description": "You pay with your phone and the expense logs itself: how the Shortcuts automation, sharing the payment notification and a receipt photo work on iPhone.",
       "inLanguage": "en",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-20",
+      "dateModified": "2026-11-21",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/en/guides/apple-pay-expenses.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image-en.png",
       "author": {
@@ -104,6 +104,14 @@
             "@type": "Answer",
             "text": "The automation works with cards saved in Wallet when you pay with your iPhone. For everything else there's the receipt photo and the manual form, which takes a few seconds."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try it without paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The first 5 automatically logged payments are free, so you can see how it works before deciding. From the sixth one you need Premium; logging by hand and from receipts stays free up to 20 expenses a month."
+          }
         }
       ]
     },
@@ -141,7 +149,7 @@
 <article class="container guide">
 <h1>How to log your Apple Pay payments as expenses</h1>
 <p class="lead">People stop tracking expenses almost always for the same reason: logging them afterwards is a chore. But if you pay with your phone, the payment already leaves a trace: the Wallet notification. You can use that.</p>
-<p class="updated"><time datetime="2026-11-20">Updated 20 November 2026</time></p>
+<p class="updated"><time datetime="2026-11-21">Updated 21 November 2026</time></p>
 <h2>The problem with everyday payments</h2>
 <p>A coffee, the groceries, gas: small amounts, many times a week. Writing them down by hand at the end of the day means forgetting half of them. It works much better when they're logged the moment you pay.</p>
 <h2>Four ways to log them, from the most automatic</h2>
@@ -151,6 +159,34 @@
   <li>Receipt photo: useful for cash or other cards. Merchant, amount and date are recognised from the text and the photo is never saved.</li>
   <li>By hand: a few seconds, always available.</li>
 </ul>
+<section class="extra">
+<h2>How to set up the automation, step by step</h2>
+<p>You do it once, in a few minutes, in the Shortcuts app that's already on your iPhone:</p>
+<ol>
+  <li>Open <strong>Shortcuts</strong>, go to the <strong>Automation</strong> tab and tap <strong>+</strong>.</li>
+  <li>Pick <strong>Wallet</strong> as the trigger, leave all cards selected and choose <strong>Run Immediately</strong>.</li>
+  <li>Create a new shortcut, search for <strong>Skurda</strong> and add the <strong>Record payment</strong> action.</li>
+  <li>In the action's two fields, pick the transaction's <strong>Amount</strong> and <strong>Merchant</strong>, then confirm.</li>
+</ol>
+<p>From then on, every contactless payment with a Wallet card reaches Skurda on its own. The <a href="../../automazione-wallet.html?lang=en">full guide with pictures and a video</a> shows every screen; the same guide is inside the app, and on iOS 27 there's a ready-made shortcut you can add in one tap.</p>
+
+<h2>Which method to choose</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Method</th><th>Best when</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>Automation</td><td>You pay by phone often and don't want to think about it</td><td>First 5 payments free, then Premium</td></tr>
+<tr><td>Sharing the notification</td><td>You want to decide payment by payment</td><td>Premium</td></tr>
+<tr><td>Receipt photo</td><td>Cash, physical card, shops without contactless</td><td>Free up to 20 expenses a month, together with manual ones</td></tr>
+<tr><td>By hand</td><td>Any time, in a few seconds</td><td>Free up to 20 expenses a month, together with receipt ones</td></tr>
+</tbody>
+</table></div>
+<p>Many people use two methods together: the automation for phone payments and the receipt photo for cash.</p>
+
+<h2>What gets read, and what doesn't</h2>
+<p>From the payment notification Skurda takes only three things: <strong>merchant, amount and date</strong>. It doesn't read your balance, card number or account activity, and it has no access to your bank. Everything happens on the iPhone: expenses are saved on the phone and in your iCloud, never on our servers. If a notification is missing the amount, the expense is saved anyway and you can complete it later.</p>
+<p>The first time you pay at a shop you choose the category; from then on Skurda remembers it for that merchant.</p>
+</section>
+
 <h2>What you should know</h2>
 <ul>
   <li>It's not a bank connection or an official Apple Pay integration: Skurda only reads the Wallet notification on your own phone and never asks for banking credentials.</li>
@@ -193,6 +229,8 @@
 <p>If the payment matches a recurring expense you already have, Skurda marks it as paid instead of creating a new expense, so it isn't counted twice.</p>
 <h3>What about payments with a physical card or in cash?</h3>
 <p>The automation works with cards saved in Wallet when you pay with your iPhone. For everything else there's the receipt photo and the manual form, which takes a few seconds.</p>
+<h3>Can I try it without paying?</h3>
+<p>Yes. The first 5 automatically logged payments are free, so you can see how it works before deciding. From the sixth one you need Premium; logging by hand and from receipts stays free up to 20 expenses a month.</p>
 </section>
 
 <div class="guide-cta">

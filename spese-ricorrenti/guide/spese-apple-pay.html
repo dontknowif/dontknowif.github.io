@@ -55,7 +55,7 @@
       "description": "Paghi col telefono e la spesa si segna da sola: come funzionano l'automazione con Comandi, la condivisione della notifica e la foto dello scontrino su iPhone.",
       "inLanguage": "it",
       "datePublished": "2026-11-01",
-      "dateModified": "2026-11-20",
+      "dateModified": "2026-11-21",
       "mainEntityOfPage": "https://dontknowif.github.io/spese-ricorrenti/guide/spese-apple-pay.html",
       "image": "https://dontknowif.github.io/spese-ricorrenti/og-image.png",
       "author": {
@@ -104,6 +104,14 @@
             "@type": "Answer",
             "text": "L'automazione funziona con le carte salvate in Wallet quando paghi con l'iPhone. Per tutto il resto ci sono la foto dello scontrino e il modulo a mano, che richiede pochi secondi."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso provarla senza pagare?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. I primi 5 pagamenti registrati in automatico sono gratuiti, così vedi come funziona prima di decidere. Dal sesto serve Premium; la registrazione a mano e da scontrino resta gratuita fino a 20 spese al mese."
+          }
         }
       ]
     },
@@ -141,7 +149,7 @@
 <article class="container guide">
 <h1>Come registrare le spese dai pagamenti con Apple Pay</h1>
 <p class="lead">Si smette di tenere traccia delle spese quasi sempre per lo stesso motivo: segnarle dopo è una fatica. Ma se paghi col telefono, il pagamento lascia già una traccia: la notifica di Wallet. Si può usare quella.</p>
-<p class="updated"><time datetime="2026-11-20">Aggiornato il 20 novembre 2026</time></p>
+<p class="updated"><time datetime="2026-11-21">Aggiornato il 21 novembre 2026</time></p>
 <h2>Il problema dei pagamenti di ogni giorno</h2>
 <p>Il caffè, la spesa, il carburante: piccole cifre, tante volte alla settimana. Annotarle a mano a fine giornata significa dimenticarne metà. Funziona molto meglio se si segnano nel momento in cui paghi.</p>
 <h2>Quattro modi per registrarle, dal più automatico</h2>
@@ -151,6 +159,34 @@
   <li>Foto dello scontrino: utile per contanti o altre carte. Esercente, importo e data vengono riconosciuti dal testo e la foto non viene mai salvata.</li>
   <li>A mano: pochi secondi, sempre disponibile.</li>
 </ul>
+<section class="extra">
+<h2>Come impostare l'automazione, passo per passo</h2>
+<p>Si fa una volta sola, in pochi minuti, nell'app Comandi Rapidi che trovi già sull'iPhone:</p>
+<ol>
+  <li>Apri <strong>Comandi Rapidi</strong>, vai alla scheda <strong>Automazioni</strong> e tocca <strong>+</strong>.</li>
+  <li>Tra i trigger scegli <strong>Wallet</strong>, lascia selezionate tutte le carte e scegli <strong>Esegui immediatamente</strong>.</li>
+  <li>Crea un nuovo comando, cerca <strong>Skurda</strong> e aggiungi l'azione <strong>Registra pagamento</strong>.</li>
+  <li>Nei due campi dell'azione scegli <strong>Importo</strong> ed <strong>Esercente</strong> della transazione, poi conferma.</li>
+</ol>
+<p>Da quel momento ogni pagamento contactless con una carta di Wallet arriva in Skurda da solo. La <a href="../automazione-wallet.html">guida completa con le immagini e il video</a> mostra ogni schermata; dentro l'app trovi la stessa guida, e su iOS 27 c'è un comando già pronto da aggiungere con un tocco.</p>
+
+<h2>Quale metodo scegliere</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Metodo</th><th>Quando conviene</th><th>Costo</th></tr></thead>
+<tbody>
+<tr><td>Automazione</td><td>Paghi spesso col telefono e non vuoi pensarci</td><td>Primi 5 pagamenti gratis, poi Premium</td></tr>
+<tr><td>Condivisione della notifica</td><td>Vuoi decidere tu, pagamento per pagamento</td><td>Premium</td></tr>
+<tr><td>Foto dello scontrino</td><td>Contanti, carta fisica, negozi senza contactless</td><td>Gratis fino a 20 spese al mese, insieme a quelle a mano</td></tr>
+<tr><td>A mano</td><td>Sempre, in pochi secondi</td><td>Gratis fino a 20 spese al mese, insieme a quelle da scontrino</td></tr>
+</tbody>
+</table></div>
+<p>Molti usano due metodi insieme: l'automazione per i pagamenti col telefono e la foto dello scontrino per i contanti.</p>
+
+<h2>Cosa viene letto, e cosa no</h2>
+<p>Dalla notifica di pagamento Skurda prende solo tre cose: <strong>esercente, importo e data</strong>. Non legge il saldo, il numero della carta o i movimenti del conto, e non ha accesso alla banca. Tutto succede sull'iPhone: le spese vengono salvate sul telefono e nel tuo iCloud, mai su server nostri. Se in qualche notifica manca l'importo, la spesa viene salvata lo stesso e puoi completarla dopo.</p>
+<p>La prima volta che paghi in un negozio scegli tu la categoria; dalla volta successiva Skurda se la ricorda per quell'esercente.</p>
+</section>
+
 <h2>Cosa devi sapere</h2>
 <ul>
   <li>Non è una connessione alla banca né un'integrazione ufficiale di Apple Pay: Skurda legge solo la notifica di Wallet sul tuo stesso telefono e non chiede mai credenziali bancarie.</li>
@@ -193,6 +229,8 @@
 <p>Se il pagamento corrisponde a una spesa ricorrente che hai già, Skurda la segna come pagata invece di creare una spesa nuova, così non la conti due volte.</p>
 <h3>E i pagamenti con la carta fisica o in contanti?</h3>
 <p>L'automazione funziona con le carte salvate in Wallet quando paghi con l'iPhone. Per tutto il resto ci sono la foto dello scontrino e il modulo a mano, che richiede pochi secondi.</p>
+<h3>Posso provarla senza pagare?</h3>
+<p>Sì. I primi 5 pagamenti registrati in automatico sono gratuiti, così vedi come funziona prima di decidere. Dal sesto serve Premium; la registrazione a mano e da scontrino resta gratuita fino a 20 spese al mese.</p>
 </section>
 
 <div class="guide-cta">
