@@ -1,6 +1,6 @@
 # dontknowif.github.io — sito pubblico
 
-Sito di **dontknowif** e delle app **Skurda** e **HomeOffice**, ospitato su GitHub
+Sito di **dontknowif** e delle app **Skurda**, **HomeOffice** e **Piano di Cura**, ospitato su GitHub
 Pages e online su <https://dontknowif.github.io/>.
 
 Contiene anche Privacy Policy e Termini e condizioni: sono documenti **pubblici e
@@ -44,7 +44,7 @@ legale, non solo di forma.
 ```text
 /                                  home: elenco delle app, volutamente generica
 /robots.txt                        ammette esplicitamente i crawler AI
-/sitemap.xml                       26 URL, con alternate hreflang (it, en, de, fr, es + x-default)
+/sitemap.xml                       30 URL, con alternate hreflang (it, en, de, fr, es + x-default)
 /llms.txt                          scheda fattuale delle app per gli assistenti AI
 /googlea082b78555501c8d.html       verifica Google Search Console
 /BingSiteAuth.xml                  verifica Bing (copia anche in /spese-ricorrenti/)
@@ -52,6 +52,12 @@ legale, non solo di forma.
 /homeoffice/                       landing italiana di HomeOffice (vedi sezione «HomeOffice»)
 /homeoffice/en/                    landing inglese di HomeOffice
 /homeoffice/privacy.html           Privacy Policy di HomeOffice, bilingue IT/EN
+
+/piano-di-cura/                    landing italiana di Piano di Cura (vedi sezione «Piano di Cura»)
+/piano-di-cura/en/                 landing inglese di Piano di Cura
+/piano-di-cura/privacy.html        Privacy Policy di Piano di Cura, bilingue IT/EN
+/piano-di-cura/support.html        pagina di supporto (Support URL di App Store Connect), bilingue IT/EN
+/piano-di-cura/_sorgenti/          script che genera le due landing (Jekyll non pubblica le cartelle con «_»)
 
 /spese-ricorrenti/                 landing italiana — URL canonico dell'app
 /spese-ricorrenti/en/              landing inglese
@@ -505,3 +511,42 @@ avvio (landing 5 lingue, le 5 guide sugli abbonamenti, JSON-LD, `llms.txt`); il
 numero fisso «57 spese» e stato tolto ovunque. Recensione a 7 giorni, paywall
 di fine onboarding e notifiche al momento giusto sono interni e non vanno sul
 sito. Prelievi di contanti: ancora non rilasciati.
+
+
+## Piano di Cura (aggiunta il 23 novembre 2026)
+
+Terza app del dominio: piano di cura del paziente (piani per patologia, appuntamenti
+ricorrenti, cose da fare prima, promemoria che insistono, mail ai medici, documenti).
+**Non ancora pubblicata**: le pagine dicono «in arrivo su App Store entro fine 2026» e il
+badge è `.store-badge.soon` (non è un link), con accanto un link mailto «Avvisami quando
+esce». La Privacy Policy §10 dichiara che quelle mail servono solo per l'avviso.
+
+Struttura come `homeoffice/`: `style.css` e `site.css` sono **copie** con i colori del
+marchio cambiati (azzurro → blu dell'icona, rosso della croce come terzo colore) e alcune
+classi in coda a `site.css` (`.notify-link`, mockup del telefono). Bundle ID
+`com.roccobar.PianoDiCura`, codice nel repo privato `roccobar/Piano-di-Cura`.
+
+- Le landing IT/EN si generano con `python3 piano-di-cura/_sorgenti/genera-landing.py`:
+  tutti i testi sono nello script, che verifica da solo che le FAQ del JSON-LD siano
+  identiche a quelle visibili. **Non modificare a mano** `index.html` ed `en/index.html`.
+- Il telefono nella hero è un **mockup HTML/CSS** della schermata «Prossime», non uno
+  screenshot: quando ci sono gli screenshot dello Store, sostituirlo con `.phone-shot`
+  come nelle altre app.
+- Icone (`favicon-32`, `icon-96/180/512`) e anteprime social `og-image*.png` sono state
+  ricavate con Pillow da `PianoDiCura/Assets.xcassets/AppIcon.appiconset/AppIcon.png`
+  dell'app: se cambia l'icona vanno rifatte.
+- `privacy.html` e `support.html` si modificano a mano, in entrambe le lingue.
+
+**Il giorno dell'uscita**: mettere l'ID App Store in `APP_STORE_ID` nello script e
+rigenerare (badge e testi passano da «in arrivo» a «disponibile»); aggiornare la riga
+della home del dominio, lo «Status» di `llms.txt` e la `lastmod` in `sitemap.xml`.
+
+| Cosa dice il sito | Dove sta la verita nell'app (repo Piano-di-Cura) |
+|---|---|
+| 8 modelli pronti | `ModelliPronti.swift` |
+| 5 lingue (IT, EN, ES, DE, FR) | `Shared/Localizable.xcstrings` |
+| iOS 17 o successivo, solo iPhone | `IPHONEOS_DEPLOYMENT_TARGET`, `TARGETED_DEVICE_FAMILY` nel progetto Xcode |
+| Widget per Home e Blocco schermo | `supportedFamilies` in `PianoDiCuraWidget/PianoDiCuraWidget.swift` |
+| Al massimo 64 notifiche, prima le più vicine (pagina Supporto) | `PianoDiCura/Notifiche.swift` |
+| Elenco degli eventi statistici nella Privacy Policy §5 | tutte le funzioni di `PianoDiCura/Analytics.swift`: un evento o un parametro nuovo va aggiunto alla policy **prima** del rilascio |
+| Nessun dato sanitario nelle statistiche | idem: mai nomi, note, date, esami, medici o documenti nei segnali |

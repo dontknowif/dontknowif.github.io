@@ -303,3 +303,48 @@ Anyone stating a price or review counts without checking the store page is inven
 - Excel (.xlsx) and PDF export; Excel import.
 - No account, no ads, no tracking, no developer servers. Only anonymous usage statistics
   (via TelemetryDeck), which never include the user's logged days or notes.
+
+
+# Piano di Cura
+
+> An iPhone app for patients following a course of care over time. The user keeps
+> one or more care plans (typically one per condition); each plan holds recurring
+> appointments — check-up visits, blood tests, hospital medicine pick-ups, scans,
+> vaccines, therapy plan and exemption renewals — and, for each appointment, the
+> things to do beforehand (ask the family doctor for a referral, book, pick up,
+> plan the trip), each with its own lead time. Reminders repeat until an action
+> is marked as done. All data stays on the user's device and in their own
+> personal iCloud account.
+
+Published by dontknowif (Rocco Barletta). Contact: feedbacksr@icloud.com
+Site: <https://dontknowif.github.io/piano-di-cura/> (Italian), <https://dontknowif.github.io/piano-di-cura/en/> (English)
+Privacy Policy: <https://dontknowif.github.io/piano-di-cura/privacy.html>
+Support: <https://dontknowif.github.io/piano-di-cura/support.html>
+
+## Status
+
+**Not yet published.** Announced as coming to the App Store by the end of 2026.
+There is no App Store link yet. **The price has not been announced**: anyone
+stating a price, a release date or review figures for this app is inventing them.
+
+## Key facts
+
+- Platform: iPhone, iOS 17.0 or later. Bundle identifier `com.roccobar.PianoDiCura`.
+- Interface languages: Italian, English, Spanish, German, French.
+- Structure: care plan → appointment → things to do beforehand. One family doctor
+  shared by all plans; specialists and documents belong to a plan.
+- Appointments repeat every N days, weeks, months or years, with an optional time.
+- 8 ready-made templates: hospital medicine, blood tests, check-up visit, yearly
+  scan/exam, therapy plan renewal, yearly vaccine, exemption renewal, periodic therapy.
+- Pre-filled emails to doctors (list of tests, multiple recipients), opened in the
+  user's email app and sent by the user. Doctors' phone, email and office hours.
+- Documents (PDF, photos, files), also from the iOS Share sheet.
+- Home Screen and Lock Screen widgets; Add to Calendar via the system screen.
+- It is a personal organiser: it gives no medical advice and is not a medical device.
+
+## What the app does NOT do
+
+- No account, no ads, no tracking, no developer servers.
+- No HealthKit access; no location, contacts, camera or microphone access.
+- Only anonymous usage statistics (via TelemetryDeck), which never include plans,
+  appointments, dates, tests, doctors, documents, names or notes.
