@@ -539,3 +539,12 @@ body.landing { padding: 0; }
 .ph-tag.due { background: #e6f0fb; color: #1f73c4; }
 .ph-tab.on { color: #1f73c4; }
 .ph-name .ph-tag { display: inline-block; }
+
+/* Cinque lingue nella barra: su iPhone il nome andrebbe a capo su tre righe. */
+.nav .brand { white-space: nowrap; }
+@media (max-width: 480px) {
+  .nav-inner { gap: 10px; padding: 10px 16px; }
+  .nav .brand { font-size: 15px; gap: 8px; }
+  .nav .langs { gap: 4px; }
+  .nav .langs a { padding: 4px 7px; font-size: 12.5px; }
+}

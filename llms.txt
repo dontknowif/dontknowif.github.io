@@ -317,7 +317,7 @@ Anyone stating a price or review counts without checking the store page is inven
 > personal iCloud account.
 
 Published by dontknowif (Rocco Barletta). Contact: feedbacksr@icloud.com
-Site: <https://dontknowif.github.io/piano-di-cura/> (Italian), <https://dontknowif.github.io/piano-di-cura/en/> (English)
+Site: <https://dontknowif.github.io/piano-di-cura/> (Italian), <https://dontknowif.github.io/piano-di-cura/en/> (English), also /es/, /de/, /fr/
 Privacy Policy: <https://dontknowif.github.io/piano-di-cura/privacy.html>
 Support: <https://dontknowif.github.io/piano-di-cura/support.html>
 

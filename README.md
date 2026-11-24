@@ -44,7 +44,7 @@ legale, non solo di forma.
 ```text
 /                                  home: elenco delle app, volutamente generica
 /robots.txt                        ammette esplicitamente i crawler AI
-/sitemap.xml                       30 URL, con alternate hreflang (it, en, de, fr, es + x-default)
+/sitemap.xml                       33 URL, con alternate hreflang (it, en, de, fr, es + x-default)
 /llms.txt                          scheda fattuale delle app per gli assistenti AI
 /googlea082b78555501c8d.html       verifica Google Search Console
 /BingSiteAuth.xml                  verifica Bing (copia anche in /spese-ricorrenti/)
@@ -54,7 +54,7 @@ legale, non solo di forma.
 /homeoffice/privacy.html           Privacy Policy di HomeOffice, bilingue IT/EN
 
 /piano-di-cura/                    landing italiana di Piano di Cura (vedi sezione «Piano di Cura»)
-/piano-di-cura/en/                 landing inglese di Piano di Cura
+/piano-di-cura/en/ es/ de/ fr/     landing inglese, spagnola, tedesca, francese (stesso script; Privacy e Supporto restano IT/EN)
 /piano-di-cura/privacy.html        Privacy Policy di Piano di Cura, bilingue IT/EN
 /piano-di-cura/support.html        pagina di supporto (Support URL di App Store Connect), bilingue IT/EN
 /piano-di-cura/_sorgenti/          script che genera le due landing (Jekyll non pubblica le cartelle con «_»)
@@ -526,9 +526,9 @@ marchio cambiati (azzurro → blu dell'icona, rosso della croce come terzo color
 classi in coda a `site.css` (`.notify-link`, mockup del telefono). Bundle ID
 `com.roccobar.PianoDiCura`, codice nel repo privato `roccobar/Piano-di-Cura`.
 
-- Le landing IT/EN si generano con `python3 piano-di-cura/_sorgenti/genera-landing.py`:
+- Le landing (IT, EN, ES, DE, FR, un URL per lingua con hreflang come Skurda) si generano con `python3 piano-di-cura/_sorgenti/genera-landing.py`:
   tutti i testi sono nello script, che verifica da solo che le FAQ del JSON-LD siano
-  identiche a quelle visibili. **Non modificare a mano** `index.html` ed `en/index.html`.
+  identiche a quelle visibili. **Non modificare a mano** le `index.html` delle cinque lingue.
 - Il telefono nella hero è un **mockup HTML/CSS** della schermata «Prossime», non uno
   screenshot: quando ci sono gli screenshot dello Store, sostituirlo con `.phone-shot`
   come nelle altre app.
