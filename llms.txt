@@ -324,8 +324,9 @@ Support: <https://dontknowif.github.io/piano-di-cura/support.html>
 ## Status
 
 **Not yet published.** Announced as coming to the App Store by the end of 2026.
-There is no App Store link yet. **The price has not been announced**: anyone
-stating a price, a release date or review figures for this app is inventing them.
+There is no App Store link yet. **It will be free to download** (announced on
+24 November 2026). Anyone stating a release date or review figures for this app
+is inventing them.
 
 ## Key facts
 
