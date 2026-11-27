@@ -131,7 +131,7 @@ T = {
     },
     "en": {
         "lang": "en", "og_locale": "en_GB", "og_alt": "it_IT", "url": BASE + "en/", "prefix": "../",
-        "title": "Medical appointment and medication reminder app | Piano di Cura",
+        "title": "Medical appointment & medication reminders | Piano di Cura",
         "og_alt_text": "Piano di Cura icon and the line: visits, tests and medicines, nothing forgotten. Coming by the end of 2026.",
         "description": "Free iPhone app for long-term care: visits, tests and medicines, with the steps to take beforehand and reminders that repeat until done. Coming by end of 2026.",
         "og_description": "Visits, tests and medicines in one place, with the things to do beforehand and reminders that make sure nothing is forgotten. Coming to the App Store by the end of 2026.",
@@ -538,6 +538,17 @@ def badge(t):
         </span>'''
 
 
+ALTRE_APP_LABEL = {"it": "Altre app:", "en": "More apps:", "es": "Más apps:", "de": "Weitere Apps:", "fr": "Autres apps :"}
+
+
+def altre_app(lang):
+    """Link in fondo alla pagina verso le altre app del dominio (aiuta Google a collegarle)."""
+    skurda = "/spese-ricorrenti/" if lang == "it" else f"/spese-ricorrenti/{lang}/"
+    homeoffice = "/homeoffice/" if lang == "it" else "/homeoffice/en/"
+    return (f'<span class="other-apps">{ALTRE_APP_LABEL[lang]} <a href="{skurda}">Skurda</a>'
+            f' · <a href="{homeoffice}">HomeOffice</a></span>')
+
+
 def json_ld(t):
     ld = t["ld"]
     app = {
@@ -763,6 +774,7 @@ def pagina(t):
     <a href="{privacy_href}">{e(t["footer"][0])}</a>
     <a href="{support_href}">{e(t["footer"][1])}</a>
     <a href="mailto:feedbacksr@icloud.com">feedbacksr@icloud.com</a>
+    {altre_app(t["lang"])}
     <span class="spacer">© 2026 dontknowif</span>
   </div>
 </footer>

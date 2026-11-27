@@ -531,8 +531,13 @@ classi in coda a `site.css` (`.notify-link`, mockup del telefono). Bundle ID
   identiche a quelle visibili. **Non modificare a mano** le `index.html` delle cinque lingue.
 - `privacy.html` e `support.html` si scrivono a mano, ma il blocco tra `<!-- SEO:inizio -->` e
   `<!-- SEO:fine -->` (meta social e JSON-LD, con la FAQPage presa dalle domande italiane di
-  supporto e la data dall'«Ultimo aggiornamento» della privacy) si rigenera con
-  `cd piano-di-cura && python3 _sorgenti/seo-pagine-legali.py` dopo ogni modifica.
+  supporto e la data dall'«Ultimo aggiornamento») si rigenera con
+  `python3 _sorgenti/seo-pagine-legali.py` dalla radice del repo dopo ogni modifica. Lo stesso
+  script copre anche privacy e termini di Skurda e la privacy di HomeOffice.
+- In fondo a ogni landing (Skurda, HomeOffice, Piano di Cura, tutte le lingue) c'è la riga
+  «Altre app» con i link alle altre due app: aiuta Google a collegarle. Per Piano di Cura sta
+  in `genera-landing.py` (`altre_app`), per HomeOffice nel `generate-landing.py` del suo repo,
+  per Skurda è scritta a mano nelle cinque `index.html`.
 - Il telefono nella hero è un **mockup HTML/CSS** della schermata «Prossime», non uno
   screenshot: quando ci sono gli screenshot dello Store, sostituirlo con `.phone-shot`
   come nelle altre app.
