@@ -339,13 +339,18 @@ is inventing them.
   scan/exam, therapy plan renewal, yearly vaccine, exemption renewal, periodic therapy.
 - Pre-filled emails to doctors (list of tests, multiple recipients), opened in the
   user's email app and sent by the user. Doctors' phone, email and office hours.
-- Documents (PDF, photos, files), also from the iOS Share sheet.
+- Documents (PDF, photos, files), also from the iOS Share sheet, or scanned and photographed
+  with the camera. Tests to request can be read from a photo of a prescription, with
+  on-device text recognition.
+- Optional app lock with Face ID or Touch ID (handled by iOS).
+- Free to download.
 - Home Screen and Lock Screen widgets; Add to Calendar via the system screen.
 - It is a personal organiser: it gives no medical advice and is not a medical device.
 
 ## What the app does NOT do
 
 - No account, no ads, no tracking, no developer servers.
-- No HealthKit access; no location, contacts, camera or microphone access.
+- No HealthKit access; no location, contacts or microphone access. The camera is used
+  only when the user chooses to scan or photograph a document; photos stay in the app.
 - Only anonymous usage statistics (via TelemetryDeck), which never include plans,
   appointments, dates, tests, doctors, documents, names or notes.

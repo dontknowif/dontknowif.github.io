@@ -529,6 +529,10 @@ classi in coda a `site.css` (`.notify-link`, mockup del telefono). Bundle ID
 - Le landing (IT, EN, ES, DE, FR, un URL per lingua con hreflang come Skurda) si generano con `python3 piano-di-cura/_sorgenti/genera-landing.py`:
   tutti i testi sono nello script, che verifica da solo che le FAQ del JSON-LD siano
   identiche a quelle visibili. **Non modificare a mano** le `index.html` delle cinque lingue.
+- `privacy.html` e `support.html` si scrivono a mano, ma il blocco tra `<!-- SEO:inizio -->` e
+  `<!-- SEO:fine -->` (meta social e JSON-LD, con la FAQPage presa dalle domande italiane di
+  supporto e la data dall'«Ultimo aggiornamento» della privacy) si rigenera con
+  `cd piano-di-cura && python3 _sorgenti/seo-pagine-legali.py` dopo ogni modifica.
 - Il telefono nella hero è un **mockup HTML/CSS** della schermata «Prossime», non uno
   screenshot: quando ci sono gli screenshot dello Store, sostituirlo con `.phone-shot`
   come nelle altre app.
