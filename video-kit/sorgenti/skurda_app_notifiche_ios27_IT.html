@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{font-family:Inter,-apple-system,Arial,sans-serif;color:#fff;
+background:radial-gradient(circle at 30% 12%,#2f3478 0%,#15173a 50%,#0a0b18 100%);position:relative}
+.abs{position:absolute}
+.glow{width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle,#5b6cff40,transparent 65%);left:-10px;top:700px}
+.grad{background:linear-gradient(90deg,#8f9bff,#5ee1b5);-webkit-background-clip:text;color:transparent}
+#hook{left:0;width:1080px;top:640px;text-align:center;font-size:110px;font-weight:800;line-height:1.08;letter-spacing:-2px}
+#hook small{display:block;font-size:54px;font-weight:600;color:#b9bef0;margin-top:40px;letter-spacing:0}
+.cap{left:60px;width:960px;top:170px;text-align:center;font-size:76px;font-weight:800;line-height:1.1;letter-spacing:-1px}
+/* phone */
+#phone{left:220px;top:560px;width:640px;height:1300px;border-radius:96px;background:#05060d;border:14px solid #262a52;
+box-shadow:0 60px 120px #000a, inset 0 0 0 3px #3d4277;overflow:hidden}
+.island{position:absolute;left:50%;top:26px;width:190px;height:54px;margin-left:-95px;background:#000;border-radius:30px;z-index:9}
+.screen{position:absolute;inset:0;padding:120px 36px 40px}
+/* apple pay sheet */
+#pay{background:#0b0b10}
+.paytop{font-size:30px;color:#9a9fc8;text-align:center;margin-top:40px}
+.card{margin:50px auto 0;width:520px;height:320px;border-radius:30px;background:linear-gradient(135deg,#3a3f8f,#1d2050 60%,#5ee1b5);
+box-shadow:0 20px 50px #0008;position:relative;padding:34px}
+.card .chip{width:70px;height:52px;border-radius:10px;background:linear-gradient(135deg,#e9d38b,#b99a4a)}
+.card .num{position:absolute;left:34px;bottom:40px;font-size:30px;letter-spacing:3px;color:#e6e8ff}
+.card .brand{position:absolute;right:34px;top:30px;font-weight:800;font-size:34px}
+.merch{text-align:center;margin-top:60px;font-size:36px;color:#c9cdf3}
+.amount{text-align:center;font-size:92px;font-weight:800;margin-top:10px}
+.side{position:absolute;right:30px;top:140px;font-size:26px;color:#9a9fc8;text-align:right;line-height:1.3}
+.side b{display:block;width:16px;height:120px;border-radius:8px;background:#5b6cff;margin:10px 0 0 auto}
+.done{position:absolute;left:50%;top:880px;width:200px;height:200px;margin-left:-100px;border-radius:50%;border:10px solid #5ee1b5;
+display:flex;align-items:center;justify-content:center;font-size:110px;color:#5ee1b5;font-weight:800}
+.donet{position:absolute;left:0;right:0;top:1105px;text-align:center;font-size:40px;font-weight:700;color:#5ee1b5}
+
+/* schermata di blocco con notifica della banca */
+#lock{background:radial-gradient(circle at 50% 20%,#2b2f6e,#0b0c1c 70%)}
+.ltime{text-align:center;font-size:150px;font-weight:300;margin-top:60px;letter-spacing:-3px}
+.ldate{text-align:center;font-size:32px;color:#c9cdf3;margin-top:-6px}
+.bnotif{position:absolute;left:24px;right:24px;top:560px;background:#ffffff1f;border:2px solid #ffffff2a;border-radius:34px;padding:24px 26px;display:flex;gap:22px;align-items:flex-start}
+.bankic{width:84px;height:84px;border-radius:20px;background:#2f6fd6;display:flex;align-items:center;justify-content:center;font-size:44px;flex:none}
+.bnotif b{font-size:30px;display:flex;justify-content:space-between;width:100%}.bnotif b span{font-weight:400;color:#c3c7ee;font-size:24px}
+.bnotif p{font-size:28px;color:#e6e8ff;margin-top:6px;line-height:1.25}
+.btxt{flex:1}
+/* skurda screen */
+#app{background:#05060d}
+.mt{font-size:26px;color:#8d92c0;text-transform:uppercase;letter-spacing:2px;margin-top:30px}
+.tot{font-size:84px;font-weight:800;margin:10px 0 4px;letter-spacing:-1px}
+.sub{font-size:28px;color:#8d92c0}
+.bar{height:16px;border-radius:9px;background:#1f2246;margin:30px 0 40px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#8f9bff,#5ee1b5)}
+.row{display:flex;justify-content:space-between;align-items:center;padding:0 6px;border-bottom:2px solid #1a1d38;font-size:32px;height:112px;overflow:hidden}
+.row small{display:block;color:#7f84b3;font-size:23px;margin-top:4px}
+.l{display:flex;align-items:center}
+.ic{width:66px;height:66px;border-radius:18px;display:inline-flex;align-items:center;justify-content:center;margin-right:22px;font-size:34px;flex:none}
+.amt{font-weight:700;white-space:nowrap}
+#notif{left:20px;right:20px;top:-200px;background:#20244acc;border:2px solid #4a50a8;border-radius:34px;padding:24px 26px;display:flex;gap:22px;align-items:center;z-index:8;backdrop-filter:blur(10px)}
+.appic{width:84px;height:84px;border-radius:20px;background:linear-gradient(135deg,#8f9bff,#5ee1b5);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:46px;color:#14162e;flex:none}
+#notif b{font-size:30px}#notif p{font-size:26px;color:#c3c7ee;margin-top:4px}
+/* features */
+.chips{left:90px;width:900px;top:150px;display:flex;flex-direction:column;gap:26px}
+.chipx{background:#ffffff12;border:2px solid #ffffff22;border-radius:30px;padding:26px 34px;font-size:44px;font-weight:700;display:flex;gap:24px;align-items:center}
+/* cta */
+#cta{left:0;width:1080px;top:0;height:1920px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.logo{width:240px;height:240px;border-radius:56px;background:linear-gradient(135deg,#8f9bff,#5ee1b5);display:flex;align-items:center;justify-content:center;font-size:150px;font-weight:900;color:#14162e;box-shadow:0 30px 80px #5b6cff66}
+.name{font-size:150px;font-weight:900;letter-spacing:-4px;margin-top:40px}
+.tag{font-size:50px;font-weight:600;color:#d5d8ff;margin-top:10px}
+.store{margin-top:70px;background:#fff;color:#14162e;font-weight:800;font-size:52px;padding:32px 60px;border-radius:30px}
+.code{margin-top:50px;border:4px dashed #5ee1b5;border-radius:28px;padding:26px 44px;font-size:40px;color:#d5fff0}
+.code b{display:block;font-size:64px;letter-spacing:4px;color:#fff;margin-top:8px}
+.desc{margin-top:60px;font-size:42px;color:#b9bef0}
+/* Variante per l'app (invito all'automazione, iOS 27): niente aggancio né
+   finale con il codice; il tempo parte da quando entra il telefono. */
+#hook,#cta{display:none!important}
+</style></head><body>
+<div class="abs glow"></div>
+ 
+<div id="hook" class="abs">Un'app che legge<br>le notifiche? 🤨<small>Sì, ma solo quelle che scegli tu.</small></div>
+ 
+<div id="cap1" class="abs cap">Su <span class="grad">iOS 27</span> la banca<br>ti avvisa del pagamento…</div>
+<div id="cap2" class="abs cap">…e <span class="grad">Skurda</span> lo segna<br>da sola ✨</div>
+<div id="chips" class="abs chips">
+  <div class="chipx" id="c1">🔔 Solo le app che scegli tu</div>
+  <div class="chipx" id="c2">📱 Letta sul tuo iPhone</div>
+  <div class="chipx" id="c3">🔒 Nessun accesso alla banca</div>
+</div>
+ 
+<div id="phone" class="abs">
+  <div class="island"></div>
+  <div id="pay" class="screen">
+    <div class="ltime">9:41</div>
+    <div class="ldate">lunedì 9 novembre</div>
+    <div class="bnotif" id="bnotif"><div class="bankic">🏦</div><div class="btxt"><b>La tua banca<span>adesso</span></b><p>Pagamento con carta di € 12,50 presso Pizzeria Napoli</p></div></div>
+  </div>
+  <div id="app" class="screen">
+    <div id="notif" class="abs"><div class="appic">S</div><div><b>Pagamento registrato ✓</b><p>Pizzeria Napoli · € 12,50 · adesso</p></div></div>
+    <div class="mt">Novembre</div>
+    <div class="tot" id="tot">€ 1.245,90</div>
+    <div class="sub">spesi questo mese</div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="row" id="newrow"><div class="l"><span class="ic" style="background:#4a2a1f">🍕</span><div>Pizzeria Napoli<small>Notifica · automatico</small></div></div><span class="amt">€ 12,50</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#1f4a44">🛒</span><div>Spesa<small>Notifica · automatico</small></div></div><span class="amt">€ 46,80</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#3b2a55">🎬</span><div>Streaming<small>Ricorrente · il 15</small></div></div><span class="amt">€ 13,99</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#4a3a1f">⛽</span><div>Carburante<small>Apple Pay · automatico</small></div></div><span class="amt">€ 55,00</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#1f2f55">📱</span><div>Telefono<small>Ricorrente · l'1</small></div></div><span class="amt">€ 9,99</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#4a1f2f">🏋️</span><div>Palestra<small>Ricorrente · il 5</small></div></div><span class="amt">€ 39,00</span></div>
+    <div class="row"><div class="l"><span class="ic" style="background:#2a3b55">💡</span><div>Luce e gas<small>Ricorrente · il 20</small></div></div><span class="amt">€ 87,00</span></div>
+  </div>
+</div>
+ 
+<div id="cta" class="abs">
+  <div class="logo">S</div>
+  <div class="name grad">Skurda</div>
+  <div class="tag">Le tue spese, in automatico.</div>
+  <div class="store">Gratis su App Store</div>
+  <div class="code">🎁 2 mesi di Premium gratis<b>SKURDAFREE2M</b></div>
+  <div class="desc">🔎 Cerca «Skurda» su App Store</div>
+</div>
+ 
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x)=>Math.max(0,Math.min(1,x));
+const p=(t,a,b)=>cl((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const back=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function vis(el,t,a,b,fade=0.35,dy=40){ // fade in at a, out at b
+  const i=eo(p(t,a,a+fade)), o=1-p(t,b-fade,b);
+  const v=Math.min(i,o); el.style.opacity=v;
+  el.style.transform=`translateY(${(1-i)*dy}px)`; return v;}
+const fmt=v=>'€ '+v.toFixed(2).replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+window.render=function(t){
+  // hook
+  const h=$('hook'); const hi=p(t,0,0.5), ho=p(t,2.5,2.9);
+  h.style.opacity=Math.min(hi,1-ho); h.style.transform=`scale(${0.85+0.15*back(hi)}) translateY(${-ho*80}px)`;
+  // captions
+  vis($('cap1'),t,3.0,6.6); vis($('cap2'),t,6.8,10.6);
+  // phone
+  const ph=$('phone'); const pi=eo(p(t,2.7,3.4)), po=p(t,14.0,14.5);
+  ph.style.opacity=Math.min(pi,1-po); ph.style.transform=`translateY(${(1-pi)*500 + po*120}px)`;
+  // screens
+  const sw=p(t,6.5,6.9); $('pay').style.opacity=1-sw; $('app').style.opacity=sw;
+  // notifica della banca sulla schermata di blocco
+  const bn=$('bnotif'); const bi=back(p(t,4.2,4.7)); bn.style.opacity=p(t,4.2,4.4); bn.style.transform=`translateY(${(1-bi)*-160}px) scale(${0.9+0.1*bi})`;
+  // notification
+  const ni=eo(p(t,7.0,7.5)), no=p(t,9.6,10.0);
+  $('notif').style.top=(-200+ (ni*260) - no*260)+'px';
+  // new row grows
+  const r=eo(p(t,7.8,8.3)); const nr=$('newrow'); nr.style.height=(r*112)+'px'; nr.style.opacity=r;
+  nr.style.background=`rgba(94,225,181,${0.18*(1-p(t,8.6,10))})`;
+  // total tick
+  const tk=eo(p(t,7.9,8.7)); $('tot').textContent=fmt(1245.90+12.50*tk);
+  $('bar').style.width=(60+2*tk)+'%';
+  // features
+  const ch=$('chips'); ch.style.opacity=1-p(t,13.8,14.2);
+  ['c1','c2','c3'].forEach((id,i)=>{const e=$(id);const a=10.8+i*0.6;const v=eo(p(t,a,a+0.4));e.style.opacity=v;e.style.transform=`translateX(${(1-v)*-120}px)`});
+  // phone dims under chips
+  // cta
+  const c=$('cta'); const ci=p(t,14.4,15.0); c.style.opacity=ci;
+  document.querySelector('.logo').style.transform=`scale(${0.5+0.5*back(ci)})`;
+  ['.store','.code','.desc'].forEach((s,i)=>{const e=document.querySelector(s);const v=eo(p(t,15.0+i*0.4,15.4+i*0.4));e.style.opacity=v;e.style.transform=`translateY(${(1-v)*40}px)`});
+};
+const renderShort=window.render;
+window.render=t=>renderShort(t+2.7);
+render(0);
+</script>
+</body></html>
